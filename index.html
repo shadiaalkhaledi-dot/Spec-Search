@@ -66,17 +66,17 @@ textarea{font-size:15px;min-height:140px;resize:vertical;line-height:1.6}
 .kw{font-family:"SF Mono",ui-monospace,monospace;font-size:12px;background:var(--chip);padding:2px 7px;border-radius:6px;color:var(--ink)}
 .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint);line-height:1.7}
 .foot b{color:var(--muted);font-weight:600}
-mark{background:rgba(245,158,11,.28);color:inherit;border-radius:3px;padding:0 1px}
+mark{background:rgba(245,158,11,.30);color:var(--ink);border-radius:3px;padding:0 2px;font-weight:600}
 .dwgtog{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin:0 2px 20px;cursor:pointer;user-select:none}
 .dwgtog input{accent-color:var(--accent);width:15px;height:15px}
 .dwgsec h3{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:30px 0 12px;font-weight:600}
-.sheet{display:flex;justify-content:space-between;gap:14px;align-items:center;border:1px solid var(--line);
-  border-radius:11px;padding:10px 14px;margin-bottom:8px;background:#fff;box-shadow:var(--shadow);transition:.15s}
+.sheet{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border:1px solid var(--line);
+  border-radius:11px;padding:11px 14px;margin-bottom:8px;background:#fff;box-shadow:var(--shadow);transition:.15s}
 .sheet:hover{border-color:var(--line2);box-shadow:0 4px 14px rgba(16,24,40,.06)}
 .sheet .sno{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;font-weight:600;color:var(--ink)}
-.sheet .stitle{font-size:12.5px;color:var(--muted);margin-top:3px}
 .sheet .sdisc{display:inline-block;font-size:10px;font-weight:700;color:var(--accent-d);background:#fff7ed;
   border:1px solid #fed7aa;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin-left:8px}
+.sheet .ssnip{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.55;font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
 .sheet .shits{font-size:12px;color:var(--faint);white-space:nowrap;text-align:right}
 </style>
 </head>
@@ -85,7 +85,7 @@ mark{background:rgba(245,158,11,.28);color:inherit;border-radius:3px;padding:0 1
   <header>
     <p class="eyebrow">DIALOG · Master Specifications</p>
     <h1>Spec Finder</h1>
-    <p class="lede">Type a term off the drawings. It tells you which MasterFormat specification section is required — no section number needed — and which drawing sheets the term appears on. Built on the published master library (864 sections, Divisions 00–48).</p>
+    <p class="lede">Type a term off the drawings. It tells you which MasterFormat specification section is required — no section number needed — and which drawing sheets the term appears on, in context. Built on the published master library (864 sections, Divisions 00–48).</p>
   </header>
 
   <nav class="tabs">
@@ -96,7 +96,7 @@ mark{background:rgba(245,158,11,.28);color:inherit;border-radius:3px;padding:0 1
 
   <section id="tab-lookup">
     <div class="searchrow"><input id="q" type="text" placeholder="e.g. sliding door, mirror, curtain wall, terrazzo…" autocomplete="off"></div>
-    <p class="hint">Matches drawing language against section titles and a construction-term dictionary, and shows which drawing sheets the term appears on. Try: <b>sliding door</b>, <b>grab bar</b>, <b>metal panel</b>, <b>terrazzo</b>.</p>
+    <p class="hint">Matches drawing language against section titles and a construction-term dictionary, and shows which drawing sheets the term appears on — with the surrounding text so you can see the hit. Try: <b>sliding door</b>, <b>grab bar</b>, <b>metal panel</b>, <b>terrazzo</b>.</p>
     <label class="dwgtog"><input type="checkbox" id="archOnly" checked> Search architectural sheets only</label>
     <div id="lookupOut"></div>
     <div id="dwgOut"></div>
@@ -117,7 +117,7 @@ mark{background:rgba(245,158,11,.28);color:inherit;border-radius:3px;padding:0 1
 
   <div class="foot">
     <b>How it works.</b> Fully standalone — spec library and the Package 5 drawing-set text are baked into this file, so it runs offline and can be hosted anywhere (e.g. GitHub Pages). Nothing is sent anywhere.<br>
-    <b>On the drawings.</b> Searches the extracted text of the YYC Concourse B Package 5 (80% Review) set — 59 architectural sheets — and lists the sheet numbers where the term appears. Uncheck the box to include structural, mechanical and electrical.<br>
+    <b>On the drawings.</b> Searches the extracted text of the YYC Concourse B Package 5 (80% Review) set and lists the sheet numbers where the term appears, with a highlighted snippet of the surrounding text. Uncheck the box to include structural, mechanical and electrical.<br>
     <b>Open in MasterSpecs</b> links search the DIALOG published master library (sign-in required).<br>
     <b>Scope.</b> Titles + section codes from the published master Table of Contents. The term dictionary is a starter set and is meant to grow — send new drawing terms and they get added.
   </div>
@@ -183,22 +183,38 @@ function card(sec,req,why){
    </div><a class="open" href="${spLink(sec)}" target="_blank" rel="noopener">Open in MasterSpecs ↗</a></div>`;
 }
 
-// ---- drawing-set search: which sheets does this term appear on ----
+// ---- drawing-set search: which sheets does this term appear on, and in what context ----
+function phraseRx(phrase){
+  const parts=phrase.split(' ').filter(Boolean).map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+  return new RegExp('('+parts.join('[^A-Za-z0-9]+')+')','ig');
+}
 function drawingHits(query, synonyms){
   const phrases=[...new Set([norm(query),...synonyms.map(norm)])].filter(p=>p.length>=3);
   if(!phrases.length) return [];
-  const rxs=phrases.map(p=>new RegExp('(?:^|[^a-z0-9])'+p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:[^a-z0-9]|$)','g'));
   const archOnly=document.getElementById('archOnly').checked;
   const out=[];
   DRAWINGS.forEach(pg=>{
     if(archOnly && pg.disc!=='A') return;
-    const txt=' '+norm(pg.text)+' ';
+    const ntxt=' '+norm(pg.text)+' ';
     let hits=0; const matched=new Set();
-    rxs.forEach((re,i)=>{const m=txt.match(re); if(m){hits+=m.length; matched.add(phrases[i]);}});
+    phrases.forEach(p=>{
+      const re=new RegExp('(?:^|[^a-z0-9])'+p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:[^a-z0-9]|$)','g');
+      const m=ntxt.match(re); if(m){hits+=m.length; matched.add(p);}
+    });
     if(hits) out.push({pg,hits,matched:[...matched]});
   });
   out.sort((a,b)=>b.hits-a.hits || (a.pg.sheet||'').localeCompare(b.pg.sheet||''));
   return out;
+}
+function snippet(text, phrases){
+  let best=-1,bestLen=0;
+  phrases.forEach(p=>{const rx=phraseRx(p);const m=rx.exec(text);
+    if(m&&(best<0||m.index<best)){best=m.index;bestLen=m[0].length;}});
+  if(best<0){return esc(text.slice(0,140))+(text.length>140?' …':'');}
+  const s=Math.max(0,best-70), e=Math.min(text.length,best+bestLen+100);
+  let seg=esc(text.slice(s,e));
+  phrases.forEach(p=>{seg=seg.replace(phraseRx(p),'<mark>$1</mark>');});
+  return (s>0?'… ':'')+seg+(e<text.length?' …':'');
 }
 function renderDrawings(query, synonyms){
   const box=document.getElementById('dwgOut');
@@ -209,7 +225,7 @@ function renderDrawings(query, synonyms){
   box.innerHTML=`<div class="dwgsec"><h3>On the drawings — ${res.length} sheet${res.length!==1?'s':''}${archOnly?' · architectural':''}</h3>`+
     shown.map(r=>`<div class="sheet"><div>
         <span class="sno">${esc(r.pg.sheet||('p.'+r.pg.page))}</span><span class="sdisc">${DISC[r.pg.disc]||r.pg.disc}</span>
-        <div class="stitle">${esc(r.pg.title||'—')}</div>
+        <div class="ssnip">${snippet(r.pg.text, r.matched)}</div>
       </div><span class="shits">${r.hits} hit${r.hits!==1?'s':''}<br>PDF p.${r.pg.page}</span></div>`).join('')+
     (res.length>40?`<p class="hint" style="margin-top:10px">Showing top 40 of ${res.length} sheets.</p>`:'')+`</div>`;
 }
@@ -232,7 +248,7 @@ function runLookup(){
       : `<p class="count">No confident match — closest sections (verify before use):</p>`;
     lookupOut.innerHTML=head+res.map((r,i)=>card(r.sec,confident&&i===0,[...r.why])).join('');
   }
-  renderDrawings(val,[...syn]);
+  renderDrawings(val,[]); // drawings: match the literal phrase, not dictionary synonyms
 }
 
 document.getElementById('batchRun').addEventListener('click',()=>{
