@@ -2,7 +2,7 @@
    This file is DATA ONLY. index.html contains no spec content.
    Improve reliability by editing this file, then commit it.
      sections : 464 MasterFormat sections  {code,title,div,divName,mfr[],bod[]}
-     aliases  : 3254 drawing terms -> section code[]   (the curated mapping)
+     aliases  : 3268 drawing terms -> section code[]   (the curated mapping)
      kwByCode : 449 section code -> terms[]          (reverse index of aliases)
    Keys are sorted so diffs stay readable. Keep aliases and kwByCode consistent. */
 const DB = {
@@ -6912,7 +6912,8 @@ const DB = {
   ],
   "access door": [
    "11 33 00",
-   "11 67 30"
+   "11 67 30",
+   "08 31 00"
   ],
   "access enclosure": [
    "07 08 25"
@@ -6924,10 +6925,12 @@ const DB = {
    "11 68 33-13"
   ],
   "access panel": [
-   "09 54 23"
+   "09 54 23",
+   "08 31 00"
   ],
   "access panels": [
-   "11 73 13"
+   "11 73 13",
+   "08 31 00"
   ],
   "access systems": [
    "13 31 13"
@@ -10093,6 +10096,9 @@ const DB = {
   "external power vent": [
    "10 31 00"
   ],
+  "extinguisher cabinet": [
+   "10 44 13"
+  ],
   "extruded aluminum finish to match mullion": [
    "05 50 00"
   ],
@@ -10311,6 +10317,9 @@ const DB = {
   "fire department lock box": [
    "10 90 00"
   ],
+  "fire extinguisher cabinet": [
+   "10 44 13"
+  ],
   "fire protection file cabinets": [
    "10 44 13"
   ],
@@ -10369,6 +10378,9 @@ const DB = {
   ],
   "fire shutters": [
    "14 93 00"
+  ],
+  "fire stopping": [
+   "07 84 00"
   ],
   "fireproof gypsum plastering system": [
    "09 23 82"
@@ -10981,6 +10993,9 @@ const DB = {
   "general purpose tables": [
    "12 50 00"
   ],
+  "gfrc": [
+   "03 49 00"
+  ],
   "girder fillers": [
    "05 31 00"
   ],
@@ -11220,6 +11235,9 @@ const DB = {
   ],
   "gravity trash chutes": [
    "14 91 82"
+  ],
+  "grc": [
+   "03 49 00"
   ],
   "grease container": [
    "12 93 26"
@@ -13272,6 +13290,12 @@ const DB = {
   "package pass through": [
    "11 17 00"
   ],
+  "paint": [
+   "09 91 00"
+  ],
+  "painted": [
+   "09 91 00"
+  ],
   "painted column markers": [
    "10 14 13-13"
   ],
@@ -13598,6 +13622,9 @@ const DB = {
   "plumbing access door": [
    "14 91 82"
   ],
+  "plywood backing": [
+   "09 28 11"
+  ],
   "plywood backing panel": [
    "06 26 13"
   ],
@@ -13637,6 +13664,9 @@ const DB = {
   ],
   "pole vault box": [
    "11 68 33-43"
+  ],
+  "polished concrete": [
+   "03 35 43"
   ],
   "poly rope": [
    "03 11 43-13"
@@ -14355,6 +14385,12 @@ const DB = {
   "roller guides": [
    "14 21 23-16"
   ],
+  "roller shade": [
+   "12 24 13"
+  ],
+  "roller shades": [
+   "12 24 13"
+  ],
   "roller window shades": [
    "12 24 13"
   ],
@@ -14830,6 +14866,9 @@ const DB = {
   "shaft components and access panels": [
    "14 93 00"
   ],
+  "shaft wall": [
+   "09 21 16-23"
+  ],
   "shaft wall assemblies": [
    "09 21 16-23"
   ],
@@ -14981,6 +15020,9 @@ const DB = {
   ],
   "sign posts": [
    "10 14 54"
+  ],
+  "signage": [
+   "10 14 00"
   ],
   "signage accessories": [
    "10 14 13-16"
@@ -15756,6 +15798,9 @@ const DB = {
   "steel stud box header": [
    "09 29 13"
   ],
+  "steel stud framing": [
+   "09 22 16"
+  ],
   "steel stud wall framing systems": [
    "05 41 16"
   ],
@@ -16010,7 +16055,8 @@ const DB = {
    "06 03 00"
   ],
   "stud framing": [
-   "06 10 00"
+   "06 10 00",
+   "09 22 16"
   ],
   "styrene butadiene rubber waterstops": [
    "03 15 13"
@@ -17588,9 +17634,9 @@ const DB = {
  },
  "kwByCode": {
   "02 41 19": [
-   "selective demolition",
+   "demolish",
    "demolition",
-   "demolish"
+   "selective demolition"
   ],
   "03 01 30-00": [
    "bonding agent",
@@ -17628,7 +17674,6 @@ const DB = {
   ],
   "03 05 09": [
    "blasting materials",
-   "concrete materials",
    "liquid sealer",
    "sealers"
   ],
@@ -17636,11 +17681,9 @@ const DB = {
    "aggregate materials",
    "cementing materials",
    "chemical admixtures",
-   "concrete accessories",
    "joint filler materials",
    "pigments",
    "recycled content form materials",
-   "reinforcing materials",
    "sustainable curing materials",
    "sustainable form release agents",
    "sustainable formwork"
@@ -17656,7 +17699,6 @@ const DB = {
    "post installed anchors",
    "roofing nails",
    "screw fasteners",
-   "sealants",
    "self adhesive membrane",
    "steel drill screws",
    "ties and anchors"
@@ -17682,7 +17724,6 @@ const DB = {
    "plywood form liner",
    "polyethylene sheet",
    "rigid insulation board",
-   "sealant",
    "transit pipe",
    "void forms",
    "waterproofing strip",
@@ -17710,7 +17751,6 @@ const DB = {
    "polyethylene sheet",
    "rigid insulation board",
    "rustication strips",
-   "sealant",
    "textured formwork inlay",
    "transit pipe",
    "void forms",
@@ -17725,7 +17765,6 @@ const DB = {
    "form ties",
    "formwork lumber",
    "plywood form liner",
-   "sealant",
    "waterproofing strip"
   ],
   "03 11 43-13": [
@@ -17733,9 +17772,7 @@ const DB = {
    "poly rope",
    "pull wires",
    "pvc conduit",
-   "rigid conduit",
-   "sealant",
-   "steel wire"
+   "rigid conduit"
   ],
   "03 15 00": [
    "armored construction joints",
@@ -17775,15 +17812,12 @@ const DB = {
    "vacuum monitoring points"
   ],
   "03 20 43": [
-   "bar supports",
    "galvanized steel reinforcing bars",
-   "reinforcing bars",
    "stainless steel reinforcing bars",
    "tie wire",
    "zinc repair material"
   ],
   "03 21 00": [
-   "bar supports",
    "galvanized steel reinforcing bars",
    "mechanical splicing systems",
    "shear stud rail systems",
@@ -17800,8 +17834,7 @@ const DB = {
    "precast blocks",
    "reinforcing steel bars",
    "tie wire and clips",
-   "welded wire reinforcing",
-   "wire supports"
+   "welded wire reinforcing"
   ],
   "03 25": [
    "chairs bolsters and bar supports",
@@ -17812,29 +17845,50 @@ const DB = {
    "frp reinforcing laminate",
    "frp reinforcing mats",
    "frp reinforcing tape",
-   "paint finish",
    "tie wraps"
   ],
   "03 31 00": [
    "aggregate",
    "air entraining admixture",
+   "architecturally exposed concrete beam",
+   "architecturally exposed concrete column",
+   "architecturally exposed concrete slab",
+   "architecturally exposed concrete wall",
+   "cast in place concrete base",
+   "chamfer",
    "concrete admixtures",
+   "concrete beam",
    "concrete bonding agents",
+   "concrete column",
+   "concrete corbel",
+   "concrete curb",
    "concrete floor slab repair materials",
+   "concrete pile",
+   "concrete slab",
+   "concrete wall",
    "corrosion inhibiting admixture",
    "curing treatments",
    "dovetail anchor slots",
    "epoxy bonding adhesive",
    "fly ash",
    "high range water reducing admixture",
+   "infill concrete slab refer to structural",
    "joint filler sealants",
    "joint filler strips",
+   "lightweight concrete topping",
+   "line of curb below",
+   "new topping slab on rigid insulation",
+   "pencil edge",
+   "precast concrete panel",
+   "precast concrete panel insulated",
    "reglets",
    "shrinkage compensating admixture",
    "shrinkage reducing admixture",
    "sleeves",
    "supplementary cementing materials",
+   "underslab soil gas suppression membrane",
    "vapour retarder",
+   "void form",
    "water reducing admixture",
    "water reducing and retarding admixture",
    "waterproofing membranes"
@@ -17845,7 +17899,6 @@ const DB = {
    "concrete admixtures",
    "corrosion inhibiting admixture",
    "embedded metals and connectors",
-   "fibre reinforcement",
    "fly ash",
    "post tensioning duct material",
    "prestressing strands",
@@ -17868,7 +17921,6 @@ const DB = {
    "concrete admixtures",
    "concrete bonding agents",
    "concrete curing agent",
-   "control joint sealants",
    "corrosion inhibiting admixture",
    "dovetail anchor slots",
    "edge joint filler",
@@ -17898,24 +17950,19 @@ const DB = {
    "form ties",
    "portland cement",
    "standard form facing panels",
-   "steel reinforcement",
    "water repellent"
   ],
   "03 34 00": [
    "cement materials",
    "chemical admixtures",
-   "fibre reinforcing",
    "foaming agents",
-   "glass fibre",
    "synthetic fibre"
   ],
   "03 35 11": [
    "armoured construction joints",
    "basaltic dry shake floor hardener",
-   "concrete accessories",
    "concrete formwork",
    "concrete maturity sensors",
-   "concrete reinforcement",
    "construction joint reinforcement",
    "construction joint sealants",
    "crack inducing joint inserts",
@@ -17931,7 +17978,6 @@ const DB = {
    "slip resistant finishing",
    "structural thermal breaks",
    "underslab soil gas suppression membrane",
-   "waterstops",
    "welded wire reinforcing"
   ],
   "03 35 13": [
@@ -17943,7 +17989,6 @@ const DB = {
    "coloured shake on floor hardener",
    "concrete formwork",
    "concrete polishing",
-   "concrete reinforcement",
    "curing compound",
    "curing materials",
    "dowels",
@@ -17986,6 +18031,7 @@ const DB = {
    "hard flooring protection",
    "integral colourant",
    "patching compound and grout",
+   "polished concrete",
    "saw cut joint filler",
    "spray on hardener compound",
    "stain blocker",
@@ -18018,7 +18064,6 @@ const DB = {
    "shotcrete admixtures",
    "shotcrete curing agent",
    "steel fibre reinforcing",
-   "steel reinforcing",
    "supplementary cementing materials",
    "thickness pins and ground wires",
    "water reducing admixture",
@@ -18033,15 +18078,21 @@ const DB = {
   ],
   "03 38 00": [
    "anchor recess concrete",
+   "anchorage and coupler hardware",
    "anchorages and distribution",
+   "anchorages at construction joints",
    "corrosion inhibitor",
    "ducts",
+   "pocket grout",
+   "post tensioning coating",
+   "post tensioning steel",
+   "repair tape",
    "rigid bar prestressing steel",
+   "tendon support system",
    "wire strand prestressing steel"
   ],
   "03 39 00": [
    "concrete overlayment",
-   "concrete protection",
    "curing aids",
    "curing sealing compounds",
    "curing treatments",
@@ -18055,9 +18106,7 @@ const DB = {
    "bearing pads",
    "hardware and miscellaneous materials",
    "prestressing tendons",
-   "reinforcing steel",
    "shims",
-   "steel primer",
    "surface retardant",
    "welding materials",
    "zinc rich primer"
@@ -18071,7 +18120,6 @@ const DB = {
    "chemical admixtures",
    "embedded steel",
    "prestressing steel",
-   "reinforcing steel",
    "welding materials"
   ],
   "03 41 36": [
@@ -18081,7 +18129,6 @@ const DB = {
    "bearing pads",
    "cement type",
    "concrete admixtures",
-   "control joint sealants",
    "corrosion inhibiting admixture",
    "flexible joint sealants",
    "fly ash",
@@ -18092,12 +18139,10 @@ const DB = {
    "penetrating sealer",
    "pigmented sealer",
    "prestressing and posttensioning steel",
-   "reinforcing steel",
    "rod type sealant backings",
    "shims",
    "silica fume",
    "steel connection materials",
-   "steel primer",
    "surface retarder",
    "tie wire",
    "water reducing admixture",
@@ -18118,7 +18163,6 @@ const DB = {
    "miscellaneous steel",
    "penetrating sealer",
    "pigmented sealer",
-   "reinforcing steel",
    "silica fume",
    "standard weight aggregates",
    "stressing strand",
@@ -18137,15 +18181,12 @@ const DB = {
    "form liners",
    "galvanizing repair paint",
    "high density plastic",
-   "joint sealants",
    "moulds",
    "nonmetallic nonshrink grout",
    "penetrating surface sealant",
    "plates hss pins",
    "pozzolanic mineral admixtures",
-   "reinforcing steel",
    "sand cement grout",
-   "steel primer",
    "supplementary cementing materials",
    "surface retardant",
    "tie wire",
@@ -18160,29 +18201,22 @@ const DB = {
    "angle connectors",
    "bolts",
    "colour pigments",
-   "concrete anchors",
-   "fiber reinforcement",
    "mould materials",
    "prestressing strands",
    "protective coating",
-   "reinforcing steel",
    "steel pipes",
    "supplementary cementing materials",
    "surface sealers",
    "ultra high performance concrete"
   ],
   "03 47 13": [
-   "board insulation",
    "bond breaker",
    "concrete curing compounds",
    "fibers",
    "fire resistant sealants",
-   "joint insulation",
    "miscellaneous metals",
    "reveals",
    "sacking grout",
-   "sealants",
-   "steel reinforcement",
    "thermally enhanced wythe ties"
   ],
   "03 48 00": [
@@ -18193,18 +18227,18 @@ const DB = {
    "chemical admixtures",
    "densifier concrete treatment",
    "dry pack",
-   "reinforcing steel",
    "stain resistant sealer",
    "welded steel wire fabric"
   ],
   "03 49 00": [
-   "glass reinforced cement columns"
+   "gfrc",
+   "glass reinforced cement columns",
+   "grc"
   ],
   "03 52 16-13": [
    "cement materials",
    "chemical admixtures",
    "foaming agents",
-   "glass fibre",
    "synthetic fibre"
   ],
   "03 53 19": [
@@ -18217,8 +18251,6 @@ const DB = {
    "curing compounds",
    "decorative aggregates",
    "epoxy bonding adhesive",
-   "fibre reinforcing",
-   "insulation materials",
    "isolation joint fillers",
    "isolation joint sealants",
    "repair compounds",
@@ -18268,7 +18300,6 @@ const DB = {
    "grout aggregates",
    "hydrated lime",
    "masonry cement",
-   "metal flashing",
    "metal framing system",
    "mortar aggregates",
    "post installed anchors",
@@ -18294,7 +18325,6 @@ const DB = {
    "hollow clay brick",
    "hydrated lime",
    "masonry cement",
-   "metal flashing",
    "metal framing system",
    "mortar aggregates",
    "post installed anchors",
@@ -18312,7 +18342,6 @@ const DB = {
    "concrete masonry units",
    "concrete veneer brick",
    "fine grout",
-   "grout materials",
    "masonry cement",
    "mortar aggregates",
    "mortar cement",
@@ -18322,7 +18351,6 @@ const DB = {
    "set enhancer",
    "set retarder",
    "stone trims",
-   "stone veneer",
    "veneer brick",
    "water repellent",
    "wet premix grout",
@@ -18342,13 +18370,10 @@ const DB = {
    "post installed anchors",
    "prescriptive connectors",
    "reinforcing bar positioners",
-   "reinforcing bars",
-   "reinforcing connectors",
    "rigid t intersection anchors",
    "shelf angle support system",
    "stone anchors",
    "stone trims",
-   "stone veneer",
    "thermally improved system",
    "toggle bolts",
    "torque controlled expansion anchors",
@@ -18375,7 +18400,6 @@ const DB = {
    "expansion joint",
    "expansion joint filler",
    "exposed metal flashings",
-   "firestopping",
    "foundation sill flashing",
    "head flashings",
    "joint filler",
@@ -18386,12 +18410,10 @@ const DB = {
    "movement joint filler",
    "openings perimeter flashings",
    "pre manufactured expansion joints",
-   "sealant",
    "sill and pan flashings",
    "splice tapes",
    "stain resistant surface treatments",
    "stone trims",
-   "stone veneer",
    "termination bar",
    "through wall flashings",
    "transition flashings",
@@ -18401,7 +18423,6 @@ const DB = {
   ],
   "04 21 13": [
    "air and vapour membranes",
-   "board insulation",
    "brick trims",
    "brick veneer",
    "burned clay brick",
@@ -18412,10 +18433,8 @@ const DB = {
    "embedded flashing",
    "face brick",
    "hollow clay brick",
-   "joint sealants",
    "masonry veneer supports",
    "metal expansion strips",
-   "movement joint filler",
    "surface treatment",
    "ties and anchors"
   ],
@@ -18432,7 +18451,6 @@ const DB = {
    "portland cement",
    "reglets",
    "rods",
-   "sealant",
    "setting mortar",
    "steel shelf angles",
    "straps",
@@ -18450,8 +18468,6 @@ const DB = {
    "dowels",
    "epoxy adhesive",
    "joint filler strips",
-   "primer paint",
-   "sealant",
    "stainless steel flashing",
    "structural steel",
    "touch up primer",
@@ -18461,16 +18477,13 @@ const DB = {
    "air and vapour membrane",
    "air barrier membrane",
    "anchors and fastenings",
-   "board insulation",
    "bond coat",
    "cavity wall insulation",
    "component fasteners",
-   "control joints",
    "diamond mesh",
    "drainage composite",
    "embedded flashings",
    "grout joint fill",
-   "joint sealants",
    "mortar adhesion beds",
    "scratch coat",
    "scratch coat mortar",
@@ -18488,20 +18501,31 @@ const DB = {
   ],
   "04 22 13": [
    "air and vapour membranes",
-   "board insulation",
    "bond breaker strips",
+   "brick veneer",
+   "bull nosed block",
+   "cavity drainage material",
+   "cmu",
    "compressible filler",
    "concrete unit masonry",
    "concrete unit masonry cell insulation",
+   "concrete unit masonry veneer",
    "fire resistant concrete unit masonry",
-   "firestopping",
    "lateral partition supports",
+   "loose lintel masonry shelf angle",
+   "masonry bond beam",
    "masonry bond beams",
    "masonry joint reinforcement",
+   "masonry lintel",
    "masonry lintels",
+   "masonry pilaster",
+   "masonry wall lateral support",
+   "pre engineered shelf angle galvanized",
    "preformed compressible sash gasket",
-   "reinforcing steel",
-   "sealants",
+   "return brick veneer at jamb",
+   "rowlock course",
+   "soldier course",
+   "terra cotta veneer",
    "through wall flashings",
    "ties and anchors"
   ],
@@ -18514,11 +18538,9 @@ const DB = {
    "concrete trims",
    "concrete unit masonry veneer",
    "embedded flashing",
-   "joint sealants",
    "masonry lintels",
    "masonry veneer supports",
    "metal expansion strips",
-   "movement joint filler",
    "surface treatment",
    "ties and anchors"
   ],
@@ -18536,8 +18558,6 @@ const DB = {
    "pre finished concrete unit masonry",
    "prefaced concrete unit masonry",
    "preformed control joint gaskets",
-   "reinforcing steel",
-   "sealants",
    "ties and anchors"
   ],
   "04 23 00": [
@@ -18549,11 +18569,7 @@ const DB = {
    "glass paver block",
    "glass unit trims",
    "hollow glass block",
-   "joint reinforcement",
-   "joint sealants",
    "joint waterproofing",
-   "panel anchors",
-   "panel reinforcement",
    "perimeter chase",
    "solid glass block",
    "spacers",
@@ -18561,7 +18577,6 @@ const DB = {
   ],
   "04 43 13-00": [
    "air and vapour membranes",
-   "board insulation",
    "cavity drainage material",
    "cavity wall insulation",
    "cellular plastic weep vent inserts",
@@ -18569,7 +18584,6 @@ const DB = {
    "control expansion joint filler",
    "embedded flashing",
    "granite",
-   "joint sealants",
    "limestone",
    "marble",
    "masonry veneer supports",
@@ -18582,16 +18596,13 @@ const DB = {
   ],
   "04 43 13-13": [
    "air and vapour membranes",
-   "board insulation",
    "cavity drainage material",
    "cavity wall insulation",
    "cellular plastic weep vent inserts",
    "compressible joint filler",
    "embedded flashing",
-   "joint sealants",
    "masonry veneer supports",
    "metal expansion strips",
-   "movement joint filler",
    "rundle stone veneer",
    "stone trims",
    "surface treatment",
@@ -18599,7 +18610,6 @@ const DB = {
   ],
   "04 43 13-16": [
    "air and vapour membranes",
-   "board insulation",
    "cavity drainage material",
    "cavity wall insulation",
    "cellular plastic weep vent inserts",
@@ -18607,7 +18617,6 @@ const DB = {
    "control expansion joint filler",
    "dimensional stone",
    "embedded flashing",
-   "joint sealants",
    "masonry veneer supports",
    "metal expansion strips",
    "rough ashlar masonry",
@@ -18619,26 +18628,22 @@ const DB = {
   ],
   "04 73 13": [
    "air and vapour membranes",
-   "board insulation",
    "calcium silicate brick",
    "cavity drainage material",
    "cavity wall insulation",
    "cellular plastic weep vent inserts",
    "compressible joint filler",
    "embedded flashing",
-   "joint sealants",
    "manufactured face brick",
    "manufactured stone masonry",
    "manufactured stone trims",
    "manufactured stone veneer",
    "masonry veneer supports",
    "metal expansion strips",
-   "movement joint filler",
    "surface treatment",
    "ties and anchors"
   ],
   "05 05 00": [
-   "adhesive fasteners",
    "lightweight steel framing",
    "mechanical fasteners",
    "metal fabrications",
@@ -18690,7 +18695,6 @@ const DB = {
    "curtain wall fixings",
    "embedded items",
    "headed stud shear connectors",
-   "reinforcing bars",
    "shear load connectors",
    "steel anchor channels",
    "stone fixings",
@@ -18698,6 +18702,7 @@ const DB = {
    "welding studs"
   ],
   "05 08 10": [
+   "architecturally exposed structural steel",
    "base plates",
    "bearing plates",
    "cap plates",
@@ -18705,10 +18710,10 @@ const DB = {
    "high strength structural bolts",
    "open web steel joists",
    "quality audit",
-   "steel deck",
    "structural steel"
   ],
   "05 12 00": [
+   "aess",
    "headed bolts",
    "headed shear stud connectors",
    "hollow structural sections",
@@ -18742,7 +18747,6 @@ const DB = {
    "stay cable strand",
    "stay cable systems",
    "stay cables",
-   "steel fittings",
    "top and bottom stay cable anchorages"
   ],
   "05 17 00": [
@@ -18788,7 +18792,6 @@ const DB = {
    "powder actuated deck fastenings",
    "roof drain sump plate",
    "sheet metal deck accessories",
-   "steel decking",
    "z closures"
   ],
   "05 36 13": [
@@ -18854,8 +18857,22 @@ const DB = {
    "universal grid medical support system"
   ],
   "05 50 00": [
+   "16 gauge bent sheet metal",
+   "18 gauge j trim closure",
+   "3mm powder coated aluminum column sleeve",
+   "aluminum snap cover to conceal fasteners",
+   "architecturally exposed structural steel",
+   "bent steel plate",
    "bollards",
+   "cluster of guard posts paint yellow",
+   "cold formed steel trusses",
    "elevator machine beams",
+   "extruded aluminum finish to match mullion",
+   "floor slab assembly",
+   "galvanized steel roof crossover stair",
+   "guard post paint yellow",
+   "intumescent foam adhered to fiber blanket",
+   "lightweight structural steel framing",
    "loose bearing and levelling plates",
    "loose steel lintels",
    "miscellaneous framing and supports",
@@ -18864,11 +18881,18 @@ const DB = {
    "rolled steel floor plate",
    "shelf angles",
    "slotted channel framing",
+   "steel framing paint where exposed",
    "steel girders",
+   "steel hss refer to structural",
+   "steel loose lintel",
    "steel pipe",
    "steel tubing",
+   "stone anchor clip",
+   "structural steel masonry lintel",
    "sump pit cover and frame",
-   "support angles for elevator door sills"
+   "support angles for elevator door sills",
+   "vehicle guardrail paint yellow",
+   "wind load bearing steel stud framing"
   ],
   "05 50 43": [
    "anchor bolts",
@@ -19020,7 +19044,6 @@ const DB = {
    "driven fasteners",
    "fabricated wood",
    "finish lumber",
-   "finish plywood",
    "fire retardant treated wood",
    "preservative treated wood",
    "structural plywood",
@@ -19049,15 +19072,25 @@ const DB = {
    "wood screws"
   ],
   "06 10 53": [
+   "13mm exterior grade plywood",
+   "13mm exterior gypsum sheathing",
+   "13mm plywood",
+   "15 5mm rough buck",
+   "16mm exterior grade plywood",
+   "16mm plywood",
+   "19mm plywood sheathing",
    "backing panels",
    "driven fasteners",
    "framing connectors",
    "light framing",
    "miscellaneous framing",
-   "plywood blocking",
    "prefabricated metal anchoring systems",
    "rough hardware",
-   "wood screws"
+   "window sill solid surface",
+   "window sill wood mdf painted",
+   "wood blocking as required",
+   "wood screws",
+   "wood shim as required"
   ],
   "06 13 23-00": [
    "driven fasteners",
@@ -19098,7 +19131,6 @@ const DB = {
    "air and vapour membrane",
    "bituminous primer",
    "exterior sheathing",
-   "gypsum sheathing",
    "joint tape",
    "transition membranes",
    "waterproof sealant"
@@ -19173,7 +19205,6 @@ const DB = {
    "wood stain"
   ],
   "06 20 13": [
-   "adhesives",
    "composite decking",
    "decorative lumber",
    "dimensional lumber",
@@ -19185,12 +19216,10 @@ const DB = {
    "post installed concrete anchors",
    "pressure preservative treated wood",
    "rough hardware",
-   "steel supports",
    "structural plywood",
    "threaded fasteners"
   ],
   "06 20 23": [
-   "adhesives",
    "brackets",
    "cabinet feet",
    "casework hardware",
@@ -19226,7 +19255,6 @@ const DB = {
    "pegboard",
    "pre finished slotted display panelling",
    "pulls",
-   "sealant",
    "shelf rests",
    "shims",
    "sliding glass doors",
@@ -19247,7 +19275,6 @@ const DB = {
    "wood stairs"
   ],
   "06 26 13": [
-   "adhesives",
    "mdf core",
    "phenolic core materials",
    "plywood backing panel",
@@ -19257,11 +19284,9 @@ const DB = {
    "z clips"
   ],
   "06 26 19": [
-   "sealant",
    "solid mineral composite panel"
   ],
   "06 40 00": [
-   "adhesives",
    "brackets",
    "cabinet feet",
    "cabinet hardware",
@@ -19284,7 +19309,6 @@ const DB = {
    "fastening devices",
    "fibre reinforced laminate panels",
    "furring",
-   "glass panels",
    "hanging strips",
    "hardboard",
    "high pressure decorative laminate",
@@ -19317,7 +19341,6 @@ const DB = {
    "trims"
   ],
   "06 60 00": [
-   "adhesives",
    "cleaner",
    "plastic solid surfacing",
    "recessed channel mount system",
@@ -19325,17 +19348,13 @@ const DB = {
    "stand offs"
   ],
   "06 61 16": [
-   "joint adhesive",
-   "panel adhesive",
    "prefabricated sinks",
-   "sealant",
    "sink mounting hardware",
    "solid surface",
    "solid surfacing sheet"
   ],
   "06 61 19": [
    "cleaning agents",
-   "joint sealant",
    "mounting adhesive",
    "quartz surface adhesive",
    "quartz surfacing",
@@ -19345,7 +19364,6 @@ const DB = {
   "06 82 00": [
    "ceiling panels",
    "fastenings",
-   "sealant",
    "trims"
   ],
   "07 01 50": [
@@ -19361,9 +19379,7 @@ const DB = {
    "concrete pavers",
    "equipment skid",
    "levelling board",
-   "membrane protection",
    "membrane underlay",
-   "pedestals",
    "pitch pocket filler",
    "primary insulation",
    "roofing nails",
@@ -19375,7 +19391,6 @@ const DB = {
    "air barrier",
    "cladding",
    "combined air and vapour retarder",
-   "sealants",
    "transition membrane",
    "vapour retarder"
   ],
@@ -19422,25 +19437,20 @@ const DB = {
   ],
   "07 11 13": [
    "asphalt primer",
-   "board insulation",
    "cutback type dampproofing coating",
    "emulsion type dampproofing coating",
    "patching compound",
-   "protection board",
    "reinforcing fabric"
   ],
   "07 11 16": [
    "embedded flashings",
    "metal lath",
-   "parging mortar",
-   "sealants"
+   "parging mortar"
   ],
   "07 13 52": [
    "below grade insulation",
    "blindside waterproofing membrane",
    "drainage panels",
-   "membrane adhesive",
-   "protection board",
    "root barrier membrane",
    "self adhering waterproofing membrane",
    "termination and joint sealant",
@@ -19463,9 +19473,7 @@ const DB = {
   "07 14 13": [
    "horizontal protection board",
    "horizontal protection membrane",
-   "joint sealants",
    "mastic",
-   "movement joints",
    "plaza deck pavers",
    "rigid insulation",
    "root protection membrane",
@@ -19475,7 +19483,6 @@ const DB = {
   "07 14 16": [
    "below grade insulation",
    "drainage panels",
-   "joint sealant",
    "reinforcing strip",
    "sheet flashing"
   ],
@@ -19504,7 +19511,6 @@ const DB = {
    "detailing materials",
    "polyethylene sheet",
    "prefabricated drainage composite",
-   "sealant",
    "seam tape",
    "termination bar",
    "under slab bentonite waterproofing panel"
@@ -19514,9 +19520,7 @@ const DB = {
    "base coat",
    "filler",
    "intermediate coat",
-   "joint sealants",
    "liquid flashing",
-   "membrane reinforcement",
    "patching compounds",
    "pedestrian load bearing coating",
    "sheet flashing",
@@ -19531,9 +19535,7 @@ const DB = {
    "fine quartz sand",
    "interior light reflective coatings",
    "intermediate coat",
-   "joint sealants",
    "liquid flashing",
-   "membrane reinforcement",
    "patching compounds",
    "pavement markings",
    "sheet flashing",
@@ -19557,14 +19559,12 @@ const DB = {
    "cavity wall polyiso board insulation",
    "cavity wall xps board insulation",
    "foundation xps board insulation",
-   "insulation adhesive",
    "insulation clips",
    "load bearing xps board insulation",
    "mechanical fasteners",
-   "protection board",
    "rigid board insulation",
-   "under slab xps board insulation",
-   "tape"
+   "tape",
+   "under slab xps board insulation"
   ],
   "07 21 16": [
    "eave ventilation",
@@ -19573,7 +19573,6 @@ const DB = {
    "mineral fibre thermal insulation",
    "nails",
    "staples",
-   "tape",
    "vapour retarder"
   ],
   "07 21 19": [
@@ -19602,16 +19601,13 @@ const DB = {
    "finish coat primer",
    "framing fasteners",
    "gap filling insulation",
-   "joint sealant",
    "joint tape",
    "masonry fasteners",
    "mechanical fasteners",
-   "membrane flashings",
    "primary insulation",
    "reinforcing mesh",
    "shapes and profiles",
-   "transition membranes",
-   "trim accessories"
+   "transition membranes"
   ],
   "07 24 41": [
    "corner beads",
@@ -19620,11 +19616,10 @@ const DB = {
    "mechanical fasteners",
    "metal j and drip channels",
    "mitered joint compound",
-   "reinforcing mesh",
-   "sealant"
+   "reinforcing mesh"
   ],
   "07 25 13": [
-   "insulation adhesive",
+   "avb",
    "opening transition membranes",
    "panel sheathing tape",
    "primers and undercoats",
@@ -19642,7 +19637,6 @@ const DB = {
    "joint sealing tape",
    "moulded box vapour retarder",
    "polyethylene film",
-   "sealant",
    "staples"
   ],
   "07 27 16": [
@@ -19669,12 +19663,10 @@ const DB = {
    "air barrier transition membrane",
    "filling levelling and seams",
    "fluid applied air barrier",
-   "metal flashing",
    "opening transition membranes",
    "primers and undercoats",
    "reinforcements",
    "roof to wall transition membranes",
-   "sealants",
    "tapes",
    "through wall membranes",
    "waterproofing mastic"
@@ -19718,11 +19710,9 @@ const DB = {
    "wood nailers and cant strips"
   ],
   "07 41 00": [
-   "board insulation",
    "fastenings",
    "flashing trim and enclosure",
    "manufactured insulated roof panels",
-   "sealant",
    "z bars"
   ],
   "07 41 13-13": [
@@ -19730,7 +19720,6 @@ const DB = {
    "auxiliary levelling surface",
    "bituminous coating",
    "blind fasteners",
-   "board insulation",
    "felts",
    "girts",
    "miscellaneous metal framing",
@@ -19758,7 +19747,6 @@ const DB = {
   ],
   "07 42 13": [
    "air and vapour membrane",
-   "aluminum panel",
    "bituminous coating",
    "closure strips",
    "flashing trim and enclosure",
@@ -19769,7 +19757,6 @@ const DB = {
    "metal cladding",
    "metal wall panel",
    "panel fastenings",
-   "sealant",
    "sealing tape",
    "stiffeners",
    "vertical channels",
@@ -19786,26 +19773,30 @@ const DB = {
    "insulation fastenings",
    "isolation tape",
    "panel stiffeners",
-   "sealant",
    "sealing tape"
   ],
   "07 42 13-19": [
    "air vapour retarder",
    "bituminous coating",
    "closure strips",
+   "core material",
    "expansion clips",
    "fabric underlayment slip sheet",
    "fastenings",
    "fixed clips",
    "flashing trim and enclosure",
+   "flashings enclosures and trims",
    "girts",
    "horizontal parapet joint counterflash",
-   "sealant",
+   "liquid sealants",
+   "preformed sealants",
    "sealing tape",
    "solder",
    "ventilation sheet",
    "wall cladding backup",
-   "zinc cladding"
+   "washers",
+   "zinc cladding",
+   "zinc galvanized sheet steel"
   ],
   "07 42 29": [
    "clips",
@@ -19819,8 +19810,6 @@ const DB = {
    "air vapour membrane",
    "aluminum sub framing materials",
    "aluminum trim and accessory materials",
-   "insulation fasteners",
-   "panel fasteners",
    "solid phenolic wall cladding",
    "solid phenolic wall panels",
    "steel girts",
@@ -19842,9 +19831,7 @@ const DB = {
    "air vapour membrane",
    "aluminum sub framing materials",
    "aluminum trim and accessory materials",
-   "corner trims",
-   "insulation fasteners",
-   "panel fasteners"
+   "corner trims"
   ],
   "07 42 63": [
    "core material",
@@ -19860,7 +19847,6 @@ const DB = {
    "fascia",
    "flashing and enclosures",
    "roof edge drip cap",
-   "sealant",
    "z bars"
   ],
   "07 44 19": [
@@ -19872,7 +19858,6 @@ const DB = {
    "marble",
    "porcelain tile",
    "screws",
-   "sealants",
    "setting materials",
    "slate",
    "steel framing",
@@ -19886,10 +19871,10 @@ const DB = {
    "metal z bars",
    "pre finished molding",
    "retaining molding",
-   "sealants",
    "wall cladding system"
   ],
   "07 46 21": [
+   "adeka panels",
    "backing plates",
    "cleats",
    "clips",
@@ -19905,7 +19890,6 @@ const DB = {
    "weather resistive barrier"
   ],
   "07 46 23-13": [
-   "adhesives",
    "cedar trim boards",
    "clear cedar bevel siding",
    "clear cedar board and batten siding",
@@ -19917,7 +19901,6 @@ const DB = {
    "knotty cedar bevel siding",
    "knotty cedar lap siding",
    "proprietary knotty cedar lap siding",
-   "sealant",
    "shingle panel siding",
    "surface applied wood preservative",
    "wood screws"
@@ -19941,7 +19924,6 @@ const DB = {
    "vertical fibre cement siding"
   ],
   "07 51 00": [
-   "adhesives",
    "aggregate ballast",
    "auxiliary levelling surface",
    "auxiliary materials",
@@ -19949,12 +19931,8 @@ const DB = {
    "built up membrane",
    "concrete pavers",
    "extendable height support",
-   "gypsum board",
-   "membrane flashings",
-   "metal flashings",
    "miscellaneous accessories",
    "multi pipe and conduit support",
-   "pedestals",
    "pipe support",
    "prefabricated penetration accessory",
    "prefabricated roof expansion joint",
@@ -19967,7 +19945,6 @@ const DB = {
    "wood roof materials"
   ],
   "07 52 13": [
-   "adhesives",
    "asphalt",
    "base sheet membrane",
    "cap sheet membrane",
@@ -19979,12 +19956,10 @@ const DB = {
    "glass mat faced roof boards",
    "gypsum board sheathing",
    "multi pipe and conduit support",
-   "pedestals",
    "pipe supports",
    "plywood cover board and wood blocking",
    "primary flat insulation",
    "primary inverted insulation",
-   "protection board",
    "rubber pavers",
    "self adhering fire seal",
    "sloped insulation",
@@ -19993,7 +19968,6 @@ const DB = {
    "wood roof materials"
   ],
   "07 52 16": [
-   "adhesives",
    "asphalt",
    "ballast",
    "concrete pavers",
@@ -20004,12 +19978,10 @@ const DB = {
    "flashing and sheet metal",
    "glass mat faced roof boards",
    "gypsum board sheathing",
-   "pedestals",
    "pipe supports",
    "plywood cover board and wood blocking",
    "primary flat insulation",
    "primary inverted insulation",
-   "protection board",
    "roofing membrane",
    "self adhering fire seal",
    "separation sheet",
@@ -20019,7 +19991,6 @@ const DB = {
    "wood roof materials"
   ],
   "07 52 26": [
-   "adhesives",
    "asphalt",
    "ballast",
    "concrete pavers",
@@ -20031,7 +20002,6 @@ const DB = {
    "glass mat faced roof boards",
    "gypsum board sheathing",
    "high albedo elastomeric roof coating",
-   "pedestals",
    "perimeter membrane",
    "pipe supports",
    "pitch pocket filler",
@@ -20049,7 +20019,6 @@ const DB = {
    "wood roof materials"
   ],
   "07 53 00": [
-   "adhesives",
    "aggregate ballast",
    "bonding adhesive",
    "concrete pavers",
@@ -20059,11 +20028,8 @@ const DB = {
    "fibre reinforced gypsum sheathing",
    "flexible walkways",
    "glass mat faced roof boards",
-   "gypsum sheathing",
-   "membrane flashing",
    "metal termination bars",
    "miscellaneous accessories",
-   "pedestals",
    "primary flat insulation",
    "primary inverted insulation",
    "roof drains",
@@ -20088,14 +20054,10 @@ const DB = {
    "flexible walkways",
    "gypsum board adhesive",
    "gypsum boards",
-   "insulation adhesive",
    "insulation fasteners to decking",
-   "membrane fasteners",
-   "membrane flashing",
    "metal battens",
    "metal termination bars",
    "miscellaneous accessories",
-   "pedestals",
    "primary flat insulation",
    "primary inverted insulation",
    "protection mat",
@@ -20115,17 +20077,14 @@ const DB = {
    "bitumen",
    "concrete pavers",
    "filter fabric",
-   "flashing adhesive",
    "flexible flashing membrane",
    "gypsum board adhesive",
    "gypsum board mechanical fasteners",
    "modified asphalt",
-   "pedestals",
    "pitch pan",
    "roof drains",
    "roof membrane",
    "root barrier",
-   "sealant",
    "sheet metal flashing",
    "slip sheet",
    "stripping adhesive",
@@ -20158,7 +20117,6 @@ const DB = {
    "premanufactured vapour retarder",
    "primary inverted insulation",
    "primary membrane",
-   "protection membrane",
    "roof ballast",
    "root protection membrane",
    "securement bars",
@@ -20173,7 +20131,6 @@ const DB = {
    "wood roof materials"
   ],
   "07 62 00": [
-   "adhesives",
    "aluminum zinc alloy coated steel sheet",
    "asphalt mastic",
    "counter flashing wind restraint clips",
@@ -20184,7 +20141,6 @@ const DB = {
    "formed aluminum flashings",
    "gutter screen",
    "mastic sealant",
-   "metal accessories",
    "reglets",
    "roofing cement",
    "slip sheet",
@@ -20194,19 +20150,67 @@ const DB = {
   ],
   "07 84 00": [
    "fire resistive expansion joint",
+   "fire stopping",
    "firestopping"
   ],
   "07 92 00": [
+   "0 53mm sheet steel backing galvanized",
+   "100x100 brake shape metal",
+   "22mm furring channel",
+   "25mm mineral wool insulation",
+   "50mm mineral wool insulation",
+   "75mm mineral wool insulation",
+   "air and vapour membrane",
+   "allow for movement",
+   "asphalt impregnated fibreboard",
+   "below grade board insulation",
    "caulking",
+   "cementitious fireproofing",
+   "closure trim prefinished",
+   "compressible gasket fire seal",
+   "concrete faced board insulation",
+   "continuous acoustic sealant",
+   "continuous sealant",
+   "continuous sealant with foam rod backing",
    "control joint",
    "control joint sealant",
+   "dampproofing membrane",
    "expansion joint",
    "expansion joint filler",
    "expansion joint sealant",
+   "fill void with mineral wool insulation",
+   "fill void with sealant",
+   "fire rated sealant",
+   "firestopping system",
+   "flashing below prefinished",
+   "flashing beyond prefinished",
+   "flashing beyond prefinished turn up",
+   "flashing prefinished",
+   "flexible membrane flashing",
+   "foam moisture barrier",
+   "future soffit assembly",
+   "inside corner trim",
+   "insulated duct refer to mechanical",
+   "intumescent fire protective coating",
    "joint filler",
    "joint sealant",
+   "metal closure beyond prefinished",
+   "metal closure prefinished",
+   "monolithic expansion joint",
    "movement joint",
-   "sealant"
+   "outside corner trim",
+   "prefinished flashing colour to match cladding",
+   "prefinished j trim",
+   "prefinished rainwater leader",
+   "seal joint at sill",
+   "seal leading membrane edge with sealant",
+   "sealant",
+   "sill flashing end dam beyond",
+   "spray applied fireproofing",
+   "spray foam insulation",
+   "spray foam insulation at all voids",
+   "waterproofing membrane",
+   "wrap roofing membrane into metal scupper"
   ],
   "07 95 00": [
    "expansion control",
@@ -20240,17 +20244,44 @@ const DB = {
    "windows"
   ],
   "08 11 13": [
+   "3mm aluminum brakeshape",
+   "45 degree outside corner mullion",
+   "45 degree outside corner mullion beyond",
    "acoustical composite core",
+   "align door with existing stair",
+   "aluminum door and frame",
+   "aluminum threshold on non shrink grout",
+   "aluminum trim colour to match mullions",
+   "anti rotational channel",
    "borrowed light frames",
+   "curtain wall anchor",
+   "door jamb beyond",
    "door silencers",
+   "existing infill door no anchors permitted",
+   "fill frame with spray foam insulation",
    "fire rated door and frame assemblies",
    "fire rated window frames",
    "glass mouldings",
    "glazing stops",
+   "hm",
+   "hmi",
+   "insulated back pan",
    "lead lined doors",
+   "mullion beyond",
+   "new rotunda flexible flashing",
+   "new rotunda threshold",
+   "passenger gate opening",
+   "ps",
+   "psi",
+   "rotunda interior closeout",
+   "scheduled door and frame",
+   "scheduled sliding door",
    "sidelight frames",
+   "skylight ridge rafter",
+   "spray foam insulation",
    "steel door frames",
-   "steel doors"
+   "steel doors",
+   "weatherstripping"
   ],
   "08 11 13-16": [
    "channel iron metal frames",
@@ -20295,9 +20326,13 @@ const DB = {
   ],
   "08 14 73": [
    "door pulls",
+   "double bypass doors",
    "shoji sliding doors",
+   "single barn door",
+   "single pocket door",
    "sliding door tracks",
-   "sliding interior wood doors"
+   "sliding interior wood doors",
+   "wood by pass door"
   ],
   "08 17 13": [
    "closers",
@@ -20320,6 +20355,9 @@ const DB = {
    "sliding door carriers"
   ],
   "08 31 00": [
+   "access door",
+   "access panel",
+   "access panels",
    "fire rated ceiling access doors",
    "fire rated wall access doors",
    "flush panels and trimless frames",
@@ -20350,7 +20388,6 @@ const DB = {
    "weather seals"
   ],
   "08 33 23.13": [
-   "accessory panels",
    "bottom bar",
    "counterbalance and tensioning system",
    "electric door operators",
@@ -20376,7 +20413,6 @@ const DB = {
    "slide bolt"
   ],
   "08 33 39": [
-   "accessory panels",
    "bottom bar",
    "counterbalance and tensioning system",
    "electric door operators",
@@ -20572,6 +20608,7 @@ const DB = {
   "08 44 13": [
    "aluminum curtain wall system",
    "back pan",
+   "cw",
    "glazing gaskets",
    "insulated spandrel panels",
    "light shelves",
@@ -20624,7 +20661,6 @@ const DB = {
    "back pan",
    "back pan spandrel insulation",
    "edge of slab insulation",
-   "glass units",
    "glazing gaskets",
    "insect screens",
    "insulated spandrel panels",
@@ -20644,7 +20680,6 @@ const DB = {
   "08 46 13": [
    "fibreglass window wall assemblies",
    "frame and sash profiles",
-   "glass units",
    "glazing stops",
    "glazing tape",
    "insect screens",
@@ -20699,7 +20734,6 @@ const DB = {
    "diffuser assemblies",
    "dome glazing",
    "dome seal",
-   "flashing accessories",
    "intermediate ring seal",
    "pivot ring",
    "reflective tunnel",
@@ -20721,8 +20755,7 @@ const DB = {
    "framing materials",
    "framing system gaskets and joint fillers",
    "framing system sealants",
-   "glazing materials",
-   "movement joints"
+   "glazing materials"
   ],
   "08 65 19": [
    "edge support fittings",
@@ -20750,7 +20783,6 @@ const DB = {
    "key control cabinets",
    "keying",
    "low energy swing operators",
-   "pedestals",
    "removable cores",
    "sliding doors",
    "stainless steel threshold",
@@ -20785,8 +20817,9 @@ const DB = {
    "glass tempered safety",
    "glass tinted annealed float",
    "glazing sealants",
-   "interior glazing",
+   "igu",
    "laminating film",
+   "mgu",
    "muntin bars",
    "sealants for insulating glass units",
    "spacer separator",
@@ -20797,8 +20830,8 @@ const DB = {
    "decorative glass",
    "frit glass coating",
    "glazing materials",
-   "laminated glass",
-   "interior glazing"
+   "interior glazing",
+   "laminated glass"
   ],
   "08 83 13": [
    "edge sealer",
@@ -20812,7 +20845,6 @@ const DB = {
    "glazing gaskets",
    "glazing panels",
    "glazing sealants",
-   "panel connectors",
    "ridges"
   ],
   "08 87 00": [
@@ -20834,7 +20866,6 @@ const DB = {
    "glass wired",
    "glass wired film faced impact resistant",
    "glazing tape",
-   "sealant",
    "setting blocks",
    "spacers"
   ],
@@ -20855,7 +20886,6 @@ const DB = {
    "glazing compound",
    "glazing tape",
    "laminating film",
-   "sealants",
    "setting blocks"
   ],
   "08 88 31": [
@@ -20876,7 +20906,6 @@ const DB = {
    "sealants for insulating glass units",
    "spacer separator",
    "stainless steel capillary tube",
-   "system accessories",
    "uninterruptible power supply",
    "weathering seal"
   ],
@@ -20899,8 +20928,6 @@ const DB = {
    "erection girts",
    "fastenings",
    "flashing trim and enclosure",
-   "metal cladding",
-   "sealant",
    "z bars"
   ],
   "08 95 19": [
@@ -20957,6 +20984,7 @@ const DB = {
    "gypsum control joint",
    "gypsum expansion joint",
    "gypsum shaft liner panels",
+   "shaft wall",
    "shaft wall assemblies"
   ],
   "09 22 16": [
@@ -20972,13 +21000,14 @@ const DB = {
    "resilient furring channels",
    "seismic bracing",
    "slotted deflection tracks",
+   "steel stud framing",
+   "stud framing",
    "z shaped furring"
   ],
   "09 22 19": [
    "carrying channels",
    "clip angles",
    "flat straps and backing plates",
-   "furring channels",
    "hat shaped channels",
    "horizontal cross bracing",
    "non structural steel stud framing system",
@@ -20989,11 +21018,11 @@ const DB = {
   "09 22 26-13": [
    "cross tees",
    "framing angles",
+   "furring channels",
    "main beams",
    "profiled edge mouldings and trim",
    "seismic bracing for partition framing",
-   "transition mouldings",
-   "furring channels"
+   "transition mouldings"
   ],
   "09 22 26-19": [
    "acoustic insulation",
@@ -21009,11 +21038,9 @@ const DB = {
   "09 23 82": [
    "base coat plaster",
    "casing beads",
-   "control joints",
    "corner beads",
    "cornerite",
    "expanded metal lath",
-   "expansion joints",
    "finish coat plaster",
    "fireproof gypsum plastering system",
    "gypsum plasterwork",
@@ -21038,9 +21065,7 @@ const DB = {
    "acrylic polymer primer coat",
    "fibreglass reinforcing mesh",
    "finish coat",
-   "joint sealant",
-   "transition membranes",
-   "trim accessories"
+   "transition membranes"
   ],
   "09 26 16": [
    "colour wash",
@@ -21054,20 +21079,34 @@ const DB = {
   ],
   "09 28 11": [
    "cementitious tile backing boards",
-   "glass mat faced gypsum backing boards"
+   "glass mat faced gypsum backing boards",
+   "plywood backing"
   ],
   "09 29 13": [
+   "13mm gypsum board",
    "abuse resistant gypsum board",
    "acoustic insulation",
    "acoustic sealants",
    "acoustic trim caps",
    "acoustically rated gypsum board",
+   "aluminum end cap",
+   "aluminum partition closure",
+   "continue flooring under base",
    "fire resistant gypsum board",
    "flexible gypsum board panels",
+   "gwb",
    "impact resistant gypsum board",
+   "j bead",
    "regular gypsum board",
+   "return gypsum board to frame typ",
+   "scheduled floor finish",
+   "scheduled wall base",
+   "scheduled wall finish",
+   "solid surface sill",
    "span rated ceiling gypsum board",
-   "trim accessories"
+   "steel stud box header",
+   "tactile warning strip",
+   "tear away edge trim with sealant"
   ],
   "09 30 00": [
    "ceramic mosaic tile",
@@ -21126,7 +21165,6 @@ const DB = {
   "09 31 39": [
    "component fasteners",
    "joint grouting",
-   "joint sealants",
    "screw type concrete anchors",
    "thin set adhesive mortar",
    "thin veneer brick units",
@@ -21145,12 +21183,10 @@ const DB = {
    "white cell egg crate louver"
   ],
   "09 51 26": [
-   "acoustical wood ceiling panel",
-   "support system"
+   "acoustical wood ceiling panel"
   ],
   "09 53 13": [
    "curved and straight main tees",
-   "hanger wire",
    "main tee curved segments",
    "straight cross tees",
    "wall attachment clip",
@@ -21166,7 +21202,6 @@ const DB = {
    "access panel",
    "acoustic insulation",
    "end caps",
-   "hanger wire",
    "linear metal ceiling",
    "main beams exposed members",
    "main t",
@@ -21225,13 +21260,19 @@ const DB = {
    "backed sheet rubber flooring",
    "backed sheet vinyl flooring",
    "cove base cap strip",
+   "landing tile",
    "linoleum tile",
+   "metal base cap",
+   "movement joint strips",
    "prefabricated integral cove base",
    "resilient wall base",
    "rubber tile",
    "safety flooring",
    "sheet linoleum flooring",
    "solid vinyl tile",
+   "stair nosing",
+   "stair tread",
+   "transition strip",
    "unbacked sheet rubber flooring",
    "unbacked sheet vinyl flooring",
    "vinyl composition tile"
@@ -21257,15 +21298,12 @@ const DB = {
    "rubber wall base"
   ],
   "09 65 36": [
-   "adhesives",
    "copper grounding straps",
-   "sealants",
    "stainless steel thresholds",
    "static control solid vinyl sheet",
    "static control solid vinyl tile"
   ],
   "09 65 66": [
-   "adhesives",
    "aluminum thresholds",
    "floor sockets",
    "game line paint",
@@ -21303,14 +21341,12 @@ const DB = {
    "trowelled epoxy mortar flooring"
   ],
   "09 68 13": [
-   "adhesives",
    "furniture system lifts",
    "seaming cement",
    "tile carpeting",
    "vapour emission control floor sealer"
   ],
   "09 68 16": [
-   "adhesives",
    "carpet base",
    "polyurethane foam cushion",
    "resilient accessories",
@@ -21328,7 +21364,6 @@ const DB = {
    "cable tray",
    "floor sealer",
    "grate panels",
-   "pedestals",
    "perimeter support",
    "plenum dividers",
    "power voice and data service modules",
@@ -21337,7 +21372,6 @@ const DB = {
    "vertical closures"
   ],
   "09 72 00": [
-   "adhesives",
    "flexible wood veneer wall covering",
    "substrate primer sealer",
    "textile wall covering",
@@ -21346,7 +21380,6 @@ const DB = {
    "woven glass fibre wall covering"
   ],
   "09 72 16": [
-   "adhesives",
    "decorative dry erase wall covering",
    "dry erase magnetic wall coverings",
    "lined dry erase wall coverings",
@@ -21356,8 +21389,7 @@ const DB = {
    "patterned dry erase wall covering",
    "substrate primer sealer",
    "tackable wall coverings",
-   "white dry erase wall coverings",
-   "wood trim"
+   "white dry erase wall coverings"
   ],
   "09 72 16-16": [
    "altro sanitary sealant",
@@ -21408,6 +21440,8 @@ const DB = {
   "09 91 00": [
    "finish coat",
    "intumescent fireproofing coating",
+   "paint",
+   "painted",
    "primer coat",
    "stain",
    "varnish"
@@ -21431,10 +21465,8 @@ const DB = {
    "basecoat",
    "finish coat",
    "finish coat primer",
-   "joint sealant",
    "mechanical fasteners",
-   "reinforcing fibreglass mesh",
-   "trim accessories"
+   "reinforcing fibreglass mesh"
   ],
   "09 96 16": [
    "marker tray",
@@ -21466,7 +21498,6 @@ const DB = {
    "concrete and masonry stain"
   ],
   "09 97 56": [
-   "finish coating",
    "surface cleaning materials"
   ],
   "10 11 00": [
@@ -21499,6 +21530,7 @@ const DB = {
    "luminous egress path marking",
    "panel signs",
    "photoluminescent signs",
+   "signage",
    "stair nosings",
    "tactile and braille copy",
    "wayfinding"
@@ -21553,7 +21585,6 @@ const DB = {
    "sign posts",
    "signboards",
    "steel posts",
-   "steel supports",
    "timber posts",
    "traffic signage"
   ],
@@ -21655,7 +21686,6 @@ const DB = {
    "bed locators",
    "bumper rail",
    "corner guard",
-   "corner guards",
    "crash rail",
    "impact resistant handrails",
    "impact resistant wall coverings",
@@ -21666,6 +21696,7 @@ const DB = {
    "wall guards"
   ],
   "10 28 13": [
+   "aluminum baffles on secondary support frame",
    "baby change table",
    "coat hooks",
    "curtain rod",
@@ -21673,12 +21704,12 @@ const DB = {
    "framed glass mirror",
    "garbage container",
    "grab bar",
-   "grab bars",
    "hand dryer",
    "mirror",
    "mop strip",
    "needle disposal",
    "paper towel dispenser",
+   "powder coated aluminum panel",
    "seat cover dispenser",
    "shower seat",
    "soap dish",
@@ -21688,7 +21719,9 @@ const DB = {
    "toilet seat back rest",
    "toilet tissue dispenser",
    "towel bar",
+   "vertically rising partition",
    "vinyl water diverter",
+   "wall mounted led monitor",
    "waste receptacle"
   ],
   "10 28 19.16": [
@@ -21703,6 +21736,8 @@ const DB = {
    "premanufactured fireplace"
   ],
   "10 44 13": [
+   "extinguisher cabinet",
+   "fire extinguisher cabinet",
    "fire protection file cabinets",
    "fireproof lateral fire cabinet"
   ],
@@ -21747,9 +21782,13 @@ const DB = {
    "wire mesh lockers"
   ],
   "10 55 23": [
+   "aluminum mail boxes",
    "aluminum mailboxes",
+   "back loading horizontal mail boxes",
    "back loading horizontal mailboxes",
+   "drop front vertical mail boxes",
    "drop front vertical mailboxes",
+   "front loading horizontal mail boxes",
    "front loading horizontal mailboxes",
    "recessed wall box"
   ],
@@ -22008,8 +22047,12 @@ const DB = {
   ],
   "11 53 43": [
    "ball valves",
+   "electrical boxes",
    "electronic fittings",
    "gas valve",
+   "laboratory lighting",
+   "laboratory service fittings",
+   "laboratory sinks and fixtures",
    "plastic valves",
    "quick disconnect fittings"
   ],
@@ -22192,9 +22235,13 @@ const DB = {
   "12 24 13": [
    "blackout fabric",
    "interior roller shades",
+   "line of entrance grillage",
    "manual chain operators",
    "manual crank operators",
+   "motorized roller window shades",
    "motorized shade operators",
+   "roller shade",
+   "roller shades",
    "roller window shades",
    "shade fabric",
    "skylight roller shades"
@@ -22214,7 +22261,6 @@ const DB = {
    "high pressure plastic laminate",
    "laboratory casework",
    "leg frame suspended units",
-   "painted steel",
    "pegboards",
    "stainless steel"
   ],
@@ -22287,13 +22333,21 @@ const DB = {
    "recessed floor grilles"
   ],
   "12 50 00": [
+   "acoustic panels",
    "case goods",
+   "general purpose tables",
    "hospitality furniture",
    "institutional furniture",
+   "lateral file cabinets",
+   "mobile filing systems",
+   "occasional tables",
    "office furniture",
    "portable audience seating",
+   "private office furniture",
    "seating",
-   "systems furniture"
+   "shelf files",
+   "systems furniture",
+   "work surfaces"
   ],
   "12 51 00": [
    "conference room tables",
@@ -22308,7 +22362,6 @@ const DB = {
    "desks",
    "filing cabinets",
    "lateral file cabinets",
-   "pedestals",
    "storage units",
    "work surfaces"
   ],
@@ -22382,8 +22435,12 @@ const DB = {
    "vertical bicycle racks"
   ],
   "12 93 13": [
+   "bicycle racks",
    "decorative bollards",
-   "site furnishings"
+   "inground mounted bicycle racks",
+   "site furnishings",
+   "surface mounted bicycle racks",
+   "wall mounted bicycle racks"
   ],
   "12 93 26": [
    "deep collection containers",
@@ -22455,7 +22512,6 @@ const DB = {
    "windows"
   ],
   "13 34 23": [
-   "board insulation",
    "clips",
    "concealed cleats",
    "gaskets",
@@ -22473,7 +22529,6 @@ const DB = {
    "insulating materials",
    "load bearing wall",
    "non load bearing wall",
-   "reinforcing materials",
    "soil and aggregate materials"
   ],
   "13 42 33": [
@@ -22510,7 +22565,6 @@ const DB = {
    "housekeeping pads",
    "isolators",
    "perimeter isolation board",
-   "plywood panels",
    "seismic floating floor snubber",
    "sound barrier walls",
    "wall sway braces"
@@ -22691,7 +22745,6 @@ const DB = {
    "discharge opening doors",
    "disinfecting and sanitizing unit",
    "electric door interlock system",
-   "firestopping",
    "floor frame",
    "gravity trash chutes",
    "intake doors frames and trims",
@@ -22721,7 +22774,6 @@ const DB = {
    "control wiring",
    "digital monitoring and control systems",
    "fire shutters",
-   "firestopping",
    "graphic display and annunciator panels",
    "hard wired controls",
    "motorized delivery carts",
@@ -22749,4 +22801,4 @@ const DB = {
    "paving joint"
   ]
  }
-};
+}
