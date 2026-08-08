@@ -1,12 +1,21 @@
 /* Spec Finder — spec library.
    This file is DATA ONLY. index.html contains no spec content.
    Improve reliability by editing this file, then commit it.
-     sections : 464 MasterFormat sections  {code,title,div,divName,mfr[],bod[]}
-     aliases  : 3274 drawing terms -> section code[]   (the curated mapping)
-     kwByCode : 449 section code -> terms[]          (reverse index of aliases)
-   Keys are sorted so diffs stay readable. Keep aliases and kwByCode consistent. */
+     sections : 472 MasterFormat sections  {code,title,div,divName,mfr[],bod[]}
+     aliases  : 3284 drawing terms -> section code[]   (the curated mapping)
+     kwByCode : 456 section code -> terms[]          (reverse index of aliases)
+     projects : registry of the projects that have taught this library
+     provenance: where each recorded alias edge came from, plus retired and declined decisions
+   Keys are sorted so diffs stay readable. kwByCode is rebuilt from aliases, never edited directly.
+   provenance.retired exists so a rejected mapping is never re-proposed. */
 const DB = {
  "sections": [
+  {
+   "code": "02 41 19",
+   "title": "Selective Demolition",
+   "div": "02",
+   "divName": "Existing Conditions"
+  },
   {
    "code": "03 01 30-00",
    "title": "Rehabilitation of Cast-In-Place Concrete",
@@ -498,17 +507,20 @@ const DB = {
    "divName": "Concrete",
    "mfr": [
     "Convergent Concrete Technologies",
-    "Gemite Products Inc",
     "Euclid Chemical Company",
+    "Gemite Products Inc",
+    "L & M Construction Chemicals, Laticrete",
     "Laticrete International Inc",
-    "Prosoco",
-    "Sika Canada / Scofield",
-    "W.R. Meadows",
     "MAPEI",
     "PolyVers International",
+    "Prosoco",
+    "Prosoco Inc",
+    "QC Construction Products",
+    "Sika Canada / Scofield",
     "VersaFlex",
-    "QC Construction Products"
-   ]
+    "W.R. Meadows"
+   ],
+   "bod": []
   },
   {
    "code": "03 35 43",
@@ -732,7 +744,8 @@ const DB = {
     "DecoForm Corp",
     "PlasterForm Inc",
     "Plastrglas Inc"
-   ]
+   ],
+   "bod": []
   },
   {
    "code": "03 52 16-13",
@@ -2568,6 +2581,14 @@ const DB = {
    ]
   },
   {
+   "code": "07 42 50",
+   "title": "Metal Column Cladding",
+   "div": "07",
+   "divName": "Thermal & Moisture Protection",
+   "mfr": [],
+   "bod": []
+  },
+  {
    "code": "07 42 53",
    "title": "Glass Fibre Reinforced Cement Composite Wall Panels",
    "div": "07",
@@ -3049,6 +3070,56 @@ const DB = {
    ]
   },
   {
+   "code": "07 84 00",
+   "title": "Firestopping",
+   "div": "07",
+   "divName": "Thermal & Moisture Protection",
+   "mfr": [
+    "Hilti Inc",
+    "Movement Capabilities: Compression and extension",
+    "Passive Fire Protection Partners",
+    "Specified Technologies Inc",
+    "Tremco Ltd"
+   ],
+   "bod": []
+  },
+  {
+   "code": "07 92 00",
+   "title": "Joint Sealants",
+   "div": "07",
+   "divName": "Thermal & Moisture Protection",
+   "mfr": [
+    "C.R. Laurence of Canada",
+    "Chemtron Manufacturing Ltd",
+    "Dow Corning Canada Inc",
+    "GE, Momentive Performance Materials Inc",
+    "Pecora Corporation",
+    "Sika Canada Inc",
+    "Tremco Ltd"
+   ],
+   "bod": []
+  },
+  {
+   "code": "07 95 00",
+   "title": "Expansion Control",
+   "div": "07",
+   "divName": "Thermal & Moisture Protection"
+  },
+  {
+   "code": "07 95 13",
+   "title": "Interior Expansion Control",
+   "div": "07",
+   "divName": "Thermal & Moisture Protection",
+   "mfr": [],
+   "bod": []
+  },
+  {
+   "code": "07 95 63",
+   "title": "Bridge Expansion Joint Cover Assemblies",
+   "div": "07",
+   "divName": "Thermal & Moisture Protection"
+  },
+  {
    "code": "08 06 10",
    "title": "Door Schedule",
    "div": "08",
@@ -3199,11 +3270,14 @@ const DB = {
    "mfr": [
     "Access Panel Solutions Inc. (Bauco)",
     "Acudor",
+    "Acudor DW-5015",
     "Cendrex",
     "Maxam Metal Products Ltd. (VanMet Series)",
+    "Mifab CAD",
     "Milcor by Duravent",
     "Nystrom Inc"
-   ]
+   ],
+   "bod": []
   },
   {
    "code": "08 32 13-16",
@@ -3301,6 +3375,14 @@ const DB = {
    "title": "Radiation Shielding Doors and Frames",
    "div": "08",
    "divName": "Openings"
+  },
+  {
+   "code": "08 34 56",
+   "title": "Security Gates",
+   "div": "08",
+   "divName": "Openings",
+   "mfr": [],
+   "bod": []
   },
   {
    "code": "08 34 73",
@@ -3871,6 +3953,14 @@ const DB = {
    ]
   },
   {
+   "code": "08 71 10",
+   "title": "Door Hardware Schedule",
+   "div": "08",
+   "divName": "Openings",
+   "mfr": [],
+   "bod": []
+  },
+  {
    "code": "08 72 13",
    "title": "Rack and Pinion Venting Panel Operators",
    "div": "08",
@@ -4164,13 +4254,16 @@ const DB = {
    "div": "09",
    "divName": "Finishes",
    "mfr": [
-    "CertainTeed Corporation",
-    "Canadian Gypsum Company",
-    "Georgia-Pacific LLC",
     "Bailey Metal Products Ltd",
+    "CGC Interiors, A USG Company",
+    "Canadian Gypsum Company",
+    "CertainTeed Corporation",
     "ClarkDietrich",
+    "Georgia-Pacific Canada, Inc",
+    "Georgia-Pacific LLC",
     "SCAFCO Steel Stud Company"
-   ]
+   ],
+   "bod": []
   },
   {
    "code": "09 22 16",
@@ -4330,7 +4423,8 @@ const DB = {
     "Canadian Gypsum Company",
     "Custom Building Products Ltd",
     "Georgia-Pacific LLC"
-   ]
+   ],
+   "bod": []
   },
   {
    "code": "09 29 13",
@@ -4482,6 +4576,14 @@ const DB = {
    "bod": [
     "CURVATURA 3Dimensional Curved Ceiling System as supplied by CGC Inc."
    ]
+  },
+  {
+   "code": "09 54 00",
+   "title": "Specialty Ceilings",
+   "div": "09",
+   "divName": "Finishes",
+   "mfr": [],
+   "bod": []
   },
   {
    "code": "09 54 16",
@@ -4870,6 +4972,8 @@ const DB = {
    "div": "09",
    "divName": "Finishes",
    "mfr": [
+    "Can Cell industries, Inc. K-13",
+    "ThermaCoustic Industries International Limited, TC-417",
     "ThermaCoustic, TC-417"
    ],
    "bod": [
@@ -5173,6 +5277,14 @@ const DB = {
    "divName": "Specialties"
   },
   {
+   "code": "10 20 00",
+   "title": "Interior Specialties",
+   "div": "10",
+   "divName": "Specialties",
+   "mfr": [],
+   "bod": []
+  },
+  {
    "code": "10 21 12-33",
    "title": "Frameless Glass Toilet Compartments",
    "div": "10",
@@ -5290,6 +5402,14 @@ const DB = {
    ]
   },
   {
+   "code": "10 26 13",
+   "title": "Corner Guards",
+   "div": "10",
+   "divName": "Specialties",
+   "mfr": [],
+   "bod": []
+  },
+  {
    "code": "10 26 23-13",
    "title": "Impact Resistant Wall Protection",
    "div": "10",
@@ -5366,7 +5486,8 @@ const DB = {
    "divName": "Specialties",
    "bod": [
     "FireKing"
-   ]
+   ],
+   "mfr": []
   },
   {
    "code": "10 51 13",
@@ -6777,34 +6898,18 @@ const DB = {
    ]
   },
   {
-   "code": "07 92 00",
-   "title": "Joint Sealants",
-   "div": "07",
-   "divName": "Thermal & Moisture Protection"
+   "code": "20 05 16",
+   "title": "Expansion Fittings and Loops for Mechanical Systems",
+   "div": "20",
+   "divName": "Mechanical"
   },
   {
-   "code": "07 95 00",
-   "title": "Expansion Control",
-   "div": "07",
-   "divName": "Thermal & Moisture Protection"
-  },
-  {
-   "code": "07 95 63",
-   "title": "Bridge Expansion Joint Cover Assemblies",
-   "div": "07",
-   "divName": "Thermal & Moisture Protection"
-  },
-  {
-   "code": "07 84 00",
-   "title": "Firestopping",
-   "div": "07",
-   "divName": "Thermal & Moisture Protection"
-  },
-  {
-   "code": "32 13 73",
-   "title": "Concrete Paving Joint Sealants",
-   "div": "32",
-   "divName": "Exterior Improvements"
+   "code": "27 41 16",
+   "title": "Integrated Audio Visual Systems",
+   "div": "27",
+   "divName": "27",
+   "mfr": [],
+   "bod": []
   },
   {
    "code": "32 13 13",
@@ -6813,16 +6918,10 @@ const DB = {
    "divName": "Exterior Improvements"
   },
   {
-   "code": "20 05 16",
-   "title": "Expansion Fittings and Loops for Mechanical Systems",
-   "div": "20",
-   "divName": "Mechanical"
-  },
-  {
-   "code": "02 41 19",
-   "title": "Selective Demolition",
-   "div": "02",
-   "divName": "Existing Conditions"
+   "code": "32 13 73",
+   "title": "Concrete Paving Joint Sealants",
+   "div": "32",
+   "divName": "Exterior Improvements"
   }
  ],
  "aliases": {
@@ -7507,6 +7606,9 @@ const DB = {
   "attic baffles": [
    "07 21 26"
   ],
+  "audio visual": [
+   "27 41 16"
+  ],
   "autoclave sterilizer": [
    "11 53 00"
   ],
@@ -7534,6 +7636,9 @@ const DB = {
   ],
   "auxiliary materials": [
    "07 51 00"
+  ],
+  "av system": [
+   "27 41 16"
   ],
   "avb": [
    "07 25 13"
@@ -8589,6 +8694,9 @@ const DB = {
   "colouring agents": [
    "03 45 00"
   ],
+  "column cladding": [
+   "07 42 50"
+  ],
   "column closures": [
    "05 31 00"
   ],
@@ -8991,10 +9099,13 @@ const DB = {
    "09 23 82"
   ],
   "corner guard": [
-   "10 26 23-13"
+   "10 26 13"
   ],
   "corner guard covers": [
    "05 70 00"
+  ],
+  "corner guards": [
+   "10 26 13"
   ],
   "corner trims": [
    "07 42 53"
@@ -9432,6 +9543,9 @@ const DB = {
    "08 06 71",
    "08 41 13",
    "08 43 13-13"
+  ],
+  "door hardware schedule": [
+   "08 71 10"
   ],
   "door hinges": [
    "10 28 19.16"
@@ -9977,19 +10091,20 @@ const DB = {
    "07 42 13-19"
   ],
   "expansion control": [
-   "07 95 00"
+   "07 95 00",
+   "07 95 13"
   ],
   "expansion fitting": [
    "20 05 16"
   ],
   "expansion joint": [
-   "07 95 00",
    "04 05 23",
    "07 92 00",
    "09 21 16-23",
    "32 13 73",
    "07 95 63",
-   "20 05 16"
+   "20 05 16",
+   "07 95 13"
   ],
   "expansion joint cover": [
    "07 95 00"
@@ -11723,7 +11838,7 @@ const DB = {
    "11 31 00"
   ],
   "igu": [
-   "08 81 00"
+   "08 81 13"
   ],
   "igu pigtail": [
    "08 88 36-13"
@@ -11866,6 +11981,9 @@ const DB = {
   ],
   "interior electronic clocks": [
    "10 74 13"
+  ],
+  "interior expansion joint": [
+   "07 95 13"
   ],
   "interior floor panels": [
    "11 41 23"
@@ -12697,6 +12815,9 @@ const DB = {
   "metal closure prefinished": [
    "07 92 00"
   ],
+  "metal column cladding": [
+   "07 42 50"
+  ],
   "metal connectors and anchors": [
    "09 75 13"
   ],
@@ -12763,7 +12884,7 @@ const DB = {
    "09 67 23"
   ],
   "mgu": [
-   "08 81 00"
+   "08 81 13"
   ],
   "microblinds": [
    "12 21 13-00"
@@ -12988,7 +13109,7 @@ const DB = {
   "movement joint": [
    "04 05 23",
    "07 92 00",
-   "07 95 00"
+   "07 95 13"
   ],
   "movement joint filler": [
    "04 05 23"
@@ -14750,6 +14871,12 @@ const DB = {
   "security film": [
    "08 87 00"
   ],
+  "security gate": [
+   "08 34 56"
+  ],
+  "security grille": [
+   "08 34 56"
+  ],
   "security mesh": [
    "09 22 19"
   ],
@@ -15444,6 +15571,9 @@ const DB = {
   ],
   "spandrel panels": [
    "13 34 23"
+  ],
+  "specialty ceiling": [
+   "09 54 00"
   ],
   "specimen pass through cabinet": [
    "10 28 13"
@@ -19844,6 +19974,10 @@ const DB = {
    "sub girts",
    "system sealants"
   ],
+  "07 42 50": [
+   "column cladding",
+   "metal column cladding"
+  ],
   "07 42 53": [
    "air vapour membrane",
    "aluminum sub framing materials",
@@ -20231,9 +20365,13 @@ const DB = {
   ],
   "07 95 00": [
    "expansion control",
-   "expansion joint",
    "expansion joint cover",
-   "fire resistive expansion joint",
+   "fire resistive expansion joint"
+  ],
+  "07 95 13": [
+   "expansion control",
+   "expansion joint",
+   "interior expansion joint",
    "movement joint"
   ],
   "07 95 63": [
@@ -20458,6 +20596,10 @@ const DB = {
    "lead lined wood doors",
    "neutron shielded doors and frames",
    "radiation shielding x ray safety glass"
+  ],
+  "08 34 56": [
+   "security gate",
+   "security grille"
   ],
   "08 34 73": [
    "acoustical seals",
@@ -20805,6 +20947,9 @@ const DB = {
    "stainless steel threshold",
    "swinging doors"
   ],
+  "08 71 10": [
+   "door hardware schedule"
+  ],
   "08 72 13": [
    "bearings",
    "curved vent racks",
@@ -20834,9 +20979,7 @@ const DB = {
    "glass tempered safety",
    "glass tinted annealed float",
    "glazing sealants",
-   "igu",
    "laminating film",
-   "mgu",
    "muntin bars",
    "sealants for insulating glass units",
    "spacer separator",
@@ -20847,8 +20990,10 @@ const DB = {
    "decorative glass",
    "frit glass coating",
    "glazing materials",
+   "igu",
    "interior glazing",
-   "laminated glass"
+   "laminated glass",
+   "mgu"
   ],
   "08 83 13": [
    "edge sealer",
@@ -21208,6 +21353,9 @@ const DB = {
    "straight cross tees",
    "wall attachment clip",
    "wall moulding"
+  ],
+  "09 54 00": [
+   "specialty ceiling"
   ],
   "09 54 16": [
    "ceiling suspension grid",
@@ -21701,11 +21849,14 @@ const DB = {
    "tempered patterned glass",
    "woodframed glass panel partition"
   ],
+  "10 26 13": [
+   "corner guard",
+   "corner guards"
+  ],
   "10 26 23-13": [
    "anti ligature handrail",
    "bed locators",
    "bumper rail",
-   "corner guard",
    "crash rail",
    "impact resistant handrails",
    "impact resistant wall coverings",
@@ -22812,6 +22963,10 @@ const DB = {
    "expansion joint",
    "pipe expansion joint"
   ],
+  "27 41 16": [
+   "audio visual",
+   "av system"
+  ],
   "32 13 73": [
    "concrete control joint",
    "concrete expansion joint",
@@ -22820,5 +22975,768 @@ const DB = {
    "expansion joint",
    "paving joint"
   ]
+ },
+ "projects": {
+  "YYC-CB-TP5": {
+   "name": "Domestic Restoration — Concourse B, Tender Package 5",
+   "org": "Calgary Airport Authority",
+   "ref": "AB002763-2009340",
+   "date": "2026-07-31",
+   "sheets": 81,
+   "issuedSections": 51,
+   "discipline": "architectural",
+   "contributed": {
+    "aliasEdges": 42,
+    "sectionsAdded": 8,
+    "manufacturersAdded": 20,
+    "retired": 8,
+    "declined": 1,
+    "confirmations": 89,
+    "flaggedForReview": 9
+   }
+  }
+ },
+ "provenance": {
+  "note": "Records where an alias edge came from. An edge is 'term|code'. Edges NOT listed here predate provenance tracking — many were derived from earlier projects and specifications, the source simply was not captured at the time. Treat them as unrecorded, not unverified. 'confirmations' accumulates projects that independently corroborate an edge — that is the trust signal, and it is more useful than origin. 'review' flags edges a project contradicted with a sibling section, which is a candidate for correction, not proof of error.",
+  "default": "unrecorded",
+  "edges": {
+   "fire stopping|07 84 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "paint|09 91 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "painted|09 91 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "signage|10 14 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "gfrc|03 49 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "grc|03 49 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "access panel|08 31 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "access panels|08 31 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "access door|08 31 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "steel stud framing|09 22 16": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "stud framing|09 22 16": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "plywood backing|09 28 11": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "roller shade|12 24 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "roller shades|12 24 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "fire extinguisher cabinet|10 44 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "extinguisher cabinet|10 44 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "polished concrete|03 35 43": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "shaft wall|09 21 16-23": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "stone veneer|04 43 13-00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "term present on the drawings; section present in the issued spec list"
+   },
+   "corian|06 61 16": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "solid surfacing material|06 61 16": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "wood stud framing|06 10 53": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "wood stud|06 10 53": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "toilet partition|10 21 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "toilet partitions|10 21 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "toilet compartment|10 21 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "corrective: raised by review of a wrong result on this project"
+   },
+   "column cladding|07 42 50": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "metal column cladding|07 42 50": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "expansion control|07 95 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "interior expansion joint|07 95 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "security gate|08 34 56": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "security grille|08 34 56": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "door hardware schedule|08 71 10": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "specialty ceiling|09 54 00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "corner guard|10 26 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "corner guards|10 26 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "audio visual|27 41 16": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "av system|27 41 16": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "section added to the library from this project's issued list, then mapped"
+   },
+   "expansion joint|07 95 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "retargeted from the generic parent to the specific section issued here"
+   },
+   "movement joint|07 95 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "retargeted from the generic parent to the specific section issued here"
+   },
+   "igu|08 81 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "retargeted from the generic parent to the specific section issued here"
+   },
+   "mgu|08 81 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "added": "2026-08-07",
+    "by": "curated",
+    "evidence": "retargeted from the generic parent to the specific section issued here"
+   }
+  },
+  "retired": {
+   "stud framing|06 10 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Rough Carpentry is a wood section. Drawings show 'steel stud' 47x and 'wood stud' 0x, and 06 10 00 was not issued (06 10 53 was). Use 'wood stud framing' for the wood case."
+   },
+   "solid surfacing material|06 40 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "06 61 16 Solid Surfacing Fabrications exists and was issued. The library already pointed 'solid surface' and 'solid surfacing sheet' there; this edge was the inconsistent one."
+   },
+   "fabric|06 40 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Bare generic word. Produced misleading attribution on architectural woodwork. Qualified variants ('fabric finished casework', 'curtain fabric', 'shade fabric') already carry the real cases."
+   },
+   "expansion joint|07 95 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Retargeted to 07 95 13 Interior Expansion Control, the section actually issued."
+   },
+   "movement joint|07 95 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Retargeted to 07 95 13, the section actually issued."
+   },
+   "igu|08 81 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Retargeted to 08 81 13 Interior Glass Glazing, the section actually issued."
+   },
+   "mgu|08 81 00": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Retargeted to 08 81 13, the section actually issued."
+   },
+   "corner guard|10 26 23-13": {
+    "retired": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "Retargeted to 10 26 13 Corner Guards once that section was added."
+   }
+  },
+  "declined": {
+   "acoustic insulation|09 81 29": {
+    "declined": "2026-08-07",
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "by": "review",
+    "reason": "09 81 29 is SPRAYED acoustic insulation. The drawings show batt. Needs a decision before mapping — do not auto-propose."
+   }
+  },
+  "confirmations": {
+   "13mm gypsum board|09 29 13": [
+    "YYC-CB-TP5"
+   ],
+   "13mm plywood|06 10 53": [
+    "YYC-CB-TP5"
+   ],
+   "16mm plywood|06 10 53": [
+    "YYC-CB-TP5"
+   ],
+   "3mm aluminum brakeshape|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "access door|08 31 00": [
+    "YYC-CB-TP5"
+   ],
+   "access panels|08 31 00": [
+    "YYC-CB-TP5"
+   ],
+   "access panel|08 31 00": [
+    "YYC-CB-TP5"
+   ],
+   "access panel|09 54 23": [
+    "YYC-CB-TP5"
+   ],
+   "acoustic ceiling|09 51 00": [
+    "YYC-CB-TP5"
+   ],
+   "acoustic insulation|09 29 13": [
+    "YYC-CB-TP5"
+   ],
+   "acoustic insulation|09 54 23": [
+    "YYC-CB-TP5"
+   ],
+   "act|09 51 00": [
+    "YYC-CB-TP5"
+   ],
+   "baby change table|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "bent steel plate|05 50 00": [
+    "YYC-CB-TP5"
+   ],
+   "brackets|06 40 00": [
+    "YYC-CB-TP5"
+   ],
+   "cmu|04 22 13": [
+    "YYC-CB-TP5"
+   ],
+   "column cladding|07 42 50": [
+    "YYC-CB-TP5"
+   ],
+   "continue flooring under base|09 29 13": [
+    "YYC-CB-TP5"
+   ],
+   "continuous sealant|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "control joint|04 05 23": [
+    "YYC-CB-TP5"
+   ],
+   "control joint|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "control joint|09 21 16-23": [
+    "YYC-CB-TP5"
+   ],
+   "corian|06 61 16": [
+    "YYC-CB-TP5"
+   ],
+   "corner guard|10 26 13": [
+    "YYC-CB-TP5"
+   ],
+   "decorative glass|08 81 13": [
+    "YYC-CB-TP5"
+   ],
+   "expansion joint|04 05 23": [
+    "YYC-CB-TP5"
+   ],
+   "expansion joint|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "expansion joint|07 95 13": [
+    "YYC-CB-TP5"
+   ],
+   "expansion joint|09 21 16-23": [
+    "YYC-CB-TP5"
+   ],
+   "extinguisher cabinet|10 44 13": [
+    "YYC-CB-TP5"
+   ],
+   "fill void with sealant|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "fire extinguisher cabinet|10 44 13": [
+    "YYC-CB-TP5"
+   ],
+   "fire rated sealant|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "fire resistant gypsum board|09 29 13": [
+    "YYC-CB-TP5"
+   ],
+   "fire separation|07 05 53": [
+    "YYC-CB-TP5"
+   ],
+   "fire stopping|07 84 00": [
+    "YYC-CB-TP5"
+   ],
+   "furring|06 40 00": [
+    "YYC-CB-TP5"
+   ],
+   "gfrc|03 49 00": [
+    "YYC-CB-TP5"
+   ],
+   "grab bar|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "grc|03 49 00": [
+    "YYC-CB-TP5"
+   ],
+   "gwb|09 29 13": [
+    "YYC-CB-TP5"
+   ],
+   "hmi|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "hm|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "igu|08 81 13": [
+    "YYC-CB-TP5"
+   ],
+   "linear metal ceiling|09 54 23": [
+    "YYC-CB-TP5"
+   ],
+   "metal ceiling|09 54 23": [
+    "YYC-CB-TP5"
+   ],
+   "metal suspension system|09 51 00": [
+    "YYC-CB-TP5"
+   ],
+   "mgu|08 81 13": [
+    "YYC-CB-TP5"
+   ],
+   "mirrors|08 83 13": [
+    "YYC-CB-TP5"
+   ],
+   "mirror|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "mop strip|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "movement joint|04 05 23": [
+    "YYC-CB-TP5"
+   ],
+   "movement joint|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "movement joint|07 95 13": [
+    "YYC-CB-TP5"
+   ],
+   "painted|09 91 00": [
+    "YYC-CB-TP5"
+   ],
+   "paint|09 91 00": [
+    "YYC-CB-TP5"
+   ],
+   "paper towel dispenser|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "plywood backing|09 28 11": [
+    "YYC-CB-TP5"
+   ],
+   "polished concrete|03 35 43": [
+    "YYC-CB-TP5"
+   ],
+   "porcelain tile|09 30 00": [
+    "YYC-CB-TP5"
+   ],
+   "powder coated aluminum panel|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "psi|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "ps|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "quarry tile|09 30 00": [
+    "YYC-CB-TP5"
+   ],
+   "roller shades|12 24 13": [
+    "YYC-CB-TP5"
+   ],
+   "roller shade|12 24 13": [
+    "YYC-CB-TP5"
+   ],
+   "rotunda interior closeout|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "scheduled door and frame|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "scheduled sliding door|08 11 13": [
+    "YYC-CB-TP5"
+   ],
+   "sealant|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "shaft wall|09 21 16-23": [
+    "YYC-CB-TP5"
+   ],
+   "shelving|06 40 00": [
+    "YYC-CB-TP5"
+   ],
+   "signage|10 14 00": [
+    "YYC-CB-TP5"
+   ],
+   "smoke barrier|07 05 53": [
+    "YYC-CB-TP5"
+   ],
+   "solid surface|06 61 16": [
+    "YYC-CB-TP5"
+   ],
+   "solid surfacing material|06 61 16": [
+    "YYC-CB-TP5"
+   ],
+   "spray applied fireproofing|07 92 00": [
+    "YYC-CB-TP5"
+   ],
+   "steel stud box header|09 29 13": [
+    "YYC-CB-TP5"
+   ],
+   "steel stud framing|09 22 16": [
+    "YYC-CB-TP5"
+   ],
+   "stone anchor clip|05 50 00": [
+    "YYC-CB-TP5"
+   ],
+   "stone veneer|04 43 13-00": [
+    "YYC-CB-TP5"
+   ],
+   "stud framing|09 22 16": [
+    "YYC-CB-TP5"
+   ],
+   "tile|09 30 00": [
+    "YYC-CB-TP5"
+   ],
+   "toilet tissue dispenser|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "transition strip|09 65 13": [
+    "YYC-CB-TP5"
+   ],
+   "wall mounted led monitor|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "waste receptacle|10 28 13": [
+    "YYC-CB-TP5"
+   ],
+   "waterproof membrane|09 30 00": [
+    "YYC-CB-TP5"
+   ],
+   "wood blocking as required|06 10 53": [
+    "YYC-CB-TP5"
+   ]
+  },
+  "review": {
+   "acoustic insulation|09 22 26-19": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "base finish|09 06 00-13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "casework|09 06 00-13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "door frames|09 06 00-13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "floor finish|09 06 00-13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "monolithic|09 66 13-00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "structural|09 66 13-00": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "toilet partition|10 21 13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   },
+   "wall finish|09 06 00-13": {
+    "projects": [
+     "YYC-CB-TP5"
+    ],
+    "why": "term on the drawings, but a sibling section was issued instead of this one"
+   }
+  }
  }
 }

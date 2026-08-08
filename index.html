@@ -1555,15 +1555,16 @@ const SPECIAL =
 function scanConf(sec, termsArr, sheetCount) {
   const specialized = SPECIAL.test(sec.title);
   const phrases = termsArr.filter((x) => x.includes(" ")).length;
-  const singles = termsArr.length - phrases;
   const broadOnly = termsArr.every((x) => !x.includes(" ") && (ALIASES[x] || []).length > 3);
   const sheets = sheetCount || 0;
-  let ev = phrases * 3 + singles;
+  // tuned against the YYC Concourse B TP5 package: single generic words carry no evidential
+  // weight at all -- they are what produced the false positives. Only phrases count.
+  let ev = phrases * 3;
   if (sheets >= 3) ev += 2;
   else if (sheets <= 1) ev -= 1;
   if (specialized && !phrases) ev -= 3;
   if (broadOnly) ev -= 2;
-  return ev >= 3 ? "likely" : "maybe";
+  return ev >= 7 ? "likely" : "maybe";
 }
 let lastScanRows = null;
 function renderScanRows(data) {
@@ -2203,11 +2204,27 @@ function loadFlags() {
 function saveFlags(f) {
   localStorage.setItem("sf_flags", JSON.stringify(f));
 }
+// Set this to a collector URL (an Apps Script web app, a webhook, anything that accepts POST)
+// and flags will reach you instead of dying in the user's browser. Left empty the app behaves
+// exactly as before: flags are stored locally and only leave via manual export.
+const FLAG_ENDPOINT = "";
 function addFlag(o) {
   var f = loadFlags();
   f.push(o);
   saveFlags(f);
   renderFeedback();
+  if (FLAG_ENDPOINT) {
+    // no-cors + text/plain avoids a preflight, which Apps Script endpoints will not answer.
+    // Fire and forget: localStorage remains the source of truth, so a failed send loses nothing.
+    try {
+      fetch(FLAG_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ ...o, set: localStorage.getItem("sf_name") || "", ua: navigator.userAgent }),
+      }).catch(() => {});
+    } catch (_) {}
+  }
 }
 var FLAG_REASONS = [
   "This keyword does not belong to this section",
