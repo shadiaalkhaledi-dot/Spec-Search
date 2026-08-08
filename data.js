@@ -2,7 +2,7 @@
    This file is DATA ONLY. index.html contains no spec content.
    Improve reliability by editing this file, then commit it.
      sections : 464 MasterFormat sections  {code,title,div,divName,mfr[],bod[]}
-     aliases  : 3268 drawing terms -> section code[]   (the curated mapping)
+     aliases  : 3274 drawing terms -> section code[]   (the curated mapping)
      kwByCode : 449 section code -> terms[]          (reverse index of aliases)
    Keys are sorted so diffs stay readable. Keep aliases and kwByCode consistent. */
 const DB = {
@@ -8975,6 +8975,9 @@ const DB = {
    "07 42 13-19",
    "07 42 63"
   ],
+  "corian": [
+   "06 61 16"
+  ],
   "cork bumpers": [
    "06 20 23",
    "06 40 00"
@@ -10119,7 +10122,6 @@ const DB = {
   ],
   "fabric": [
    "06 20 23",
-   "06 40 00",
    "09 77 13"
   ],
   "fabric finished casework": [
@@ -15386,7 +15388,7 @@ const DB = {
    "09 29 13"
   ],
   "solid surfacing material": [
-   "06 40 00"
+   "06 61 16"
   ],
   "solid surfacing material countertops": [
    "06 40 00",
@@ -16055,7 +16057,6 @@ const DB = {
    "06 03 00"
   ],
   "stud framing": [
-   "06 10 00",
    "09 22 16"
   ],
   "styrene butadiene rubber waterstops": [
@@ -16544,7 +16545,16 @@ const DB = {
   "toilet accessories": [
    "10 28 13"
   ],
+  "toilet compartment": [
+   "10 21 13"
+  ],
   "toilet compartments": [
+   "10 21 13"
+  ],
+  "toilet partition": [
+   "10 21 13"
+  ],
+  "toilet partitions": [
    "10 21 13"
   ],
   "toilet seat back rest": [
@@ -17524,6 +17534,12 @@ const DB = {
   ],
   "wood stairs": [
    "06 20 23"
+  ],
+  "wood stud": [
+   "06 10 53"
+  ],
+  "wood stud framing": [
+   "06 10 53"
   ],
   "wood veneer faced wood doors": [
    "08 14 00"
@@ -19067,7 +19083,6 @@ const DB = {
    "structural joists and planks",
    "structural light framing",
    "structural shear walls",
-   "stud framing",
    "wall sheathing",
    "wood screws"
   ],
@@ -19090,7 +19105,9 @@ const DB = {
    "window sill wood mdf painted",
    "wood blocking as required",
    "wood screws",
-   "wood shim as required"
+   "wood shim as required",
+   "wood stud",
+   "wood stud framing"
   ],
   "06 13 23-00": [
    "driven fasteners",
@@ -19304,7 +19321,6 @@ const DB = {
    "door latches",
    "door slides",
    "drawer slides",
-   "fabric",
    "fabric finished casework",
    "fastening devices",
    "fibre reinforced laminate panels",
@@ -19326,7 +19342,6 @@ const DB = {
    "shelving",
    "shims",
    "softwood plywood",
-   "solid surfacing material",
    "solid surfacing material countertops",
    "stainless steel countertops",
    "stone surfacing material countertops",
@@ -19348,9 +19363,11 @@ const DB = {
    "stand offs"
   ],
   "06 61 16": [
+   "corian",
    "prefabricated sinks",
    "sink mounting hardware",
    "solid surface",
+   "solid surfacing material",
    "solid surfacing sheet"
   ],
   "06 61 19": [
@@ -21605,7 +21622,10 @@ const DB = {
    "sheet steel doors and panels",
    "solid phenolic core doors and panels",
    "solid plastic doors and panels",
+   "toilet compartment",
    "toilet compartments",
+   "toilet partition",
+   "toilet partitions",
    "urinal screens",
    "urinal splash guards"
   ],
