@@ -16460,10 +16460,10 @@
         const wantUrl = pdfUrlField.value.trim();
         let html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
         html = html.replace(
-          /const DRAWINGS = [\s\S]*?;\nconst DISC/,
-          "const DRAWINGS = " + JSON.stringify(DRAWINGS) + ";\nconst DISC",
+          /const DRAWINGS = [\s\S]*?;(\s*)const DISC/,
+          (m, gap) => "const DRAWINGS = " + JSON.stringify(DRAWINGS) + ";" + gap + "const DISC",
         );
-        html = html.replace(/let PDF_URL = "[^"]*"/, "let PDF_URL = " + JSON.stringify(wantUrl));
+        html = html.replace(/let PDF_URL = "[^"]*"/, () => "let PDF_URL = " + JSON.stringify(wantUrl));
         const blob = new Blob([html], { type: "text/html" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
