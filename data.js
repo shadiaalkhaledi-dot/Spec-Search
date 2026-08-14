@@ -8076,6 +8076,10 @@ const DB = {
   "75mm mineral wool insulation": [
    "07 92 00"
   ],
+  "above grade": [
+   "03 20 13",
+   "03 30 13"
+  ],
   "above grade cast in place concrete": [
    "03 30 13"
   ],
@@ -8147,6 +8151,9 @@ const DB = {
   "acid stains": [
    "03 35 13"
   ],
+  "acm panel": [
+   "07 42 43"
+  ],
   "acoustic": [
    "09 84 00",
    "09 81 29"
@@ -8160,6 +8167,9 @@ const DB = {
   "acoustic ceiling": [
    "09 51 00"
   ],
+  "acoustic ceiling tile": [
+   "09 51 00"
+  ],
   "acoustic concrete unit masonry": [
    "04 22 23"
   ],
@@ -8170,15 +8180,22 @@ const DB = {
    "09 22 26-19",
    "09 29 13",
    "09 54 23",
-   "09 80 00-13"
+   "09 80 00-13",
+   "09 81 29"
   ],
   "acoustic isolation strips": [
    "06 17 26",
    "06 18 00"
   ],
+  "acoustic panel": [
+   "09 51 00"
+  ],
   "acoustic panels": [
    "09 51 00",
    "12 50 00"
+  ],
+  "acoustic sealant": [
+   "07 92 00"
   ],
   "acoustic sealants": [
    "09 29 13"
@@ -8188,6 +8205,9 @@ const DB = {
   ],
   "acoustic trim caps": [
    "09 29 13"
+  ],
+  "acoustic wall panel": [
+   "09 84 00"
   ],
   "acoustical composite core": [
    "08 11 13"
@@ -8222,6 +8242,9 @@ const DB = {
   ],
   "acoustically rated gypsum board": [
    "09 29 13"
+  ],
+  "acp": [
+   "09 51 00"
   ],
   "acrylic base coat": [
    "09 25 13-13"
@@ -8344,7 +8367,9 @@ const DB = {
   "air barrier": [
    "07 05 11",
    "09 24 23",
-   "13 42 33"
+   "13 42 33",
+   "07 05 10",
+   "07 27 16"
   ],
   "air barrier membrane": [
    "04 21 31"
@@ -8391,9 +8416,18 @@ const DB = {
   "air supported fabric structure": [
    "13 31 13"
   ],
+  "air vapour": [
+   "07 25 13",
+   "07 25 19"
+  ],
+  "air vapour barrier": [
+   "07 25 19",
+   "07 25 13"
+  ],
   "air vapour membrane": [
    "07 42 33-13",
-   "07 42 53"
+   "07 42 53",
+   "07 25 13"
   ],
   "air vapour retarder": [
    "07 42 13-19"
@@ -8442,6 +8476,18 @@ const DB = {
   "aluminum castings": [
    "05 70 00"
   ],
+  "aluminum composite": [
+   "07 42 43"
+  ],
+  "aluminum composite panel": [
+   "07 42 43"
+  ],
+  "aluminum curtain": [
+   "08 44 13"
+  ],
+  "aluminum curtain wall": [
+   "08 44 13"
+  ],
   "aluminum curtain wall system": [
    "08 44 13"
   ],
@@ -8459,6 +8505,9 @@ const DB = {
   ],
   "aluminum frame insulation": [
    "08 44 39"
+  ],
+  "aluminum framed": [
+   "10 22 40"
   ],
   "aluminum framed glass panel partition": [
    "10 22 39.13"
@@ -8638,6 +8687,9 @@ const DB = {
   "applied vinyl films": [
    "10 14 13-13"
   ],
+  "applied waterproofing": [
+   "07 14 16"
+  ],
   "applied waterstop": [
    "03 11 13",
    "03 11 16",
@@ -8654,6 +8706,9 @@ const DB = {
   ],
   "architectural": [
    "06 40 00",
+   "03 45 00"
+  ],
+  "architectural concrete": [
    "03 45 00"
   ],
   "architectural concrete masonry units": [
@@ -8675,6 +8730,15 @@ const DB = {
   ],
   "architectural terra cotta": [
    "04 21 29-00"
+  ],
+  "architectural woodwork": [
+   "06 40 00"
+  ],
+  "architecturally exposed": [
+   "03 33 00"
+  ],
+  "architecturally exposed concrete": [
+   "03 33 00"
   ],
   "architecturally exposed concrete beam": [
    "03 31 00"
@@ -8775,6 +8839,9 @@ const DB = {
   "awning fabric": [
    "10 73 13"
   ],
+  "awp": [
+   "09 84 00"
+  ],
   "baby change table": [
    "10 28 13"
   ],
@@ -8810,7 +8877,8 @@ const DB = {
    "09 65 00"
   ],
   "backer rod": [
-   "04 21 29-00"
+   "04 21 29-00",
+   "07 92 00"
   ],
   "backing panels": [
    "06 10 53"
@@ -8855,6 +8923,9 @@ const DB = {
   ],
   "bar foot rail tubing": [
    "10 90 00"
+  ],
+  "barrier vapour": [
+   "07 05 10"
   ],
   "basaltic dry shake floor hardener": [
    "03 35 11"
@@ -8902,6 +8973,9 @@ const DB = {
   "basketball equipment": [
    "11 66 23"
   ],
+  "batt insulation": [
+   "07 21 16"
+  ],
   "batteries": [
    "11 73 53"
   ],
@@ -8933,6 +9007,12 @@ const DB = {
   "bed rails": [
    "05 58 00"
   ],
+  "below grade": [
+   "07 21 23"
+  ],
+  "below grade board": [
+   "07 21 23"
+  ],
   "below grade board insulation": [
    "07 92 00",
    "07 21 23"
@@ -8943,6 +9023,9 @@ const DB = {
   ],
   "bench seats": [
    "12 62 00"
+  ],
+  "bent plate": [
+   "05 50 00"
   ],
   "bent steel plate": [
    "05 50 00"
@@ -9032,6 +9115,16 @@ const DB = {
   ],
   "board": [
    "07 21 13",
+   "09 21 16-23"
+  ],
+  "board ceiling": [
+   "09 22 26-13"
+  ],
+  "board insulation": [
+   "07 21 13",
+   "07 21 23"
+  ],
+  "board shaft": [
    "09 21 16-23"
   ],
   "bollard shield": [
@@ -9214,6 +9307,9 @@ const DB = {
   "building enclosure systems": [
    "07 08 11"
   ],
+  "building envelope": [
+   "07 08 15"
+  ],
   "building envelope inspection and testing": [
    "07 08 15"
   ],
@@ -9320,6 +9416,9 @@ const DB = {
   ],
   "canopy support framing": [
    "10 73 13"
+  ],
+  "cap flashing": [
+   "07 62 00"
   ],
   "cap flashings": [
    "04 05 23"
@@ -9519,6 +9618,9 @@ const DB = {
   "ceiling service column": [
    "11 76 13"
   ],
+  "ceiling suspension": [
+   "09 22 26-13"
+  ],
   "ceiling suspension grid": [
    "09 54 16"
   ],
@@ -9606,6 +9708,12 @@ const DB = {
   "ceramic mosaic tile": [
    "09 30 00"
   ],
+  "ceramic tile": [
+   "09 30 00"
+  ],
+  "cg": [
+   "10 26 13"
+  ],
   "chain link fence fabric": [
    "10 22 13-13"
   ],
@@ -9674,6 +9782,9 @@ const DB = {
    "07 05 11",
    "07 08 13",
    "14 31 00"
+  ],
+  "cladding support": [
+   "07 05 43"
   ],
   "clean coarse aggregates": [
    "03 15 26"
@@ -9776,7 +9887,8 @@ const DB = {
    "05 50 00"
   ],
   "cmu": [
-   "04 22 13"
+   "04 22 13",
+   "04 22 00"
   ],
   "coarse aggregates": [
    "04 21 29-00"
@@ -9811,6 +9923,9 @@ const DB = {
   "coatings": [
    "07 18 16-00",
    "09 96 00"
+  ],
+  "coiling fire": [
+   "08 33 23"
   ],
   "coin operated metal lockers": [
    "10 51 13"
@@ -9921,6 +10036,9 @@ const DB = {
   "composite floor decking": [
    "05 31 00"
   ],
+  "composite panel": [
+   "07 42 43"
+  ],
   "composite steel membrane waterstops": [
    "03 15 13"
   ],
@@ -9976,6 +10094,9 @@ const DB = {
   ],
   "concealed floor closers": [
    "08 42 26"
+  ],
+  "concealed frame": [
+   "08 12 26"
   ],
   "concealed frames": [
    "08 12 26"
@@ -10049,18 +10170,33 @@ const DB = {
   "concrete faced board insulation": [
    "07 92 00"
   ],
+  "concrete floor": [
+   "03 35 41",
+   "03 35 11",
+   "03 35 45"
+  ],
   "concrete floor slab repair materials": [
    "03 31 00"
   ],
   "concrete floor tile": [
    "09 31 36"
   ],
+  "concrete flooring": [
+   "03 35 43"
+  ],
+  "concrete forming": [
+   "03 11 00"
+  ],
   "concrete forming and accessories": [
    "03 10 00"
   ],
   "concrete formwork": [
    "03 35 11",
-   "03 35 13"
+   "03 35 13",
+   "03 11 00"
+  ],
+  "concrete masonry unit": [
+   "04 22 00"
   ],
   "concrete masonry units": [
    "04 01 52",
@@ -10101,8 +10237,20 @@ const DB = {
   "concrete polishing": [
    "03 35 13"
   ],
+  "concrete reinforcement": [
+   "03 20 00"
+  ],
   "concrete seal": [
    "09 61 19"
+  ],
+  "concrete sealer": [
+   "03 35 50"
+  ],
+  "concrete sealers": [
+   "03 35 50"
+  ],
+  "concrete sidewalk": [
+   "32 13 13"
   ],
   "concrete slab": [
    "03 31 00"
@@ -10110,12 +10258,16 @@ const DB = {
   "concrete stain": [
    "09 61 19"
   ],
+  "concrete stair": [
+   "03 15 21"
+  ],
   "concrete substrate": [
    "04 01 42",
    "04 01 52"
   ],
   "concrete topping": [
-   "07 55 63"
+   "07 55 63",
+   "03 35 00"
   ],
   "concrete topping and hardener": [
    "03 35 33"
@@ -10175,6 +10327,9 @@ const DB = {
   ],
   "construction joint sealants": [
    "03 35 11"
+  ],
+  "construction quality": [
+   "07 08 11"
   ],
   "containers": [
    "14 93 00"
@@ -10319,6 +10474,9 @@ const DB = {
   "corrosion protection": [
    "05 16 33"
   ],
+  "corrugated metal": [
+   "07 42 23"
+  ],
   "corrugated metal wall cladding": [
    "07 42 23"
   ],
@@ -10352,6 +10510,9 @@ const DB = {
   ],
   "cover plates": [
    "08 88 15"
+  ],
+  "cpt": [
+   "09 68 13"
   ],
   "crack and joint sealing tape": [
    "07 16 13"
@@ -10495,6 +10656,9 @@ const DB = {
   "custom form facing panels": [
    "03 11 16"
   ],
+  "custom light": [
+   "06 62 00"
+  ],
   "custom light box": [
    "06 62 00"
   ],
@@ -10626,6 +10790,9 @@ const DB = {
   "demountable partition system": [
    "10 22 19-53"
   ],
+  "densifier": [
+   "03 35 50"
+  ],
   "densifier concrete treatment": [
    "03 48 00"
   ],
@@ -10699,6 +10866,9 @@ const DB = {
   "dock bumpers": [
    "11 13 00"
   ],
+  "dock equipment": [
+   "11 13 00"
+  ],
   "dock leveller": [
    "11 13 00"
   ],
@@ -10738,13 +10908,22 @@ const DB = {
   "door equipment": [
    "14 01 20"
   ],
+  "door frame": [
+   "08 11 13",
+   "08 34 49"
+  ],
   "door frames": [
    "09 06 00-13"
   ],
   "door hardware": [
    "08 06 71",
    "08 41 13",
-   "08 43 13-13"
+   "08 43 13-13",
+   "08 71 00",
+   "08 71 10"
+  ],
+  "door hardware group": [
+   "08 71 10"
   ],
   "door hardware schedule": [
    "08 71 10"
@@ -10770,6 +10949,9 @@ const DB = {
   ],
   "door operator": [
    "08 36 13-13"
+  ],
+  "door panel": [
+   "08 31 00"
   ],
   "door panel rollers": [
    "08 36 19"
@@ -11008,6 +11190,9 @@ const DB = {
   "egress door": [
    "08 35 16"
   ],
+  "ej": [
+   "07 95 00"
+  ],
   "elastomer": [
    "05 95 43"
   ],
@@ -11224,6 +11409,9 @@ const DB = {
   "entrance mats": [
    "10 80 00"
   ],
+  "entrance rug": [
+   "12 48 53"
+  ],
   "entrance screens": [
    "10 21 13"
   ],
@@ -11330,7 +11518,8 @@ const DB = {
    "32 13 73",
    "07 95 63",
    "20 05 16",
-   "07 95 13"
+   "07 95 13",
+   "07 95 00"
   ],
   "expansion joint cover": [
    "07 95 00"
@@ -11353,6 +11542,10 @@ const DB = {
   ],
   "exposed aggregate": [
    "03 45 00"
+  ],
+  "exposed concrete": [
+   "32 13 13",
+   "03 33 00"
   ],
   "exposed flashing and closures": [
    "08 63 00"
@@ -11396,11 +11589,23 @@ const DB = {
   "exterior fabric awnings": [
    "10 73 13"
   ],
+  "exterior fixed": [
+   "10 73 13"
+  ],
+  "exterior fixed awning": [
+   "10 73 13"
+  ],
   "exterior free standing signs": [
    "10 14 26"
   ],
   "exterior grade gypsum sheathing panels": [
    "06 16 43"
+  ],
+  "exterior insulation": [
+   "07 24 19"
+  ],
+  "exterior insulation finish": [
+   "07 24 19"
   ],
   "exterior materials and finishes": [
    "09 06 00-00"
@@ -11480,6 +11685,12 @@ const DB = {
   ],
   "fabric underlayment slip sheet": [
    "07 42 13-19"
+  ],
+  "fabricated architectural": [
+   "06 40 00"
+  ],
+  "fabricated architectural woodwork": [
+   "06 40 00"
   ],
   "fabricated characters": [
    "10 14 00"
@@ -11572,6 +11783,9 @@ const DB = {
   ],
   "fibre cement shingle siding": [
    "07 46 46"
+  ],
+  "fibre reinforced": [
+   "07 42 53"
   ],
   "fibre reinforced gypsum sheathing": [
    "07 52 13",
@@ -11684,8 +11898,14 @@ const DB = {
   "fire department lock box": [
    "10 90 00"
   ],
+  "fire door": [
+   "08 33 23"
+  ],
   "fire extinguisher cabinet": [
    "10 44 13"
+  ],
+  "fire protection": [
+   "07 81 23"
   ],
   "fire protection file cabinets": [
    "10 44 13"
@@ -11722,6 +11942,9 @@ const DB = {
   ],
   "fire resistance rated systems": [
    "07 05 53"
+  ],
+  "fire resistant": [
+   "08 88 13"
   ],
   "fire resistant concrete unit masonry": [
    "04 22 13"
@@ -11766,6 +11989,9 @@ const DB = {
   ],
   "five tier locker": [
    "10 51 29"
+  ],
+  "fixed awning": [
+   "10 73 13"
   ],
   "fixed carriages": [
    "10 56 26"
@@ -11982,7 +12208,8 @@ const DB = {
    "05 51 00"
   ],
   "floor sealer": [
-   "09 69 00"
+   "09 69 00",
+   "03 35 50"
   ],
   "floor sheathing": [
    "06 10 00",
@@ -12018,6 +12245,10 @@ const DB = {
   "flowable grout": [
    "03 01 30-00",
    "03 01 43"
+  ],
+  "fluid applied": [
+   "07 14 13",
+   "07 14 16"
   ],
   "fluid applied air barrier": [
    "07 27 26",
@@ -12073,6 +12304,12 @@ const DB = {
   "folding mechanism": [
    "10 22 26-16"
   ],
+  "folding panel": [
+   "10 22 39"
+  ],
+  "folding panel partition": [
+   "10 22 39"
+  ],
   "folding panel partition system": [
    "10 22 39"
   ],
@@ -12122,6 +12359,9 @@ const DB = {
    "03 11 43",
    "03 33 00"
   ],
+  "form work": [
+   "03 11 00"
+  ],
   "formed aluminum flashings": [
    "07 62 00"
   ],
@@ -12134,7 +12374,8 @@ const DB = {
    "03 01 30-00",
    "03 01 43",
    "03 31 33",
-   "13 35 00"
+   "13 35 00",
+   "03 11 00"
   ],
   "formwork lumber": [
    "03 11 13",
@@ -12359,6 +12600,9 @@ const DB = {
   "gates doors": [
    "14 42 00"
   ],
+  "gb": [
+   "09 29 13"
+  ],
   "gear dryers": [
    "11 96 00"
   ],
@@ -12511,6 +12755,9 @@ const DB = {
   "glass wired film faced impact resistant": [
    "08 88 13"
   ],
+  "glazed aluminum": [
+   "08 44 13"
+  ],
   "glazed demountable partition": [
    "10 22 19-53"
   ],
@@ -12565,6 +12812,9 @@ const DB = {
    "08 14 33-13",
    "08 46 13"
   ],
+  "glazing surface": [
+   "08 87 00"
+  ],
   "glazing tape": [
    "08 46 13",
    "08 88 13",
@@ -12594,6 +12844,12 @@ const DB = {
   ],
   "grab bar": [
    "10 28 13"
+  ],
+  "grade board": [
+   "07 21 23"
+  ],
+  "grade board insulation": [
+   "07 21 23"
   ],
   "grade separation geotextile": [
    "03 15 26"
@@ -12722,9 +12978,18 @@ const DB = {
   "gwb": [
    "09 29 13"
   ],
+  "gyp": [
+   "09 29 13"
+  ],
   "gypsum": [
    "06 16 43",
    "09 21 16-23"
+  ],
+  "gypsum board": [
+   "09 21 16-23",
+   "09 22 26-13",
+   "09 29 13",
+   "09 22 00"
   ],
   "gypsum board accessories": [
    "09 22 00"
@@ -12733,11 +12998,17 @@ const DB = {
    "07 54 00",
    "07 55 53-13"
   ],
+  "gypsum board ceiling": [
+   "09 22 26-13"
+  ],
   "gypsum board facer panels": [
    "09 21 16-23"
   ],
   "gypsum board mechanical fasteners": [
    "07 55 53-13"
+  ],
+  "gypsum board shaft": [
+   "09 21 16-23"
   ],
   "gypsum board sheathing": [
    "07 52 13",
@@ -12768,6 +13039,9 @@ const DB = {
   ],
   "gypsum sheathing": [
    "06 16 43"
+  ],
+  "gypsum wall board": [
+   "09 29 13"
   ],
   "halyard": [
    "10 75 00"
@@ -12819,6 +13093,9 @@ const DB = {
   "hardware and miscellaneous materials": [
    "03 41 00",
    "03 41 36"
+  ],
+  "hardware group": [
+   "08 71 10"
   ],
   "hardwood trim": [
    "06 20 23"
@@ -12913,6 +13190,12 @@ const DB = {
    "03 31 43",
    "03 37 13",
    "03 41 36"
+  ],
+  "high speed": [
+   "08 33 39"
+  ],
+  "high speed coiling": [
+   "08 33 39"
   ],
   "high speed coiling doors": [
    "08 33 23.13",
@@ -13015,6 +13298,12 @@ const DB = {
   "hollow glass block": [
    "04 23 00"
   ],
+  "hollow metal": [
+   "08 11 13"
+  ],
+  "hollow metal door": [
+   "08 11 13"
+  ],
   "hollow steel doors": [
    "08 11 13-16"
   ],
@@ -13022,6 +13311,9 @@ const DB = {
    "05 12 00",
    "05 50 43",
    "05 52 19"
+  ],
+  "hollow structural steel": [
+   "05 12 00"
   ],
   "home plate": [
    "11 68 33-33"
@@ -13094,6 +13386,9 @@ const DB = {
   "housekeeping pads": [
    "13 48 13"
   ],
+  "hss": [
+   "05 12 00"
+  ],
   "hydrated lime": [
    "04 01 42",
    "04 01 52",
@@ -13122,7 +13417,8 @@ const DB = {
    "11 31 00"
   ],
   "igu": [
-   "08 81 13"
+   "08 81 13",
+   "08 81 00"
   ],
   "igu pigtail": [
    "08 88 36-13"
@@ -13138,6 +13434,9 @@ const DB = {
   ],
   "image tiles": [
    "09 54 16"
+  ],
+  "imp": [
+   "07 42 13-19"
   ],
   "impact mat flooring": [
    "11 67 30"
@@ -13207,6 +13506,15 @@ const DB = {
   "insulated duct refer to mechanical": [
    "07 92 00"
   ],
+  "insulated glass unit": [
+   "08 81 00"
+  ],
+  "insulated metal": [
+   "07 42 13-19"
+  ],
+  "insulated metal panel": [
+   "07 42 13-19"
+  ],
   "insulated spandrel panels": [
    "08 44 13",
    "08 44 39",
@@ -13239,6 +13547,9 @@ const DB = {
    "07 42 13",
    "07 42 13-13",
    "07 42 43"
+  ],
+  "insulation finish": [
+   "07 24 19"
   ],
   "intake doors frames and trims": [
    "14 91 82"
@@ -13425,7 +13736,8 @@ const DB = {
    "09 31 39"
   ],
   "joint sealant": [
-   "07 92 00"
+   "07 92 00",
+   "07 92 13"
   ],
   "joint sealing tape": [
    "07 26 00"
@@ -13634,6 +13946,9 @@ const DB = {
   "lifting tape": [
    "10 71 15"
   ],
+  "light box": [
+   "06 62 00"
+  ],
   "light framing": [
    "06 10 00",
    "06 10 53"
@@ -13739,6 +14054,9 @@ const DB = {
   "liquid tight flexible conduit": [
    "03 11 43-13"
   ],
+  "load bearing": [
+   "05 41 13"
+  ],
   "load bearing inverted insulation": [
    "07 55 63"
   ],
@@ -13750,6 +14068,9 @@ const DB = {
   ],
   "loadbearing wall framing": [
    "05 41 13"
+  ],
+  "loading dock": [
+   "11 13 00"
   ],
   "loading dock equipment": [
    "11 13 00"
@@ -14104,7 +14425,10 @@ const DB = {
    "07 27 26-16"
   ],
   "membrane roofing": [
-   "07 01 50"
+   "07 01 50",
+   "07 52 16",
+   "07 08 50",
+   "07 52 23"
   ],
   "membrane underlay": [
    "07 01 52"
@@ -14127,7 +14451,8 @@ const DB = {
    "07 54 00"
   ],
   "metal ceiling": [
-   "09 54 23"
+   "09 54 23",
+   "09 54 13"
   ],
   "metal ceiling panels system": [
    "09 58 00"
@@ -14136,7 +14461,8 @@ const DB = {
    "09 80 00-13"
   ],
   "metal cladding": [
-   "07 42 13"
+   "07 42 13",
+   "07 42 16"
   ],
   "metal closure beyond prefinished": [
    "07 92 00"
@@ -14150,6 +14476,9 @@ const DB = {
   "metal connectors and anchors": [
    "09 75 13"
   ],
+  "metal door": [
+   "08 11 13"
+  ],
   "metal expansion strips": [
    "04 21 13",
    "04 22 16",
@@ -14161,12 +14490,18 @@ const DB = {
   "metal fabrications": [
    "05 05 00"
   ],
+  "metal flashing": [
+   "07 62 00"
+  ],
   "metal framing supports": [
    "05 45 00"
   ],
   "metal framing system": [
    "04 01 42",
    "04 01 52"
+  ],
+  "metal grating": [
+   "05 53 00"
   ],
   "metal hat sections furring": [
    "07 46 00"
@@ -14180,9 +14515,22 @@ const DB = {
   "metal lath reinforcing": [
    "12 36 13"
   ],
+  "metal locker": [
+   "10 51 13"
+  ],
   "metal lockers": [
    "10 51 13",
    "10 80 00"
+  ],
+  "metal mesh": [
+   "09 54 13"
+  ],
+  "metal panel": [
+   "07 42 15"
+  ],
+  "metal soffit": [
+   "07 42 93",
+   "07 42 13"
   ],
   "metal suspension system": [
    "09 51 00"
@@ -14193,6 +14541,16 @@ const DB = {
   ],
   "metal trims and accessories": [
    "09 78 29"
+  ],
+  "metal wall": [
+   "07 42 13-19",
+   "07 42 13",
+   "07 42 23"
+  ],
+  "metal wall cladding": [
+   "07 42 16",
+   "07 42 13",
+   "07 42 23"
   ],
   "metal wall panel": [
    "07 42 13"
@@ -14213,7 +14571,8 @@ const DB = {
    "09 67 23"
   ],
   "mgu": [
-   "08 81 13"
+   "08 81 13",
+   "08 81 00"
   ],
   "microblinds": [
    "12 21 13-00"
@@ -14244,6 +14603,9 @@ const DB = {
   ],
   "mineral fibre thermal insulation": [
    "07 21 16"
+  ],
+  "mineral wool": [
+   "07 21 13"
   ],
   "miniblinds": [
    "12 21 13-00"
@@ -14295,6 +14657,9 @@ const DB = {
   ],
   "mitered joint compound": [
    "07 24 41"
+  ],
+  "mj": [
+   "07 95 00"
   ],
   "mobile cabinets": [
    "12 35 53-26"
@@ -14355,6 +14720,9 @@ const DB = {
   ],
   "monolithic expansion joint": [
    "07 92 00"
+  ],
+  "monolithic glass unit": [
+   "08 81 00"
   ],
   "monumental solid core doors": [
    "08 14 33-13"
@@ -14447,7 +14815,8 @@ const DB = {
   "movement joint": [
    "04 05 23",
    "07 92 00",
-   "07 95 13"
+   "07 95 13",
+   "07 95 00"
   ],
   "movement joint filler": [
    "04 05 23"
@@ -14480,6 +14849,9 @@ const DB = {
   ],
   "muntin bars": [
    "08 81 00"
+  ],
+  "mw": [
+   "06 40 00"
   ],
   "nail laminated timber": [
    "06 17 26"
@@ -14773,8 +15145,15 @@ const DB = {
    "09 51 00",
    "10 22 39"
   ],
+  "panel ceiling": [
+   "09 51 00"
+  ],
   "panel fastenings": [
    "07 42 13"
+  ],
+  "panel partition": [
+   "10 22 39",
+   "10 22 39.13"
   ],
   "panel sections": [
    "11 41 23"
@@ -14925,6 +15304,13 @@ const DB = {
   "perforated acoustical panels": [
    "09 58 00"
   ],
+  "perforated metal": [
+   "07 42 15",
+   "07 42 13"
+  ],
+  "perforated metal panel": [
+   "07 42 15"
+  ],
   "perforated metal panels": [
    "07 42 15"
   ],
@@ -14961,6 +15347,9 @@ const DB = {
   ],
   "period wood": [
    "06 03 00"
+  ],
+  "permeable membrane": [
+   "07 27 16"
   ],
   "pesticide chemical treatments": [
    "06 03 00"
@@ -15047,6 +15436,9 @@ const DB = {
   "pivoting base": [
    "10 75 00"
   ],
+  "plam": [
+   "06 40 00"
+  ],
   "plant materials": [
    "07 55 63"
   ],
@@ -15061,6 +15453,10 @@ const DB = {
   ],
   "plastic": [
    "08 14 00"
+  ],
+  "plastic laminate": [
+   "08 14 00",
+   "06 40 00"
   ],
   "plastic laminate countertops": [
    "12 35 30"
@@ -15110,6 +15506,12 @@ const DB = {
   "plumbing access door": [
    "14 91 82"
   ],
+  "ply": [
+   "06 10 53"
+  ],
+  "plywood": [
+   "06 10 53"
+  ],
   "plywood backing": [
    "09 28 11"
   ],
@@ -15125,6 +15527,9 @@ const DB = {
    "03 11 13",
    "03 11 16",
    "03 11 43"
+  ],
+  "plywood sheathing": [
+   "06 16 43"
   ],
   "plywood signboards": [
    "10 14 54"
@@ -15233,6 +15638,9 @@ const DB = {
   "positioning system": [
    "14 21 23-16"
   ],
+  "post installed": [
+   "05 05 23"
+  ],
   "post installed anchors": [
    "03 05 34",
    "04 01 42",
@@ -15329,6 +15737,12 @@ const DB = {
   "precast": [
    "03 45 00"
   ],
+  "precast architectural": [
+   "03 45 00"
+  ],
+  "precast architectural concrete": [
+   "03 45 00"
+  ],
   "precast blocks": [
    "03 22 00"
   ],
@@ -15390,6 +15804,9 @@ const DB = {
   "prefinished j trim": [
    "07 92 00"
   ],
+  "prefinished metal flashing": [
+   "07 62 00"
+  ],
   "prefinished rainwater leader": [
    "07 92 00"
   ],
@@ -15430,6 +15847,9 @@ const DB = {
   ],
   "preservative treated wood": [
    "06 05 73"
+  ],
+  "pressed steel": [
+   "08 11 13"
   ],
   "pressed steel metal frames": [
    "08 11 13-16"
@@ -15545,6 +15965,12 @@ const DB = {
   "protective undercoat": [
    "06 18 00"
   ],
+  "protective wall covering": [
+   "10 26 26"
+  ],
+  "protective wall panel": [
+   "10 26 26"
+  ],
   "ps": [
    "08 11 13"
   ],
@@ -15619,6 +16045,9 @@ const DB = {
   "radiation protection wood doors": [
    "08 14 00"
   ],
+  "radiation shielding": [
+   "08 34 49"
+  ],
   "radiation shielding glass x ray barriers": [
    "13 49 00"
   ],
@@ -15654,8 +16083,14 @@ const DB = {
   "rapid teller railing": [
    "10 80 00"
   ],
+  "rb": [
+   "09 65 13"
+  ],
   "rear projection screen": [
    "11 52 13"
+  ],
+  "rebar": [
+   "03 20 00"
   ],
   "recessed channel mount system": [
    "06 60 00"
@@ -15726,6 +16161,9 @@ const DB = {
    "07 27 26",
    "07 27 26-16"
   ],
+  "reinforcing bar": [
+   "03 20 00"
+  ],
   "reinforcing bar positioners": [
    "04 05 19"
   ],
@@ -15738,6 +16176,9 @@ const DB = {
   "reinforcing mesh": [
    "07 24 19",
    "07 24 41"
+  ],
+  "reinforcing steel": [
+   "03 20 00"
   ],
   "reinforcing steel bars": [
    "03 15 23",
@@ -15793,6 +16234,9 @@ const DB = {
   ],
   "resilient base": [
    "09 65 13"
+  ],
+  "resilient flooring": [
+   "09 65 00"
   ],
   "resilient flooring primer": [
    "03 54 13"
@@ -15850,7 +16294,8 @@ const DB = {
    "03 11 43-13"
   ],
   "rigid insulation": [
-   "07 14 13"
+   "07 14 13",
+   "07 21 13"
   ],
   "rigid insulation board": [
    "03 11 13",
@@ -15867,6 +16312,9 @@ const DB = {
   ],
   "rim boards": [
    "06 17 00"
+  ],
+  "rising partition": [
+   "10 22 26-16"
   ],
   "rod support system": [
    "06 60 00"
@@ -15887,6 +16335,9 @@ const DB = {
   "rolled w sections": [
    "05 12 00"
   ],
+  "roller blind": [
+   "12 24 13"
+  ],
   "roller chains": [
    "08 72 13"
   ],
@@ -15897,6 +16348,12 @@ const DB = {
    "12 24 13"
   ],
   "roller shades": [
+   "12 24 13"
+  ],
+  "roller window": [
+   "12 24 13"
+  ],
+  "roller window shade": [
    "12 24 13"
   ],
   "roller window shades": [
@@ -16035,12 +16492,18 @@ const DB = {
   "rowlock course": [
    "04 22 13"
   ],
+  "rs": [
+   "12 24 13"
+  ],
   "rub rails": [
    "10 26 23-13",
    "11 41 23"
   ],
   "rubber accessories": [
    "09 65 16-19"
+  ],
+  "rubber base": [
+   "09 65 13"
   ],
   "rubber cushion": [
    "09 68 16"
@@ -16075,6 +16538,12 @@ const DB = {
   ],
   "rubber wall base": [
    "09 65 16-19"
+  ],
+  "rug": [
+   "12 48 53"
+  ],
+  "rugs": [
+   "12 48 53"
   ],
   "rundle stone veneer": [
    "04 43 13-13"
@@ -16198,6 +16667,9 @@ const DB = {
   "scrims": [
    "11 61 43"
   ],
+  "scw": [
+   "08 14 00"
+  ],
   "seal joint at sill": [
    "07 92 00"
   ],
@@ -16205,6 +16677,12 @@ const DB = {
    "07 92 00"
   ],
   "sealant": [
+   "07 92 00"
+  ],
+  "sealant and backer": [
+   "07 92 00"
+  ],
+  "sealant joint": [
    "07 92 00"
   ],
   "sealant pockets": [
@@ -16219,6 +16697,9 @@ const DB = {
   "sealants for insulating glass units": [
    "08 81 00",
    "08 88 36-13"
+  ],
+  "sealed concrete": [
+   "03 35 00"
   ],
   "sealed glass units": [
    "08 44 13"
@@ -16308,6 +16789,9 @@ const DB = {
    "07 25 13",
    "07 27 16"
   ],
+  "self adhered membrane": [
+   "07 25 13"
+  ],
   "self adhering fire seal": [
    "07 52 13",
    "07 52 16",
@@ -16349,6 +16833,12 @@ const DB = {
   ],
   "selflevelling and smoothing underlayment": [
    "03 01 30-71"
+  ],
+  "semi rigid": [
+   "07 21 13"
+  ],
+  "semi rigid insulation": [
+   "07 21 13"
   ],
   "semi rigid pvc": [
    "10 26 23-13"
@@ -16434,8 +16924,16 @@ const DB = {
    "07 18 16-00",
    "09 24 23"
   ],
+  "sheet flooring": [
+   "09 65 16",
+   "09 65 23",
+   "09 65 36"
+  ],
   "sheet linoleum flooring": [
    "09 65 00"
+  ],
+  "sheet metal": [
+   "07 62 00"
   ],
   "sheet metal deck accessories": [
    "05 31 00"
@@ -16499,6 +16997,12 @@ const DB = {
   ],
   "shop applied coatings": [
    "05 05 13"
+  ],
+  "shop fabricated": [
+   "06 40 00"
+  ],
+  "shop fabricated architectural": [
+   "06 40 00"
   ],
   "shop primer": [
    "05 05 19"
@@ -16899,6 +17403,9 @@ const DB = {
   "solid core doors": [
    "08 14 00"
   ],
+  "solid core wood door": [
+   "08 14 00"
+  ],
   "solid glass block": [
    "04 23 00"
   ],
@@ -16930,8 +17437,14 @@ const DB = {
   "solid surface": [
    "06 61 16"
   ],
+  "solid surface material": [
+   "06 61 16"
+  ],
   "solid surface sill": [
    "09 29 13"
+  ],
+  "solid surfacing": [
+   "06 61 16"
   ],
   "solid surfacing material": [
    "06 61 16"
@@ -16999,6 +17512,9 @@ const DB = {
   ],
   "specimen pass through cabinet": [
    "10 28 13"
+  ],
+  "speed coiling": [
+   "08 33 39"
   ],
   "speed control unit": [
    "08 42 33"
@@ -17077,6 +17593,9 @@ const DB = {
   ],
   "sprockets": [
    "08 72 13"
+  ],
+  "ssm": [
+   "06 61 16"
   ],
   "stackable flood barriers": [
    "08 39 19"
@@ -17196,10 +17715,14 @@ const DB = {
    "09 61 13-13",
    "03 15 21"
   ],
+  "stair landing": [
+   "09 61 13-13"
+  ],
   "stair nosing": [
    "09 65 00",
    "09 65 13",
-   "09 61 13-13"
+   "09 61 13-13",
+   "03 15 21"
   ],
   "stair nosings": [
    "09 30 00",
@@ -17242,6 +17765,9 @@ const DB = {
   "standing and running trim": [
    "06 20 23"
   ],
+  "standing seam": [
+   "07 41 13-13"
+  ],
   "staples": [
    "07 21 16",
    "07 26 00"
@@ -17253,6 +17779,9 @@ const DB = {
    "09 65 36"
   ],
   "static control solid vinyl tile": [
+   "09 65 36"
+  ],
+  "static dissipative": [
    "09 65 36"
   ],
   "stationary players bench": [
@@ -17278,8 +17807,14 @@ const DB = {
   "steel anchor channels": [
    "05 05 31"
   ],
+  "steel angle": [
+   "05 50 00"
+  ],
   "steel bearing plates": [
    "05 05 00"
+  ],
+  "steel channel": [
+   "05 50 00"
   ],
   "steel connection materials": [
    "03 41 36"
@@ -17292,6 +17827,10 @@ const DB = {
   ],
   "steel deck materials": [
    "05 05 00"
+  ],
+  "steel door": [
+   "08 11 13",
+   "08 36 13-13"
   ],
   "steel door frames": [
    "08 11 13",
@@ -17355,6 +17894,9 @@ const DB = {
   "steel pipes": [
    "03 45 19"
   ],
+  "steel plate": [
+   "05 50 00"
+  ],
   "steel plates": [
    "05 36 13",
    "05 50 43"
@@ -17372,19 +17914,24 @@ const DB = {
    "05 51 00"
   ],
   "steel stud": [
-   "09 22 16"
+   "09 22 16",
+   "05 41 13"
   ],
   "steel stud box header": [
    "09 29 13"
   ],
   "steel stud framing": [
-   "09 22 16"
+   "09 22 16",
+   "05 41 13"
   ],
   "steel stud wall framing systems": [
    "05 41 16"
   ],
   "steel track": [
    "11 61 43"
+  ],
+  "steel tube": [
+   "05 12 00"
   ],
   "steel tubing": [
    "05 50 00"
@@ -17434,6 +17981,9 @@ const DB = {
   ],
   "stone ballast": [
    "07 55 63"
+  ],
+  "stone cladding": [
+   "04 42 00"
   ],
   "stone countertops": [
    "12 36 40"
@@ -17603,7 +18153,8 @@ const DB = {
    "05 12 33",
    "05 95 43",
    "08 34 16",
-   "05 10 00"
+   "05 10 00",
+   "05 12 00"
   ],
   "structural steel connectors and anchors": [
    "06 13 23-00",
@@ -17648,7 +18199,8 @@ const DB = {
    "06 03 00"
   ],
   "stud framing": [
-   "09 22 16"
+   "09 22 16",
+   "05 41 13"
   ],
   "styrene butadiene rubber waterstops": [
    "03 15 13"
@@ -17947,6 +18499,9 @@ const DB = {
   "textured formwork inlay": [
    "03 11 16"
   ],
+  "theatre seating": [
+   "12 61 13"
+  ],
   "thermal break": [
    "08 44 26-23-13"
   ],
@@ -18064,6 +18619,9 @@ const DB = {
    "07 25 13",
    "07 27 26"
   ],
+  "through window": [
+   "08 56 19"
+  ],
   "ticking": [
    "06 20 23",
    "06 40 00"
@@ -18109,6 +18667,9 @@ const DB = {
    "09 30 00"
   ],
   "tile expansion joint": [
+   "09 30 00"
+  ],
+  "tile flooring": [
    "09 30 00"
   ],
   "tile grout": [
@@ -18241,6 +18802,9 @@ const DB = {
   ],
   "traffic bearing waterproofing membrane": [
    "07 18 16-23"
+  ],
+  "traffic coating": [
+   "07 18 16-00"
   ],
   "traffic controllers": [
    "11 12 00"
@@ -18469,6 +19033,12 @@ const DB = {
    "03 35 11",
    "03 31 00"
   ],
+  "underslab vapour": [
+   "03 15 19"
+  ],
+  "underslab vapour barrier": [
+   "03 15 19"
+  ],
   "underslab vapour barriers": [
    "03 15 19"
   ],
@@ -18523,6 +19093,10 @@ const DB = {
   "vanity cabinets": [
    "12 35 30"
   ],
+  "vapour barrier": [
+   "07 25 19",
+   "03 15 19"
+  ],
   "vapour barrier continuity strip": [
    "07 52 13",
    "07 52 16",
@@ -18534,7 +19108,14 @@ const DB = {
    "09 68 16"
   ],
   "vapour membrane": [
-   "07 08 13"
+   "07 08 13",
+   "07 25 13"
+  ],
+  "vapour permeable": [
+   "07 27 16"
+  ],
+  "vapour permeable membrane": [
+   "07 27 16"
   ],
   "vapour proof lighting fixtures": [
    "13 21 26"
@@ -18551,7 +19132,10 @@ const DB = {
    "07 53 00",
    "09 64 53",
    "09 64 66",
-   "13 42 33"
+   "13 42 33",
+   "07 05 10",
+   "07 26 00",
+   "07 25 13"
   ],
   "vapour retarder continuity strip": [
    "07 51 00",
@@ -18589,6 +19173,9 @@ const DB = {
   ],
   "vehicle restraint device": [
    "11 13 00"
+  ],
+  "vehicular traffic": [
+   "07 18 16-00"
   ],
   "vehicular traffic coating": [
    "07 18 16-00"
@@ -18681,8 +19268,15 @@ const DB = {
   "vertical wheelchair platform lift": [
    "14 42 00"
   ],
+  "vertically rising": [
+   "10 22 26-16"
+  ],
   "vertically rising partition": [
-   "10 28 13"
+   "10 28 13",
+   "10 22 26-16"
+  ],
+  "vibration control": [
+   "13 48 13"
   ],
   "vinyl characters": [
    "10 14 13-16"
@@ -18707,10 +19301,12 @@ const DB = {
    "10 14 13-13"
   ],
   "vinyl sheet": [
-   "09 65 16"
+   "09 65 16",
+   "09 65 36"
   ],
   "vinyl sheet flooring": [
-   "09 65 16"
+   "09 65 16",
+   "09 65 36"
   ],
   "vinyl siding": [
    "07 46 33"
@@ -18761,6 +19357,9 @@ const DB = {
   "walk in freezer": [
    "13 21 26"
   ],
+  "walk off mat": [
+   "12 48 13-26"
+  ],
   "walkin laboratory fume hoods": [
    "11 53 13"
   ],
@@ -18780,6 +19379,9 @@ const DB = {
   "wall attachment clip": [
    "09 53 13"
   ],
+  "wall base": [
+   "09 65 13"
+  ],
   "wall base mouldings": [
    "05 70 00"
   ],
@@ -18789,11 +19391,24 @@ const DB = {
   "wall cabinets": [
    "12 35 53-26"
   ],
+  "wall cladding": [
+   "07 42 13",
+   "07 42 23"
+  ],
   "wall cladding backup": [
    "07 42 13-19"
   ],
   "wall cladding system": [
    "07 46 00"
+  ],
+  "wall covering": [
+   "09 72 00",
+   "10 26 26",
+   "09 72 16",
+   "10 26 23-13"
+  ],
+  "wall covering protection": [
+   "10 26 26"
   ],
   "wall finish": [
    "09 06 00-13"
@@ -18824,6 +19439,9 @@ const DB = {
   ],
   "wall padding": [
    "11 66 23"
+  ],
+  "wall panel": [
+   "07 42 13-19"
   ],
   "wall paper": [
    "09 72 00"
@@ -19078,11 +19696,17 @@ const DB = {
   "window screen perforated panels": [
    "10 80 00"
   ],
+  "window shade": [
+   "12 24 13"
+  ],
   "window sill solid surface": [
    "06 10 53"
   ],
   "window sill wood mdf painted": [
    "06 10 53"
+  ],
+  "window wall": [
+   "08 44 39"
   ],
   "window wall assemblies": [
    "08 44 39"
@@ -19108,6 +19732,9 @@ const DB = {
    "08 14 00",
    "06 05 73"
   ],
+  "wood blocking": [
+   "06 10 53"
+  ],
   "wood blocking as required": [
    "06 10 53"
   ],
@@ -19124,6 +19751,10 @@ const DB = {
   "wood countertops": [
    "12 35 30",
    "12 36 19"
+  ],
+  "wood door": [
+   "08 14 00",
+   "08 14 16"
   ],
   "wood faced kitchen cabinets": [
    "12 35 30"
@@ -19151,6 +19782,9 @@ const DB = {
   ],
   "wood nailers and cant strips": [
    "07 31 26"
+  ],
+  "wood paneling": [
+   "06 40 00"
   ],
   "wood rails": [
    "06 20 23"
@@ -19183,11 +19817,18 @@ const DB = {
   "wood stairs": [
    "06 20 23"
   ],
+  "wood strip": [
+   "09 64 29"
+  ],
   "wood stud": [
    "06 10 53"
   ],
   "wood stud framing": [
    "06 10 53"
+  ],
+  "wood veneer": [
+   "08 14 00",
+   "06 40 00"
   ],
   "wood veneer faced wood doors": [
    "08 14 00"
@@ -19219,6 +19860,9 @@ const DB = {
   ],
   "woven glass fibre wall covering": [
    "09 72 00"
+  ],
+  "wp": [
+   "07 13 52"
   ],
   "wrap roofing membrane into metal scupper": [
    "07 92 00"
@@ -19375,6 +20019,12 @@ const DB = {
   "03 10 00": [
    "concrete forming and accessories"
   ],
+  "03 11 00": [
+   "concrete forming",
+   "concrete formwork",
+   "form work",
+   "formwork"
+  ],
   "03 11 13": [
    "applied waterstop",
    "bearings",
@@ -19462,14 +20112,19 @@ const DB = {
    "waterstop"
   ],
   "03 15 19": [
-   "underslab vapour barriers"
+   "underslab vapour",
+   "underslab vapour barrier",
+   "underslab vapour barriers",
+   "vapour barrier"
   ],
   "03 15 20": [
    "isolation slab spring jack up system"
   ],
   "03 15 21": [
    "cast in concrete stair nosings",
-   "stair"
+   "concrete stair",
+   "stair",
+   "stair nosing"
   ],
   "03 15 23": [
    "compression components",
@@ -19488,7 +20143,14 @@ const DB = {
    "suction pit",
    "vacuum monitoring points"
   ],
+  "03 20 00": [
+   "concrete reinforcement",
+   "rebar",
+   "reinforcing bar",
+   "reinforcing steel"
+  ],
   "03 20 13": [
+   "above grade",
    "above grade concrete reinforcement"
   ],
   "03 20 43": [
@@ -19531,6 +20193,7 @@ const DB = {
    "cast in place concrete"
   ],
   "03 30 13": [
+   "above grade",
    "above grade cast in place concrete"
   ],
   "03 30 53": [
@@ -19634,9 +20297,12 @@ const DB = {
    "reinforced"
   ],
   "03 33 00": [
+   "architecturally exposed",
+   "architecturally exposed concrete",
    "bonding agent",
    "chamfer strips",
    "epoxy bonding adhesive",
+   "exposed concrete",
    "form joint sealant",
    "form joint tape",
    "form release agent",
@@ -19653,11 +20319,14 @@ const DB = {
   ],
   "03 35 00": [
    "concrete",
-   "finishing"
+   "concrete topping",
+   "finishing",
+   "sealed concrete"
   ],
   "03 35 11": [
    "armoured construction joints",
    "basaltic dry shake floor hardener",
+   "concrete floor",
    "concrete formwork",
    "concrete maturity sensors",
    "construction joint reinforcement",
@@ -19717,6 +20386,7 @@ const DB = {
   "03 35 41": [
    "acid staining",
    "concrete densifier and chemical hardener",
+   "concrete floor",
    "floor",
    "saw cut joint filler",
    "stain blocker"
@@ -19724,6 +20394,7 @@ const DB = {
   "03 35 43": [
    "concrete densifier and chemical hardener",
    "concrete dye",
+   "concrete flooring",
    "decorative floor treatments",
    "dry shake hardeners",
    "hard flooring protection",
@@ -19738,6 +20409,7 @@ const DB = {
   ],
   "03 35 45": [
    "active crack compounds",
+   "concrete floor",
    "concrete overlayment",
    "dormant crack compounds",
    "high flow concrete correction compounds",
@@ -19746,6 +20418,12 @@ const DB = {
    "saw cut contraction joint sealants",
    "self levelling underlayment",
    "temporary concrete protection"
+  ],
+  "03 35 50": [
+   "concrete sealer",
+   "concrete sealers",
+   "densifier",
+   "floor sealer"
   ],
   "03 37 13": [
    "aggregate",
@@ -19872,6 +20550,7 @@ const DB = {
    "air entrainment admixture",
    "antigraffiti treatment",
    "architectural",
+   "architectural concrete",
    "cement",
    "chemical admixtures",
    "colouring agents",
@@ -19887,6 +20566,8 @@ const DB = {
    "plates hss pins",
    "pozzolanic mineral admixtures",
    "precast",
+   "precast architectural",
+   "precast architectural concrete",
    "sand cement grout",
    "supplementary cementing materials",
    "surface retardant",
@@ -20204,6 +20885,8 @@ const DB = {
    "z girts"
   ],
   "04 22 00": [
+   "cmu",
+   "concrete masonry unit",
    "concrete unit masonry",
    "unit"
   ],
@@ -20284,7 +20967,8 @@ const DB = {
    "ties and anchors"
   ],
   "04 42 00": [
-   "stone"
+   "stone",
+   "stone cladding"
   ],
   "04 43 13-00": [
    "air and vapour membranes",
@@ -20398,6 +21082,7 @@ const DB = {
    "adhesive anchor rod system",
    "adhesive reinforcing bar system",
    "heavy duty expansion anchor system",
+   "post installed",
    "post installed fasteners",
    "post installed structural anchors",
    "screw anchor system",
@@ -20437,8 +21122,12 @@ const DB = {
    "headed bolts",
    "headed shear stud connectors",
    "hollow structural sections",
+   "hollow structural steel",
+   "hss",
    "mechanical fasteners",
    "rolled w sections",
+   "steel tube",
+   "structural steel",
    "structural steel framing",
    "washers",
    "web stiffeners",
@@ -20539,12 +21228,16 @@ const DB = {
    "levelling grout",
    "lightweight structural steel framing",
    "lintels",
+   "load bearing",
    "loadbearing wall framing",
    "roof rafter framing",
    "roof trusses",
    "sill gaskets",
    "sills",
    "steel",
+   "steel stud",
+   "steel stud framing",
+   "stud framing",
    "thermal insulation",
    "top and bottom tracks",
    "web stiffeners"
@@ -20586,6 +21279,7 @@ const DB = {
    "3mm powder coated aluminum column sleeve",
    "aluminum snap cover to conceal fasteners",
    "architecturally exposed structural steel",
+   "bent plate",
    "bent steel plate",
    "bollards",
    "cluster of guard posts paint yellow",
@@ -20606,11 +21300,14 @@ const DB = {
    "rolled steel floor plate",
    "shelf angles",
    "slotted channel framing",
+   "steel angle",
+   "steel channel",
    "steel framing paint where exposed",
    "steel girders",
    "steel hss refer to structural",
    "steel loose lintel",
    "steel pipe",
+   "steel plate",
    "steel tubing",
    "stone anchor clip",
    "structural steel masonry lintel",
@@ -20668,6 +21365,7 @@ const DB = {
   "05 53 00": [
    "grating frames and supports",
    "metal bar gratings",
+   "metal grating",
    "post installed anchors",
    "pressure locked aluminum i bar grating",
    "pressure locked stainless steel grating",
@@ -20819,10 +21517,13 @@ const DB = {
    "framing connectors",
    "light framing",
    "miscellaneous framing",
+   "ply",
+   "plywood",
    "prefabricated metal anchoring systems",
    "rough hardware",
    "window sill solid surface",
    "window sill wood mdf painted",
+   "wood blocking",
    "wood blocking as required",
    "wood screws",
    "wood shim as required",
@@ -20863,7 +21564,8 @@ const DB = {
    "exterior grade gypsum sheathing panels",
    "glass mat gypsum substrate",
    "gypsum",
-   "gypsum sheathing"
+   "gypsum sheathing",
+   "plywood sheathing"
   ],
   "06 16 43-13": [
    "air and vapour membrane",
@@ -21029,6 +21731,7 @@ const DB = {
   ],
   "06 40 00": [
    "architectural",
+   "architectural woodwork",
    "brackets",
    "cabinet feet",
    "cabinet hardware",
@@ -21047,6 +21750,8 @@ const DB = {
    "door slides",
    "drawer slides",
    "fabric finished casework",
+   "fabricated architectural",
+   "fabricated architectural woodwork",
    "fastening devices",
    "fibre reinforced laminate panels",
    "furring",
@@ -21061,12 +21766,17 @@ const DB = {
    "medium density fibreboard",
    "millwork",
    "miscellaneous items",
+   "mw",
    "pegboard",
+   "plam",
+   "plastic laminate",
    "pre finished slotted display panelling",
    "pulls",
    "shelf rests",
    "shelving",
    "shims",
+   "shop fabricated",
+   "shop fabricated architectural",
    "softwood plywood",
    "solid surfacing material countertops",
    "stainless steel countertops",
@@ -21075,6 +21785,8 @@ const DB = {
    "tackable surfaces",
    "ticking",
    "wall standards",
+   "wood paneling",
+   "wood veneer",
    "wood veneer finished casework"
   ],
   "06 40 13": [
@@ -21103,8 +21815,11 @@ const DB = {
    "prefabricated sinks",
    "sink mounting hardware",
    "solid surface",
+   "solid surface material",
+   "solid surfacing",
    "solid surfacing material",
-   "solid surfacing sheet"
+   "solid surfacing sheet",
+   "ssm"
   ],
   "06 61 19": [
    "cleaning agents",
@@ -21115,7 +21830,9 @@ const DB = {
    "solvent"
   ],
   "06 62 00": [
-   "custom light box"
+   "custom light",
+   "custom light box",
+   "light box"
   ],
   "06 82 00": [
    "ceiling panels",
@@ -21144,7 +21861,10 @@ const DB = {
    "waterproofing mastic"
   ],
   "07 05 10": [
-   "common work results for air barrier and vapour retarder systems"
+   "air barrier",
+   "barrier vapour",
+   "common work results for air barrier and vapour retarder systems",
+   "vapour retarder"
   ],
   "07 05 11": [
    "air barrier",
@@ -21157,6 +21877,7 @@ const DB = {
    "thermally improved cladding support systems"
   ],
   "07 05 43": [
+   "cladding support",
    "closure protection",
    "separation strips",
    "steel girts",
@@ -21175,6 +21896,7 @@ const DB = {
   "07 08 11": [
    "air barriers",
    "building enclosure systems",
+   "construction quality",
    "vapour retarders"
   ],
   "07 08 13": [
@@ -21185,6 +21907,7 @@ const DB = {
    "vapour membrane"
   ],
   "07 08 15": [
+   "building envelope",
    "building envelope inspection and testing"
   ],
   "07 08 25": [
@@ -21199,6 +21922,7 @@ const DB = {
   "07 08 50": [
    "built up bituminous membrane roofing",
    "membrane",
+   "membrane roofing",
    "roofing",
    "roofing assemblies"
   ],
@@ -21224,7 +21948,8 @@ const DB = {
    "sheet",
    "termination and joint sealant",
    "torch applied waterproofing membrane",
-   "waterproofing"
+   "waterproofing",
+   "wp"
   ],
   "07 13 52-16": [
    "asphalt wear course",
@@ -21241,6 +21966,7 @@ const DB = {
    "sheet metal flashing"
   ],
   "07 14 13": [
+   "fluid applied",
    "horizontal protection board",
    "horizontal protection membrane",
    "mastic",
@@ -21252,8 +21978,10 @@ const DB = {
    "waterproofing"
   ],
   "07 14 16": [
+   "applied waterproofing",
    "below grade insulation",
    "drainage panels",
+   "fluid applied",
    "reinforcing strip",
    "sheet flashing"
   ],
@@ -21316,7 +22044,9 @@ const DB = {
    "sheet flashing",
    "sloping compounds",
    "top coat",
+   "traffic coating",
    "traffic topping",
+   "vehicular traffic",
    "vehicular traffic coating"
   ],
   "07 18 16-23": [
@@ -21331,6 +22061,7 @@ const DB = {
   ],
   "07 21 13": [
    "board",
+   "board insulation",
    "cavity wall eps board insulation",
    "cavity wall glass fibre board insulation",
    "cavity wall polyiso board insulation",
@@ -21340,11 +22071,16 @@ const DB = {
    "insulation clips",
    "load bearing xps board insulation",
    "mechanical fasteners",
+   "mineral wool",
    "rigid board insulation",
+   "rigid insulation",
+   "semi rigid",
+   "semi rigid insulation",
    "tape",
    "under slab xps board insulation"
   ],
   "07 21 16": [
+   "batt insulation",
    "eave ventilation",
    "fibrous blanket thermal insulation",
    "glass fibre thermal insulation",
@@ -21359,7 +22095,12 @@ const DB = {
    "spray applied polyurethane foam"
   ],
   "07 21 23": [
-   "below grade board insulation"
+   "below grade",
+   "below grade board",
+   "below grade board insulation",
+   "board insulation",
+   "grade board",
+   "grade board insulation"
   ],
   "07 21 26": [
    "attic baffles",
@@ -21382,10 +22123,13 @@ const DB = {
   "07 24 19": [
    "air water resistive barrier",
    "basecoat",
+   "exterior insulation",
+   "exterior insulation finish",
    "finish coat",
    "finish coat primer",
    "framing fasteners",
    "gap filling insulation",
+   "insulation finish",
    "joint tape",
    "masonry fasteners",
    "mechanical fasteners",
@@ -21404,32 +22148,46 @@ const DB = {
    "reinforcing mesh"
   ],
   "07 25 13": [
+   "air vapour",
+   "air vapour barrier",
+   "air vapour membrane",
    "avb",
    "opening transition membranes",
    "panel sheathing tape",
    "primers and undercoats",
    "roof to wall transition membranes",
    "self adhered air barrier membranes",
+   "self adhered membrane",
    "through wall flashing membrane",
    "through wall membranes",
+   "vapour membrane",
+   "vapour retarder",
    "waterproofing mastic"
   ],
   "07 25 19": [
    "air seal thermal barrier",
-   "spray applied polyurethane foam"
+   "air vapour",
+   "air vapour barrier",
+   "spray applied polyurethane foam",
+   "vapour barrier"
   ],
   "07 26 00": [
    "joint sealing tape",
    "moulded box vapour retarder",
    "polyethylene film",
-   "staples"
+   "staples",
+   "vapour retarder"
   ],
   "07 27 16": [
+   "air barrier",
    "opening transition membranes",
+   "permeable membrane",
    "primers and undercoats",
    "roof to wall transition membranes",
    "self adhered air barrier membranes",
    "through wall flashing membrane",
+   "vapour permeable",
+   "vapour permeable membrane",
    "waterproofing mastic"
   ],
   "07 27 23": [
@@ -21511,6 +22269,7 @@ const DB = {
    "pipe flashing",
    "slip sheet",
    "snow barriers",
+   "standing seam",
    "zinc galvanized sheet steel cladding"
   ],
   "07 41 13-19": [
@@ -21540,12 +22299,17 @@ const DB = {
    "insulation fastenings",
    "isolation tape",
    "metal cladding",
+   "metal soffit",
+   "metal wall",
+   "metal wall cladding",
    "metal wall panel",
    "panel fastenings",
+   "perforated metal",
    "sealing tape",
    "stiffeners",
    "vertical channels",
    "wall",
+   "wall cladding",
    "zinc cladding",
    "zinc galvanized sheet steel cladding",
    "zinc panels"
@@ -21574,21 +22338,37 @@ const DB = {
    "flashings enclosures and trims",
    "girts",
    "horizontal parapet joint counterflash",
+   "imp",
+   "insulated metal",
+   "insulated metal panel",
    "liquid sealants",
+   "metal wall",
    "preformed sealants",
    "sealing tape",
    "solder",
    "ventilation sheet",
    "wall cladding backup",
+   "wall panel",
    "washers",
    "zinc cladding",
    "zinc galvanized sheet steel"
   ],
   "07 42 15": [
+   "metal panel",
+   "perforated metal",
+   "perforated metal panel",
    "perforated metal panels"
   ],
+  "07 42 16": [
+   "metal cladding",
+   "metal wall cladding"
+  ],
   "07 42 23": [
-   "corrugated metal wall cladding"
+   "corrugated metal",
+   "corrugated metal wall cladding",
+   "metal wall",
+   "metal wall cladding",
+   "wall cladding"
   ],
   "07 42 29": [
    "clips",
@@ -21608,8 +22388,12 @@ const DB = {
    "transfer girts"
   ],
   "07 42 43": [
+   "acm panel",
    "air and vapour membrane",
+   "aluminum composite",
+   "aluminum composite panel",
    "composite",
+   "composite panel",
    "extrusions",
    "girts",
    "insulation fastenings",
@@ -21629,7 +22413,8 @@ const DB = {
    "air vapour membrane",
    "aluminum sub framing materials",
    "aluminum trim and accessory materials",
-   "corner trims"
+   "corner trims",
+   "fibre reinforced"
   ],
   "07 42 63": [
    "core material",
@@ -21644,6 +22429,7 @@ const DB = {
    "exposed trims",
    "fascia",
    "flashing and enclosures",
+   "metal soffit",
    "roof edge drip cap",
    "z bars"
   ],
@@ -21782,6 +22568,7 @@ const DB = {
    "glass mat faced roof boards",
    "gypsum board sheathing",
    "membrane",
+   "membrane roofing",
    "pipe supports",
    "plywood cover board and wood blocking",
    "primary flat insulation",
@@ -21796,7 +22583,8 @@ const DB = {
    "wood roof materials"
   ],
   "07 52 23": [
-   "cold adhesive applied modified bituminous membrane roofing"
+   "cold adhesive applied modified bituminous membrane roofing",
+   "membrane roofing"
   ],
   "07 52 26": [
    "asphalt",
@@ -21941,6 +22729,7 @@ const DB = {
   "07 62 00": [
    "aluminum zinc alloy coated steel sheet",
    "asphalt mastic",
+   "cap flashing",
    "counter flashing wind restraint clips",
    "dielectric separator",
    "elastomeric sealant",
@@ -21950,9 +22739,12 @@ const DB = {
    "gutter screen",
    "mastic sealant",
    "metal",
+   "metal flashing",
+   "prefinished metal flashing",
    "reglets",
    "roofing cement",
    "sheet",
+   "sheet metal",
    "slip sheet",
    "solder",
    "zinc flashings",
@@ -21967,6 +22759,7 @@ const DB = {
    "spray applied fireproofing"
   ],
   "07 81 23": [
+   "fire protection",
    "intumescent fire protection",
    "intumescent fireproofing"
   ],
@@ -21982,9 +22775,11 @@ const DB = {
    "25mm mineral wool insulation",
    "50mm mineral wool insulation",
    "75mm mineral wool insulation",
+   "acoustic sealant",
    "air and vapour membrane",
    "allow for movement",
    "asphalt impregnated fibreboard",
+   "backer rod",
    "below grade board insulation",
    "caulking",
    "cementitious fireproofing",
@@ -22027,6 +22822,8 @@ const DB = {
    "seal joint at sill",
    "seal leading membrane edge with sealant",
    "sealant",
+   "sealant and backer",
+   "sealant joint",
    "sealants",
    "sill flashing end dam beyond",
    "spray applied fireproofing",
@@ -22037,13 +22834,18 @@ const DB = {
   ],
   "07 92 13": [
    "interior",
-   "interior joint sealants"
+   "interior joint sealants",
+   "joint sealant"
   ],
   "07 95 00": [
    "control",
+   "ej",
    "expansion control",
+   "expansion joint",
    "expansion joint cover",
-   "fire resistive expansion joint"
+   "fire resistive expansion joint",
+   "mj",
+   "movement joint"
   ],
   "07 95 13": [
    "expansion control",
@@ -22087,6 +22889,7 @@ const DB = {
    "anti rotational channel",
    "borrowed light frames",
    "curtain wall anchor",
+   "door frame",
    "door jamb beyond",
    "door silencers",
    "doors",
@@ -22098,12 +22901,16 @@ const DB = {
    "glazing stops",
    "hm",
    "hmi",
+   "hollow metal",
+   "hollow metal door",
    "insulated back pan",
    "lead lined doors",
+   "metal door",
    "mullion beyond",
    "new rotunda flexible flashing",
    "new rotunda threshold",
    "passenger gate opening",
+   "pressed steel",
    "ps",
    "psi",
    "rotunda interior closeout",
@@ -22113,6 +22920,7 @@ const DB = {
    "skylight ridge rafter",
    "spray foam insulation",
    "steel",
+   "steel door",
    "steel door frames",
    "steel doors",
    "weatherstripping"
@@ -22142,6 +22950,7 @@ const DB = {
    "glass mouldings"
   ],
   "08 12 26": [
+   "concealed frame",
    "concealed frames"
   ],
   "08 14 00": [
@@ -22151,15 +22960,21 @@ const DB = {
    "lead lined wood doors",
    "particleboard door cores",
    "plastic",
+   "plastic laminate",
    "plastic laminate faced wood doors",
    "radiation protection wood doors",
+   "scw",
    "solid core doors",
+   "solid core wood door",
    "structural composite lumber",
    "wood",
+   "wood door",
+   "wood veneer",
    "wood veneer faced wood doors"
   ],
   "08 14 16": [
-   "flush wood doors"
+   "flush wood doors",
+   "wood door"
   ],
   "08 14 33-13": [
    "composite stile and rail wood doors",
@@ -22200,6 +23015,7 @@ const DB = {
    "access door",
    "access panel",
    "access panels",
+   "door panel",
    "doors",
    "fire rated ceiling access doors",
    "fire rated wall access doors",
@@ -22220,9 +23036,11 @@ const DB = {
   "08 33 23": [
    "automatic closing device",
    "bottom bar",
+   "coiling fire",
    "curtain jamb guides",
    "curtain slats",
    "end locks",
+   "fire door",
    "hood",
    "overhead coiling counter door",
    "overhead coiling counter fire shutter",
@@ -22261,10 +23079,13 @@ const DB = {
    "counterbalance and tensioning system",
    "electric door operators",
    "flexible door material",
+   "high speed",
+   "high speed coiling",
    "high speed coiling doors",
    "hood",
    "overhead rapid coiling doors",
    "side guide frames",
+   "speed coiling",
    "warning horn and light",
    "windbar channel"
   ],
@@ -22280,10 +23101,12 @@ const DB = {
    "weatherstripping"
   ],
   "08 34 49": [
+   "door frame",
    "lead lined door frames",
    "lead lined hollow metal doors",
    "lead lined wood doors",
    "neutron shielded doors and frames",
+   "radiation shielding",
    "radiation shielding x ray safety glass"
   ],
   "08 34 56": [
@@ -22317,6 +23140,7 @@ const DB = {
    "sectional overhead doors",
    "slide bolt",
    "spring bumper",
+   "steel door",
    "steel door sections",
    "tracks",
    "weather seals"
@@ -22460,10 +23284,13 @@ const DB = {
   ],
   "08 44 13": [
    "aluminum",
+   "aluminum curtain",
+   "aluminum curtain wall",
    "aluminum curtain wall system",
    "back pan",
    "curtain wall",
    "cw",
+   "glazed aluminum",
    "glazing gaskets",
    "insulated spandrel panels",
    "light shelves",
@@ -22523,6 +23350,7 @@ const DB = {
    "spandrel glass inserts",
    "transition membranes",
    "window",
+   "window wall",
    "window wall assemblies"
   ],
   "08 45 23": [
@@ -22582,6 +23410,7 @@ const DB = {
    "hood",
    "horizontal sliding windows",
    "locking system",
+   "through window",
    "vertical sliding windows"
   ],
   "08 62 23": [
@@ -22634,6 +23463,7 @@ const DB = {
    "automatic swing door operators",
    "cylinders",
    "door",
+   "door hardware",
    "electrified door hardware",
    "folding doors",
    "hardware",
@@ -22647,7 +23477,10 @@ const DB = {
    "swinging doors"
   ],
   "08 71 10": [
-   "door hardware schedule"
+   "door hardware",
+   "door hardware group",
+   "door hardware schedule",
+   "hardware group"
   ],
   "08 72 13": [
    "bearings",
@@ -22679,7 +23512,11 @@ const DB = {
    "glass tempered safety",
    "glass tinted annealed float",
    "glazing sealants",
+   "igu",
+   "insulated glass unit",
    "laminating film",
+   "mgu",
+   "monolithic glass unit",
    "muntin bars",
    "sealants for insulating glass units",
    "spacer separator",
@@ -22713,6 +23550,7 @@ const DB = {
   ],
   "08 87 00": [
    "glazing films",
+   "glazing surface",
    "opaque glazing film",
    "security film",
    "translucent glazing film"
@@ -22724,6 +23562,7 @@ const DB = {
   "08 88 13": [
    "fire rated frames",
    "fire rated glass",
+   "fire resistant",
    "glass annealed float",
    "glass ceramic",
    "glass laminated safety",
@@ -22849,11 +23688,14 @@ const DB = {
   ],
   "09 21 16-23": [
    "board",
+   "board shaft",
    "commercial steel framing",
    "control joint",
    "expansion joint",
    "gypsum",
+   "gypsum board",
    "gypsum board facer panels",
+   "gypsum board shaft",
    "gypsum control joint",
    "gypsum expansion joint",
    "gypsum shaft liner panels",
@@ -22862,6 +23704,7 @@ const DB = {
    "wall"
   ],
   "09 22 00": [
+   "gypsum board",
    "gypsum board accessories"
   ],
   "09 22 16": [
@@ -22894,9 +23737,13 @@ const DB = {
    "slotted deflection tracks"
   ],
   "09 22 26-13": [
+   "board ceiling",
+   "ceiling suspension",
    "cross tees",
    "framing angles",
    "furring channels",
+   "gypsum board",
+   "gypsum board ceiling",
    "main beams",
    "profiled edge mouldings and trim",
    "seismic bracing for partition framing",
@@ -22972,7 +23819,11 @@ const DB = {
    "continue flooring under base",
    "fire resistant gypsum board",
    "flexible gypsum board panels",
+   "gb",
    "gwb",
+   "gyp",
+   "gypsum board",
+   "gypsum wall board",
    "impact resistant gypsum board",
    "j bead",
    "regular gypsum board",
@@ -22988,6 +23839,7 @@ const DB = {
   ],
   "09 30 00": [
    "ceramic mosaic tile",
+   "ceramic tile",
    "control joint strips",
    "cove base trims",
    "crack suppression membranes",
@@ -23003,6 +23855,7 @@ const DB = {
    "tile",
    "tile control joint",
    "tile expansion joint",
+   "tile flooring",
    "tiling",
    "transition edge strips",
    "uncoupling membranes",
@@ -23054,13 +23907,17 @@ const DB = {
   ],
   "09 51 00": [
    "acoustic ceiling",
+   "acoustic ceiling tile",
+   "acoustic panel",
    "acoustic panels",
    "acoustic sound batts",
+   "acp",
    "act",
    "edge mouldings and trim",
    "luminous ceiling",
    "metal suspension system",
    "panel",
+   "panel ceiling",
    "parabolic cell louver",
    "valance lens",
    "white cell egg crate louver"
@@ -23079,6 +23936,8 @@ const DB = {
    "specialty ceiling"
   ],
   "09 54 13": [
+   "metal ceiling",
+   "metal mesh",
    "open metal mesh ceilings",
    "specialty metal ceilings"
   ],
@@ -23115,6 +23974,7 @@ const DB = {
    "slip resistant",
    "slip resistant tapes",
    "stair",
+   "stair landing",
    "stair nosing",
    "tactile studs",
    "tactile tile inlay"
@@ -23131,6 +23991,7 @@ const DB = {
    "engineered wood plank",
    "floor finish system",
    "transition strips",
+   "wood strip",
    "wood wall base"
   ],
   "09 64 53": [
@@ -23168,6 +24029,7 @@ const DB = {
    "movement joint strips",
    "prefabricated integral cove base",
    "resilient",
+   "resilient flooring",
    "resilient wall base",
    "rubber tile",
    "safety flooring",
@@ -23186,16 +24048,20 @@ const DB = {
    "metal base cap",
    "movement joint strips",
    "prefabricated integral cove base",
+   "rb",
    "resilient",
    "resilient base",
+   "rubber base",
    "stair nosing",
    "stair tread",
    "stair tread nosings",
    "transition leveller",
-   "transition strip"
+   "transition strip",
+   "wall base"
   ],
   "09 65 16": [
    "resilient sheet",
+   "sheet flooring",
    "sheet vinyl",
    "vinyl sheet",
    "vinyl sheet flooring"
@@ -23212,13 +24078,18 @@ const DB = {
   ],
   "09 65 23": [
    "rubber sheet",
-   "rubber sheet flooring"
+   "rubber sheet flooring",
+   "sheet flooring"
   ],
   "09 65 36": [
    "copper grounding straps",
+   "sheet flooring",
    "stainless steel thresholds",
    "static control solid vinyl sheet",
-   "static control solid vinyl tile"
+   "static control solid vinyl tile",
+   "static dissipative",
+   "vinyl sheet",
+   "vinyl sheet flooring"
   ],
   "09 65 66": [
    "aluminum thresholds",
@@ -23260,6 +24131,7 @@ const DB = {
   "09 68 13": [
    "carpet",
    "carpet tile",
+   "cpt",
    "furniture system lifts",
    "seaming cement",
    "tile carpeting",
@@ -23295,6 +24167,7 @@ const DB = {
    "substrate primer sealer",
    "textile wall covering",
    "vinyl wall covering",
+   "wall covering",
    "wall paper",
    "woven glass fibre wall covering"
   ],
@@ -23308,6 +24181,7 @@ const DB = {
    "patterned dry erase wall covering",
    "substrate primer sealer",
    "tackable wall coverings",
+   "wall covering",
    "white dry erase wall coverings"
   ],
   "09 72 16-16": [
@@ -23349,10 +24223,13 @@ const DB = {
   ],
   "09 81 29": [
    "acoustic",
+   "acoustic insulation",
    "spray applied materials"
   ],
   "09 84 00": [
    "acoustic",
+   "acoustic wall panel",
+   "awp",
    "facing material",
    "glass fiber board",
    "mineral fiber board",
@@ -23590,16 +24467,22 @@ const DB = {
    "folding mechanism",
    "lifting equipment",
    "partition",
+   "rising partition",
    "safety equipment",
-   "vertical folding configuration"
+   "vertical folding configuration",
+   "vertically rising",
+   "vertically rising partition"
   ],
   "10 22 39": [
    "carpet covered panels",
    "electrically operated folding partitions",
    "fixed sound seals",
+   "folding panel",
+   "folding panel partition",
    "folding panel partition system",
    "manually operated folding partitions",
    "panel",
+   "panel partition",
    "pass doors",
    "storage pocket door",
    "suspension track",
@@ -23613,12 +24496,14 @@ const DB = {
    "insulating glass units",
    "laminated glass",
    "manually operated glass panel partitions",
+   "panel partition",
    "patterned glass",
    "tempered glass",
    "tempered patterned glass",
    "woodframed glass panel partition"
   ],
   "10 22 40": [
+   "aluminum framed",
    "aluminum framed glass partitions"
   ],
   "10 22 43.13": [
@@ -23629,6 +24514,7 @@ const DB = {
    "all glass partitions"
   ],
   "10 26 13": [
+   "cg",
    "corner guard",
    "corner guards"
   ],
@@ -23643,8 +24529,15 @@ const DB = {
    "rub rails",
    "semi rigid pvc",
    "stainless steel wall bases",
+   "wall covering",
    "wall guards",
    "wall protection"
+  ],
+  "10 26 26": [
+   "protective wall covering",
+   "protective wall panel",
+   "wall covering",
+   "wall covering protection"
   ],
   "10 28 13": [
    "accessories",
@@ -23704,6 +24597,7 @@ const DB = {
    "double tier locker",
    "locker benches",
    "lockers",
+   "metal locker",
    "metal lockers",
    "open front athletic metal lockers",
    "single full height locker",
@@ -23797,6 +24691,9 @@ const DB = {
    "convex awning",
    "dome awning",
    "exterior fabric awnings",
+   "exterior fixed",
+   "exterior fixed awning",
+   "fixed awning",
    "gable roof entrance canopy",
    "hip roof entrance canopy",
    "rounded entrance canopy",
@@ -23883,11 +24780,13 @@ const DB = {
   ],
   "11 13 00": [
    "dock bumpers",
+   "dock equipment",
    "dock leveller",
    "dock loading lights",
    "dock safety barrier",
    "dock seal",
    "equipment",
+   "loading dock",
    "loading dock equipment",
    "recessed dock leveller",
    "scissors lift",
@@ -24198,12 +25097,17 @@ const DB = {
    "manual crank operators",
    "motorized roller window shades",
    "motorized shade operators",
+   "roller blind",
    "roller shade",
    "roller shades",
+   "roller window",
+   "roller window shade",
    "roller window shades",
+   "rs",
    "shade fabric",
    "skylight roller shades",
-   "window"
+   "window",
+   "window shade"
   ],
   "12 35 30": [
    "kitchen cabinets",
@@ -24287,7 +25191,8 @@ const DB = {
    "recessed frames",
    "scraper mat",
    "surface mounted frames",
-   "three stage entrance floor mats"
+   "three stage entrance floor mats",
+   "walk off mat"
   ],
   "12 48 16": [
    "drain pans",
@@ -24299,6 +25204,11 @@ const DB = {
   ],
   "12 48 23": [
    "entrance floor grids"
+  ],
+  "12 48 53": [
+   "entrance rug",
+   "rug",
+   "rugs"
   ],
   "12 50 00": [
    "acoustic panels",
@@ -24373,6 +25283,7 @@ const DB = {
    "chair mounting standards",
    "fixed theatre seating",
    "folding writing tablet arm",
+   "theatre seating",
    "upholstered audience seating"
   ],
   "12 62 00": [
@@ -24539,6 +25450,7 @@ const DB = {
    "perimeter isolation board",
    "seismic floating floor snubber",
    "sound barrier walls",
+   "vibration control",
    "wall sway braces"
   ],
   "13 49 00": [
@@ -24775,6 +25687,10 @@ const DB = {
   "27 41 16": [
    "audio visual",
    "av system"
+  ],
+  "32 13 13": [
+   "concrete sidewalk",
+   "exposed concrete"
   ],
   "32 13 73": [
    "concrete control joint",
@@ -25586,7 +26502,7 @@ const DB = {
     ],
     "added": "2026-08-14",
     "by": "curated",
-    "evidence": "section issued on Glenbow; term = section title (drawings pending for keynote/callout verification)"
+    "evidence": "drawing-verified: term appears on Glenbow drawings; section issued"
    },
    "all glass partitions|10 22 53": {
     "projects": [
@@ -26667,6 +27583,2070 @@ const DB = {
     "added": "2026-08-14",
     "by": "curated",
     "evidence": "generic term; mapped to primary issued section across DIALOG projects"
+   },
+   "protective wall covering|10 26 26": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "wall covering protection|10 26 26": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "protective wall panel|10 26 26": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "metal cladding|07 42 16": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; term appears on project drawings"
+   },
+   "metal wall cladding|07 42 16": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; term appears on project drawings"
+   },
+   "rug|12 48 53": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "rugs|12 48 53": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "entrance rug|12 48 53": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "concrete forming|03 11 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "formwork|03 11 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "concrete formwork|03 11 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "form work|03 11 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "concrete reinforcement|03 20 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "rebar|03 20 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; term appears on project drawings"
+   },
+   "reinforcing steel|03 20 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "reinforcing bar|03 20 00": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "concrete sealer|03 35 50": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; term appears on project drawings"
+   },
+   "concrete sealers|03 35 50": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "floor sealer|03 35 50": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "densifier|03 35 50": {
+    "projects": [
+     "portfolio"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "gap-fill; section issued, term = descriptive title"
+   },
+   "precast architectural|03 45 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "precast architectural concrete|03 45 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "architectural concrete|03 45 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "shop fabricated|06 40 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "shop fabricated architectural|06 40 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "fabricated architectural|06 40 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "fabricated architectural woodwork|06 40 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "architectural woodwork|06 40 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "cladding support|07 05 43": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "board insulation|07 21 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "below grade|07 21 23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "below grade board|07 21 23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "grade board|07 21 23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "grade board insulation|07 21 23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "board insulation|07 21 23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "vapour membrane|07 25 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "insulated metal|07 42 13-19": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "metal wall|07 42 13-19": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "wall panel|07 42 13-19": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "metal wall|07 42 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "metal wall cladding|07 42 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "wall cladding|07 42 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "sheet metal|07 62 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "metal flashing|07 62 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "steel door|08 11 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "door frame|08 11 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "plastic laminate|08 14 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "door panel|08 31 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "radiation shielding|08 34 49": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "door frame|08 34 49": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "steel door|08 36 13-13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "aluminum curtain|08 44 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "aluminum curtain wall|08 44 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "through window|08 56 19": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "door hardware|08 71 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "fire resistant|08 88 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "gypsum board|09 21 16-23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "gypsum board|09 22 26-13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "ceiling suspension|09 22 26-13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "gypsum board|09 29 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "sheet flooring|09 65 16": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "sheet flooring|09 65 23": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "static dissipative|09 65 36": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "vinyl sheet|09 65 36": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "vinyl sheet flooring|09 65 36": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "sheet flooring|09 65 36": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "wall covering|09 72 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "folding panel|10 22 39": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "folding panel partition|10 22 39": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "panel partition|10 22 39": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "wall covering|10 26 26": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "metal locker|10 51 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "roller window|12 24 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "roller window shade|12 24 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "window shade|12 24 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "exposed concrete|32 13 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on OCME drawings; section issued"
+   },
+   "concrete floor|03 35 41": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "solid surfacing|06 61 16": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "air vapour|07 25 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "air vapour membrane|07 25 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "vapour permeable|07 27 16": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "vapour permeable membrane|07 27 16": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "permeable membrane|07 27 16": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "metal wall|07 42 23": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "metal wall cladding|07 42 23": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "wall cladding|07 42 23": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "composite panel|07 42 43": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "membrane roofing|07 52 16": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "hollow metal|08 11 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "hollow metal door|08 11 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "metal door|08 11 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "gypsum board ceiling|09 22 26-13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "board ceiling|09 22 26-13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "panel ceiling|09 51 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "stair landing|09 61 13-13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "concrete sidewalk|32 13 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Fortis drawings; section issued"
+   },
+   "stone cladding|04 42 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "semi rigid|07 21 13": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "air vapour|07 25 19": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "perforated metal|07 42 15": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "perforated metal panel|07 42 15": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "metal panel|07 42 15": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "wood veneer|08 14 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "wood door|08 14 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "fire door|08 33 23": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "vertically rising|10 22 26-16": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "vertically rising partition|10 22 26-16": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "rising partition|10 22 26-16": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on HSBC drawings; section issued"
+   },
+   "above grade|03 20 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "above grade|03 30 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "exposed concrete|03 33 00": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "load bearing|05 41 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "steel stud|05 41 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "steel stud framing|05 41 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "stud framing|05 41 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "air barrier|07 05 10": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "barrier vapour|07 05 10": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "vapour retarder|07 05 10": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "fluid applied|07 14 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "fluid applied|07 14 16": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "applied waterproofing|07 14 16": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "exterior insulation|07 24 19": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "exterior insulation finish|07 24 19": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "insulation finish|07 24 19": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "air vapour barrier|07 25 19": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "vapour barrier|07 25 19": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "vapour retarder|07 26 00": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "air barrier|07 27 16": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "standing seam|07 41 13-13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "high speed|08 33 39": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "high speed coiling|08 33 39": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "speed coiling|08 33 39": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "window wall|08 44 39": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "exterior fixed|10 73 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "exterior fixed awning|10 73 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "fixed awning|10 73 13": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Curtis Block drawings; section issued"
+   },
+   "underslab vapour|03 15 19": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "underslab vapour barrier|03 15 19": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "vapour barrier|03 15 19": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "architecturally exposed|03 33 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "architecturally exposed concrete|03 33 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "post installed|05 05 23": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "structural steel|05 12 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "loading dock|11 13 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "dock equipment|11 13 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "concrete stair|03 15 21": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "stair nosing|03 15 21": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "concrete flooring|03 35 43": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "building envelope|07 08 15": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "membrane roofing|07 08 50": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "membrane roofing|07 52 23": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "coiling fire|08 33 23": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "glazed aluminum|08 44 13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "metal grating|05 53 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "custom light|06 62 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "light box|06 62 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "vehicular traffic|07 18 16-00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "traffic coating|07 18 16-00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "joint sealant|07 92 13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "wood door|08 14 16": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "metal ceiling|09 54 13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "wood strip|09 64 29": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "resilient flooring|09 65 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "wall covering|09 72 16": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "acoustic insulation|09 81 29": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "panel partition|10 22 39.13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "aluminum framed|10 22 40": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "wall covering|10 26 23-13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "theatre seating|12 61 13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "vibration control|13 48 13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on NCL drawings; section issued"
+   },
+   "concrete floor|03 35 11": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "concrete floor|03 35 45": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "construction quality|07 08 11": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "perforated metal|07 42 13": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "corrugated metal|07 42 23": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "fibre reinforced|07 42 53": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "metal soffit|07 42 93": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "fire protection|07 81 23": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "concealed frame|08 12 26": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "door hardware|08 71 10": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "door hardware group|08 71 10": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "hardware group|08 71 10": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "glazing surface|08 87 00": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "gypsum board shaft|09 21 16-23": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "board shaft|09 21 16-23": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "gypsum board|09 22 00": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "metal mesh|09 54 13": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "deep pass: phrase from section title appears verbatim on Glenbow drawings; section issued"
+   },
+   "scw|08 14 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'SCW' appears 45x as standalone tag on OCME drawings; section issued"
+   },
+   "solid core wood door|08 14 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'SCW' appears 45x as standalone tag on OCME drawings; section issued"
+   },
+   "gb|09 29 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'GB' appears 20x as standalone tag on OCME drawings; section issued"
+   },
+   "acoustic ceiling tile|09 51 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'ACT' appears 125x as standalone tag on OCME drawings; section issued"
+   },
+   "wp|07 13 52": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'WP' appears 4x as standalone tag on OCME drawings; section issued"
+   },
+   "imp|07 42 13-19": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'IMP' appears 15x as standalone tag on OCME drawings; section issued"
+   },
+   "insulated metal panel|07 42 13-19": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'IMP' appears 15x as standalone tag on OCME drawings; section issued"
+   },
+   "igu|08 81 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'IGU' appears 9x as standalone tag on Fortis drawings; section issued"
+   },
+   "insulated glass unit|08 81 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'IGU' appears 9x as standalone tag on Fortis drawings; section issued"
+   },
+   "mgu|08 81 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'MGU' appears 17x as standalone tag on Fortis drawings; section issued"
+   },
+   "monolithic glass unit|08 81 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'MGU' appears 17x as standalone tag on Fortis drawings; section issued"
+   },
+   "gypsum wall board|09 29 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'GWB' appears 3x as standalone tag on Fortis drawings; section issued"
+   },
+   "gyp|09 29 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'GYP' appears 4x as standalone tag on Fortis drawings; section issued"
+   },
+   "cpt|09 68 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'CPT' appears 226x as standalone tag on Fortis drawings; section issued"
+   },
+   "ej|07 95 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'EJ' appears 54x as standalone tag on Fortis drawings; section issued"
+   },
+   "expansion joint|07 95 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'EJ' appears 54x as standalone tag on Fortis drawings; section issued"
+   },
+   "mj|07 95 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'MJ' appears 27x as standalone tag on Fortis drawings; section issued"
+   },
+   "movement joint|07 95 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'MJ' appears 27x as standalone tag on Fortis drawings; section issued"
+   },
+   "rs|12 24 13": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'RS' appears 74x as standalone tag on Fortis drawings; section issued"
+   },
+   "mw|06 40 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'MW' appears 288x as standalone tag on Fortis drawings; section issued"
+   },
+   "awp|09 84 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'AWP' appears 138x as standalone tag on Fortis drawings; section issued"
+   },
+   "acoustic wall panel|09 84 00": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'AWP' appears 138x as standalone tag on Fortis drawings; section issued"
+   },
+   "acp|09 51 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'ACP' appears 12x as standalone tag on HSBC drawings; section issued"
+   },
+   "acoustic panel|09 51 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'ACP' appears 12x as standalone tag on HSBC drawings; section issued"
+   },
+   "rb|09 65 13": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'RB' appears 48x as standalone tag on HSBC drawings; section issued"
+   },
+   "ply|06 10 53": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'PLY' appears 4x as standalone tag on HSBC drawings; section issued"
+   },
+   "plywood|06 10 53": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'PLY' appears 4x as standalone tag on HSBC drawings; section issued"
+   },
+   "cmu|04 22 00": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'CMU' appears 23x as standalone tag on Curtis Block drawings; section issued"
+   },
+   "concrete masonry unit|04 22 00": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'CMU' appears 23x as standalone tag on Curtis Block drawings; section issued"
+   },
+   "hss|05 12 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'HSS' appears 153x as standalone tag on NCL drawings; section issued"
+   },
+   "hollow structural steel|05 12 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'HSS' appears 153x as standalone tag on NCL drawings; section issued"
+   },
+   "plam|06 40 00": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'PLAM' appears 66x as standalone tag on Glenbow drawings; section issued"
+   },
+   "plastic laminate|06 40 00": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'PLAM' appears 66x as standalone tag on Glenbow drawings; section issued"
+   },
+   "ssm|06 61 16": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'SSM' appears 20x as standalone tag on Glenbow drawings; section issued"
+   },
+   "solid surface material|06 61 16": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'SSM' appears 20x as standalone tag on Glenbow drawings; section issued"
+   },
+   "air vapour barrier|07 25 13": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'AVB' appears 3x as standalone tag on Glenbow drawings; section issued"
+   },
+   "cg|10 26 13": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "abbrev pass: 'CG' appears 67x as standalone tag on Glenbow drawings; section issued"
+   },
+   "pressed steel|08 11 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "rigid insulation|07 21 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "mineral wool|07 21 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "plywood sheathing|06 16 43": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "cap flashing|07 62 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "prefinished metal flashing|07 62 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "wall base|09 65 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "rubber base|09 65 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "backer rod|07 92 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "acoustic sealant|07 92 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "vapour retarder|07 25 13": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "wood veneer|06 40 00": {
+    "projects": [
+     "OCME"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on OCME drawings; section issued"
+   },
+   "aluminum composite|07 42 43": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Fortis drawings; section issued"
+   },
+   "aluminum composite panel|07 42 43": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Fortis drawings; section issued"
+   },
+   "wood blocking|06 10 53": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Fortis drawings; section issued"
+   },
+   "walk off mat|12 48 13-26": {
+    "projects": [
+     "Fortis"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Fortis drawings; section issued"
+   },
+   "semi rigid insulation|07 21 13": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "steel angle|05 50 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "steel plate|05 50 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "steel channel|05 50 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "sealed concrete|03 35 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "sealant and backer|07 92 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "tile flooring|09 30 00": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "roller blind|12 24 13": {
+    "projects": [
+     "HSBC"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on HSBC drawings; section issued"
+   },
+   "bent plate|05 50 00": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Curtis Block drawings; section issued"
+   },
+   "ceramic tile|09 30 00": {
+    "projects": [
+     "Curtis Block"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Curtis Block drawings; section issued"
+   },
+   "steel tube|05 12 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on NCL drawings; section issued"
+   },
+   "concrete topping|03 35 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on NCL drawings; section issued"
+   },
+   "self adhered membrane|07 25 13": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on NCL drawings; section issued"
+   },
+   "wood paneling|06 40 00": {
+    "projects": [
+     "NCL"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on NCL drawings; section issued"
+   },
+   "batt insulation|07 21 16": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Glenbow drawings; section issued"
+   },
+   "acm panel|07 42 43": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Glenbow drawings; section issued"
+   },
+   "metal soffit|07 42 13": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Glenbow drawings; section issued"
+   },
+   "sealant joint|07 92 00": {
+    "projects": [
+     "Glenbow"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "missed-vocab pass: material phrase on Glenbow drawings; section issued"
    }
   },
   "retired": {
@@ -26814,7 +29794,8 @@ const DB = {
    ],
    "bent steel plate|05 50 00": [
     "YYC-CB-TP5",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "brackets|06 40 00": [
     "YYC-CB-TP5",
@@ -26906,7 +29887,8 @@ const DB = {
    ],
    "fire rated sealant|07 92 00": [
     "YYC-CB-TP5",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "fire resistant gypsum board|09 29 13": [
     "YYC-CB-TP5",
@@ -27014,12 +29996,14 @@ const DB = {
    ],
    "movement joint|04 05 23": [
     "YYC-CB-TP5",
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "movement joint|07 92 00": [
     "YYC-CB-TP5",
     "Fortis",
-    "HSBC"
+    "HSBC",
+    "Glenbow"
    ],
    "movement joint|07 95 13": [
     "YYC-CB-TP5"
@@ -27050,7 +30034,8 @@ const DB = {
     "Glenbow"
    ],
    "plywood backing|09 28 11": [
-    "YYC-CB-TP5"
+    "YYC-CB-TP5",
+    "Glenbow"
    ],
    "polished concrete|03 35 43": [
     "YYC-CB-TP5",
@@ -27128,7 +30113,8 @@ const DB = {
     "OCME",
     "Fortis",
     "HSBC",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "signage|10 14 00": [
     "YYC-CB-TP5"
@@ -27246,7 +30232,8 @@ const DB = {
    ],
    "stair nosing|09 61 13-13": [
     "OCME",
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "slip resistant|09 61 13-13": [
     "OCME",
@@ -27419,7 +30406,8 @@ const DB = {
    ],
    "curtain rod|10 28 13": [
     "OCME",
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "door hardware|08 41 13": [
     "OCME"
@@ -27445,7 +30433,8 @@ const DB = {
    ],
    "flashing prefinished|07 92 00": [
     "OCME",
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "framing|10 22 19-53": [
     "OCME",
@@ -27513,7 +30502,8 @@ const DB = {
    "mullion beyond|08 11 13": [
     "OCME",
     "Curtis Block",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "outside corner trim|07 92 00": [
     "OCME",
@@ -27535,7 +30525,8 @@ const DB = {
     "OCME",
     "Fortis",
     "HSBC",
-    "Curtis Block"
+    "Curtis Block",
+    "Glenbow"
    ],
    "scheduled floor finish|09 29 13": [
     "OCME"
@@ -27559,12 +30550,14 @@ const DB = {
    "spray foam insulation|07 92 00": [
     "OCME",
     "Fortis",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "spray foam insulation|08 11 13": [
     "OCME",
     "Fortis",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "spray foam insulation at all voids|07 92 00": [
     "OCME"
@@ -27573,7 +30566,8 @@ const DB = {
     "OCME"
    ],
    "stair nosing|09 65 13": [
-    "OCME"
+    "OCME",
+    "Glenbow"
    ],
    "tactile warning strip|09 29 13": [
     "OCME",
@@ -27587,7 +30581,8 @@ const DB = {
    ],
    "termination bar|04 05 23": [
     "OCME",
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "threshold|13 21 26": [
     "OCME"
@@ -27601,7 +30596,8 @@ const DB = {
    ],
    "transition membrane|07 05 11": [
     "OCME",
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "vapour retarder|07 05 11": [
     "OCME",
@@ -27665,13 +30661,15 @@ const DB = {
     "Fortis"
    ],
    "drip edge|04 05 23": [
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "expansion control|07 95 00": [
     "Fortis"
    ],
    "expansion joint cover|07 95 00": [
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "firestopping|07 84 00": [
     "Fortis",
@@ -27685,7 +30683,8 @@ const DB = {
    ],
    "flexible flashing|07 62 00": [
     "Fortis",
-    "Curtis Block"
+    "Curtis Block",
+    "Glenbow"
    ],
    "flexible membrane flashing|07 92 00": [
     "Fortis"
@@ -27705,7 +30704,8 @@ const DB = {
     "Glenbow"
    ],
    "soap dish|10 28 13": [
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "stain|09 91 00": [
     "Fortis",
@@ -27791,7 +30791,8 @@ const DB = {
    ],
    "shims|06 40 00": [
     "HSBC",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "spandrel glass|08 44 13": [
     "HSBC"
@@ -27817,7 +30818,8 @@ const DB = {
    ],
    "back pan|08 44 13": [
     "Curtis Block",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "back pan|08 44 39": [
     "Curtis Block"
@@ -27845,7 +30847,8 @@ const DB = {
    ],
    "insulated back pan|08 11 13": [
     "Curtis Block",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "isolators|13 48 13": [
     "Curtis Block",
@@ -27863,7 +30866,8 @@ const DB = {
    ],
    "steel pipe|05 50 00": [
     "Curtis Block",
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "structural steel|05 10 00": [
     "Curtis Block"
@@ -27901,7 +30905,8 @@ const DB = {
     "NCL"
    ],
    "cement|03 45 00": [
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "closed cell neoprene|09 22 26-19": [
     "NCL"
@@ -27960,7 +30965,8 @@ const DB = {
     "NCL"
    ],
    "needle disposal|10 28 13": [
-    "NCL"
+    "NCL",
+    "Glenbow"
    ],
    "panel stiffeners|07 42 43": [
     "NCL"
@@ -28356,7 +31362,8 @@ const DB = {
     "NCL"
    ],
    "lockers|10 51 29": [
-    "Fortis"
+    "Fortis",
+    "Glenbow"
    ],
    "panels|07 42 43": [
     "Fortis",
@@ -28498,6 +31505,744 @@ const DB = {
     "Glenbow"
    ],
    "polyester powder coat|05 05 13": [
+    "Glenbow"
+   ],
+   "foam moisture barrier|07 92 00": [
+    "Glenbow"
+   ],
+   "furring channels|09 22 26-13": [
+    "Glenbow"
+   ],
+   "hardboard|06 40 00": [
+    "Glenbow"
+   ],
+   "portland cement|03 33 00": [
+    "Glenbow"
+   ],
+   "reinforcing mesh|07 24 19": [
+    "Glenbow"
+   ],
+   "stair tread|09 65 13": [
+    "Glenbow"
+   ],
+   "finish coat primer|07 24 19": [
+    "Glenbow"
+   ],
+   "wood flooring|09 64 00": [
+    "Glenbow"
+   ],
+   "precast architectural|03 45 00": [
+    "OCME"
+   ],
+   "precast architectural concrete|03 45 00": [
+    "OCME"
+   ],
+   "architectural concrete|03 45 00": [
+    "OCME"
+   ],
+   "shop fabricated|06 40 00": [
+    "OCME"
+   ],
+   "shop fabricated architectural|06 40 00": [
+    "OCME"
+   ],
+   "fabricated architectural|06 40 00": [
+    "OCME"
+   ],
+   "fabricated architectural woodwork|06 40 00": [
+    "OCME"
+   ],
+   "architectural woodwork|06 40 00": [
+    "OCME"
+   ],
+   "cladding support|07 05 43": [
+    "OCME"
+   ],
+   "board insulation|07 21 13": [
+    "OCME"
+   ],
+   "below grade|07 21 23": [
+    "OCME"
+   ],
+   "below grade board|07 21 23": [
+    "OCME"
+   ],
+   "grade board|07 21 23": [
+    "OCME"
+   ],
+   "grade board insulation|07 21 23": [
+    "OCME"
+   ],
+   "board insulation|07 21 23": [
+    "OCME"
+   ],
+   "vapour membrane|07 25 13": [
+    "OCME"
+   ],
+   "insulated metal|07 42 13-19": [
+    "OCME"
+   ],
+   "metal wall|07 42 13-19": [
+    "OCME"
+   ],
+   "wall panel|07 42 13-19": [
+    "OCME"
+   ],
+   "metal wall|07 42 13": [
+    "OCME"
+   ],
+   "metal wall cladding|07 42 13": [
+    "OCME"
+   ],
+   "wall cladding|07 42 13": [
+    "OCME"
+   ],
+   "sheet metal|07 62 00": [
+    "OCME"
+   ],
+   "metal flashing|07 62 00": [
+    "OCME"
+   ],
+   "steel door|08 11 13": [
+    "OCME"
+   ],
+   "door frame|08 11 13": [
+    "OCME"
+   ],
+   "plastic laminate|08 14 00": [
+    "OCME"
+   ],
+   "door panel|08 31 00": [
+    "OCME"
+   ],
+   "radiation shielding|08 34 49": [
+    "OCME"
+   ],
+   "door frame|08 34 49": [
+    "OCME"
+   ],
+   "steel door|08 36 13-13": [
+    "OCME"
+   ],
+   "aluminum curtain|08 44 13": [
+    "OCME"
+   ],
+   "aluminum curtain wall|08 44 13": [
+    "OCME"
+   ],
+   "through window|08 56 19": [
+    "OCME"
+   ],
+   "door hardware|08 71 00": [
+    "OCME"
+   ],
+   "fire resistant|08 88 13": [
+    "OCME"
+   ],
+   "gypsum board|09 21 16-23": [
+    "OCME"
+   ],
+   "gypsum board|09 22 26-13": [
+    "OCME"
+   ],
+   "ceiling suspension|09 22 26-13": [
+    "OCME"
+   ],
+   "gypsum board|09 29 13": [
+    "OCME"
+   ],
+   "sheet flooring|09 65 16": [
+    "OCME"
+   ],
+   "sheet flooring|09 65 23": [
+    "OCME"
+   ],
+   "static dissipative|09 65 36": [
+    "OCME"
+   ],
+   "vinyl sheet|09 65 36": [
+    "OCME"
+   ],
+   "vinyl sheet flooring|09 65 36": [
+    "OCME"
+   ],
+   "sheet flooring|09 65 36": [
+    "OCME"
+   ],
+   "wall covering|09 72 00": [
+    "OCME"
+   ],
+   "folding panel|10 22 39": [
+    "OCME"
+   ],
+   "folding panel partition|10 22 39": [
+    "OCME"
+   ],
+   "panel partition|10 22 39": [
+    "OCME"
+   ],
+   "wall covering|10 26 26": [
+    "OCME"
+   ],
+   "metal locker|10 51 13": [
+    "OCME"
+   ],
+   "roller window|12 24 13": [
+    "OCME"
+   ],
+   "roller window shade|12 24 13": [
+    "OCME"
+   ],
+   "window shade|12 24 13": [
+    "OCME"
+   ],
+   "exposed concrete|32 13 13": [
+    "OCME"
+   ],
+   "concrete floor|03 35 41": [
+    "Fortis"
+   ],
+   "solid surfacing|06 61 16": [
+    "Fortis"
+   ],
+   "air vapour|07 25 13": [
+    "Fortis"
+   ],
+   "air vapour membrane|07 25 13": [
+    "Fortis"
+   ],
+   "vapour permeable|07 27 16": [
+    "Fortis"
+   ],
+   "vapour permeable membrane|07 27 16": [
+    "Fortis"
+   ],
+   "permeable membrane|07 27 16": [
+    "Fortis"
+   ],
+   "metal wall|07 42 23": [
+    "Fortis"
+   ],
+   "metal wall cladding|07 42 23": [
+    "Fortis"
+   ],
+   "wall cladding|07 42 23": [
+    "Fortis"
+   ],
+   "composite panel|07 42 43": [
+    "Fortis"
+   ],
+   "membrane roofing|07 52 16": [
+    "Fortis"
+   ],
+   "hollow metal|08 11 13": [
+    "Fortis"
+   ],
+   "hollow metal door|08 11 13": [
+    "Fortis"
+   ],
+   "metal door|08 11 13": [
+    "Fortis"
+   ],
+   "gypsum board ceiling|09 22 26-13": [
+    "Fortis"
+   ],
+   "board ceiling|09 22 26-13": [
+    "Fortis"
+   ],
+   "panel ceiling|09 51 00": [
+    "Fortis"
+   ],
+   "stair landing|09 61 13-13": [
+    "Fortis"
+   ],
+   "concrete sidewalk|32 13 13": [
+    "Fortis"
+   ],
+   "stone cladding|04 42 00": [
+    "HSBC"
+   ],
+   "semi rigid|07 21 13": [
+    "HSBC"
+   ],
+   "air vapour|07 25 19": [
+    "HSBC"
+   ],
+   "perforated metal|07 42 15": [
+    "HSBC"
+   ],
+   "perforated metal panel|07 42 15": [
+    "HSBC"
+   ],
+   "metal panel|07 42 15": [
+    "HSBC"
+   ],
+   "wood veneer|08 14 00": [
+    "HSBC"
+   ],
+   "wood door|08 14 00": [
+    "HSBC"
+   ],
+   "fire door|08 33 23": [
+    "HSBC"
+   ],
+   "vertically rising|10 22 26-16": [
+    "HSBC"
+   ],
+   "vertically rising partition|10 22 26-16": [
+    "HSBC"
+   ],
+   "rising partition|10 22 26-16": [
+    "HSBC"
+   ],
+   "above grade|03 20 13": [
+    "Curtis Block"
+   ],
+   "above grade|03 30 13": [
+    "Curtis Block"
+   ],
+   "exposed concrete|03 33 00": [
+    "Curtis Block"
+   ],
+   "load bearing|05 41 13": [
+    "Curtis Block"
+   ],
+   "steel stud|05 41 13": [
+    "Curtis Block"
+   ],
+   "steel stud framing|05 41 13": [
+    "Curtis Block"
+   ],
+   "stud framing|05 41 13": [
+    "Curtis Block"
+   ],
+   "air barrier|07 05 10": [
+    "Curtis Block"
+   ],
+   "barrier vapour|07 05 10": [
+    "Curtis Block"
+   ],
+   "vapour retarder|07 05 10": [
+    "Curtis Block"
+   ],
+   "fluid applied|07 14 13": [
+    "Curtis Block"
+   ],
+   "fluid applied|07 14 16": [
+    "Curtis Block"
+   ],
+   "applied waterproofing|07 14 16": [
+    "Curtis Block"
+   ],
+   "exterior insulation|07 24 19": [
+    "Curtis Block"
+   ],
+   "exterior insulation finish|07 24 19": [
+    "Curtis Block"
+   ],
+   "insulation finish|07 24 19": [
+    "Curtis Block"
+   ],
+   "air vapour barrier|07 25 19": [
+    "Curtis Block"
+   ],
+   "vapour barrier|07 25 19": [
+    "Curtis Block"
+   ],
+   "vapour retarder|07 26 00": [
+    "Curtis Block"
+   ],
+   "air barrier|07 27 16": [
+    "Curtis Block"
+   ],
+   "standing seam|07 41 13-13": [
+    "Curtis Block"
+   ],
+   "high speed|08 33 39": [
+    "Curtis Block"
+   ],
+   "high speed coiling|08 33 39": [
+    "Curtis Block"
+   ],
+   "speed coiling|08 33 39": [
+    "Curtis Block"
+   ],
+   "window wall|08 44 39": [
+    "Curtis Block"
+   ],
+   "exterior fixed|10 73 13": [
+    "Curtis Block"
+   ],
+   "exterior fixed awning|10 73 13": [
+    "Curtis Block"
+   ],
+   "fixed awning|10 73 13": [
+    "Curtis Block"
+   ],
+   "underslab vapour|03 15 19": [
+    "NCL"
+   ],
+   "underslab vapour barrier|03 15 19": [
+    "NCL"
+   ],
+   "vapour barrier|03 15 19": [
+    "NCL"
+   ],
+   "architecturally exposed|03 33 00": [
+    "NCL"
+   ],
+   "architecturally exposed concrete|03 33 00": [
+    "NCL"
+   ],
+   "post installed|05 05 23": [
+    "NCL"
+   ],
+   "structural steel|05 12 00": [
+    "NCL"
+   ],
+   "loading dock|11 13 00": [
+    "NCL"
+   ],
+   "dock equipment|11 13 00": [
+    "NCL"
+   ],
+   "concrete stair|03 15 21": [
+    "NCL"
+   ],
+   "stair nosing|03 15 21": [
+    "NCL"
+   ],
+   "concrete flooring|03 35 43": [
+    "NCL"
+   ],
+   "building envelope|07 08 15": [
+    "NCL"
+   ],
+   "membrane roofing|07 08 50": [
+    "NCL"
+   ],
+   "membrane roofing|07 52 23": [
+    "NCL"
+   ],
+   "coiling fire|08 33 23": [
+    "NCL"
+   ],
+   "glazed aluminum|08 44 13": [
+    "NCL"
+   ],
+   "metal grating|05 53 00": [
+    "NCL"
+   ],
+   "custom light|06 62 00": [
+    "NCL"
+   ],
+   "light box|06 62 00": [
+    "NCL"
+   ],
+   "vehicular traffic|07 18 16-00": [
+    "NCL"
+   ],
+   "traffic coating|07 18 16-00": [
+    "NCL"
+   ],
+   "joint sealant|07 92 13": [
+    "NCL"
+   ],
+   "wood door|08 14 16": [
+    "NCL"
+   ],
+   "metal ceiling|09 54 13": [
+    "NCL"
+   ],
+   "wood strip|09 64 29": [
+    "NCL"
+   ],
+   "resilient flooring|09 65 00": [
+    "NCL"
+   ],
+   "wall covering|09 72 16": [
+    "NCL"
+   ],
+   "acoustic insulation|09 81 29": [
+    "NCL"
+   ],
+   "panel partition|10 22 39.13": [
+    "NCL"
+   ],
+   "aluminum framed|10 22 40": [
+    "NCL"
+   ],
+   "wall covering|10 26 23-13": [
+    "NCL"
+   ],
+   "theatre seating|12 61 13": [
+    "NCL"
+   ],
+   "vibration control|13 48 13": [
+    "NCL"
+   ],
+   "concrete floor|03 35 11": [
+    "Glenbow"
+   ],
+   "concrete floor|03 35 45": [
+    "Glenbow"
+   ],
+   "construction quality|07 08 11": [
+    "Glenbow"
+   ],
+   "perforated metal|07 42 13": [
+    "Glenbow"
+   ],
+   "corrugated metal|07 42 23": [
+    "Glenbow"
+   ],
+   "fibre reinforced|07 42 53": [
+    "Glenbow"
+   ],
+   "metal soffit|07 42 93": [
+    "Glenbow"
+   ],
+   "fire protection|07 81 23": [
+    "Glenbow"
+   ],
+   "concealed frame|08 12 26": [
+    "Glenbow"
+   ],
+   "door hardware|08 71 10": [
+    "Glenbow"
+   ],
+   "door hardware group|08 71 10": [
+    "Glenbow"
+   ],
+   "hardware group|08 71 10": [
+    "Glenbow"
+   ],
+   "glazing surface|08 87 00": [
+    "Glenbow"
+   ],
+   "gypsum board shaft|09 21 16-23": [
+    "Glenbow"
+   ],
+   "board shaft|09 21 16-23": [
+    "Glenbow"
+   ],
+   "gypsum board|09 22 00": [
+    "Glenbow"
+   ],
+   "metal mesh|09 54 13": [
+    "Glenbow"
+   ],
+   "scw|08 14 00": [
+    "OCME"
+   ],
+   "solid core wood door|08 14 00": [
+    "OCME"
+   ],
+   "gb|09 29 13": [
+    "OCME"
+   ],
+   "acoustic ceiling tile|09 51 00": [
+    "OCME"
+   ],
+   "wp|07 13 52": [
+    "OCME"
+   ],
+   "imp|07 42 13-19": [
+    "OCME"
+   ],
+   "insulated metal panel|07 42 13-19": [
+    "OCME"
+   ],
+   "igu|08 81 00": [
+    "Fortis"
+   ],
+   "insulated glass unit|08 81 00": [
+    "Fortis"
+   ],
+   "mgu|08 81 00": [
+    "Fortis"
+   ],
+   "monolithic glass unit|08 81 00": [
+    "Fortis"
+   ],
+   "gypsum wall board|09 29 13": [
+    "Fortis"
+   ],
+   "gyp|09 29 13": [
+    "Fortis"
+   ],
+   "cpt|09 68 13": [
+    "Fortis"
+   ],
+   "ej|07 95 00": [
+    "Fortis"
+   ],
+   "expansion joint|07 95 00": [
+    "Fortis"
+   ],
+   "mj|07 95 00": [
+    "Fortis"
+   ],
+   "movement joint|07 95 00": [
+    "Fortis"
+   ],
+   "rs|12 24 13": [
+    "Fortis"
+   ],
+   "mw|06 40 00": [
+    "Fortis"
+   ],
+   "awp|09 84 00": [
+    "Fortis"
+   ],
+   "acoustic wall panel|09 84 00": [
+    "Fortis"
+   ],
+   "acp|09 51 00": [
+    "HSBC"
+   ],
+   "acoustic panel|09 51 00": [
+    "HSBC"
+   ],
+   "rb|09 65 13": [
+    "HSBC"
+   ],
+   "ply|06 10 53": [
+    "HSBC"
+   ],
+   "plywood|06 10 53": [
+    "HSBC"
+   ],
+   "cmu|04 22 00": [
+    "Curtis Block"
+   ],
+   "concrete masonry unit|04 22 00": [
+    "Curtis Block"
+   ],
+   "hss|05 12 00": [
+    "NCL"
+   ],
+   "hollow structural steel|05 12 00": [
+    "NCL"
+   ],
+   "plam|06 40 00": [
+    "Glenbow"
+   ],
+   "plastic laminate|06 40 00": [
+    "Glenbow"
+   ],
+   "ssm|06 61 16": [
+    "Glenbow"
+   ],
+   "solid surface material|06 61 16": [
+    "Glenbow"
+   ],
+   "air vapour barrier|07 25 13": [
+    "Glenbow"
+   ],
+   "cg|10 26 13": [
+    "Glenbow"
+   ],
+   "pressed steel|08 11 13": [
+    "OCME"
+   ],
+   "rigid insulation|07 21 13": [
+    "OCME"
+   ],
+   "mineral wool|07 21 13": [
+    "OCME"
+   ],
+   "plywood sheathing|06 16 43": [
+    "OCME"
+   ],
+   "cap flashing|07 62 00": [
+    "OCME"
+   ],
+   "prefinished metal flashing|07 62 00": [
+    "OCME"
+   ],
+   "wall base|09 65 13": [
+    "OCME"
+   ],
+   "rubber base|09 65 13": [
+    "OCME"
+   ],
+   "backer rod|07 92 00": [
+    "OCME"
+   ],
+   "acoustic sealant|07 92 00": [
+    "OCME"
+   ],
+   "vapour retarder|07 25 13": [
+    "OCME"
+   ],
+   "wood veneer|06 40 00": [
+    "OCME"
+   ],
+   "aluminum composite|07 42 43": [
+    "Fortis"
+   ],
+   "aluminum composite panel|07 42 43": [
+    "Fortis"
+   ],
+   "wood blocking|06 10 53": [
+    "Fortis"
+   ],
+   "walk off mat|12 48 13-26": [
+    "Fortis"
+   ],
+   "semi rigid insulation|07 21 13": [
+    "HSBC"
+   ],
+   "steel angle|05 50 00": [
+    "HSBC"
+   ],
+   "steel plate|05 50 00": [
+    "HSBC"
+   ],
+   "steel channel|05 50 00": [
+    "HSBC"
+   ],
+   "sealed concrete|03 35 00": [
+    "HSBC"
+   ],
+   "sealant and backer|07 92 00": [
+    "HSBC"
+   ],
+   "tile flooring|09 30 00": [
+    "HSBC"
+   ],
+   "roller blind|12 24 13": [
+    "HSBC"
+   ],
+   "bent plate|05 50 00": [
+    "Curtis Block"
+   ],
+   "ceramic tile|09 30 00": [
+    "Curtis Block"
+   ],
+   "steel tube|05 12 00": [
+    "NCL"
+   ],
+   "concrete topping|03 35 00": [
+    "NCL"
+   ],
+   "self adhered membrane|07 25 13": [
+    "NCL"
+   ],
+   "wood paneling|06 40 00": [
+    "NCL"
+   ],
+   "batt insulation|07 21 16": [
+    "Glenbow"
+   ],
+   "acm panel|07 42 43": [
+    "Glenbow"
+   ],
+   "metal soffit|07 42 13": [
+    "Glenbow"
+   ],
+   "sealant joint|07 92 00": [
     "Glenbow"
    ]
   },

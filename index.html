@@ -183,7 +183,7 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
   <section class="view" id="v-makers">
     <h2 class="section-h">Manufacturers &amp; products</h2>
     <p class="section-s">Search the other direction. Type a maker or a specified product and see every section it's named in — the reverse of the drawing-term lookup.</p>
-    <div class="searchbar" style="margin-bottom:14px"><input id="mq" placeholder="Kawneer · Hilti · Sika · Soprema · Duranar…"></div>
+    <div class="searchbar" style="margin-bottom:14px"><input id="mq" placeholder="Kawneer · curtain wall · roofing · Hilti · epoxy… (maker, product, or drawing keyword)"></div>
     <div class="filters"><button class="tog" id="mmode-mfr" data-m="mfr">Manufacturers</button><button class="tog" id="mmode-prod" data-m="prod">Products</button></div>
     <p class="count" id="mcount"></p>
     <div id="makersout"></div>
@@ -385,13 +385,20 @@ function buildMakerIndex(){
     (s.mfr||[]).forEach(function(m){var k=m.toLowerCase();(mfrIndex[k]=mfrIndex[k]||{name:m,secs:[]}).secs.push(s.code);});
     (s.bod||[]).forEach(function(p){var k=p.toLowerCase();(prodIndex[k]=prodIndex[k]||{name:p,secs:[]}).secs.push(s.code);});
   });
+  // build a keyword haystack per maker: its name + the titles + curated terms of every section it's in
+  var kwbc=(typeof DB!=="undefined"&&DB.kwByCode)||{};
+  function hay(rec){var parts=[rec.name];rec.secs.forEach(function(c){var s=secOf(c);parts.push(s.code,s.title);(kwbc[c]||[]).slice(0,30).forEach(function(t){parts.push(t);});});rec.hay=nrm(parts.join(" "));}
+  Object.keys(mfrIndex).forEach(function(k){hay(mfrIndex[k]);});
+  Object.keys(prodIndex).forEach(function(k){hay(prodIndex[k]);});
 }
 function renderMakers(){
   var q=nrm(document.getElementById("mq").value);
   var idx=makerMode==="mfr"?mfrIndex:prodIndex;
   var rows=Object.keys(idx).map(function(k){return idx[k];});
-  if(q)rows=rows.filter(function(r){return nrm(r.name).indexOf(q)>=0;});
-  rows.sort(function(a,b){return b.secs.length-a.secs.length||a.name.localeCompare(b.name);});
+  if(q)rows=rows.filter(function(r){return (r.hay||nrm(r.name)).indexOf(q)>=0;});
+  rows.sort(function(a,b){
+    if(q){var an=nrm(a.name).indexOf(q)>=0?0:1,bn=nrm(b.name).indexOf(q)>=0?0:1;if(an!==bn)return an-bn;}
+    return b.secs.length-a.secs.length||a.name.localeCompare(b.name);});
   var cnt=document.getElementById("mcount"),out=document.getElementById("makersout");
   var total=Object.keys(idx).length;
   cnt.innerHTML=q?(rows.length+' '+(makerMode==="mfr"?'manufacturers':'products')+' match "'+esc(q)+'"'):('Showing the most-referenced of '+total+' '+(makerMode==="mfr"?'manufacturers':'products')+' — type to search');
