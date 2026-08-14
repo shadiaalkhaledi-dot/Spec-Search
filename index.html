@@ -76,6 +76,7 @@ nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
 .rc .ttl{font-size:14px;color:var(--ink);margin-top:1px;font-weight:600}
 .badge{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
 .badge.req{background:var(--amber);color:#fff}
+.badge.likely{background:var(--accent-soft);color:var(--accent);border:1px solid #cdd8e2}
 .badge.sug{background:#eef1f6;color:var(--muted);border:1px solid var(--brd)}
 .dtag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;color:#fff;margin-top:10px;width:fit-content}
 .mrow{margin-top:12px;font-size:12px;color:var(--muted)}
@@ -120,6 +121,30 @@ nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
 @media(max-width:760px){.klayer{grid-template-columns:1fr}.scanstat{grid-template-columns:repeat(2,1fr)}nav{display:none}}
 footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);font-size:12px;text-align:center}
 .hidden{display:none!important}
+/* detail modal */
+.rc{cursor:pointer;transition:transform .08s,box-shadow .12s}
+.rc:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(28,40,66,.13)}
+.modalbg{position:fixed;inset:0;background:rgba(24,32,44,.42);backdrop-filter:blur(3px);z-index:50;display:none;align-items:flex-start;justify-content:center;padding:48px 18px;overflow:auto}
+.modalbg.on{display:flex}
+.modal{background:#fff;border-radius:18px;max-width:720px;width:100%;box-shadow:0 24px 70px rgba(20,30,50,.3);overflow:hidden}
+.modal .medge{height:6px}
+.modal .mb{padding:22px 24px}
+.modal .mclose{float:right;border:none;background:#f2f4f8;width:30px;height:30px;border-radius:8px;color:var(--ink2);font-size:16px}
+.modal .mcode{font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:22px}
+.modal h3{margin:2px 0 0;font-size:17px}
+.modal .msec{margin-top:16px}
+.modal .msec .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:7px}
+.projdot{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:3px 9px;border-radius:8px;background:var(--accent-soft);color:var(--accent);margin:0 6px 6px 0}
+.relchip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 9px;border-radius:8px;background:#fff;border:1px solid var(--brd);margin:0 6px 6px 0;cursor:pointer}
+.relchip:hover{border-color:var(--accent)}
+.relchip .rn{font-size:10.5px;color:var(--muted)}
+.flagbtn{border:1px solid var(--brd);background:#fff;color:var(--muted);font-size:12px;padding:6px 12px;border-radius:9px;margin-top:8px}
+.flagbtn:hover{border-color:#c0392b;color:#c0392b}
+.flagbtn.flagged{border-color:#c0392b;color:#c0392b;background:#fdecea}
+.cfilter{display:inline-flex;gap:0;border:1px solid var(--brd);border-radius:9px;overflow:hidden;margin-left:2px}
+.cfilter button{border:none;background:#fff;color:var(--ink2);font-size:12px;padding:6px 11px;font-weight:600;border-right:1px solid var(--brd)}
+.cfilter button:last-child{border-right:none}
+.cfilter button.on{background:var(--accent);color:#fff}
 </style>
 </head>
 <body>
@@ -223,12 +248,16 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
       <div class="step"><div class="num">2</div><div><h3>Read the badge</h3><p><span class="badge req">required</span> means a curated term reaches it — the tool can assert it. <span class="badge sug">suggestion</span> means a title-text match only, shown but never asserted. No match is an honest blank, not a guess.</p></div></div>
       <div class="step"><div class="num">3</div><div><h3>Use the makers &amp; product</h3><p>Each card carries the acceptable manufacturers and the specified basis-of-design product, pulled from the real issued spec books.</p></div></div>
       <div class="step"><div class="num">4</div><div><h3>Scan a whole set</h3><p>On <b>Scan drawings</b>, drop the architectural PDF. It reads every sheet in your browser and summarises the required sections by division.</p></div></div>
-      <div class="step"><div class="num">5</div><div><h3>Filter by division &amp; trust</h3><p>Colour filters narrow to the divisions you care about; the trust dots show how many of the six projects corroborate a mapping.</p></div></div>
+      <div class="step"><div class="num">5</div><div><h3>Open any section for the full picture</h3><p>Click a result to see every drawing term, manufacturer, and product for it, which of the six projects issued it, and the sections it's usually issued alongside.</p></div></div>
+      <div class="step"><div class="num">6</div><div><h3>Filter by division &amp; confidence</h3><p>Colour filters narrow to the divisions you care about; the confidence filter (2+/3+/4+) shows only mappings that many projects agree on.</p></div></div>
+      <div class="step"><div class="num">7</div><div><h3>Flag what's wrong, export it back</h3><p>See a bad mapping? Open the section and <b>flag it</b> — it saves in your browser only. Export the flags and hand them to a curation session to bake the fixes in. <button class="btn ghost" id="expFb" style="margin-top:8px">Export feedback (JSON)</button></p></div></div>
       <div class="callout"><b>The one rule:</b> a section is only ever badged <b>required</b> when the curated library backs it. Reach without proof is just a guess — and this tool won't make one.</div>
     </div>
   </section>
 </div>
 <footer id="foot"></footer>
+
+<div class="modalbg" id="modalbg"><div class="modal" id="modal"></div></div>
 
 <script src="data.js"></script>
 <script>
@@ -288,7 +317,7 @@ function lookup(q){
 }
 
 /* ---------- filters state ---------- */
-var activeDivs=null, reqOnly=false, mfrOnly=false, lastResults=[];
+var activeDivs=null, reqOnly=false, mfrOnly=false, minConf=0, lastResults=[];
 function allDivs(){var d={};SECS.forEach(function(s){if(DIVCOLOR[s.div])d[s.div]=s.divName;});return d;}
 
 function buildFilters(){
@@ -298,7 +327,9 @@ function buildFilters(){
     h+='<button class="dfilter" data-d="'+d+'"><span class="dot" style="background:'+divCol(d)+'"></span>'+d+'</button>';
   });
   h+='<span style="width:12px"></span><button class="tog" id="reqTog">Required only</button><button class="tog" id="mfrTog">Has manufacturers</button>';
+  h+='<span style="width:10px"></span><span class="lbl">Confidence</span><span class="cfilter" id="cfilter"><button data-c="0" class="on">Any</button><button data-c="2">2+</button><button data-c="3">3+</button><button data-c="4">4+</button></span>';
   host.innerHTML=h;
+  host.querySelectorAll("#cfilter button").forEach(function(b){b.onclick=function(){minConf=+b.dataset.c;host.querySelectorAll("#cfilter button").forEach(function(x){x.classList.toggle("on",x===b);});renderResults();};});
   host.querySelectorAll(".dfilter").forEach(function(b){
     b.onclick=function(){ if(activeDivs===null)activeDivs={}; if(activeDivs[b.dataset.d]){delete activeDivs[b.dataset.d];b.classList.add("off");}else{activeDivs[b.dataset.d]=1;b.classList.remove("off");}
       if(Object.keys(activeDivs).length===0)activeDivs=null; renderResults();};
@@ -311,14 +342,16 @@ function card(r){
   var s=secOf(r.code),div=s.div,col=divCol(div);
   var mfr=(s.mfr||[]),bod=(s.bod||[]);
   var terms=r.terms.slice().sort(function(a,b){return b.split(" ").length-a.split(" ").length;}).slice(0,6);
-  var h='<div class="rc"><div class="edge" style="background:'+col+'"></div><div class="rb">';
+  var h='<div class="rc" onclick="openDetail(\''+s.code+'\')"><div class="edge" style="background:'+col+'"></div><div class="rb">';
   h+='<div class="top"><div><div class="code">'+esc(s.code)+'</div><div class="ttl">'+esc(s.title)+'</div></div>';
-  h+='<span class="badge '+(r.via?"req":"sug")+'">'+(r.via?"required":"suggestion")+'</span></div>';
+  var bCls=r.tier==="likely"?"likely":(r.via?"req":"sug"),bTxt=r.tier==="likely"?"likely":(r.via?"required":"suggestion");
+  h+='<span class="badge '+bCls+'">'+bTxt+'</span></div>';
   h+='<span class="dtag" style="background:'+col+'">'+div+' · '+esc(s.divName||"")+'</span>';
-  if(terms.length){h+='<div class="mrow"><b>Matched terms</b><br>';terms.forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});h+='</div>';}
+  if(terms.length){h+='<div class="mrow"><b>'+(r.tier?"Drawing phrases":"Matched terms")+'</b><br>';terms.forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});h+='</div>';}
   if(mfr.length){h+='<div class="mrow"><b>Manufacturers</b><br>';mfr.slice(0,5).forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});if(mfr.length>5)h+='<span class="pill">+'+(mfr.length-5)+'</span>';h+='</div>';}
   if(bod.length){h+='<div class="mrow"><b>Specified product</b><br>';bod.slice(0,2).forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
-  if(r.via){var c=r.maxconf;h+='<div class="conf"><span class="dots">';for(var i=0;i<6;i++)h+='<i class="'+(i<c?"f":"")+'"></i>';h+='</span> corroborated by '+c+' of 6 projects</div>';}
+  if(r.tier){h+='<div class="conf">'+r.m+' distinct drawing phrase'+(r.m!==1?"s":"")+(r.corr?" · "+r.corr+" corroborated":"")+'</div>';}
+  else if(r.via){var c=r.maxconf;h+='<div class="conf"><span class="dots">';for(var i=0;i<6;i++)h+='<i class="'+(i<c?"f":"")+'"></i>';h+='</span> corroborated by '+c+' of 6 projects</div>';}
   h+='</div></div>';
   return h;
 }
@@ -329,6 +362,7 @@ function renderResults(){
     if(activeDivs&&!activeDivs[s.div])return false;
     if(reqOnly&&!r.via)return false;
     if(mfrOnly&&!((s.mfr||[]).length))return false;
+    if(minConf&&(r.maxconf||0)<minConf)return false;
     return true;
   });
   if(!lastResults.length){out.innerHTML='';cnt.textContent='';return;}
@@ -354,6 +388,42 @@ function doSearch(q){
   lastResults=lookup(q); renderResults();
   document.getElementById("scount").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
+/* ---------- feedback (client-side only) ---------- */
+function loadFlags(){try{return JSON.parse(localStorage.getItem("sf_flags")||"[]");}catch(e){return [];}}
+function saveFlags(f){try{localStorage.setItem("sf_flags",JSON.stringify(f));}catch(e){}}
+function isFlagged(code){return loadFlags().some(function(x){return x.code===code;});}
+function toggleFlag(code,term){var f=loadFlags();var i=f.findIndex(function(x){return x.code===code;});
+  if(i>=0)f.splice(i,1);else f.push({code:code,term:term||"",t:new Date().toISOString().slice(0,16).replace("T"," ")});saveFlags(f);}
+function exportFlags(){var f=loadFlags();if(!f.length){alert("No flags saved yet. Click ‘flag as wrong’ on any result first.");return;}
+  var blob=new Blob([JSON.stringify({flags:f,exported:new Date().toISOString()},null,1)],{type:"application/json"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="specfinder-feedback.json";a.click();}
+/* ---------- section detail ---------- */
+var DETAIL_FROM_SCAN=false;
+function openDetail(code){
+  var s=secOf(code),col=divCol(s.div);
+  var terms=(DB.kwByCode&&DB.kwByCode[s.code])||[];
+  var mfr=s.mfr||[],bod=s.bod||[];
+  var by=(DB.issuedBy&&(DB.issuedBy[s.code]||DB.issuedBy[canon(s.code)]))||[];
+  var rel=(DB.related&&(DB.related[s.code]||DB.related[canon(s.code)]))||[];
+  var flagged=isFlagged(s.code);
+  var h='<div class="medge" style="background:'+col+'"></div><div class="mb">';
+  h+='<button class="mclose" onclick="closeDetail()">×</button>';
+  h+='<div class="mcode">'+esc(s.code)+'</div><h3>'+esc(s.title)+'</h3>';
+  h+='<span class="dtag" style="background:'+col+';margin-top:8px">'+s.div+' · '+esc(s.divName||"")+'</span>';
+  if(by.length){h+='<div class="msec"><div class="h">Issued on '+by.length+' of 6 projects</div>';by.forEach(function(p){h+='<span class="projdot">'+esc(p)+'</span>';});h+='</div>';}
+  if(terms.length){h+='<div class="msec"><div class="h">Drawing terms that reach it ('+terms.length+')</div>';terms.slice(0,40).forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});if(terms.length>40)h+='<span class="pill">+'+(terms.length-40)+'</span>';h+='</div>';}
+  if(mfr.length){h+='<div class="msec"><div class="h">Acceptable manufacturers ('+mfr.length+')</div>';mfr.forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});h+='</div>';}
+  if(bod.length){h+='<div class="msec"><div class="h">Specified products</div>';bod.forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
+  if(rel.length){h+='<div class="msec"><div class="h">Often issued together (across your projects)</div>';rel.forEach(function(r){var rs=secOf(r[0]);h+='<span class="relchip" onclick="openDetail(\''+esc(rs.code)+'\')"><span class="dot" style="width:8px;height:8px;border-radius:3px;background:'+divCol(rs.div)+'"></span>'+esc(rs.code)+' '+esc(rs.title)+' <span class="rn">'+r[1]+' proj</span></span>';});h+='</div>';}
+  h+='<div class="msec"><button class="flagbtn '+(flagged?"flagged":"")+'" onclick="detailFlag(\''+esc(s.code)+'\')">'+(flagged?"⚑ flagged as wrong — click to undo":"⚑ flag this mapping as wrong")+'</button></div>';
+  h+='</div>';
+  document.getElementById("modal").innerHTML=h;
+  document.getElementById("modalbg").classList.add("on");
+}
+function closeDetail(){document.getElementById("modalbg").classList.remove("on");}
+function detailFlag(code){toggleFlag(code);openDetail(code);}
+document.getElementById("modalbg").addEventListener("click",function(e){if(e.target===this)closeDetail();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
 
 /* ---------- browse ---------- */
 var bDivs=null;
@@ -428,33 +498,55 @@ function runScan(files){
     fr.readAsArrayBuffer(f);
   });
 }
+// Tiered scan, tuned across all six buildings (not one). Signal = distinct MULTI-WORD phrases
+// on the drawings per section; single words are ignored as noise. Two honest tiers:
+//   required (confident): >=4 distinct multi-word phrases AND >=1 corroborated  (~76% precision)
+//   likely:               >=2 distinct multi-word phrases                        (broader, softer)
 function scanResult(text){
   var nt=" "+nrm(text)+" ";var words={};nt.split(" ").forEach(function(w){words[w]=1;});
   var sec={};
   for(var term in ALIASES){
-    var tt=toks(term);if(!tt.length)continue;
+    var tt=toks(term);if(tt.length<2)continue;                 // multi-word only
     if(!tt.every(function(w){return words[w];}))continue;
     if(nt.indexOf(" "+nrm(term)+" ")<0)continue;
-    var wt=tt.length>=2?tt.length:0.4;
-    for(var i=0;i<ALIASES[term].length;i++){var c=ALIASES[term][i];sec[c]=sec[c]||{w:0,terms:[]};sec[c].w+=wt;sec[c].terms.push(term);}
+    for(var i=0;i<ALIASES[term].length;i++){var c=ALIASES[term][i];
+      sec[c]=sec[c]||{mw:[],corr:0};sec[c].mw.push(term);
+      if((confByEdge[term+"|"+c]||[]).length>0)sec[c].corr++;
+      else if(confCount(term,c)>0)sec[c].corr++;}
   }
-  var rows=Object.keys(sec).map(function(c){return {code:c,w:sec[c].w,terms:sec[c].terms};}).sort(function(a,b){return b.w-a.w;});
-  var likely=rows.filter(function(r){return r.w>=2;});
-  var byDiv={};likely.forEach(function(r){var d=secOf(r.code).div;byDiv[d]=(byDiv[d]||0)+1;});
+  var rows=Object.keys(sec).map(function(c){var v=sec[c];return {code:c,m:v.mw.length,corr:v.corr,terms:v.mw,maxconf:0,via:true};});
+  var required=rows.filter(function(r){return r.m>=4&&r.corr>=1;}).sort(function(a,b){return b.m-a.m;});
+  var likely=rows.filter(function(r){return r.m>=2&&!(r.m>=4&&r.corr>=1);}).sort(function(a,b){return b.m-a.m;});
+  required.forEach(function(r){r.tier="required";});likely.forEach(function(r){r.tier="likely";});
+  var flagged=required.concat(likely);
+  var byDiv={};flagged.forEach(function(r){var d=secOf(r.code).div;byDiv[d]=(byDiv[d]||0)+1;});
+  var mfrn=required.reduce(function(n,r){return n+((secOf(r.code).mfr||[]).length);},0);
   var out=document.getElementById("scanout");
   var h='<div class="scanstat">';
-  h+='<div class="s glass"><div class="n">'+likely.length+'</div><div class="l">Likely required</div></div>';
-  h+='<div class="s glass"><div class="n">'+rows.length+'</div><div class="l">Sections touched</div></div>';
+  h+='<div class="s glass"><div class="n">'+required.length+'</div><div class="l">Required (confident)</div></div>';
+  h+='<div class="s glass"><div class="n">'+likely.length+'</div><div class="l">Likely</div></div>';
   h+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
-  var mfrn=likely.reduce(function(n,r){return n+((secOf(r.code).mfr||[]).length);},0);
   h+='<div class="s glass"><div class="n">'+mfrn+'</div><div class="l">Manufacturers surfaced</div></div></div>';
-  // division bar
-  var tot=likely.length||1;h+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){h+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});h+='</div>';
-  h+='<p class="count" style="margin-top:8px">Sections the set is likely to require, most-evidenced first:</p>';
-  h+='<div class="grid">';
-  likely.slice(0,60).forEach(function(r){h+=card({code:r.code,score:r.w,terms:r.terms,via:true,maxconf:0});});
-  h+='</div>';
+  var tot=flagged.length||1;h+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){h+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});h+='</div>';
+  lastScan=required.concat(likely);
+  h+='<div class="row" style="margin:14px 0"><button class="btn" id="expSpec">Export spec index (CSV)</button><button class="btn ghost" id="printSpec" style="margin-left:8px">Print</button></div>';
+  h+='<div class="callout" style="margin:14px 0">This is a reading aid, not a substitute for the spec list. The <b>confident</b> tier (≥4 corroborated drawing phrases) runs about 76% precise across six buildings; <b>likely</b> is a wider, softer net. Verify anything before you rely on it.</div>';
+  if(required.length){h+='<p class="count"><b style="color:var(--amber-d)">Required — confident</b> ('+required.length+')</p><div class="grid">';required.slice(0,60).forEach(function(r){h+=card(r);});h+='</div>';}
+  if(likely.length){h+='<p class="count" style="margin-top:20px"><b>Likely — softer signal</b> ('+likely.length+')</p><div class="grid">';likely.slice(0,60).forEach(function(r){h+=card(r);});h+='</div>';}
+  if(!flagged.length)h+='<div class="empty glass"><b>No sections cleared the bar</b>The set may be light on text, or use vocabulary not yet curated. Try the per-term Search instead.</div>';
   out.innerHTML=h;
+  var ex=document.getElementById("expSpec");if(ex)ex.onclick=exportSpecIndex;
+  var pr=document.getElementById("printSpec");if(pr)pr.onclick=function(){window.print();};
+}
+var lastScan=[];
+function exportSpecIndex(){
+  if(!lastScan.length)return;
+  var rows=[["Division","Section","Title","Confidence","Drawing phrases","Acceptable manufacturers","Specified products"]];
+  lastScan.forEach(function(r){var s=secOf(r.code);
+    rows.push([s.div,s.code,s.title,(r.tier==="required"?"Confident":"Likely"),(r.terms||[]).join("; "),(s.mfr||[]).join("; "),(s.bod||[]).join("; ")]);});
+  var csv=rows.map(function(row){return row.map(function(c){c=(c==null?"":String(c));return '"'+c.replace(/"/g,'""')+'"';}).join(",");}).join("\r\n");
+  var blob=new Blob(["﻿"+csv],{type:"text/csv;charset=utf-8"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="spec-index.csv";a.click();
 }
 
 /* ---------- keynotes ---------- */
@@ -468,18 +560,23 @@ function fillKeynotes(){
 
   // "this keynote could be better" — same section, several wordings; standard = wording closest to the section title
   var picks=[];
-  ["07 92 00","09 22 16","08 44 13","07 84 00"].forEach(function(code){
+  var ovl=function(t,titleToks){return toks(t).filter(function(w){return titleToks.indexOf(w)>=0;}).length;};
+  ["07 92 00","08 44 13","09 30 00","10 28 13","09 22 16","09 51 00","12 24 13","08 11 13","09 91 00"].forEach(function(code){
+    if(picks.length>=3)return;
     var sec=secOf(code); var titleToks=toks(sec.title);
     var terms=[];for(var t in ALIASES)if(ALIASES[t].indexOf(code)>=0)terms.push(t);
     if(terms.length<2)return;
-    // score each term: overlap with title tokens, prefer 2-3 words, penalise digits/very long
-    function score(t){var tt=toks(t);var ov=tt.filter(function(w){return titleToks.indexOf(w)>=0;}).length;
-      var lenpen=Math.abs(tt.length-2)*0.4; var digit=/\d/.test(t)?2:0;
-      return ov*2 - lenpen - digit;}
-    terms.sort(function(a,b){return score(b)-score(a);});
-    var best=terms[0];
+    // a good keynote standard is CONCISE and specific: 2-4 words, no digits, best title overlap.
+    function score(t){return ovl(t,titleToks)*2 - toks(t).length*0.6 - (/\d/.test(t)?3:0);}
+    var concise=terms.filter(function(t){var n=toks(t).length;return n>=2&&n<=4;});
+    if(!concise.length)return;
+    concise.sort(function(a,b){return score(b)-score(a)||toks(a).length-toks(b).length;});
+    var best=concise[0];
     var weak=terms.slice().sort(function(a,b){return toks(a).length-toks(b).length;})[0];
-    if(best!==weak)picks.push({code:code,title:sec.title,best:best,weak:weak,n:terms.length});
+    var norm2=function(s){return s.replace(/[^a-z0-9]/g,"");};
+    // only a real improvement: standard adds title-specificity the weak term lacks, and isn''t just a spacing variant
+    if(best!==weak && ovl(best,titleToks)>ovl(weak,titleToks) && norm2(best)!==norm2(weak))
+      picks.push({code:code,title:sec.title,best:best,weak:weak,n:terms.length});
   });
   var c='';
   picks.forEach(function(p){
@@ -508,6 +605,7 @@ document.getElementById("bq").addEventListener("input",renderBrowse);
 document.getElementById("mq").addEventListener("input",renderMakers);
 document.getElementById("mmode-mfr").onclick=function(){setMakerMode("mfr");};
 document.getElementById("mmode-prod").onclick=function(){setMakerMode("prod");};
+var _fb=document.getElementById("expFb");if(_fb)_fb.onclick=exportFlags;
 var drop=document.getElementById("drop"),file=document.getElementById("file");
 drop.onclick=function(){file.click();};
 file.onchange=function(){if(file.files.length)runScan(file.files);};
