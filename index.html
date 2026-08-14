@@ -410,10 +410,24 @@ function openDetail(code){
   h+='<button class="mclose" onclick="closeDetail()">×</button>';
   h+='<div class="mcode">'+esc(s.code)+'</div><h3>'+esc(s.title)+'</h3>';
   h+='<span class="dtag" style="background:'+col+';margin-top:8px">'+s.div+' · '+esc(s.divName||"")+'</span>';
-  if(by.length){h+='<div class="msec"><div class="h">Issued on '+by.length+' of 6 projects</div>';by.forEach(function(p){h+='<span class="projdot">'+esc(p)+'</span>';});h+='</div>';}
+  if(by.length){
+    var typs={};by.forEach(function(p){var ty=((DB.projects||{})[p]||{}).typology;if(ty)typs[ty]=1;});
+    var ntyp=Object.keys(typs).length;
+    h+='<div class="msec"><div class="h">Issued on '+by.length+' project'+(by.length!==1?'s':'')+(ntyp?' · '+ntyp+' building type'+(ntyp!==1?'s':''):'')+'</div>';
+    by.forEach(function(p){var ty=((DB.projects||{})[p]||{}).typology||'';h+='<span class="projdot">'+esc(p)+(ty?' · '+esc(ty.split(" / ")[0]):'')+'</span>';});
+    if(ntyp>=3)h+='<div style="font-size:12px;color:var(--ok);margin-top:7px">✓ Confirmed across '+ntyp+' building types — a broadly universal mapping.</div>';
+    else if(ntyp===1)h+='<div style="font-size:12px;color:var(--muted);margin-top:7px">Seen in one building type so far ('+esc(Object.keys(typs)[0])+') — may be typology-specific until a second confirms it.</div>';
+    var nw=0,rn=0;by.forEach(function(p){var cs=((DB.projects||{})[p]||{}).construction;if(cs==="New")nw++;else if(cs==="Renovation")rn++;});
+    if(nw||rn){h+='<div style="font-size:12px;color:var(--muted);margin-top:5px">Construction: '+nw+' new · '+rn+' renovation'+((rn&&!nw)?" — appears in renovation context":(nw&&!rn&&(nw+rn)>=3)?" — new-build context":"")+'</div>';}
+    h+='</div>';
+  }
   if(terms.length){h+='<div class="msec"><div class="h">Drawing terms that reach it ('+terms.length+')</div>';terms.slice(0,40).forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});if(terms.length>40)h+='<span class="pill">+'+(terms.length-40)+'</span>';h+='</div>';}
-  if(mfr.length){h+='<div class="msec"><div class="h">Acceptable manufacturers ('+mfr.length+')</div>';mfr.forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});h+='</div>';}
-  if(bod.length){h+='<div class="msec"><div class="h">Specified products</div>';bod.forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
+  var mfrByS=(DB.mfrBy&&DB.mfrBy[s.code])||{}, bodByS=(DB.bodBy&&DB.bodBy[s.code])||{};
+  if(bod.length){h+='<div class="msec"><div class="h">Specified — basis of design · actually used ('+bod.length+')</div>';
+    bod.forEach(function(p){var ps=bodByS[p]||[];h+='<span class="pill prod">'+esc(p)+(ps.length?' <span style="opacity:.75;font-weight:600">· used on '+esc(ps.join(", "))+'</span>':'')+'</span>';});h+='</div>';}
+  if(mfr.length){h+='<div class="msec"><div class="h">Acceptable manufacturers · allowed alternatives ('+mfr.length+')</div>';
+    mfr.forEach(function(m){var ps=mfrByS[m]||[];h+='<span class="pill">'+esc(m)+(ps.length?' <span style="opacity:.6">· listed on '+esc(ps.join(", "))+'</span>':'')+'</span>';});h+='</div>';}
+  if(bod.length||mfr.length)h+='<div style="font-size:11.5px;color:var(--muted);margin-top:-4px">“Used” = named as basis of design in that spec. “Acceptable” = allowed alternatives listed alongside.</div>';
   if(rel.length){h+='<div class="msec"><div class="h">Often issued together (across your projects)</div>';rel.forEach(function(r){var rs=secOf(r[0]);h+='<span class="relchip" onclick="openDetail(\''+esc(rs.code)+'\')"><span class="dot" style="width:8px;height:8px;border-radius:3px;background:'+divCol(rs.div)+'"></span>'+esc(rs.code)+' '+esc(rs.title)+' <span class="rn">'+r[1]+' proj</span></span>';});h+='</div>';}
   h+='<div class="msec"><button class="flagbtn '+(flagged?"flagged":"")+'" onclick="detailFlag(\''+esc(s.code)+'\')">'+(flagged?"⚑ flagged as wrong — click to undo":"⚑ flag this mapping as wrong")+'</button></div>';
   h+='</div>';
@@ -443,8 +457,8 @@ function renderBrowse(){
   }).sort(function(a,b){return canon(a.code)<canon(b.code)?-1:1;});
   cnt.textContent=rows.length+" sections";
   list.innerHTML=rows.slice(0,400).map(function(s){
-    var col=divCol(s.div),na=aliasCount[s.code]||0,nm=(s.mfr||[]).length;
-    return '<div class="brow"><div class="bedge" style="background:'+col+'"></div><div class="bcode">'+esc(s.code)+'</div><div class="btitle">'+esc(s.title)+'</div><div class="bmeta">'+(na?na+' terms':'<span style="color:#c0392b">no term</span>')+' · '+nm+' mfr</div></div>';
+    var col=divCol(s.div),na=aliasCount[s.code]||0,nm=(s.mfr||[]).length,nb=(s.bod||[]).length;
+    return '<div class="brow" onclick="openDetail(\''+s.code+'\')" style="cursor:pointer"><div class="bedge" style="background:'+col+'"></div><div class="bcode">'+esc(s.code)+'</div><div class="btitle">'+esc(s.title)+'</div><div class="bmeta">'+(na?na+' terms':'<span style="color:#c0392b">no term</span>')+' · '+nm+' mfr'+(nb?' · '+nb+' used':'')+'</div></div>';
   }).join("")+(rows.length>400?'<p class="count">showing first 400 of '+rows.length+'</p>':'');
 }
 

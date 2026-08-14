@@ -8111,8 +8111,6 @@ const DB = {
    "11 12 00"
   ],
   "access door": [
-   "11 33 00",
-   "11 67 30",
    "08 31 00"
   ],
   "access enclosure": [
@@ -8725,7 +8723,7 @@ const DB = {
    "08 88 15"
   ],
   "architectural precast concrete": [
-   "12 36 13"
+   "03 45 00"
   ],
   "architectural terra cotta": [
    "04 21 29-00"
@@ -9456,7 +9454,6 @@ const DB = {
    "05 52 19"
   ],
   "carpet": [
-   "11 61 23",
    "09 68 13"
   ],
   "carpet base": [
@@ -12371,7 +12368,6 @@ const DB = {
    "03 01 30-00",
    "03 01 43",
    "03 31 33",
-   "13 35 00",
    "03 11 00"
   ],
   "formwork lumber": [
@@ -18505,7 +18501,7 @@ const DB = {
   "thermal insulation": [
    "05 41 13",
    "05 41 16",
-   "13 42 33"
+   "07 21 16"
   ],
   "thermal insulation material": [
    "08 44 26-23-13"
@@ -20545,6 +20541,7 @@ const DB = {
    "antigraffiti treatment",
    "architectural",
    "architectural concrete",
+   "architectural precast concrete",
    "cement",
    "chemical admixtures",
    "colouring agents",
@@ -22082,6 +22079,7 @@ const DB = {
    "mineral fibre thermal insulation",
    "nails",
    "staples",
+   "thermal insulation",
    "vapour retarder"
   ],
   "07 21 19": [
@@ -24831,7 +24829,6 @@ const DB = {
    "ventilation range hoods"
   ],
   "11 33 00": [
-   "access door",
    "frame",
    "stairway"
   ],
@@ -24906,7 +24903,6 @@ const DB = {
    "backdrops",
    "box riser with guardrail",
    "box step",
-   "carpet",
    "curtain closures",
    "portable stage platforms",
    "stage drapery fabric",
@@ -24950,7 +24946,6 @@ const DB = {
    "wall padding"
   ],
   "11 67 30": [
-   "access door",
    "bouldering wall",
    "climbing wall returns",
    "climbing wall system",
@@ -25136,7 +25131,6 @@ const DB = {
    "stainless steel casework"
   ],
   "12 36 13": [
-   "architectural precast concrete",
    "concrete countertops",
    "decorative precast concrete",
    "metal lath reinforcing",
@@ -25395,7 +25389,6 @@ const DB = {
   "13 35 00": [
    "cement stabilized rammed earth wall",
    "cementing materials",
-   "formwork",
    "insulated wall construction",
    "insulating materials",
    "load bearing wall",
@@ -25412,7 +25405,6 @@ const DB = {
    "lumber",
    "mechanical plumbing and ducting",
    "structural walls",
-   "thermal insulation",
    "underlayment",
    "vapour retarder",
    "wall sheathing",
@@ -25706,7 +25698,9 @@ const DB = {
     "declined": 1,
     "confirmations": 89,
     "flaggedForReview": 9
-   }
+   },
+   "typology": "Aviation / Terminal",
+   "construction": "Renovation"
   },
   "OCME": {
    "name": "Office of the Chief Medical Examiner",
@@ -25722,7 +25716,9 @@ const DB = {
     "manufacturersAdded": 74,
     "productsAdded": 68,
     "flaggedForReview": 1
-   }
+   },
+   "typology": "Healthcare / Forensic",
+   "construction": "New"
   },
   "Fortis": {
    "name": "FortisAlberta TP2",
@@ -25737,7 +25733,9 @@ const DB = {
     "manufacturersAdded": 65,
     "productsAdded": 38,
     "note": "spec-derived; drawing-verified aliases + keynotes pending"
-   }
+   },
+   "typology": "Utility / Corporate",
+   "construction": "New"
   },
   "Glenbow": {
    "name": "Glenbow Reimagined (GRCP P3)",
@@ -25752,7 +25750,9 @@ const DB = {
     "manufacturersAdded": 65,
     "productsAdded": 64,
     "note": "spec-derived; drawing-verified aliases + keynotes pending"
-   }
+   },
+   "typology": "Cultural / Museum",
+   "construction": "Renovation"
   },
   "Curtis Block": {
    "name": "Curtis Block TP2",
@@ -25767,7 +25767,9 @@ const DB = {
     "manufacturersAdded": 56,
     "productsAdded": 52,
     "note": "spec-derived; drawing-verified aliases + keynotes pending"
-   }
+   },
+   "typology": "Commercial / Mixed-use",
+   "construction": "New"
   },
   "NCL": {
    "name": "New Central Library (BP1/1a/3/4)",
@@ -25782,7 +25784,9 @@ const DB = {
     "manufacturersAdded": 77,
     "productsAdded": 102,
     "note": "spec-derived; drawing-verified aliases + keynotes pending"
-   }
+   },
+   "typology": "Civic / Library",
+   "construction": "New"
   },
   "HSBC": {
    "name": "HSBC Tower & Parkade",
@@ -25797,7 +25801,9 @@ const DB = {
     "manufacturersAdded": 21,
     "productsAdded": 49,
     "note": "spec-derived; drawings pending"
-   }
+   },
+   "typology": "Commercial / Office",
+   "construction": "New"
   }
  },
  "provenance": {
@@ -29587,6 +29593,22 @@ const DB = {
     "added": "2026-08-14",
     "by": "curated",
     "evidence": "missed-vocab pass: material phrase on Glenbow drawings; section issued"
+   },
+   "thermal insulation|07 21 16": {
+    "projects": [
+     "QA-audit"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "QA fix: correct home for thermal insulation (Blanket Insulation)."
+   },
+   "architectural precast concrete|03 45 00": {
+    "projects": [
+     "QA-audit"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "QA fix: correct home Precast Architectural Concrete."
    }
   },
   "retired": {
@@ -29653,6 +29675,54 @@ const DB = {
     ],
     "by": "review",
     "reason": "Retargeted to 10 26 13 Corner Guards once that section was added."
+   },
+   "carpet|11 61 23": {
+    "retired": "2026-08-14",
+    "projects": [
+     "QA-audit"
+    ],
+    "by": "review",
+    "reason": "material term; Folding Stages unrelated. carpet -> 09 68 13 is correct."
+   },
+   "access door|11 33 00": {
+    "retired": "2026-08-14",
+    "projects": [
+     "QA-audit"
+    ],
+    "by": "review",
+    "reason": "access door -> Retractable Stairs wrong; 08 31 00 Access Doors is correct."
+   },
+   "access door|11 67 30": {
+    "retired": "2026-08-14",
+    "projects": [
+     "QA-audit"
+    ],
+    "by": "review",
+    "reason": "access door -> Climbing Walls wrong; 08 31 00 correct."
+   },
+   "formwork|13 35 00": {
+    "retired": "2026-08-14",
+    "projects": [
+     "QA-audit"
+    ],
+    "by": "review",
+    "reason": "formwork -> Rammed Earth Walls too narrow; 03 11 00 Concrete Forming correct."
+   },
+   "thermal insulation|13 42 33": {
+    "retired": "2026-08-14",
+    "projects": [
+     "QA-audit"
+    ],
+    "by": "review",
+    "reason": "thermal insulation -> Apartment Unit Modules wrong; belongs in Div 07."
+   },
+   "architectural precast concrete|12 36 13": {
+    "retired": "2026-08-14",
+    "projects": [
+     "QA-audit"
+    ],
+    "by": "review",
+    "reason": "architectural precast concrete -> Concrete Countertops wrong; 03 45 00 is correct."
    }
   },
   "declined": {
@@ -32228,6 +32298,12 @@ const DB = {
      "OCME"
     ],
     "why": "library's 09 65 16-19 titled 'Nora Systems Sheet Rubber Flooring (non-DLG)' but 09 65 16 is Vinyl Sheet Flooring per MasterFormat; OCME issued vinyl at this code. Added proper 09 65 16; stray -19 left for your ruling."
+   },
+   "ceiling lights|14 27 00": {
+    "projects": [
+     "QA-audit"
+    ],
+    "why": "only target is Custom Elevator Cabs; likely electrical scope (Div 26). Rule: retarget or retire?"
    }
   }
  },
@@ -35785,5 +35861,3713 @@ const DB = {
     2
    ]
   ]
+ },
+ "mfrBy": {
+  "07 84 00": {
+   "Passive Fire Protection Partners": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Hilti Inc": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Roxtec": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Tremco Ltd": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "A/D Fire Protection Systems Inc": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Hilti Canada Ltd": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Nuco Self Seal Firestopping Products": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Specified Technologies Inc": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "3M Canada Inc": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "08 71 00": {
+   "Butt Hinges": [
+    "OCME"
+   ],
+   "Hager Companies (HAG)": [
+    "OCME",
+    "Fortis",
+    "NCL",
+    "HSBC"
+   ],
+   "McKinney Products Company (MCK)": [
+    "OCME",
+    "NCL"
+   ],
+   "Stanley Commercial Hardware (STH)": [
+    "OCME",
+    "Fortis",
+    "NCL",
+    "HSBC"
+   ],
+   "DORMA Door Controls Inc. (DC)": [
+    "OCME",
+    "HSBC"
+   ],
+   "Rixson-Firemark": [
+    "OCME",
+    "HSBC"
+   ],
+   "Auto Operators": [
+    "OCME"
+   ],
+   "Lawrence (LH)": [
+    "Fortis"
+   ],
+   "Dorma Canada/PBB": [
+    "NCL"
+   ],
+   "McKinney Products Company (MCK": [
+    "HSBC"
+   ],
+   "Continuous Geared Hinges": [
+    "HSBC"
+   ]
+  },
+  "10 28 13": {
+   "ASI Specialties Inc": [
+    "OCME",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Bobrick Washroom Equipment of Canada Ltd": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Bradley Corporation": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Koala Kare Corporation": [
+    "OCME"
+   ],
+   "Safe Strap Company": [
+    "OCME"
+   ],
+   "Dyson Canada Ltd": [
+    "OCME"
+   ],
+   "World Dryer": [
+    "OCME"
+   ],
+   "ASI American Specialties Inc": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Excel Dryer Inc": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Frost Ltd": [
+    "Fortis",
+    "Glenbow"
+   ]
+  },
+  "09 96 56": {
+   "Mapei": [
+    "OCME"
+   ],
+   "Sika Canada/Duochem Inc": [
+    "OCME"
+   ]
+  },
+  "09 22 16": {
+   "BRACELOK by Plenum Inc": [
+    "OCME",
+    "Fortis"
+   ],
+   "Bailey Metal Products Ltd": [
+    "OCME"
+   ],
+   "ClarkDietrich": [
+    "OCME"
+   ],
+   "SCAFCO Steel Stud Company": [
+    "OCME"
+   ],
+   "Non-Structural Steel Stud Framing Properties": [
+    "Fortis"
+   ]
+  },
+  "06 05 73": {
+   "Arch Wood Protection (Lonza Wood Protection)": [
+    "OCME"
+   ],
+   "KMG-Bernuth": [
+    "OCME"
+   ],
+   "Ruetgers Canada (Rain Carbon Inc.)": [
+    "OCME"
+   ],
+   "Timber Specialties Co. (Koppers Canada)": [
+    "OCME"
+   ],
+   "Viance Treated Wood Solutions": [
+    "OCME"
+   ]
+  },
+  "10 26 13": {
+   "Construction Specialties": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Inpro": [
+    "OCME"
+   ],
+   "Korogard Wall Protection Systems": [
+    "OCME"
+   ]
+  },
+  "10 21 13": {
+   "Hadrian": [
+    "OCME",
+    "Fortis"
+   ],
+   "ASI Global Partitions": [
+    "OCME",
+    "Fortis"
+   ],
+   "Bobrick": [
+    "OCME",
+    "Fortis",
+    "HSBC"
+   ],
+   "Bradley": [
+    "Fortis"
+   ],
+   "Global Partitions": [
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "07 25 13": {
+   "Henry Company Canada": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Soprema": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Tremco": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "W.R. Meadows": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "IKO Industries Ltd": [
+    "Fortis"
+   ],
+   "Bakor Inc. (Henry Canada)": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Grace Construction Materials": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Soprema Canada": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Tremco Commercial Sealants and Waterproofing": [
+    "Curtis Block"
+   ],
+   "W. R. Meadows Inc": [
+    "Curtis Block"
+   ]
+  },
+  "08 41 13": {
+   "Kawneer": [
+    "OCME"
+   ],
+   "Alumicor Limited": [
+    "OCME"
+   ]
+  },
+  "09 65 13": {
+   "Johnsonite Tarkett": [
+    "OCME"
+   ],
+   "Mannington": [
+    "OCME"
+   ],
+   "Roppe": [
+    "OCME"
+   ]
+  },
+  "09 67 23": {
+   "Mapei": [
+    "OCME"
+   ],
+   "Sherwin Williams": [
+    "OCME"
+   ],
+   "Sika": [
+    "OCME"
+   ],
+   "Master Builders (BASF)": [
+    "Glenbow"
+   ]
+  },
+  "07 62 00": {
+   "Sherwin Williams": [
+    "OCME"
+   ],
+   "Zinc Galvanized Sheet Steel Flashing": [
+    "Curtis Block"
+   ],
+   "Thickness": [
+    "Curtis Block"
+   ],
+   "Galvanizing Designation": [
+    "Curtis Block"
+   ],
+   "Metal Flashing": [
+    "Curtis Block"
+   ],
+   "Surface Texture": [
+    "Curtis Block"
+   ],
+   "Finish": [
+    "Curtis Block"
+   ]
+  },
+  "09 65 36": {
+   "Gerflor": [
+    "OCME"
+   ],
+   "Johnsonite Tarkett": [
+    "OCME"
+   ],
+   "Forbo": [
+    "HSBC"
+   ]
+  },
+  "08 56 19": {
+   "Clean Air Products": [
+    "OCME"
+   ],
+   "C. R. Laurence Co.": [
+    "HSBC"
+   ],
+   "Easi-Serv Products Inc": [
+    "HSBC"
+   ],
+   "Ready Access": [
+    "HSBC"
+   ]
+  },
+  "12 21 13-43": {
+   "Groupe Prelco": [
+    "OCME"
+   ]
+  },
+  "08 14 00": {
+   "Ampco": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Baillargeon Doors": [
+    "Fortis",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Construction Specialties": [
+    "Fortis"
+   ],
+   "Lambton Doors": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Lynden Door Inc": [
+    "Fortis",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Lampton Doors": [
+    "Curtis Block"
+   ],
+   "Edmonton": [
+    "HSBC"
+   ],
+   "Jasper Millwork Ltd": [
+    "HSBC"
+   ],
+   "Madsen Custom Cabinets": [
+    "HSBC"
+   ],
+   "McMurray Interiors": [
+    "HSBC"
+   ],
+   "Calgary": [
+    "HSBC"
+   ],
+   "Bennett Millwork Western Ltd": [
+    "HSBC"
+   ],
+   "Cambium Woodwork Ltd": [
+    "HSBC"
+   ],
+   "Nickâs Woodcraft Industries Ltd": [
+    "HSBC"
+   ]
+  },
+  "10 22 39": {
+   "Corflex": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Panelfold Inc": [
+    "OCME"
+   ],
+   "Moderco Inc": [
+    "OCME"
+   ],
+   "Coreflex 5900 Series": [
+    "Fortis"
+   ],
+   "Moderfold": [
+    "Fortis"
+   ],
+   "Hufcor": [
+    "Fortis"
+   ],
+   "Moderco": [
+    "Fortis"
+   ]
+  },
+  "08 87 00": {
+   "Avery Dennison Graphics": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Apex Window Films": [
+    "OCME"
+   ],
+   "Llumar Window Film": [
+    "OCME"
+   ]
+  },
+  "12 35 53": {
+   "Mott Manufacturing": [
+    "OCME",
+    "Glenbow"
+   ]
+  },
+  "09 28 11": {
+   "CertainTeed Gypsum of Canada": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "CGC Interiors": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Georgia-Pacific Canada": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Custom Building Products Ltd": [
+    "Fortis"
+   ]
+  },
+  "08 36 13-13": {
+   "Atlas Roll-Lite Overhead Doors": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Creative Door Services Ltd": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Overhead Door Company": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Richards-Wilcox Canada Inc": [
+    "Glenbow"
+   ],
+   "Steel-Craft Door Products Ltd": [
+    "Glenbow"
+   ]
+  },
+  "07 13 52": {
+   "Henry Company Canada": [
+    "OCME"
+   ],
+   "Soprema": [
+    "OCME",
+    "Fortis",
+    "Curtis Block"
+   ],
+   "W.R. Meadows": [
+    "OCME",
+    "Fortis",
+    "Curtis Block"
+   ],
+   "Bakor Inc. (Henry Canada)": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "Grace Construction Materials": [
+    "Curtis Block"
+   ],
+   "IKO Industries Ltd": [
+    "Curtis Block"
+   ]
+  },
+  "09 05 61": {
+   "Ardex": [
+    "OCME"
+   ],
+   "Custom Building Products Ltd": [
+    "OCME"
+   ],
+   "Sika Canada": [
+    "OCME"
+   ],
+   "Ardex Engineered Cements": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "MAPEI Canada Inc": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "Sika Canada Ltd": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "W.R. Meadows of Canada": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "Custom Building Products": [
+    "Fortis",
+    "Curtis Block"
+   ]
+  },
+  "10 21 23": {
+   "Construction Specialties": [
+    "OCME"
+   ],
+   "AR Nelson": [
+    "OCME"
+   ],
+   "Imperial Surgical Inc": [
+    "OCME"
+   ]
+  },
+  "07 21 23": {
+   "Polystyrene Plastic Board Insulation": [
+    "OCME"
+   ],
+   "DuPont Canada": [
+    "OCME"
+   ],
+   "Owens Corning": [
+    "OCME"
+   ]
+  },
+  "07 25 19": {
+   "Huntsman Building Solutions": [
+    "OCME"
+   ],
+   "Johns Manville": [
+    "OCME",
+    "Curtis Block"
+   ],
+   "BASF The Chemical Company": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "CertainTeed-Saint Gobain": [
+    "Curtis Block"
+   ],
+   "Demilec Canada": [
+    "Curtis Block"
+   ],
+   "Lapolla Canada": [
+    "Curtis Block"
+   ]
+  },
+  "09 51 00": {
+   "Armstrong Ceiling and Wall Solutions": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "CGC Interiors": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Saint-Gobain CertainTeed": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "NCL",
+    "HSBC"
+   ],
+   "Rockfon": [
+    "Fortis"
+   ],
+   "Lindner Group": [
+    "NCL",
+    "HSBC"
+   ],
+   "Armstrong World Industries Canada Ltd": [
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "07 42 13-19": {
+   "Kingspan Insulated Panels Ltd": [
+    "OCME"
+   ]
+  },
+  "10 51 13": {
+   "Canadian Locker Company Limited": [
+    "OCME"
+   ],
+   "GSS Lockers": [
+    "OCME"
+   ],
+   "Hadrian Manufacturing Inc": [
+    "OCME"
+   ],
+   "Shanahan’s Limited": [
+    "OCME"
+   ]
+  },
+  "09 65 16": {
+   "Altro": [
+    "OCME"
+   ],
+   "Forbo": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Tarkett": [
+    "OCME"
+   ],
+   "Nora": [
+    "OCME"
+   ],
+   "Armstrong": [
+    "Glenbow"
+   ],
+   "Johnsonite Tarkett": [
+    "Glenbow"
+   ]
+  },
+  "08 35 16": {
+   "Dynamic Closures Corporation": [
+    "OCME"
+   ],
+   "Cookson Company": [
+    "OCME"
+   ],
+   "Cornell Ironworks": [
+    "OCME"
+   ]
+  },
+  "10 26 23-13": {
+   "Construction Specialties": [
+    "OCME"
+   ],
+   "IPC Door and Wall Protection Systems": [
+    "OCME"
+   ],
+   "Korogard Wall Protection Systems": [
+    "OCME"
+   ]
+  },
+  "07 27 16": {
+   "Cossella-Dorken": [
+    "OCME"
+   ],
+   "Henry": [
+    "OCME"
+   ],
+   "Soprema": [
+    "OCME",
+    "Fortis",
+    "Curtis Block"
+   ],
+   "SRP Canada": [
+    "OCME"
+   ],
+   "W.R. Meadows": [
+    "OCME"
+   ],
+   "Imetco": [
+    "OCME"
+   ],
+   "Henry Company Canada": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "IKO Industries Ltd": [
+    "Fortis"
+   ]
+  },
+  "12 35 70": {
+   "MottLab": [
+    "OCME"
+   ],
+   "Mott Manufacturing (Stainless Steel Casework)": [
+    "OCME"
+   ]
+  },
+  "09 29 13": {
+   "CertainTeed Gypsum of Canada": [
+    "OCME"
+   ],
+   "CGC Inc": [
+    "OCME"
+   ],
+   "Georgia-Pacific Canada": [
+    "OCME"
+   ]
+  },
+  "09 21 16-23": {
+   "CertainTeed": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "CGC Interiors": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Georgia-Pacific Canada": [
+    "OCME",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Bailey Metal Products Ltd": [
+    "OCME",
+    "Glenbow"
+   ],
+   "ClarkDietrich": [
+    "OCME",
+    "Glenbow"
+   ],
+   "SCAFCO Steel Stud Company": [
+    "OCME",
+    "Glenbow"
+   ],
+   "CGC Inc": [
+    "Curtis Block",
+    "NCL"
+   ]
+  },
+  "08 31 00": {
+   "Acudor": [
+    "OCME"
+   ],
+   "Bauco Access Panel Solutions Inc": [
+    "OCME"
+   ],
+   "Acudor DW-5015": [
+    "OCME"
+   ],
+   "Mifab CAD": [
+    "OCME"
+   ]
+  },
+  "10 22 19-53": {
+   "Haworth": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Steelcase": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Teknion": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "MAARS (HermanMiller)": [
+    "Fortis"
+   ],
+   "Demountable Partitions": [
+    "Fortis"
+   ]
+  },
+  "07 81 00": {
+   "Carboline Company": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "NCL"
+   ],
+   "Grace Construction Products": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "NCL"
+   ],
+   "Isolatek International Inc.": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "NCL"
+   ]
+  },
+  "07 21 16": {
+   "CertainTeed Corporation": [
+    "OCME"
+   ],
+   "Johns Manville": [
+    "OCME"
+   ],
+   "Owens-Corning Canada Inc": [
+    "Glenbow"
+   ]
+  },
+  "12 24 13": {
+   "Mechoshade": [
+    "OCME"
+   ],
+   "Lutron": [
+    "Fortis"
+   ],
+   "MechoShade Systems": [
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "HSBC"
+   ],
+   "HunterDouglas": [
+    "Glenbow"
+   ]
+  },
+  "04 21 13": {
+   "Hebron": [
+    "OCME"
+   ],
+   "Glen-Gery": [
+    "OCME"
+   ]
+  },
+  "09 61 13-13": {
+   "Balco Inc": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Wooster Products Inc": [
+    "OCME",
+    "Fortis"
+   ],
+   "Abrasive Coatings": [
+    "Fortis",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Sika Canada": [
+    "Fortis",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Tactile Studs": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Kinesik": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Stoncor": [
+    "Glenbow",
+    "Curtis Block"
+   ]
+  },
+  "13 21 26": {
+   "Conviron": [
+    "OCME"
+   ],
+   "SubZero Technical": [
+    "OCME"
+   ],
+   "Biocold": [
+    "OCME"
+   ],
+   "Bahnson / Environmental Specialties": [
+    "OCME"
+   ],
+   "Harris Environmental Systems": [
+    "OCME"
+   ]
+  },
+  "12 48 16": {
+   "Construction Specialties": [
+    "OCME",
+    "Curtis Block"
+   ],
+   "Balco": [
+    "OCME",
+    "Curtis Block"
+   ],
+   "K. N. Crowder Mfg. Inc": [
+    "OCME",
+    "Curtis Block"
+   ],
+   "Reese Enterprises": [
+    "Curtis Block"
+   ],
+   "Hendrickâs": [
+    "HSBC"
+   ]
+  },
+  "08 42 29-23": {
+   "Stanley Access Technologies": [
+    "OCME"
+   ],
+   "ASSA ABLOY Entrance Systems": [
+    "OCME"
+   ],
+   "Nabco Entrances Inc": [
+    "OCME"
+   ],
+   "Horton Automatics": [
+    "OCME"
+   ],
+   "Record": [
+    "Glenbow"
+   ]
+  },
+  "07 16 16": {
+   "Kryton International Inc": [
+    "OCME"
+   ],
+   "Tremco": [
+    "OCME",
+    "Glenbow",
+    "NCL"
+   ],
+   "WR Meadows": [
+    "OCME"
+   ],
+   "Kryton Canada Corporation": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Xypex Chemical Corporation": [
+    "NCL"
+   ]
+  },
+  "07 92 00": {
+   "Chemtron Manufacturing Ltd": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "C.R. Laurence of Canada": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Dow Corning Canada Inc": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Pecora Corporation": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Sika Canada Inc": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Tremco Ltd": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "GE Silicones Limited": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "Sika Chemical of Canada Ltd": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "ChemRex Inc.": [
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "09 91 00": {
+   "Benjamin Moore": [
+    "OCME"
+   ],
+   "Sherwin Williams": [
+    "OCME"
+   ]
+  },
+  "08 90 00": {
+   "Price Industries": [
+    "OCME"
+   ],
+   "Airolite Company LLC": [
+    "OCME",
+    "Glenbow",
+    "NCL"
+   ],
+   "Construction Specialties": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Greenheck Fan Corporatoin": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Construction Specialties Company": [
+    "NCL"
+   ],
+   "Haakon Industries": [
+    "NCL"
+   ],
+   "Nystrom Airline Products Co": [
+    "NCL"
+   ],
+   "Western Ventilation Products Ltd": [
+    "NCL"
+   ]
+  },
+  "11 70 00": {
+   "Detecto": [
+    "OCME"
+   ]
+  },
+  "08 44 13": {
+   "Kawneer": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Alumicor Limited": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Ferguson": [
+    "Fortis"
+   ],
+   "Stick Built Curtain wall System": [
+    "Glenbow"
+   ]
+  },
+  "08 88 13": {
+   "Pilkington Pyrostop": [
+    "OCME"
+   ],
+   "Technical Glass Product (TGP)": [
+    "OCME"
+   ],
+   "SAFTI Fire and Safety Rated Glass": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Schott PYRAN": [
+    "OCME"
+   ],
+   "Vetrotech Saint-Gobain": [
+    "OCME"
+   ],
+   "Technical Glass Products": [
+    "Glenbow"
+   ],
+   "Nippon Electric Glass Products": [
+    "Glenbow"
+   ],
+   "Pilkington Glass": [
+    "Glenbow"
+   ]
+  },
+  "09 65 23": {
+   "American Biltrite": [
+    "OCME"
+   ],
+   "Nora": [
+    "OCME"
+   ],
+   "Mondo": [
+    "OCME"
+   ]
+  },
+  "10 11 00": {
+   "Architectural School Products Ltd": [
+    "OCME",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Claridge Products and Equipment Inc": [
+    "OCME",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "C.P. Distributors Ltd": [
+    "OCME",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Egan Visual Inc": [
+    "OCME",
+    "Curtis Block"
+   ],
+   "Forbo Flooring Systems": [
+    "Curtis Block"
+   ]
+  },
+  "10 51 29": {
+   "ThreeH Lcokers": [
+    "Fortis"
+   ],
+   "Hollman": [
+    "Fortis"
+   ],
+   "Longhorn Lockers": [
+    "Fortis"
+   ],
+   "Space Saver": [
+    "Glenbow"
+   ]
+  },
+  "06 16 43": {
+   "CertainTeed Saint-Gobain": [
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ],
+   "CGC Inc": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Georgia-Pacific Canada": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Georgia Pacific": [
+    "Curtis Block",
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "07 81 23": {
+   "Carboline Company": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Isolatek International Inc.": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Cafco/Isolatek International Inc": [
+    "NCL"
+   ]
+  },
+  "07 95 00": {
+   "Construction Specialties": [
+    "Fortis",
+    "HSBC"
+   ],
+   "MM Systems": [
+    "Fortis"
+   ],
+   "Sika Canada": [
+    "Fortis"
+   ],
+   "Emseal Joint Systems": [
+    "HSBC"
+   ],
+   "MM Systems Corporation": [
+    "HSBC"
+   ]
+  },
+  "03 35 41": {
+   "L & M Construction Chemicals": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Mapei": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Prosoco Inc": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "W.R. Meadows": [
+    "Fortis",
+    "Glenbow"
+   ]
+  },
+  "09 22 26-13": {
+   "GRIDLOK by Plenum Inc": [
+    "Fortis"
+   ],
+   "Armstrong Drywall Grid Solutions": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "CertainTeed Drywall Grid System": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Chicago Metallic Drywall Grid": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "CGC Drywall Suspension Systems": [
+    "Fortis",
+    "Glenbow"
+   ]
+  },
+  "10 26 26": {
+   "Altro": [
+    "Fortis"
+   ],
+   "BioClad": [
+    "Fortis"
+   ]
+  },
+  "12 48 13-26": {
+   "Mannington Commercial": [
+    "Fortis"
+   ],
+   "Milliken Floor Covering": [
+    "Fortis"
+   ]
+  },
+  "07 52 16": {
+   "Soprema": [
+    "Fortis"
+   ],
+   "IKO Industries Ltd": [
+    "Fortis"
+   ]
+  },
+  "07 42 16": {
+   "Custom Metal Contracting Ltd": [
+    "Fortis"
+   ],
+   "VicWest": [
+    "Fortis"
+   ],
+   "LKMe": [
+    "Fortis"
+   ],
+   "Flynn Canada Ltd": [
+    "Fortis"
+   ],
+   "Igloo Erectors Ltd": [
+    "Fortis"
+   ],
+   "IMARK Inc. Metal roofing and Wall Systems": [
+    "Fortis"
+   ],
+   "Proclad Enterprises Ltd": [
+    "Fortis"
+   ]
+  },
+  "08 81 00": {
+   "Guardian Glass": [
+    "Fortis",
+    "Curtis Block"
+   ],
+   "Glass Materials": [
+    "Fortis",
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Guardian Glass (Europe)": [
+    "Glenbow"
+   ]
+  },
+  "07 42 23": {
+   "Behlen Industries LP": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Custom Metal Contracting Ltd": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Gentek Building Products Limited": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Igloo Erectors Ltd": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "IMARK Inc. Metal roofing and Wall Systems": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Proclad Enterprises Ltd": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Thermal Systems KWC Ltd": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Vicwest Steel Inc": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Westman Steel Industries": [
+    "Glenbow"
+   ]
+  },
+  "07 21 13": {
+   "Fibrous Board Insulation": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Owens Corning": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Polystyrene Plastic Board Insulation": [
+    "Fortis"
+   ],
+   "Knauf Insulation": [
+    "Glenbow"
+   ],
+   "Johns Manville": [
+    "Glenbow"
+   ],
+   "Dow Canada": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Owens-Corning Canada": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Roxul Inc": [
+    "NCL"
+   ]
+  },
+  "07 42 43": {
+   "Alucobond": [
+    "Fortis"
+   ],
+   "Reynobond": [
+    "Fortis"
+   ],
+   "Alucoil": [
+    "Fortis"
+   ],
+   "Alpolic Materials": [
+    "Curtis Block",
+    "HSBC"
+   ]
+  },
+  "07 21 19": {
+   "Master Builders Solutions": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "CertainTeed-Saint Gobain": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Icynene Inc": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Johns Manville": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Lapolla Canada": [
+    "Fortis",
+    "Glenbow"
+   ]
+  },
+  "03 33 00": {
+   "Aluma Systems": [
+    "Glenbow",
+    "Curtis Block",
+    "NCL"
+   ],
+   "Dayton Superior": [
+    "Glenbow",
+    "Curtis Block",
+    "NCL"
+   ],
+   "Doka": [
+    "Glenbow",
+    "Curtis Block",
+    "NCL"
+   ],
+   "US Formliner": [
+    "Curtis Block"
+   ],
+   "EFCO Forms Canada": [
+    "NCL"
+   ]
+  },
+  "04 05 19": {
+   "MASONRY CONNECTORS (VENEER TIES)": [
+    "Glenbow"
+   ]
+  },
+  "12 48 23": {
+   "K. N. Crowder Mfg. Inc": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Arden Architectural Specialties": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Balco": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Construction Specialties": [
+    "Glenbow"
+   ],
+   "Grillage Bolar (Canada) Inc": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Kadee Industries Inc": [
+    "Glenbow",
+    "NCL"
+   ],
+   "2.1.1     Basis-of-Design Product": [
+    "NCL"
+   ]
+  },
+  "07 14 13": {
+   "Carlisle Coatings and Waterproofing": [
+    "Glenbow",
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Henry Company Canada": [
+    "Glenbow"
+   ],
+   "Hydrotech Membrane Corp": [
+    "Glenbow",
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Henry (Bakor)": [
+    "Curtis Block",
+    "HSBC"
+   ]
+  },
+  "07 24 19": {
+   "ADEX Architectural Coatings": [
+    "Glenbow"
+   ],
+   "Master Builders Solutions by BASF": [
+    "Glenbow"
+   ],
+   "Dryvit Systems Canada": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Durabond Products Ltd": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "DuRock Alfacing International Ltd": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Sto Corporation": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "ADEX Architectural Coatings Inc": [
+    "Curtis Block"
+   ],
+   "BASF Senergy Wall Systems": [
+    "Curtis Block"
+   ]
+  },
+  "07 42 53": {
+   "Heavy Industries": [
+    "Glenbow"
+   ]
+  },
+  "04 05 23": {
+   "Movement Joint Filler": [
+    "Glenbow"
+   ]
+  },
+  "09 54 13": {
+   "SAS International": [
+    "Glenbow"
+   ],
+   "Armstrong": [
+    "Curtis Block"
+   ],
+   "Suspended Ceiling Fasteners": [
+    "Curtis Block"
+   ],
+   "Steel Roof Decking Anchors": [
+    "Curtis Block"
+   ],
+   "Steel Structure Fasteners": [
+    "Curtis Block"
+   ]
+  },
+  "10 22 39.13": {
+   "Coreflex": [
+    "Glenbow"
+   ],
+   "Nana Wall Systems": [
+    "Glenbow"
+   ],
+   "CRL-US Aluminum": [
+    "Glenbow"
+   ],
+   "Glass": [
+    "NCL"
+   ],
+   "Insulated Glazing Unit": [
+    "NCL"
+   ],
+   "Exterior Lite": [
+    "NCL"
+   ],
+   "Air Space": [
+    "NCL"
+   ],
+   "Interior Lite": [
+    "NCL"
+   ],
+   "Aluminum": [
+    "NCL"
+   ]
+  },
+  "07 08 25": {
+   "Detec Systems": [
+    "Glenbow"
+   ]
+  },
+  "07 42 93": {
+   "Behlen Industries LP": [
+    "Glenbow"
+   ],
+   "Custom Metal Contracting Ltd": [
+    "Glenbow"
+   ],
+   "Gentek Building Products Limited": [
+    "Glenbow"
+   ],
+   "Igloo Erectors Ltd": [
+    "Glenbow"
+   ],
+   "IMARK Inc. Metal roofing and Wall Systems": [
+    "Glenbow"
+   ],
+   "Proclad Enterprises Ltd": [
+    "Glenbow"
+   ],
+   "Thermal Systems KWC Ltd": [
+    "Glenbow"
+   ],
+   "Vicwest Steel Inc": [
+    "Glenbow"
+   ],
+   "Westman Steel Industries": [
+    "Glenbow"
+   ]
+  },
+  "04 22 13": {
+   "Basalite": [
+    "Glenbow"
+   ],
+   "Expocrete": [
+    "Glenbow"
+   ],
+   "Lafarge Canada Inc": [
+    "Glenbow"
+   ]
+  },
+  "08 63 00": {
+   "Ferguson Corporation": [
+    "Glenbow"
+   ]
+  },
+  "03 35 45": {
+   "Ardex Engineered Cements": [
+    "Glenbow"
+   ],
+   "Custom Building Products": [
+    "Glenbow"
+   ],
+   "Dayton Superior": [
+    "Glenbow"
+   ],
+   "LATICRETE International": [
+    "Glenbow"
+   ],
+   "MAPEI Canada Inc": [
+    "Glenbow"
+   ],
+   "Sika Canada Ltd": [
+    "Glenbow"
+   ],
+   "W.R. Meadows of Canada": [
+    "Glenbow"
+   ]
+  },
+  "03 01 30-00": {
+   "BASF Construction Chemicals": [
+    "Glenbow"
+   ],
+   "Sika Canada Inc": [
+    "Glenbow"
+   ],
+   "W.R. Meadows": [
+    "Glenbow"
+   ]
+  },
+  "11 13 00": {
+   "Blue Giant Equipment Corporation": [
+    "Glenbow"
+   ],
+   "Serco": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Rite Hite(formerly Frommelt Industries)": [
+    "Glenbow"
+   ],
+   "Pentalift Equipment Corp": [
+    "Glenbow"
+   ],
+   "Rite Hite (formerly Frommelt Industries)": [
+    "NCL"
+   ]
+  },
+  "03 35 43": {
+   "Ardex": [
+    "Glenbow"
+   ],
+   "Uzin": [
+    "Glenbow"
+   ],
+   "Convergent Concrete Technologies": [
+    "NCL"
+   ]
+  },
+  "03 35 50": {
+   "Euclid Chemical Company": [
+    "Glenbow"
+   ],
+   "L & M Construction Chemicals": [
+    "Glenbow"
+   ],
+   "Mapei": [
+    "Glenbow"
+   ],
+   "Prosoco Inc": [
+    "Glenbow"
+   ],
+   "W.R. Meadows": [
+    "Glenbow"
+   ]
+  },
+  "10 22 53": {
+   "MillerKnoll": [
+    "Glenbow"
+   ],
+   "Ferguson": [
+    "Glenbow"
+   ]
+  },
+  "09 22 00": {
+   "Trim Accessories": [
+    "Glenbow"
+   ],
+   "Aluminum Trim": [
+    "Glenbow"
+   ],
+   "Aluminum": [
+    "Glenbow"
+   ],
+   "Finish": [
+    "Glenbow"
+   ]
+  },
+  "07 44 73": {
+   "Ferguson": [
+    "Glenbow"
+   ]
+  },
+  "09 22 26-19": {
+   "Amber/Booth Co": [
+    "Glenbow"
+   ],
+   "Amber/Booth Company": [
+    "NCL"
+   ],
+   "Kinetic Noise Control": [
+    "NCL"
+   ],
+   "Mason Industries": [
+    "NCL"
+   ]
+  },
+  "09 51 26": {
+   "Armstrong": [
+    "Curtis Block"
+   ]
+  },
+  "07 41 13-13": {
+   "Lam Metal": [
+    "Curtis Block"
+   ]
+  },
+  "07 18 16-00": {
+   "Advanced Polymer Technology Corp.": [
+    "Curtis Block",
+    "NCL"
+   ],
+   "BASF Building Systems": [
+    "NCL"
+   ],
+   "LymTal International": [
+    "NCL"
+   ],
+   "Neogard": [
+    "NCL"
+   ],
+   "Sika Canada/Duochem Inc.": [
+    "NCL"
+   ],
+   "Stoncor Group": [
+    "NCL"
+   ]
+  },
+  "10 73 13": {
+   "Calgary Tent & Awning Ltd": [
+    "Curtis Block"
+   ],
+   "Alberta Tent & Awning Co. Ltd": [
+    "Curtis Block"
+   ]
+  },
+  "09 54 00": {
+   "Armstrong": [
+    "Curtis Block"
+   ]
+  },
+  "07 14 16": {
+   "Sika": [
+    "Curtis Block"
+   ],
+   "Tremco Commercial Sealants and Waterproofing": [
+    "Curtis Block",
+    "NCL"
+   ],
+   "W.R. Meadows": [
+    "Curtis Block",
+    "NCL"
+   ],
+   "Bakor Inc": [
+    "NCL"
+   ]
+  },
+  "08 33 39": {
+   "Albany Door Systems": [
+    "Curtis Block"
+   ],
+   "Dynaco Door": [
+    "Curtis Block"
+   ],
+   "Flexon Inc": [
+    "Curtis Block"
+   ],
+   "Rite-Hite Doors": [
+    "Curtis Block"
+   ],
+   "Rytec Corporation": [
+    "Curtis Block"
+   ],
+   "Superseal Manufacturing Ltd": [
+    "Curtis Block"
+   ]
+  },
+  "08 44 39": {
+   "Toro Aluminum": [
+    "Curtis Block"
+   ]
+  },
+  "09 96 23": {
+   "Faceal Oleo HD": [
+    "Curtis Block"
+   ]
+  },
+  "03 35 00": {
+   "Ardex Engineered Cements": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Curecrete Chemical Company": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Dayton Superior": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Euclid Chemical Company": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Evonik Industries": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Custom Building Products Ltd": [
+    "HSBC"
+   ]
+  },
+  "09 96 00": {
+   "Advanced Polymer Technology": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Carboline Company": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "AkzoNobel": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Sika Canada/Duochem Inc": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Valspar Corporation": [
+    "Curtis Block",
+    "HSBC"
+   ]
+  },
+  "13 48 13": {
+   "Mason Industries": [
+    "Curtis Block"
+   ],
+   "Kinetic Noise Control": [
+    "Curtis Block"
+   ]
+  },
+  "10 55 23": {
+   "Canadian Locker Co. Ltd": [
+    "Curtis Block"
+   ]
+  },
+  "08 42 33": {
+   "Boon Edam": [
+    "Curtis Block"
+   ],
+   "DormaKabba": [
+    "Curtis Block"
+   ],
+   "Horton Automatics": [
+    "Curtis Block"
+   ],
+   "Stanley": [
+    "Curtis Block"
+   ]
+  },
+  "03 15 19": {
+   "Raven Industries": [
+    "NCL"
+   ],
+   "Stego Industries LLC": [
+    "NCL"
+   ],
+   "W.R. Meadows": [
+    "NCL"
+   ]
+  },
+  "14 21 00": {
+   "KONE Inc": [
+    "NCL"
+   ],
+   "Otis Elevator Company": [
+    "NCL"
+   ],
+   "Schindler Elevator Corporation": [
+    "NCL"
+   ],
+   "ThyssenKrupp Elevator": [
+    "NCL"
+   ],
+   "Fujitec Inc": [
+    "NCL"
+   ],
+   "Source Limitations": [
+    "NCL"
+   ],
+   "Elevator System": [
+    "NCL"
+   ],
+   "Elevator Identification": [
+    "NCL"
+   ],
+   "Capacity": [
+    "NCL"
+   ]
+  },
+  "07 52 23": {
+   "Firestone": [
+    "NCL"
+   ],
+   "Siplast": [
+    "NCL"
+   ]
+  },
+  "07 72 33": {
+   "Babcock-Davis": [
+    "NCL",
+    "HSBC"
+   ],
+   "Bilco Company": [
+    "NCL",
+    "HSBC"
+   ],
+   "Lexcan Ltd": [
+    "NCL",
+    "HSBC"
+   ],
+   "Maxam Metal Products Ltd": [
+    "NCL",
+    "HSBC"
+   ],
+   "Nystrom Inc": [
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "03 15 21": {
+   "Balco P-200": [
+    "NCL"
+   ]
+  },
+  "07 21 29": {
+   "BASF The Chemical Company": [
+    "NCL"
+   ],
+   "CertainTeed-Saint Gobain": [
+    "NCL"
+   ],
+   "Demilec Canada": [
+    "NCL"
+   ],
+   "Johns Manville": [
+    "NCL"
+   ],
+   "Lapolla Canada": [
+    "NCL"
+   ]
+  },
+  "09 69 00": {
+   "ASM Modular Systems Inc": [
+    "NCL"
+   ],
+   "Camino Modular Systems Inc": [
+    "NCL"
+   ],
+   "Tate Access Floors": [
+    "NCL"
+   ]
+  },
+  "03 52 16-13": {
+   "Cematrix (Canada) Inc": [
+    "NCL"
+   ],
+   "Elastizell Corporation of America": [
+    "NCL"
+   ],
+   "Cement Materials": [
+    "NCL"
+   ],
+   "Water": [
+    "NCL"
+   ]
+  },
+  "10 22 40": {
+   "Alumicor Limited": [
+    "NCL"
+   ]
+  },
+  "10 22 43.13": {
+   "Tempered Glass": [
+    "NCL"
+   ],
+   "Type": [
+    "NCL"
+   ]
+  },
+  "09 64 29": {
+   "Alternate 1 â Nydree Red Oak Natural": [
+    "NCL"
+   ]
+  },
+  "07 92 13": {
+   "GE Silicones Limited": [
+    "NCL"
+   ],
+   "ChemRex Inc.": [
+    "NCL"
+   ],
+   "Chemtron Manufacturing Ltd": [
+    "NCL"
+   ],
+   "Dow Corning Canada Inc": [
+    "NCL"
+   ],
+   "Sika Chemical of Canada Ltd": [
+    "NCL"
+   ],
+   "Tremco Ltd": [
+    "NCL"
+   ]
+  },
+  "08 42 00": {
+   "C. R. Laurence Co. Inc": [
+    "NCL"
+   ],
+   "Prelco Inc.": [
+    "NCL"
+   ]
+  },
+  "09 72 16": {
+   "Custom graphic wallpaper (WLP-1)": [
+    "NCL"
+   ]
+  },
+  "06 61 16": {
+   "Aristech Acrylics Avonite": [
+    "NCL"
+   ]
+  },
+  "08 14 16": {
+   "Ampco": [
+    "NCL"
+   ],
+   "Baillargeon Doors": [
+    "NCL"
+   ],
+   "Lambton Doors": [
+    "NCL"
+   ],
+   "Lynden Door Inc": [
+    "NCL"
+   ]
+  },
+  "09 23 13": {
+   "Description": [
+    "NCL"
+   ]
+  },
+  "20 05 16": {
+   "Flexible Pipe Connections": [
+    "NCL"
+   ],
+   "Mason Industries": [
+    "NCL"
+   ],
+   "Senior Flexonics (Canada) Limited": [
+    "NCL"
+   ],
+   "Metraflex": [
+    "NCL"
+   ],
+   "Expansion Joints and Compensators": [
+    "NCL"
+   ]
+  },
+  "08 42 26": {
+   "C. R. Laurence Co. Inc": [
+    "HSBC"
+   ],
+   "Prelco Inc.": [
+    "HSBC"
+   ]
+  },
+  "07 17 20": {
+   "Epro Waterproofing Systems": [
+    "HSBC"
+   ]
+  },
+  "32 13 13": {
+   "Forms": [
+    "HSBC"
+   ],
+   "Form Materials": [
+    "HSBC"
+   ],
+   "Form Release Agent": [
+    "HSBC"
+   ]
+  },
+  "08 33 23": {
+   "Cornell Ironworks": [
+    "HSBC"
+   ],
+   "Kinnear/Wayne-Dalton Corporation": [
+    "HSBC"
+   ]
+  },
+  "09 06 00-00": {
+   "Johnsonite Tarkett": [
+    "HSBC"
+   ],
+   "Mannington": [
+    "HSBC"
+   ]
+  },
+  "12 93 14": {
+   "Advantage Bike Racks and Lockers Inc.": [
+    "HSBC"
+   ]
+  }
+ },
+ "bodBy": {
+  "07 84 00": {
+   "Hilti CP777 Speed Plugs with": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Hilti Quickseal CFS-EOS QS": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Hilti CP777 Speed Plugs with Hilti CFS-SP WB Firestop Joint Spray": [
+    "OCME"
+   ],
+   "Hilti, CFS-TTS Firestop Top Track Seal": [
+    "Glenbow"
+   ],
+   "Hilti, CFS-TTS MD Firestop Top Track Seal": [
+    "Glenbow"
+   ]
+  },
+  "10 28 13": {
+   "First Edition First Aid, Alarmed AED Wall Cabinet - FEG Toilet Seat Back Rest: One horizon": [
+    "OCME"
+   ],
+   "Frost 1028": [
+    "OCME"
+   ],
+   "Richelieu 51127 Coat Hook: Satin finished stainless steel, robe hook with concealed mounti": [
+    "OCME"
+   ],
+   "Richelieu 51127 Coat Hook: Satin finished stainless steel, with concealed mounting, locate": [
+    "OCME"
+   ],
+   "Bobrick B-9944, hat and Coat Rack – 4 Hooks Transfer Board Wall Rack: Prefabricated Hook w": [
+    "OCME"
+   ],
+   "HK1 Grayline Medical Techno-Aide Transfer Board Hook - Transfer board Wall Rack, Hook, 2 P": [
+    "OCME"
+   ],
+   "Bobrick, B-6047 Shower Curtain Hooks: Type 304 stainless steel hooks to fit 32 mm rod": [
+    "OCME"
+   ],
+   "Bobrick, B-204-1 Shower Curtain: Flame resistant to NFPA 701, 100% polyester with anti- mi": [
+    "OCME"
+   ],
+   "Koala KB110-SSWM": [
+    "Glenbow"
+   ],
+   "Bobrick, B-6777": [
+    "Glenbow"
+   ],
+   "Richelieu, RH2823128900": [
+    "Glenbow"
+   ],
+   "Bobrick, 5806 Series": [
+    "Glenbow"
+   ],
+   "Bobrick, B-5898, satin finish": [
+    "Glenbow"
+   ],
+   "Frost 1003SP 40âx30â": [
+    "Glenbow"
+   ],
+   "Rubbermaid, Office Trash Can, S-14491W": [
+    "Glenbow"
+   ],
+   "ASI Model No. 1308-3": [
+    "Glenbow"
+   ]
+  },
+  "04 05 19": {
+   "Hilti Inc.": [
+    "OCME"
+   ],
+   "Hilti Inc., HIT HY200 System": [
+    "OCME",
+    "Fortis",
+    "Glenbow"
+   ],
+   "Hilti Inc., HIT HY270 System": [
+    "OCME"
+   ],
+   "Hilti Inc., HIT HY70 System, no": [
+    "Fortis"
+   ],
+   "Hilti Inc., HIT HY70 System": [
+    "Glenbow"
+   ]
+  },
+  "08 81 00": {
+   "Edgetech-Quanex Super Spacer T-Spacer": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "ICD High Performance Coatings, Opaci-Coat-300, applied by ICD approved applicator": [
+    "OCME"
+   ],
+   "Edgetech-Quanex Super Spacer T-Spacer and TriSeal, black coloured": [
+    "OCME"
+   ],
+   "ICD High Performance Coatings, Opaci-Coat-300": [
+    "OCME"
+   ],
+   "Eastman, Saflex R Clear": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Kuraray, SentryGlas Plus": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Guardian Glass Europe": [
+    "Glenbow"
+   ],
+   "Vitro": [
+    "Glenbow"
+   ],
+   "Pilkington": [
+    "Curtis Block"
+   ],
+   "SentryGlas Plus": [
+    "Curtis Block"
+   ],
+   "Guardian Glass, SunGuard AG43": [
+    "Curtis Block"
+   ],
+   "Pilkington LOF": [
+    "Curtis Block"
+   ],
+   "ICD, Opaci-Coat 300": [
+    "Curtis Block"
+   ],
+   "Guardian Glass": [
+    "HSBC"
+   ],
+   "Technoform warm edge spacer": [
+    "HSBC"
+   ],
+   "Guardian Glass, SN68 on": [
+    "HSBC"
+   ],
+   "Vitro Architectural Class (formerly PPG": [
+    "HSBC"
+   ],
+   "Edgetech-Quanex Super Spacer TriSeal": [
+    "HSBC"
+   ],
+   "Vitro, Starphire Solarban 60": [
+    "HSBC"
+   ]
+  },
+  "09 22 16": {
+   "Pre-engineered seismic bracing and movement": [
+    "OCME",
+    "Fortis"
+   ],
+   "Flex-Ability Concepts": [
+    "OCME",
+    "Fortis"
+   ],
+   "Hilti CP777 Speed Plugs with Hilti CFS-SP": [
+    "OCME",
+    "Fortis"
+   ],
+   "Hilti CFS-TTS Firestop Track Seal": [
+    "OCME",
+    "Fortis"
+   ],
+   "BRACELOK RETRO": [
+    "OCME",
+    "Fortis"
+   ],
+   "Hilti CP777 Speed Plugs with Hilti CFS-SP WB Firestop Joint Spray": [
+    "OCME"
+   ]
+  },
+  "07 52 16": {
+   "Clearline Technologies": [
+    "OCME"
+   ],
+   "Soprema, Elastacool Stick": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Soprema Duotack Adhesive": [
+    "OCME",
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Soprema Sopravap’R": [
+    "OCME"
+   ],
+   "Soprema, SopraISO+": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Clearline Technologies, C-Port": [
+    "OCME",
+    "Fortis",
+    "HSBC"
+   ],
+   "Siplast": [
+    "Fortis",
+    "HSBC"
+   ],
+   "Siplast, TA 325": [
+    "Fortis"
+   ],
+   "Siplast Parafast Insulation Adhesive": [
+    "Fortis",
+    "HSBC"
+   ],
+   "Siplast SA Vapor Retarder": [
+    "Fortis"
+   ],
+   "Siplast Paratherm CG": [
+    "Fortis"
+   ],
+   "Siplast, Paradiene 20 SA": [
+    "Fortis"
+   ],
+   "Siplast, Parafor 30 TG": [
+    "Fortis"
+   ],
+   "Soprema Inc": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Soprema SopravapâR": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Soprema Sopraguard Tape": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "Soprema, Sopraply Base Plus P/P 3": [
+    "Glenbow"
+   ],
+   "Soprema, Sopraply Flam Stick": [
+    "Glenbow"
+   ],
+   "Sopralene Stick": [
+    "Curtis Block"
+   ],
+   "Sopralene Stick Adhesive": [
+    "Curtis Block"
+   ],
+   "Soprema, SopraISO Plus": [
+    "Curtis Block"
+   ],
+   "Soprema, Sopraply Base 520": [
+    "Curtis Block"
+   ],
+   "Siplast Paradiene 20 SA": [
+    "HSBC"
+   ],
+   "Siplast IREX 40": [
+    "HSBC"
+   ],
+   "Siplast Paradiene 20 TG": [
+    "HSBC"
+   ],
+   "Siplast, Paradiene 20 HT TG": [
+    "HSBC"
+   ],
+   "Siplast, Parafor 30 TG BW": [
+    "HSBC"
+   ]
+  },
+  "10 56 26": {
+   "Spacesaver Corporation": [
+    "OCME"
+   ]
+  },
+  "07 25 13": {
+   "Soprema, Lastobond Shield HT": [
+    "OCME"
+   ],
+   "Henry, Blueskin PE200HT": [
+    "Fortis"
+   ],
+   "Henryy, Blueskin PE200HT": [
+    "Glenbow"
+   ]
+  },
+  "08 41 13": {
+   "PPG Duranar": [
+    "OCME"
+   ],
+   "Kawneer 360 Insulclad Thermal Entrances Series": [
+    "OCME"
+   ],
+   "Kawneer Trifab VersaGlaze 451 Series": [
+    "OCME"
+   ]
+  },
+  "09 65 36": {
+   "Johnsonite, # CFS-00": [
+    "OCME"
+   ],
+   "Johnsonite, # CFS-00-S1": [
+    "HSBC"
+   ]
+  },
+  "08 87 00": {
+   "Refer to Section 09 06 00 – Schedules for Finishes for material description required by th": [
+    "OCME"
+   ]
+  },
+  "12 35 53": {
+   "Richelieu 20694722G": [
+    "OCME",
+    "Glenbow"
+   ]
+  },
+  "07 21 23": {
+   "Gemco": [
+    "OCME"
+   ],
+   "Henry": [
+    "OCME"
+   ],
+   "Gemco, Insulation Fasteners, Insulation Hangers": [
+    "OCME"
+   ],
+   "Henry, 230-21 Rigid Insulation Adhesive": [
+    "OCME"
+   ]
+  },
+  "09 65 16": {
+   "Johnsonsite, #CFS-00": [
+    "OCME"
+   ],
+   "Johnsonite, # CFS-00": [
+    "Glenbow"
+   ]
+  },
+  "08 35 16": {
+   "Dynamic Closures Corporation, Slim line SL Prestige, 90 degree turn": [
+    "OCME"
+   ]
+  },
+  "09 29 13": {
+   "Hilti": [
+    "OCME"
+   ],
+   "Pecora Corp.": [
+    "OCME"
+   ],
+   "Hilti, CP 506 Smoke and Acoustic Sealant": [
+    "OCME",
+    "Fortis"
+   ],
+   "Pecora Corp., AC-20 FTR Acoustic and Insulation Sealant": [
+    "OCME"
+   ],
+   "Fry Reglet, DRME 3     Execution": [
+    "OCME"
+   ],
+   "Pecora Corp., AC-20 FTR Acoustic and": [
+    "Fortis"
+   ]
+  },
+  "08 31 00": {
+   "Acudor AS-9000": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Acudor LT-4000": [
+    "OCME",
+    "Glenbow"
+   ],
+   "Access Panel Solutions, BaucoPlus-II": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Acudor, TD-5025": [
+    "Glenbow"
+   ]
+  },
+  "09 22 26-13": {
+   "Pre-engineered seismic bracing and movement": [
+    "OCME",
+    "Fortis"
+   ],
+   "GRIDLOK GRD-10 Series": [
+    "OCME",
+    "Fortis"
+   ]
+  },
+  "09 61 13-13": {
+   "Balco Abrasive Bars": [
+    "OCME"
+   ],
+   "Balco Abrasive Bars, R-315LP": [
+    "OCME"
+   ],
+   "Access Tile, Surface Applied Fire Retardant 3     Execution": [
+    "OCME"
+   ]
+  },
+  "12 48 16": {
+   "CS Model Pedimat w/ drain pan": [
+    "OCME"
+   ]
+  },
+  "06 16 43": {
+   "Ucan Fastening Products RUSPRO": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Ucan Fastening Products RUSPRO Coated Sheathing Screws": [
+    "OCME"
+   ]
+  },
+  "09 30 00": {
+   "Schlüter Dilex KSN to suit tile depth": [
+    "OCME"
+   ],
+   "Schlüter Dilex EKSB": [
+    "OCME"
+   ],
+   "SchlÃ¼ter Dilex EZ to suit tile depth": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "SchlÃ¼ter Dilex AKWS": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "SchlÃ¼ter Dilex BWA": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Custom Building Products Fusion Pro single": [
+    "Curtis Block"
+   ],
+   "Custom Building Products SpeedSlope RS": [
+    "HSBC"
+   ],
+   "Custom Building Products": [
+    "HSBC"
+   ],
+   "Custom Building Products ProLite": [
+    "HSBC"
+   ],
+   "Custom Building Products, ProLite": [
+    "HSBC"
+   ],
+   "Custom Building Products, MegaLite RS": [
+    "HSBC"
+   ],
+   "Custom Building Products, Complete": [
+    "HSBC"
+   ],
+   "Custom Building Products CEG-Lite Epoxy": [
+    "HSBC"
+   ],
+   "Custom Building Products Prism Grout": [
+    "HSBC"
+   ]
+  },
+  "10 26 26": {
+   "Altro": [
+    "OCME"
+   ],
+   "Altro, W39 Adhesive": [
+    "OCME"
+   ],
+   "Altro Whiterock colour and Sizing as": [
+    "Fortis"
+   ]
+  },
+  "07 21 13": {
+   "Gemco": [
+    "OCME"
+   ],
+   "Gemco, Insulation Fasteners, Insulation Hangers": [
+    "OCME"
+   ],
+   "Gemco Insulation Fasteners": [
+    "Fortis",
+    "NCL"
+   ],
+   "Henry, 230-21 Rigid": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Gemco Insulation Fasteners, Insulation": [
+    "Glenbow"
+   ],
+   "Bakor, 230-21 Rigid Insulation": [
+    "Curtis Block"
+   ],
+   "Roxul CavityRock MD": [
+    "NCL"
+   ]
+  },
+  "08 90 00": {
+   "Price Industries, DE635": [
+    "OCME"
+   ],
+   "TenPlus, H4451 Stainless Steel": [
+    "Glenbow"
+   ],
+   "TenPlus, H4451 Custom colour": [
+    "Glenbow"
+   ],
+   "TenPlus, Model H4451": [
+    "NCL"
+   ],
+   "PPG Duranar XL": [
+    "NCL"
+   ]
+  },
+  "08 44 13": {
+   "Kawneer": [
+    "OCME"
+   ],
+   "Kawneer, 1600UT – System 1": [
+    "OCME"
+   ],
+   "Kawneer 360 Insulclad Thermal Entrances Series": [
+    "OCME"
+   ],
+   "Kawneer 560 Insulclad Thermal Entrances": [
+    "Fortis"
+   ],
+   "PPG Duranar XL": [
+    "Fortis",
+    "Glenbow",
+    "NCL",
+    "HSBC"
+   ],
+   "Ferguson 130HP": [
+    "Glenbow"
+   ],
+   "Ferguson 130 SG/SHG/Toggle": [
+    "Glenbow"
+   ],
+   "Ferguson WS075, inward opening": [
+    "Glenbow"
+   ],
+   "Ferguson, 130HP Series": [
+    "Curtis Block"
+   ],
+   "Ferguson, 130 Series": [
+    "Curtis Block"
+   ],
+   "Linetec, Cherry DS733 1402-02": [
+    "Curtis Block"
+   ],
+   "PPG Acrynar": [
+    "Curtis Block"
+   ],
+   "Ferguson Corporation": [
+    "NCL"
+   ],
+   "PPG Duranar": [
+    "NCL"
+   ],
+   "SOTAWALL": [
+    "HSBC"
+   ],
+   "SOTAWALL Hybrid-Wall": [
+    "HSBC"
+   ]
+  },
+  "08 88 13": {
+   "TGP, Fireframes Designer Series": [
+    "OCME",
+    "Glenbow"
+   ],
+   "SAFTIFIRST, GPX Architectural Series (for STC rated assemblies": [
+    "OCME"
+   ],
+   "TGP, Fireframes Aluminum Series, Non- load bearing": [
+    "OCME"
+   ],
+   "TGP, Fireframes Heat Barrier Series": [
+    "Glenbow"
+   ],
+   "TGP, Fireframes SG Curtainwall Series": [
+    "Glenbow"
+   ]
+  },
+  "09 65 23": {
+   "Johnsonite, #CFS-00": [
+    "OCME"
+   ]
+  },
+  "06 10 53": {
+   "Hoover, Exterior Fire X, clear with no added colourants": [
+    "OCME"
+   ],
+   "Hoover, Pyro-Guard": [
+    "OCME",
+    "Fortis",
+    "NCL",
+    "HSBC"
+   ],
+   "Hoover, Exterior Fire X, clear with no": [
+    "Fortis"
+   ]
+  },
+  "06 40 00": {
+   "Hoover, Pyro-Guard": [
+    "OCME"
+   ],
+   "Keyless.Co, Keyless1-SN and Keyless1-SN-ADA": [
+    "OCME"
+   ],
+   "Richelieu, OL107810126D": [
+    "OCME"
+   ],
+   "Richelieu 2291180": [
+    "OCME",
+    "Fortis",
+    "Glenbow",
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Richelieu 8572143/185018143": [
+    "OCME"
+   ],
+   "Richelieu, Triade Pro Maxi 2621612G": [
+    "OCME"
+   ],
+   "Richelieu, 6240090290": [
+    "OCME"
+   ],
+   "Richelieu, 6240120290": [
+    "OCME"
+   ],
+   "Darcon": [
+    "Glenbow"
+   ],
+   "Velcro Canada": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Richelieu 1215612140": [
+    "Glenbow"
+   ],
+   "Richelieu 1451210": [
+    "Glenbow"
+   ],
+   "Richelieu Series 1491210": [
+    "Glenbow"
+   ],
+   "Richelieu 1461210": [
+    "Glenbow"
+   ],
+   "Richelieu D012916": [
+    "Glenbow"
+   ],
+   "Panolam Industries International": [
+    "NCL"
+   ],
+   "Gore-Tex": [
+    "NCL"
+   ],
+   "Richelieu 3487": [
+    "NCL"
+   ],
+   "HÃ¤fele America Co., Salice": [
+    "NCL"
+   ],
+   "Richelieu Concealed Steel": [
+    "NCL"
+   ],
+   "HÃ¤fele America Co., ITEM": [
+    "NCL"
+   ],
+   "Richelieu BP600100": [
+    "NCL"
+   ],
+   "Richelieu 38322G20": [
+    "HSBC"
+   ],
+   "Richelieu 71T359180 and": [
+    "HSBC"
+   ]
+  },
+  "07 05 43": {
+   "Armadillo Noise and Vibration Control, Armatherm FRR Structural Thermal Break": [
+    "OCME"
+   ],
+   "Armadillo Noise and Vibration Control": [
+    "Glenbow"
+   ]
+  },
+  "07 18 16-00": {
+   "Tremco Vulkem 350/950/951NF": [
+    "OCME"
+   ],
+   "Tremco Vulkem 350/950/950 and": [
+    "Curtis Block"
+   ]
+  },
+  "07 42 13": {
+   "Luxlap V-Groove": [
+    "OCME"
+   ],
+   "Vicwest, CL6025-P2": [
+    "OCME"
+   ],
+   "PPG Acrynar": [
+    "Curtis Block"
+   ]
+  },
+  "09 54 00": {
+   "Hush Acoustics": [
+    "OCME"
+   ],
+   "Maxxit Group": [
+    "Fortis"
+   ]
+  },
+  "10 80 00": {
+   "Spider closed industrial shelving, Stock No": [
+    "OCME"
+   ],
+   "Metro Super Erecta 4-Shelf Industrial Wire Shelving Model No": [
+    "OCME"
+   ]
+  },
+  "32 13 13": {
+   "PERI Formwork Systems, DK Reusable Tie Rod System and Seals": [
+    "OCME"
+   ],
+   "American Specialty Glass, Inc": [
+    "Fortis"
+   ]
+  },
+  "07 27 16": {
+   "DÃ¶rken Systems Inc., DELTAÂ®-FASSADE": [
+    "Fortis",
+    "Glenbow"
+   ]
+  },
+  "07 81 23": {
+   "Flame Control Coatings Canada No. 20-20A": [
+    "Fortis",
+    "Glenbow"
+   ],
+   "Cafco/Isolatek WB5 SprayFilm System": [
+    "Glenbow"
+   ],
+   "Grace Monokote WB500 Intumescent": [
+    "NCL"
+   ],
+   "Cafco/ Isolatek WB4 Spray Film System â": [
+    "NCL"
+   ],
+   "Flame Control No. 320A Flat White Latex": [
+    "NCL"
+   ]
+  },
+  "07 95 00": {
+   "Emseal EMSHIELD DSM -DS": [
+    "Fortis"
+   ],
+   "Construction Specialties, LAF-600": [
+    "HSBC"
+   ],
+   "Construction Specialties, SGC-600": [
+    "HSBC"
+   ],
+   "Construction Specialties, SGP-600 with Fire": [
+    "HSBC"
+   ]
+  },
+  "03 35 41": {
+   "Metzger/McGuire, SPAL-PRO RS 88": [
+    "Fortis",
+    "Glenbow"
+   ]
+  },
+  "12 48 13-26": {
+   "C/S Group": [
+    "Fortis"
+   ]
+  },
+  "07 42 16": {
+   "Vicwest CL-622": [
+    "Fortis"
+   ]
+  },
+  "07 42 23": {
+   "Vicwest 7/8â and AD300R with": [
+    "Fortis"
+   ],
+   "Vicwest 1/2â with fasteners": [
+    "Glenbow"
+   ]
+  },
+  "07 13 52": {
+   "Soprema Colphene Torchân Stick": [
+    "Fortis"
+   ],
+   "Soprema ProtectâR": [
+    "Fortis"
+   ],
+   "Soprema Colphene BSW-V and BSW-H": [
+    "Curtis Block"
+   ]
+  },
+  "07 42 43": {
+   "Alpolic, /fr": [
+    "Fortis"
+   ],
+   "Alpolic /FR SCM": [
+    "Glenbow"
+   ],
+   "Alucobond, Plus": [
+    "Glenbow"
+   ],
+   "Alpolic Materials, Mitsubishi Chemical FP": [
+    "NCL"
+   ],
+   "Alpolic /fr": [
+    "NCL"
+   ],
+   "Alpolic/ fr 3MM4HLA3.5 Hairline": [
+    "HSBC"
+   ]
+  },
+  "10 11 00": {
+   "As specified in Section 09 06 00": [
+    "Glenbow"
+   ],
+   "Clarus, Box Tray - Magnetic Marker Tray": [
+    "Glenbow"
+   ]
+  },
+  "05 51 00": {
+   "Bilco LadderUp Safety Post, Model LU-1": [
+    "Glenbow"
+   ]
+  },
+  "07 14 13": {
+   "Soprema, Sopradrain 15-G": [
+    "Glenbow",
+    "Curtis Block"
+   ]
+  },
+  "05 50 00": {
+   "Southco": [
+    "Glenbow"
+   ]
+  },
+  "07 16 16": {
+   "Xypex Chemical Corporation": [
+    "Glenbow",
+    "NCL"
+   ]
+  },
+  "05 05 13": {
+   "IFS Coatings, Architectural Series": [
+    "Glenbow",
+    "Curtis Block"
+   ],
+   "IFS Coatings, Architectural Series , IFS": [
+    "Glenbow"
+   ],
+   "IFS Coatings, Architectural Series , IFS 400": [
+    "Curtis Block"
+   ]
+  },
+  "03 35 43": {
+   "Prosoco, Consolideck LS": [
+    "Glenbow"
+   ],
+   "Ardex, PC-T Polished Concrete Topping with": [
+    "Glenbow"
+   ],
+   "Ardex, K 523 with Ardex EP 2000 Substrate": [
+    "Glenbow"
+   ],
+   "Ardex PC 10 Lithium Hardener and Ardex": [
+    "Glenbow"
+   ],
+   "Ardex Ardifix Low Viscosity Rigid": [
+    "Glenbow"
+   ],
+   "Advanced Floor Products, RetroPlate": [
+    "NCL"
+   ]
+  },
+  "05 73 13": {
+   "Sika Canada, SikaGlaze": [
+    "Glenbow"
+   ],
+   "Sika Canada, SikaGlaze GG-735": [
+    "Curtis Block"
+   ],
+   "C. R. Laurence Co. Inc": [
+    "NCL"
+   ]
+  },
+  "07 08 25": {
+   "Detec, PermaScan-I System": [
+    "Glenbow"
+   ],
+   "Detec, EGLL or VSLL": [
+    "Glenbow"
+   ]
+  },
+  "07 42 93": {
+   "Vicwest AD300": [
+    "Glenbow"
+   ]
+  },
+  "08 63 00": {
+   "Ferguson Glass Western Ltd.(Engineered": [
+    "Glenbow",
+    "NCL"
+   ],
+   "Engineered Aluminum Products Inc. (EAP)": [
+    "NCL"
+   ],
+   "PPG Duranar": [
+    "NCL"
+   ]
+  },
+  "03 01 30-00": {
+   "Sika Canada Inc., SikaTop 122": [
+    "Glenbow"
+   ],
+   "Sika Canada Inc., Sikadur 35 Hi-Mod LV": [
+    "Glenbow"
+   ]
+  },
+  "11 13 00": {
+   "Blue Giant Model H7008H": [
+    "Glenbow"
+   ],
+   "Blue Giant, BG- 200 Compression seal": [
+    "Glenbow"
+   ],
+   "Blue Giant": [
+    "Glenbow"
+   ],
+   "Blue Giant Equipment of Canada Ltd": [
+    "NCL"
+   ],
+   "Blue Giant A Series, Model HA6606": [
+    "NCL"
+   ]
+  },
+  "09 22 00": {
+   "Fry Reglet, Z Reveal": [
+    "Glenbow"
+   ]
+  },
+  "06 44 00": {
+   "Hoover, Pyro-Guard": [
+    "Glenbow",
+    "Curtis Block",
+    "NCL"
+   ],
+   "Knauf, Atmosphere Rigid Plenum Liner": [
+    "Curtis Block"
+   ]
+  },
+  "08 12 26": {
+   "EZCONCEPT, EzyJamb SRC": [
+    "Glenbow"
+   ],
+   "EZCONCEPT, EzyJamb ISD": [
+    "Glenbow"
+   ]
+  },
+  "07 81 00": {
+   "Hilti CP777 Speed Plugs with Hilti CFS-SP": [
+    "Glenbow"
+   ],
+   "Hilti CFS-TTS Firestop Track Seal": [
+    "Glenbow"
+   ]
+  },
+  "09 91 00": {
+   "PPG, DEFT , and Dulux Interior": [
+    "Curtis Block"
+   ],
+   "PPG, Dulux Interior Polyurethane": [
+    "Curtis Block"
+   ],
+   "Sansin, Sansin Classic": [
+    "NCL"
+   ],
+   "Rosco Canada, Supersaturated Rosco paint": [
+    "NCL"
+   ]
+  },
+  "07 41 13-13": {
+   "LAM Metal, 1â Standing Seam": [
+    "Curtis Block"
+   ],
+   "Grace, Ice & Water Shield HT": [
+    "Curtis Block"
+   ]
+  },
+  "10 73 13": {
+   "Sunbrella": [
+    "Curtis Block"
+   ]
+  },
+  "05 53 00": {
+   "Hendrick Screen Company": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Hendricks Screen Company, B9": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Hendrick Screen Company, B9 Profile": [
+    "NCL"
+   ]
+  },
+  "14 91 82": {
+   "Waste Solutions Group": [
+    "Curtis Block"
+   ]
+  },
+  "07 92 00": {
+   "Sika Loadflex": [
+    "Curtis Block",
+    "NCL"
+   ]
+  },
+  "05 41 13": {
+   "Hilti Kwik Con": [
+    "Curtis Block",
+    "NCL"
+   ],
+   "Dow Ethafoam 222": [
+    "Curtis Block",
+    "NCL"
+   ]
+  },
+  "05 05 19": {
+   "Zinga": [
+    "Curtis Block",
+    "HSBC"
+   ]
+  },
+  "07 05 42": {
+   "Armadillo Noise and Vibration Control": [
+    "Curtis Block"
+   ]
+  },
+  "09 06 00-00": {
+   "Richelieu 2291180": [
+    "Curtis Block"
+   ]
+  },
+  "08 44 39": {
+   "Dow Corning, HPI-1000 Building": [
+    "Curtis Block"
+   ],
+   "Roxul CavityRock": [
+    "Curtis Block"
+   ],
+   "PPG Acrynar": [
+    "Curtis Block"
+   ]
+  },
+  "09 31 00": {
+   "Custom, MegaLite": [
+    "Curtis Block"
+   ],
+   "Custom Prism Grout": [
+    "Curtis Block"
+   ]
+  },
+  "13 48 13": {
+   "Regupol America, Sonus Series": [
+    "Curtis Block"
+   ],
+   "Regupol America, AkustiPro 80": [
+    "Curtis Block"
+   ],
+   "Mason, 30CC": [
+    "Curtis Block"
+   ],
+   "Mason, AB-716": [
+    "Curtis Block"
+   ],
+   "Mason BR": [
+    "Curtis Block"
+   ],
+   "Mason, RBA, RCA, RDA": [
+    "Curtis Block"
+   ],
+   "Mason HG": [
+    "Curtis Block"
+   ],
+   "Mason, HMIB": [
+    "Curtis Block"
+   ],
+   "Mason Industries, A-26583": [
+    "NCL"
+   ],
+   "Mason Industries, NPS": [
+    "NCL"
+   ],
+   "Mason Industries, Captive Mounting": [
+    "NCL"
+   ],
+   "Mason Industries, WHR": [
+    "NCL"
+   ],
+   "Mason Industries Type FSN": [
+    "NCL"
+   ],
+   "Mason Industries, EAFM": [
+    "NCL"
+   ],
+   "Mason Industries, NS": [
+    "NCL"
+   ]
+  },
+  "09 21 16-23": {
+   "Hilti CP777 Speed Plugs with Hilti CFS-SP": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Hilti CFS-TTS Firestop Track Seal": [
+    "Curtis Block"
+   ],
+   "Hilti, CP 506 Smoke and Acoustic Sealant": [
+    "Curtis Block",
+    "HSBC"
+   ],
+   "Pecora Corp., AC-20 FTR Acoustic and": [
+    "Curtis Block"
+   ],
+   "Flex-C Trac": [
+    "NCL"
+   ],
+   "Georgia-Pacific Canada, Inc., DenseArmor": [
+    "NCL"
+   ],
+   "Vogl 12/25R, Deckensysteme supplied by": [
+    "NCL"
+   ],
+   "MULL-it-OVER Products, Mullion Trim Cap": [
+    "NCL"
+   ],
+   "DONN US-25": [
+    "NCL"
+   ],
+   "DONN DX-24 main T-Bar or M-6": [
+    "NCL"
+   ],
+   "Minimalist Door Frame, Fry Reglet": [
+    "NCL"
+   ],
+   "Fry Reglet, DMGT": [
+    "NCL"
+   ],
+   "Hilti CFS-TTS": [
+    "HSBC"
+   ]
+  },
+  "04 81 00": {
+   "Hilti Inc., HIT HY200 System, no": [
+    "Curtis Block"
+   ],
+   "Hilti Inc., HIT HY70 System, no": [
+    "Curtis Block"
+   ]
+  },
+  "08 42 33": {
+   "PPG Acrynar": [
+    "Curtis Block"
+   ],
+   "Dorma/Dormakaba, Stainless welded floor": [
+    "HSBC"
+   ]
+  },
+  "03 33 00": {
+   "Finland Forms": [
+    "NCL"
+   ]
+  },
+  "05 05 23": {
+   "Hilti Canada": [
+    "NCL"
+   ],
+   "Hilti HVA-HAS System": [
+    "NCL"
+   ],
+   "Hilti HVA-HIS System": [
+    "NCL"
+   ],
+   "Hilti HVA-Rebar System": [
+    "NCL"
+   ],
+   "Hilti HIT HY200 System": [
+    "NCL"
+   ],
+   "Hilti HIT HY200-HIS System": [
+    "NCL"
+   ],
+   "Hilti HIT HY200-Rebar System": [
+    "NCL"
+   ]
+  },
+  "07 52 23": {
+   "Soprema Inc": [
+    "NCL"
+   ],
+   "Sopralene Stick": [
+    "NCL"
+   ],
+   "Sopralene Stick Adhesive": [
+    "NCL"
+   ],
+   "Soprema Duotack Adhesive": [
+    "NCL"
+   ],
+   "Clearline Technologies, C-Port": [
+    "NCL"
+   ],
+   "Expocrete Pavers": [
+    "NCL"
+   ]
+  },
+  "08 33 23": {
+   "Overhead Door Corporation": [
+    "NCL",
+    "HSBC"
+   ],
+   "Cookson, Roll Up Fire Doors": [
+    "HSBC"
+   ]
+  },
+  "05 75 00": {
+   "Tigerlac Super Durable Series 58": [
+    "NCL"
+   ]
+  },
+  "03 15 21": {
+   "American Safety Tread, Type 3311": [
+    "NCL"
+   ]
+  },
+  "12 48 23": {
+   "Construction Specialties, Inc., Pedigrid G1": [
+    "NCL"
+   ]
+  },
+  "09 68 13": {
+   "DuPont VaprStop, Level I": [
+    "NCL"
+   ],
+   "DuPont VaprStop, Level II": [
+    "NCL"
+   ],
+   "DuPont VaprStop, Level III": [
+    "NCL"
+   ]
+  },
+  "09 69 00": {
+   "Haworth Inc., TecCrete 1250; and TecCrete": [
+    "NCL"
+   ]
+  },
+  "06 43 00": {
+   "Quiet Glide, QG.720.08": [
+    "NCL"
+   ],
+   "Quiet Glide, QG.4008.08": [
+    "NCL"
+   ],
+   "Quiet Glide, QG.202.08": [
+    "NCL"
+   ],
+   "Quiet Glide, QG.41": [
+    "NCL"
+   ],
+   "Quiet Glide, QG.620.08": [
+    "NCL"
+   ]
+  },
+  "10 22 43.13": {
+   "Modernfold": [
+    "NCL"
+   ],
+   "Modernfold, Moveo Glass": [
+    "NCL"
+   ]
+  },
+  "10 22 39.13": {
+   "NanaWall": [
+    "NCL"
+   ],
+   "NanaWall, SL70": [
+    "NCL"
+   ]
+  },
+  "09 54 13": {
+   "Armstrong Metalworks M15": [
+    "NCL"
+   ]
+  },
+  "09 64 29": {
+   "Balco AS-2": [
+    "NCL"
+   ],
+   "Hoover, Pyro-Guard": [
+    "NCL"
+   ]
+  },
+  "12 61 13": {
+   "Ducharme Seating International, Symphony": [
+    "NCL"
+   ],
+   "DesignTex Billiard Cloth in colours": [
+    "NCL"
+   ]
+  },
+  "09 81 29": {
+   "Isolatek., Sound-Shield 40": [
+    "NCL"
+   ]
+  },
+  "07 92 13": {
+   "Sika Loadflex": [
+    "NCL"
+   ],
+   "Mason Industries AFG-10": [
+    "NCL"
+   ]
+  },
+  "12 93 13": {
+   "Bike-Up Bicycle Parking Systems Inc": [
+    "NCL",
+    "HSBC"
+   ],
+   "Bike-Up Bicycle Parking": [
+    "NCL",
+    "HSBC"
+   ],
+   "Fairweather Site Furnishings and Accessories âModel": [
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "09 54 43": {
+   "DyneemaÂ®": [
+    "NCL"
+   ],
+   "Jakob": [
+    "NCL"
+   ]
+  },
+  "09 84 00": {
+   "SoundQuality as supplied by Sound Seal": [
+    "NCL"
+   ]
+  },
+  "10 51 13": {
+   "Spectrum": [
+    "NCL",
+    "HSBC"
+   ]
+  },
+  "08 81 13": {
+   "Bendheim, Satintech SNHT-197": [
+    "NCL"
+   ],
+   "Mirrorlite, Glassless Mirror": [
+    "NCL"
+   ],
+   "ZC & R Coatings for Optics, Abrisa": [
+    "NCL"
+   ],
+   "Engineered Aluminum Products Inc. (EAP)": [
+    "NCL"
+   ],
+   "PPG Duranar": [
+    "NCL"
+   ],
+   "C.R. Laurence, Geneva GENS6BN": [
+    "NCL"
+   ]
+  },
+  "08 42 00": {
+   "DORMA, Pure Pivot": [
+    "NCL"
+   ]
+  },
+  "06 62 00": {
+   "Armstrong, Ultima": [
+    "NCL"
+   ]
+  },
+  "09 96 23": {
+   "Faceal Oleo HD, distributed by Eco-Graffiti": [
+    "NCL"
+   ]
+  },
+  "08 14 16": {
+   "Ambico Limited": [
+    "NCL"
+   ]
+  },
+  "08 71 00": {
+   "Pro-Finish Hardware Associates Ltd": [
+    "NCL"
+   ]
+  },
+  "09 23 13": {
+   "Pyrok, StarSilent Panel System": [
+    "NCL"
+   ],
+   "Pyrok StarSilent Atec Alumi Panel": [
+    "NCL"
+   ],
+   "StarSilent Acoustic Plaster": [
+    "NCL"
+   ]
+  },
+  "10 21 13": {
+   "Hadrian Manufacturing Inc": [
+    "NCL"
+   ]
+  },
+  "09 96 00": {
+   "Sika Canada Inc, Sikafloor Resoclad MRW": [
+    "NCL"
+   ],
+   "Sika Canada/Duochem Inc, Sikafloor": [
+    "HSBC"
+   ],
+   "Sika Canada/Duochem Inc., Sikafloor": [
+    "HSBC"
+   ]
+  },
+  "09 51 00": {
+   "Armstrong World Industries Canada Ltd": [
+    "NCL"
+   ],
+   "Armstrong Shadow Molding": [
+    "NCL"
+   ]
+  },
+  "10 22 39": {
+   "Modernfold": [
+    "NCL"
+   ],
+   "Modernfold Acousti-Seal, Encore - Paired": [
+    "NCL"
+   ]
+  },
+  "10 50 00": {
+   "Metro, Super Erecta Shelf â 33PDF, SW53C": [
+    "NCL"
+   ]
+  },
+  "05 70 00": {
+   "Gordon Inc, eConnect Metal Column Covers": [
+    "HSBC"
+   ],
+   "C.R. Laurence, ACRS Component Railing": [
+    "HSBC"
+   ],
+   "C.R. Laurence, Malibu Series Glass": [
+    "HSBC"
+   ]
+  },
+  "08 42 26": {
+   "DORMA, Pure": [
+    "HSBC"
+   ]
+  },
+  "07 42 15": {
+   "PPG, Duranar Vari-Cool": [
+    "HSBC"
+   ]
+  },
+  "09 30 33": {
+   "Custom Building Products": [
+    "HSBC"
+   ],
+   "Custom Building Products, Contact Fortified": [
+    "HSBC"
+   ],
+   "Custom Building Products, Prism Ultimate": [
+    "HSBC"
+   ],
+   "Custom Building Products, RedGard": [
+    "HSBC"
+   ]
+  },
+  "10 22 26-16": {
+   "SkyfoldÂ® Classicâ¢ 60": [
+    "HSBC"
+   ]
+  },
+  "07 17 20": {
+   "Epro, e.spray": [
+    "HSBC"
+   ],
+   "Epro, e.shield 110": [
+    "HSBC"
+   ],
+   "Epro, e.drain": [
+    "HSBC"
+   ]
+  },
+  "08 42 29-23": {
+   "PPG Duranar": [
+    "HSBC"
+   ]
+  },
+  "08 56 19": {
+   "C.R. Laurence, D1040A": [
+    "HSBC"
+   ]
+  },
+  "03 45 00": {
+   "Evonik Degussa Protectosil Antigraffiti": [
+    "HSBC"
+   ]
+  },
+  "04 42 00": {
+   "Polycor": [
+    "HSBC"
+   ],
+   "Polycor, Saint Clair Fleury": [
+    "HSBC"
+   ]
+  }
  }
 };
