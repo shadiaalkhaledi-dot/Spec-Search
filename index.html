@@ -4,7 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Spec Finder — DIALOG</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="pdf.min.js"></script>
+<script src="fflate.min.js"></script>
 <style>
 :root{
   /* restrained: a single muted brass accent, used sparingly */
@@ -93,6 +94,8 @@ nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
 /* scan */
 .drop{border:2px dashed #cfd6e2;border-radius:16px;padding:34px;text-align:center;background:rgba(255,255,255,.6);transition:.15s}
 .drop.hot{border-color:var(--amber);background:var(--amber-soft)}
+.scanbar{height:8px;background:#eef1f6;border-radius:6px;overflow:hidden;border:1px solid var(--brd)}
+.scanbar i{display:block;height:100%;width:2%;background:var(--accent);transition:width .25s ease}
 .drop .ic{font-size:34px}
 .drop p{margin:8px 0 0;color:var(--ink2)}
 .drop small{color:var(--muted)}
@@ -190,6 +193,13 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
       <p><b>Drop a drawing PDF here</b> or click to choose</p>
       <small>Runs entirely on your device · large sets take a moment</small>
       <input type="file" id="file" accept="application/pdf" class="hidden" multiple>
+    </div>
+    <div style="text-align:center;color:var(--muted);font-size:12px;margin:16px 0 8px">— or, for the sharpest run, add the project’s keynote file —</div>
+    <div class="drop glass" id="kdrop" style="padding:22px">
+      <div class="ic" style="font-size:26px">🗝️</div>
+      <p style="margin:6px 0 0"><b>Drop the keynote file</b> (.txt or .xlsm/.xlsx) here or click</p>
+      <small>The cleanest input — authoritative keynote → section mapping, instant, no PDF needed</small>
+      <input type="file" id="kfile" accept=".txt,.csv,.tsv,.xlsx,.xlsm,.xltx" class="hidden">
     </div>
     <div id="scanout"></div>
   </section>
@@ -496,21 +506,129 @@ function renderMakers(){
 }
 function setMakerMode(m){makerMode=m;document.getElementById("mmode-mfr").classList.toggle("on",m==="mfr");document.getElementById("mmode-prod").classList.toggle("on",m==="prod");renderMakers();}
 
+/* ---------- keynote/wording standard (shared) ---------- */
+function bestStandard(code){
+  var s=secOf(code),titleToks=toks(s.title);
+  var terms=[];for(var t in ALIASES)if(ALIASES[t].map(canon).indexOf(canon(s.code))>=0)terms.push(t);
+  var concise=terms.filter(function(t){var n=toks(t).length;return n>=2&&n<=4;});
+  if(!concise.length)return null;
+  function sc(t){return toks(t).filter(function(w){return titleToks.indexOf(w)>=0;}).length*2 - toks(t).length*0.6 - (/\d/.test(t)?3:0);}
+  concise.sort(function(a,b){return sc(b)-sc(a)||toks(a).length-toks(b).length;});
+  return {std:concise[0], ov:toks(concise[0]).filter(function(w){return titleToks.indexOf(w)>=0;}).length};
+}
+// drawing-driven: for each section the user's set reaches, if they used a vaguer wording than the
+// firm standard, suggest the upgrade. This is "improve the keynotes in YOUR drawings."
+var lastScanSuggestions=[];
+function scanWordingSuggestions(words,nt,codes){
+  var out=[],seen={};
+  codes.forEach(function(code){
+    if(seen[code])return;seen[code]=1;
+    var bs=bestStandard(code);if(!bs)return;
+    var stoks=toks(bs.std);if(stoks.length<2)return;
+    var stdPresent=stoks.every(function(w){return words[w];})&&nt.indexOf(" "+nrm(bs.std)+" ")>=0;
+    if(stdPresent)return;                 // they already use the good wording
+    // only suggest when the drawing used a VAGUER form that the standard REFINES —
+    // i.e. the drawing term is a subset of the standard ("aluminum" -> "aluminum curtain wall").
+    // this avoids nonsense like "plywood -> miscellaneous framing".
+    var yours=null;
+    for(var t in ALIASES){if(ALIASES[t].map(canon).indexOf(canon(code))<0)continue;var tt=toks(t);
+      if(!tt.length||tt.length>=stoks.length)continue;
+      if(!tt.every(function(w){return stoks.indexOf(w)>=0;}))continue;         // must be subset of standard
+      if(!tt.every(function(w){return words[w];})||nt.indexOf(" "+nrm(t)+" ")<0)continue; // present in drawing
+      if(!yours||tt.length<toks(yours).length)yours=t;
+    }
+    if(yours)out.push({code:code,title:secOf(code).title,yours:yours,std:bs.std});
+  });
+  return out;
+}
+
+/* ---------- keynote file (the accuracy layer) ---------- */
+function knLookup(q){var qt=toks(q),sc={};if(!qt.length)return [];
+  for(var term in ALIASES){var tt=toks(term);if(tt.length&&tt.every(function(w){return tokMatch(w,qt);}))for(var i=0;i<ALIASES[term].length;i++){var c=ALIASES[term][i];sc[c]=(sc[c]||0)+tt.length;}}
+  return Object.keys(sc).sort(function(a,b){return sc[b]-sc[a];});}
+function parseKeynoteText(txt){
+  var kns=[],seen={};
+  txt.split(/\r?\n/).forEach(function(l){
+    var cells=l.indexOf("\t")>=0?l.split("\t"):l.split(",");
+    var code=(cells[0]||"").trim();if(!/^\d{5}$/.test(code))return;
+    var text=(cells[1]||"").trim().replace(/^"|"$/g,"").replace(/""/g,'"').trim();
+    if(!text||text.toUpperCase()==="X"||text.length<3)return;
+    var key=code+"|"+text.toLowerCase();if(seen[key])return;seen[key]=1;
+    kns.push({code:code,text:text,div:code.slice(0,2)});
+  });
+  return kns;
+}
+function runKeynoteFile(txt,fname){
+  var out=document.getElementById("scanout");
+  var kns=parseKeynoteText(txt);
+  if(!kns.length){out.innerHTML='<div class="empty glass"><b>No keynotes found in that file</b>Expected rows like <code>07010&nbsp;&nbsp;AIR AND VAPOUR MEMBRANE&nbsp;&nbsp;Div 07</code> (tab or comma separated).</div>';return;}
+  var sec={},unmapped=[],corpus=[];
+  kns.forEach(function(k){
+    corpus.push(k.text);
+    if(!/^(0[3-9]|1[0-4])/.test(k.div))return;           // map architectural divisions
+    var res=knLookup(k.text);
+    var inDiv=res.filter(function(c){return canon(c).slice(0,2)===k.div;});
+    var pick=inDiv[0]||res[0];
+    if(pick){sec[pick]=sec[pick]||[];sec[pick].push(k);}else unmapped.push(k);
+  });
+  var archTotal=kns.filter(function(k){return /^(0[3-9]|1[0-4])/.test(k.div);}).length;
+  var codes=Object.keys(sec).sort(function(a,b){return sec[b].length-sec[a].length;});
+  // wording suggestions from the keynote corpus (feeds the Keynotes tab too)
+  var nt=" "+nrm(corpus.join(" "))+" ";var words={};nt.split(" ").forEach(function(w){words[w]=1;});
+  lastScanSuggestions=scanWordingSuggestions(words,nt,codes);
+  var byDiv={};codes.forEach(function(c){var d=secOf(c).div;byDiv[d]=(byDiv[d]||0)+1;});
+  var mappedN=archTotal-unmapped.length;
+  var h='<div class="scanstat">';
+  h+='<div class="s glass"><div class="n">'+codes.length+'</div><div class="l">Sections identified</div></div>';
+  h+='<div class="s glass"><div class="n">'+mappedN+'/'+archTotal+'</div><div class="l">Keynotes recognised</div></div>';
+  h+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
+  h+='<div class="s glass"><div class="n">'+unmapped.length+'</div><div class="l">Unrecognised (curate)</div></div></div>';
+  var tot=codes.length||1;h+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){h+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});h+='</div>';
+  lastScan=codes.map(function(c){return {code:c,tier:"required",via:true,terms:sec[c].map(function(k){return k.text;}).slice(0,8),m:sec[c].length,corr:0};});
+  h+='<div class="row" style="margin:14px 0"><button class="btn" id="expSpec">Export spec index (CSV)</button><button class="btn ghost" id="printSpec" style="margin-left:8px">Print</button></div>';
+  h+='<div class="callout" style="margin:14px 0"><b>Keynote run — '+esc(fname)+'.</b> The keynote file is the authoritative wording, so this is the most accurate spec list the tool produces. '+mappedN+' of '+archTotal+' architectural keynotes matched a curated section; the '+unmapped.length+' below are candidates to curate.</div>';
+  h+='<p class="count"><b>Sections your keynotes call for</b> ('+codes.length+')</p><div class="grid">';
+  codes.slice(0,120).forEach(function(c){h+=card(lastScan.filter(function(r){return r.code===c;})[0]);});
+  h+='</div>';
+  if(unmapped.length){h+='<p class="count" style="margin-top:22px"><b>Keynotes the library doesn’t recognise yet</b> ('+unmapped.length+') — curation candidates</p><div class="glass" style="padding:8px 16px">';
+    unmapped.slice(0,60).forEach(function(k){h+='<div style="font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line)"><b style="color:var(--accent);font-family:ui-monospace,Menlo,monospace">'+esc(k.code)+'</b> &nbsp;'+esc(k.text)+'</div>';});h+='</div>';}
+  if(lastScanSuggestions.length)h+='<p class="count" style="margin-top:22px"><b>Keynote wording to tighten</b> ('+lastScanSuggestions.length+') — see the Keynotes tab for the full list</p>';
+  out.innerHTML=h;
+  var ex=document.getElementById("expSpec");if(ex)ex.onclick=exportSpecIndex;
+  var pr=document.getElementById("printSpec");if(pr)pr.onclick=function(){window.print();};
+  fillKeynotes();
+}
+
 /* ---------- scan ---------- */
 function runScan(files){
   var out=document.getElementById("scanout");
-  out.innerHTML='<p class="count">Reading '+files.length+' file'+(files.length!==1?'s':'')+'…</p>';
-  var alltext="";var done=0;
-  Array.prototype.forEach.call(files,function(f){
-    var fr=new FileReader();
+  if(!window.pdfjsLib){
+    out.innerHTML='<div class="empty glass"><b>The PDF reader didn’t load</b>The scan needs the pdf.js library, which this page couldn’t load (usually a network or firewall block on the CDN). The per-term <b>Search</b>, <b>Browse</b>, and <b>Manufacturers</b> tabs work without it. If you’re on the office network, try again off-VPN, or ask me to ship a version with the reader built in.</div>';
+    return;
+  }
+  var arr=Array.prototype.slice.call(files),alltext="";
+  out.innerHTML='<div class="glass" style="padding:18px 20px"><div class="count" id="scanmsg" style="margin:0 0 10px">Opening '+esc(arr[0]?arr[0].name:"file")+'…</div><div class="scanbar"><i id="scanbari"></i></div><div style="font-size:11.5px;color:var(--muted);margin-top:8px">Reading in your browser — large sets can take a minute or two. Nothing leaves your device.</div></div>';
+  var setmsg=function(t,pct){var m=document.getElementById("scanmsg");if(m)m.textContent=t;var bi=document.getElementById("scanbari");if(bi&&pct!=null)bi.style.width=Math.max(2,Math.min(100,pct))+"%";};
+  function readFile(idx){
+    if(idx>=arr.length){setmsg("Matching against the curated library…",100);setTimeout(function(){try{scanResult(alltext);}catch(e){out.innerHTML='<div class="empty glass"><b>Scan error</b>'+esc(e.message||"")+'</div>';}},40);return;}
+    var f=arr[idx],fr=new FileReader();
+    fr.onerror=function(){setmsg("Couldn’t read "+esc(f.name)+", skipping…");readFile(idx+1);};
     fr.onload=function(){
-      pdfjsLib.getDocument({data:new Uint8Array(fr.result)}).promise.then(function(pdf){
-        var pages=[];for(var p=1;p<=pdf.numPages;p++)pages.push(p);
-        return pages.reduce(function(chain,p){return chain.then(function(){return pdf.getPage(p).then(function(pg){return pg.getTextContent();}).then(function(tc){alltext+=" "+tc.items.map(function(it){return it.str;}).join(" ");});});},Promise.resolve());
-      }).then(function(){done++;out.querySelector(".count").textContent="Read "+done+" of "+files.length+"…";if(done===files.length)scanResult(alltext);}).catch(function(e){out.innerHTML='<div class="empty glass"><b>Could not read that PDF</b>'+esc(e.message||"")+'</div>';});
+      var task;
+      try{task=pdfjsLib.getDocument({data:new Uint8Array(fr.result)});}
+      catch(e){out.innerHTML='<div class="empty glass"><b>PDF reader error</b>'+esc(e.message||"")+'</div>';return;}
+      var fail=setTimeout(function(){setmsg("Still opening "+esc(f.name)+"… if this doesn’t move, the PDF reader (pdf.js worker) may be blocked on this network.");},12000);
+      task.promise.then(function(pdf){
+        clearTimeout(fail);var N=pdf.numPages,chain=Promise.resolve();
+        var base=arr.length>1?("File "+(idx+1)+" of "+arr.length+" — "):"";
+        setmsg(base+esc(f.name)+" — "+N+" pages",3);
+        for(var p=1;p<=N;p++){(function(p){chain=chain.then(function(){return pdf.getPage(p).then(function(pg){return pg.getTextContent();}).then(function(tc){alltext+=" "+tc.items.map(function(it){return it.str;}).join(" ");if(p%2===0||p===N)setmsg(base+"page "+p+" of "+N,Math.round((idx+p/N)/arr.length*100));});});})(p);}
+        return chain;
+      }).then(function(){readFile(idx+1);}).catch(function(e){clearTimeout(fail);out.innerHTML='<div class="empty glass"><b>Couldn’t read '+esc(f.name)+'</b>'+esc(e.message||"")+'. If it’s a scanned/image-only PDF there’s no text layer to read.</div>';});
     };
     fr.readAsArrayBuffer(f);
-  });
+  }
+  readFile(0);
 }
 // Tiered scan, tuned across all six buildings (not one). Signal = distinct MULTI-WORD phrases
 // on the drawings per section; single words are ignored as noise. Two honest tiers:
@@ -533,6 +651,9 @@ function scanResult(text){
   var likely=rows.filter(function(r){return r.m>=2&&!(r.m>=4&&r.corr>=1);}).sort(function(a,b){return b.m-a.m;});
   required.forEach(function(r){r.tier="required";});likely.forEach(function(r){r.tier="likely";});
   var flagged=required.concat(likely);
+  // sections the set reaches by ANY term (incl. single words) — basis for wording suggestions
+  var reached={};for(var rt in ALIASES){var rtt=toks(rt);if(!rtt.length||!rtt.every(function(w){return words[w];})||nt.indexOf(" "+nrm(rt)+" ")<0)continue;ALIASES[rt].forEach(function(c){reached[c]=1;});}
+  lastScanSuggestions=scanWordingSuggestions(words,nt,Object.keys(reached));
   var byDiv={};flagged.forEach(function(r){var d=secOf(r.code).div;byDiv[d]=(byDiv[d]||0)+1;});
   var mfrn=required.reduce(function(n,r){return n+((secOf(r.code).mfr||[]).length);},0);
   var out=document.getElementById("scanout");
@@ -547,10 +668,18 @@ function scanResult(text){
   h+='<div class="callout" style="margin:14px 0">This is a reading aid, not a substitute for the spec list. The <b>confident</b> tier (≥4 corroborated drawing phrases) runs about 76% precise across six buildings; <b>likely</b> is a wider, softer net. Verify anything before you rely on it.</div>';
   if(required.length){h+='<p class="count"><b style="color:var(--amber-d)">Required — confident</b> ('+required.length+')</p><div class="grid">';required.slice(0,60).forEach(function(r){h+=card(r);});h+='</div>';}
   if(likely.length){h+='<p class="count" style="margin-top:20px"><b>Likely — softer signal</b> ('+likely.length+')</p><div class="grid">';likely.slice(0,60).forEach(function(r){h+=card(r);});h+='</div>';}
+  if(lastScanSuggestions.length){
+    h+='<p class="count" style="margin-top:22px"><b>Keynote wording to tighten — from your set</b> ('+lastScanSuggestions.length+')</p>';
+    h+='<div class="glass" style="padding:6px 18px 14px">';
+    lastScanSuggestions.slice(0,40).forEach(function(x){var col=divCol(secOf(x.code).div);
+      h+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin:9px 0"><div style="font-size:12.5px;font-weight:650">'+esc(x.code)+' · '+esc(x.title)+'</div><div style="font-size:12px;color:var(--muted);margin-top:5px">your set tags this as <span class="pill" style="margin:0">'+esc(x.yours)+'</span> → firm standard <span class="pill term" style="margin:0">'+esc(x.std)+'</span></div></div>';});
+    h+='</div><div style="font-size:11.5px;color:var(--muted);margin:2px 0 0">Also shown on the Keynotes tab. “Standard” = the clearest wording the firm’s other projects used for this section.</div>';
+  }
   if(!flagged.length)h+='<div class="empty glass"><b>No sections cleared the bar</b>The set may be light on text, or use vocabulary not yet curated. Try the per-term Search instead.</div>';
   out.innerHTML=h;
   var ex=document.getElementById("expSpec");if(ex)ex.onclick=exportSpecIndex;
   var pr=document.getElementById("printSpec");if(pr)pr.onclick=function(){window.print();};
+  fillKeynotes();  // refresh the Keynotes tab to reflect THIS set
 }
 var lastScan=[];
 function exportSpecIndex(){
@@ -593,13 +722,21 @@ function fillKeynotes(){
       picks.push({code:code,title:sec.title,best:best,weak:weak,n:terms.length});
   });
   var c='';
-  picks.forEach(function(p){
-    var col=divCol(secOf(p.code).div);
-    c+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin-bottom:11px">';
-    c+='<div style="font-size:12.5px;font-weight:650">'+esc(p.code)+' · '+esc(p.title)+'</div>';
-    c+='<div style="font-size:12px;color:var(--muted);margin-top:5px">tagged as <span class="pill" style="margin:0">'+esc(p.weak)+'</span> and '+(p.n-1)+' other'+(p.n>2?'s':'')+'</div>';
-    c+='<div style="font-size:12px;color:var(--ink2);margin-top:6px">suggested standard → <span class="pill term" style="margin:0">'+esc(p.best)+'</span></div></div>';
-  });
+  if(lastScanSuggestions.length){
+    // DRAWING-DRIVEN: keynotes in the user's scanned set that could be tightened
+    c+='<div style="font-size:12px;color:var(--ok);font-weight:650;margin-bottom:11px">✓ From your scanned set — '+lastScanSuggestions.length+' keynote'+(lastScanSuggestions.length!==1?'s':'')+' that could be tightened</div>';
+    lastScanSuggestions.slice(0,40).forEach(function(x){var col=divCol(secOf(x.code).div);
+      c+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin-bottom:11px"><div style="font-size:12.5px;font-weight:650">'+esc(x.code)+' · '+esc(x.title)+'</div><div style="font-size:12px;color:var(--muted);margin-top:5px">your set tags this as <span class="pill" style="margin:0">'+esc(x.yours)+'</span></div><div style="font-size:12px;color:var(--ink2);margin-top:6px">firm standard → <span class="pill term" style="margin:0">'+esc(x.std)+'</span></div></div>';});
+  } else {
+    c+='<div class="callout" style="margin:0 0 12px;padding:12px 14px">Go to <b>Scan drawings</b> and upload your set — this panel then lists the keynotes in <i>your</i> drawings that could be worded better. Below are examples from the library meanwhile.</div>';
+    picks.forEach(function(p){
+      var col=divCol(secOf(p.code).div);
+      c+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin-bottom:11px">';
+      c+='<div style="font-size:12.5px;font-weight:650">'+esc(p.code)+' · '+esc(p.title)+'</div>';
+      c+='<div style="font-size:12px;color:var(--muted);margin-top:5px">tagged as <span class="pill" style="margin:0">'+esc(p.weak)+'</span> and '+(p.n-1)+' other'+(p.n>2?'s':'')+'</div>';
+      c+='<div style="font-size:12px;color:var(--ink2);margin-top:6px">suggested standard → <span class="pill term" style="margin:0">'+esc(p.best)+'</span></div></div>';
+    });
+  }
   document.getElementById("kncompare").innerHTML=c||'<p style="font-size:12.5px;color:var(--muted)">Fold in more keynotes to surface wording drift.</p>';
 }
 
@@ -626,9 +763,53 @@ file.onchange=function(){if(file.files.length)runScan(file.files);};
 ["dragover","dragenter"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add("hot");});});
 ["dragleave","drop"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove("hot");});});
 drop.addEventListener("drop",function(e){if(e.dataTransfer.files.length)runScan(e.dataTransfer.files);});
+var kdrop=document.getElementById("kdrop"),kfile=document.getElementById("kfile");
+function unescapeXml(s){return String(s).replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&apos;/g,"'").replace(/&#(\d+);/g,function(_,n){return String.fromCharCode(+n);}).replace(/&amp;/g,"&");}
+function xlsxToKeynoteText(buf){
+  if(typeof fflate==="undefined")throw new Error("Spreadsheet reader not loaded — try the .txt export instead.");
+  var u8=(buf instanceof Uint8Array)?buf:new Uint8Array(buf);
+  var files=fflate.unzipSync(u8),dec=new TextDecoder("utf-8");
+  function txt(n){return files[n]?dec.decode(files[n]):"";}
+  var shared=[],ss=txt("xl/sharedStrings.xml");
+  if(ss){ss.replace(/<si>([\s\S]*?)<\/si>/g,function(_,inner){var s="";inner.replace(/<t[^>]*>([\s\S]*?)<\/t>/g,function(_,t){s+=t;});shared.push(unescapeXml(s));});}
+  var sheetName=Object.keys(files).filter(function(n){return /^xl\/worksheets\/sheet\d+\.xml$/.test(n);}).sort(function(a,b){return(+a.match(/(\d+)\.xml$/)[1])-(+b.match(/(\d+)\.xml$/)[1]);})[0];
+  if(!sheetName)throw new Error("No worksheet found in that spreadsheet.");
+  var sheet=txt(sheetName),rowsOut=[];
+  sheet.replace(/<row[^>]*>([\s\S]*?)<\/row>/g,function(_,rowXml){
+    var cells={};
+    rowXml.replace(/<c\s+([^>]*?)(\/>|>([\s\S]*?)<\/c>)/g,function(m,attrs,close,body){
+      var rm=attrs.match(/r="([A-Z]+)\d+"/);if(!rm)return m;var col=rm[1];
+      var tm=attrs.match(/t="([^"]+)"/),t=tm?tm[1]:"",val="";
+      if(body){
+        if(t==="inlineStr"){var im=body.match(/<t[^>]*>([\s\S]*?)<\/t>/);if(im)val=unescapeXml(im[1]);}
+        else{var vm=body.match(/<v[^>]*>([\s\S]*?)<\/v>/);if(vm){val=(t==="s")?(shared[+vm[1]]||""):unescapeXml(vm[1]);}}
+      }
+      cells[col]=val;return m;
+    });
+    var a=(cells.A||"").trim(),b=(cells.B||"").trim(),c=(cells.C||"").trim();
+    if(a||b||c)rowsOut.push(a+"\t"+b+"\t"+c);
+  });
+  return rowsOut.join("\n");
+}
+function readKeynote(f){
+  var isXlsx=/\.(xlsx|xlsm|xltx)$/i.test(f.name),fr=new FileReader();
+  fr.onerror=function(){document.getElementById("scanout").innerHTML='<div class="empty glass"><b>Couldn’t read the file</b></div>';};
+  fr.onload=function(){try{
+    var txt=isXlsx?xlsxToKeynoteText(fr.result):fr.result;
+    runKeynoteFile(txt,f.name.replace(/\.[^.]+$/,""));
+  }catch(e){document.getElementById("scanout").innerHTML='<div class="empty glass"><b>Keynote parse error</b>'+esc(e.message||"")+'</div>';}};
+  if(isXlsx)fr.readAsArrayBuffer(f);else fr.readAsText(f);
+}
+if(kdrop&&kfile){
+  kdrop.onclick=function(){kfile.click();};
+  kfile.onchange=function(){if(kfile.files.length)readKeynote(kfile.files[0]);};
+  ["dragover","dragenter"].forEach(function(ev){kdrop.addEventListener(ev,function(e){e.preventDefault();kdrop.classList.add("hot");});});
+  ["dragleave","drop"].forEach(function(ev){kdrop.addEventListener(ev,function(e){e.preventDefault();kdrop.classList.remove("hot");});});
+  kdrop.addEventListener("drop",function(e){if(e.dataTransfer.files.length)readKeynote(e.dataTransfer.files[0]);});
+}
 
 /* ---------- boot ---------- */
-if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+if(window.pdfjsLib){var _wsrc="pdf.worker.min.js";var _we=document.getElementById("__pdfworker");if(_we){try{_wsrc=URL.createObjectURL(new Blob([_we.textContent],{type:"application/javascript"}));}catch(e){}}pdfjsLib.GlobalWorkerOptions.workerSrc=_wsrc;}
 if(initData()){
   buildFilters();buildBrowse();buildMakerIndex();setMakerMode("mfr");fillKeynotes();
   var np=Object.keys(PROJ).length;

@@ -1,9 +1,9 @@
 /* Spec Finder — spec library.
    This file is DATA ONLY. index.html contains no spec content.
    Improve reliability by editing this file, then commit it.
-     sections : 472 MasterFormat sections  {code,title,div,divName,mfr[],bod[]}
-     aliases  : 3284 drawing terms -> section code[]   (the curated mapping)
-     kwByCode : 456 section code -> terms[]          (reverse index of aliases)
+     sections : 521 MasterFormat sections  {code,title,div,divName,mfr[],bod[]}
+     aliases  : 3603 drawing terms -> section code[]   (the curated mapping)
+     kwByCode : 519 section code -> terms[]          (reverse index of aliases)
      projects : registry of the projects that have taught this library
      provenance: where each recorded alias edge came from, plus retired and declined decisions
    Keys are sorted so diffs stay readable. kwByCode is rebuilt from aliases, never edited directly.
@@ -19928,6 +19928,12 @@ const DB = {
   "zinc strips": [
    "09 30 00",
    "09 30 33"
+  ],
+  "galvanized brake shape": [
+   "07 62 00"
+  ],
+  "parapet cap": [
+   "07 62 00"
   ]
  },
  "kwByCode": {
@@ -22728,10 +22734,12 @@ const DB = {
    "epoxy seam sealer",
    "flexible flashing",
    "formed aluminum flashings",
+   "galvanized brake shape",
    "gutter screen",
    "mastic sealant",
    "metal",
    "metal flashing",
+   "parapet cap",
    "prefinished metal flashing",
    "reglets",
    "roofing cement",
@@ -29609,6 +29617,22 @@ const DB = {
     "added": "2026-08-14",
     "by": "curated",
     "evidence": "QA fix: correct home Precast Architectural Concrete."
+   },
+   "galvanized brake shape|07 62 00": {
+    "projects": [
+     "YYC Concourse B"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "keynote 07066 \"150 x 100 GALVANIZED BRAKE SHAPE AROUND PERIMETER OF OPENING\"; mapped to 07 62 00 Sheet Metal Flashing and Trim (brake-formed / cap sheet metal). Library already routes 'cap flashing' and 'metal flashing' here."
+   },
+   "parapet cap|07 62 00": {
+    "projects": [
+     "YYC Concourse B"
+    ],
+    "added": "2026-08-14",
+    "by": "curated",
+    "evidence": "keynote 07087 \"BUILT UP PARAPET CAP TO PROVIDE SLOPE\"; mapped to 07 62 00 Sheet Metal Flashing and Trim (brake-formed / cap sheet metal). Library already routes 'cap flashing' and 'metal flashing' here."
    }
   },
   "retired": {
