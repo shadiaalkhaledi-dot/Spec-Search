@@ -141,6 +141,23 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
 .relchip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 9px;border-radius:8px;background:#fff;border:1px solid var(--brd);margin:0 6px 6px 0;cursor:pointer}
 .relchip:hover{border-color:var(--accent)}
 .relchip .rn{font-size:10.5px;color:var(--muted)}
+.flpill{cursor:pointer;transition:background .1s,border-color .1s}
+.flpill:hover{border-color:#c0392b;color:#c0392b}
+.pill.flg{background:#fdecea;border-color:#e6a9a1;color:#c0392b;text-decoration:line-through}
+.pill.flg *{text-decoration:line-through}
+.slist{display:flex;flex-direction:column;gap:7px}
+.sli{border:1px solid var(--brd);border-radius:11px;background:#fff;overflow:hidden}
+.slrow{display:flex;align-items:center;gap:11px;padding:10px 14px;cursor:pointer;user-select:none}
+.slrow:hover{background:#f7f9fc}
+.slrow .bedge{width:5px;height:20px;border-radius:4px;flex:none}
+.slrow .chev{color:var(--muted);font-size:12px;transition:transform .12s;flex:none}
+.sli.open .chev{transform:rotate(90deg)}
+.slrow .slcode{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:12.5px;min-width:74px;flex:none}
+.slrow .sltitle{flex:1;font-size:13.5px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slrow .slmeta{font-size:11.5px;color:var(--muted);flex:none;white-space:nowrap}
+.slbody{display:none;padding:2px 16px 15px;border-top:1px solid var(--line)}
+.sli.open .slbody{display:block}
+@media(max-width:640px){.slrow .slmeta{display:none}}
 .flagbtn{border:1px solid var(--brd);background:#fff;color:var(--muted);font-size:12px;padding:6px 12px;border-radius:9px;margin-top:8px}
 .flagbtn:hover{border-color:#c0392b;color:#c0392b}
 .flagbtn.flagged{border-color:#c0392b;color:#c0392b;background:#fdecea}
@@ -358,6 +375,7 @@ function card(r){
   h+='<span class="badge '+bCls+'">'+bTxt+'</span></div>';
   h+='<span class="dtag" style="background:'+col+'">'+div+' · '+esc(s.divName||"")+'</span>';
   if(terms.length){h+='<div class="mrow"><b>'+(r.tier?"Drawing phrases":"Matched terms")+'</b><br>';terms.forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});h+='</div>';}
+  if(r.src&&r.src.length){h+='<div class="mrow"><b>'+(r.srcLabel||"Seen on")+'</b><br>';r.src.slice(0,5).forEach(function(x){h+='<span class="pill">'+esc(x)+'</span>';});if(r.src.length>5)h+='<span class="pill">+'+(r.src.length-5)+'</span>';h+='</div>';}
   if(mfr.length){h+='<div class="mrow"><b>Manufacturers</b><br>';mfr.slice(0,5).forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});if(mfr.length>5)h+='<span class="pill">+'+(mfr.length-5)+'</span>';h+='</div>';}
   if(bod.length){h+='<div class="mrow"><b>Specified product</b><br>';bod.slice(0,2).forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
   if(r.tier){h+='<div class="conf">'+r.m+' distinct drawing phrase'+(r.m!==1?"s":"")+(r.corr?" · "+r.corr+" corroborated":"")+'</div>';}
@@ -398,15 +416,28 @@ function doSearch(q){
   lastResults=lookup(q); renderResults();
   document.getElementById("scount").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
-/* ---------- feedback (client-side only) ---------- */
-function loadFlags(){try{return JSON.parse(localStorage.getItem("sf_flags")||"[]");}catch(e){return [];}}
-function saveFlags(f){try{localStorage.setItem("sf_flags",JSON.stringify(f));}catch(e){}}
-function isFlagged(code){return loadFlags().some(function(x){return x.code===code;});}
-function toggleFlag(code,term){var f=loadFlags();var i=f.findIndex(function(x){return x.code===code;});
-  if(i>=0)f.splice(i,1);else f.push({code:code,term:term||"",t:new Date().toISOString().slice(0,16).replace("T"," ")});saveFlags(f);}
-function exportFlags(){var f=loadFlags();if(!f.length){alert("No flags saved yet. Click ‘flag as wrong’ on any result first.");return;}
+/* ---------- feedback (client-side only, item-level) ---------- */
+// A flag targets a specific item: kind "section" (the whole mapping), "term", "mfr", or "product".
+var __flags=null;   // in-memory fallback when localStorage is unavailable (e.g. sandboxed embeds)
+function loadFlags(){if(__flags)return __flags;try{__flags=JSON.parse(localStorage.getItem("sf_flags")||"[]");}catch(e){__flags=[];}return __flags;}
+function saveFlags(f){__flags=f;try{localStorage.setItem("sf_flags",JSON.stringify(f));}catch(e){}}
+function flagKey(x){return x.code+"|"+(x.kind||"section")+"|"+(x.item||"");}
+function isFlaggedItem(code,kind,item){var k=code+"|"+(kind||"section")+"|"+(item||"");return loadFlags().some(function(x){return flagKey(x)===k;});}
+function isFlagged(code){return isFlaggedItem(code,"section","");}
+function toggleFlagItem(code,kind,item){var f=loadFlags(),k=code+"|"+(kind||"section")+"|"+(item||"");
+  var i=f.findIndex(function(x){return flagKey(x)===k;});
+  if(i>=0)f.splice(i,1);else f.push({code:code,kind:kind||"section",item:item||"",t:new Date().toISOString().slice(0,16).replace("T"," ")});
+  saveFlags(f);}
+function toggleFlag(code){toggleFlagItem(code,"section","");}   // back-compat
+function flagCount(){return loadFlags().length;}
+function exportFlags(){var f=loadFlags();if(!f.length){alert("No flags saved yet. Open a section and click any term, manufacturer, or product — or the section itself — to flag it as wrong.");return;}
   var blob=new Blob([JSON.stringify({flags:f,exported:new Date().toISOString()},null,1)],{type:"application/json"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="specfinder-feedback.json";a.click();}
+// a pill the user can click to flag just that item as wrong
+function flPill(code,kind,item,cls,labelHtml){
+  var fl=isFlaggedItem(code,kind,item);
+  return '<span class="pill'+(cls?" "+cls:"")+" flpill"+(fl?" flg":"")+'" data-fl-code="'+esc(code)+'" data-fl-kind="'+kind+'" data-fl-item="'+esc(item)+'" title="'+(fl?"flagged as wrong — click to undo":"click to flag this item as wrong")+'">'+(labelHtml||esc(item))+(fl?' <b style="color:#c0392b">⚑</b>':'')+'</span>';
+}
 /* ---------- section detail ---------- */
 var DETAIL_FROM_SCAN=false;
 function openDetail(code){
@@ -431,22 +462,36 @@ function openDetail(code){
     if(nw||rn){h+='<div style="font-size:12px;color:var(--muted);margin-top:5px">Construction: '+nw+' new · '+rn+' renovation'+((rn&&!nw)?" — appears in renovation context":(nw&&!rn&&(nw+rn)>=3)?" — new-build context":"")+'</div>';}
     h+='</div>';
   }
-  if(terms.length){h+='<div class="msec"><div class="h">Drawing terms that reach it ('+terms.length+')</div>';terms.slice(0,40).forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});if(terms.length>40)h+='<span class="pill">+'+(terms.length-40)+'</span>';h+='</div>';}
+  if(terms.length){h+='<div class="msec"><div class="h">Drawing terms that reach it ('+terms.length+') — click one to flag it as wrong</div>';terms.slice(0,40).forEach(function(t){h+=flPill(s.code,"term",t,"term");});if(terms.length>40)h+='<span class="pill">+'+(terms.length-40)+'</span>';h+='</div>';}
   var mfrByS=(DB.mfrBy&&DB.mfrBy[s.code])||{}, bodByS=(DB.bodBy&&DB.bodBy[s.code])||{};
   if(bod.length){h+='<div class="msec"><div class="h">Specified — basis of design · actually used ('+bod.length+')</div>';
-    bod.forEach(function(p){var ps=bodByS[p]||[];h+='<span class="pill prod">'+esc(p)+(ps.length?' <span style="opacity:.75;font-weight:600">· used on '+esc(ps.join(", "))+'</span>':'')+'</span>';});h+='</div>';}
+    bod.forEach(function(p){var ps=bodByS[p]||[];h+=flPill(s.code,"product",p,"prod",esc(p)+(ps.length?' <span style="opacity:.75;font-weight:600">· used on '+esc(ps.join(", "))+'</span>':''));});h+='</div>';}
   if(mfr.length){h+='<div class="msec"><div class="h">Acceptable manufacturers · allowed alternatives ('+mfr.length+')</div>';
-    mfr.forEach(function(m){var ps=mfrByS[m]||[];h+='<span class="pill">'+esc(m)+(ps.length?' <span style="opacity:.6">· listed on '+esc(ps.join(", "))+'</span>':'')+'</span>';});h+='</div>';}
-  if(bod.length||mfr.length)h+='<div style="font-size:11.5px;color:var(--muted);margin-top:-4px">“Used” = named as basis of design in that spec. “Acceptable” = allowed alternatives listed alongside.</div>';
+    mfr.forEach(function(m){var ps=mfrByS[m]||[];h+=flPill(s.code,"mfr",m,"",esc(m)+(ps.length?' <span style="opacity:.6">· listed on '+esc(ps.join(", "))+'</span>':''));});h+='</div>';}
+  if(bod.length||mfr.length)h+='<div style="font-size:11.5px;color:var(--muted);margin-top:-4px">“Used” = named as basis of design in that spec. “Acceptable” = allowed alternatives listed alongside. Click any item above to flag just that one as wrong.</div>';
   if(rel.length){h+='<div class="msec"><div class="h">Often issued together (across your projects)</div>';rel.forEach(function(r){var rs=secOf(r[0]);h+='<span class="relchip" onclick="openDetail(\''+esc(rs.code)+'\')"><span class="dot" style="width:8px;height:8px;border-radius:3px;background:'+divCol(rs.div)+'"></span>'+esc(rs.code)+' '+esc(rs.title)+' <span class="rn">'+r[1]+' proj</span></span>';});h+='</div>';}
-  h+='<div class="msec"><button class="flagbtn '+(flagged?"flagged":"")+'" onclick="detailFlag(\''+esc(s.code)+'\')">'+(flagged?"⚑ flagged as wrong — click to undo":"⚑ flag this mapping as wrong")+'</button></div>';
-  h+='</div>';
+  var nItem=loadFlags().filter(function(x){return x.code===s.code&&x.kind!=="section";}).length;
+  h+='<div class="msec"><button class="flagbtn '+(flagged?"flagged":"")+'" onclick="detailFlag(\''+esc(s.code)+'\')">'+(flagged?"⚑ whole section flagged as wrong — click to undo":"⚑ flag the whole section mapping as wrong")+'</button>';
+  if(nItem)h+='<span style="font-size:11.5px;color:#c0392b;margin-left:10px">'+nItem+' item'+(nItem!==1?'s':'')+' flagged in this section</span>';
+  h+='</div></div>';
   document.getElementById("modal").innerHTML=h;
   document.getElementById("modalbg").classList.add("on");
 }
 function closeDetail(){document.getElementById("modalbg").classList.remove("on");}
 function detailFlag(code){toggleFlag(code);openDetail(code);}
+// delegated: click any flaggable item pill inside the modal to toggle its flag
+document.getElementById("modal").addEventListener("click",function(e){
+  var el=e.target.closest("[data-fl-kind]");if(!el)return;e.stopPropagation();
+  toggleFlagItem(el.getAttribute("data-fl-code"),el.getAttribute("data-fl-kind"),el.getAttribute("data-fl-item"));
+  openDetail(el.getAttribute("data-fl-code"));
+});
 document.getElementById("modalbg").addEventListener("click",function(e){if(e.target===this)closeDetail();});
+// expandable scan list rows (delegated on the stable #scanout container)
+document.getElementById("scanout").addEventListener("click",function(e){
+  if(e.target.closest("button"))return;              // let Open-detail / export buttons work
+  var row=e.target.closest(".slrow");if(!row)return;
+  row.parentNode.classList.toggle("open");
+});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
 
 /* ---------- browse ---------- */
@@ -519,6 +564,8 @@ function bestStandard(code){
 // drawing-driven: for each section the user's set reaches, if they used a vaguer wording than the
 // firm standard, suggest the upgrade. This is "improve the keynotes in YOUR drawings."
 var lastScanSuggestions=[];
+// bare material nouns that appear incidentally in almost any drawing set — never a "wording to tighten" on their own
+var GENERIC_WORD={metal:1,board:1,unit:1,steel:1,wood:1,glass:1,concrete:1,panel:1,tile:1,frame:1,door:1,wall:1,floor:1,ceiling:1,stone:1,sheet:1,base:1,trim:1,membrane:1,insulation:1,joint:1,coating:1,finish:1,system:1};
 function scanWordingSuggestions(words,nt,codes){
   var out=[],seen={};
   codes.forEach(function(code){
@@ -533,6 +580,7 @@ function scanWordingSuggestions(words,nt,codes){
     var yours=null;
     for(var t in ALIASES){if(ALIASES[t].map(canon).indexOf(canon(code))<0)continue;var tt=toks(t);
       if(!tt.length||tt.length>=stoks.length)continue;
+      if(tt.length===1&&GENERIC_WORD[tt[0]])continue;   // a bare material noun ("metal","board") is not a "vague tag" — it just appears incidentally in the text
       if(!tt.every(function(w){return stoks.indexOf(w)>=0;}))continue;         // must be subset of standard
       if(!tt.every(function(w){return words[w];})||nt.indexOf(" "+nrm(t)+" ")<0)continue; // present in drawing
       if(!yours||tt.length<toks(yours).length)yours=t;
@@ -574,28 +622,27 @@ function runKeynoteFile(txt,fname){
   var archTotal=kns.filter(function(k){return /^(0[3-9]|1[0-4])/.test(k.div);}).length;
   var codes=Object.keys(sec).sort(function(a,b){return sec[b].length-sec[a].length;});
   // wording suggestions from the keynote corpus (feeds the Keynotes tab too)
-  var nt=" "+nrm(corpus.join(" "))+" ";var words={};nt.split(" ").forEach(function(w){words[w]=1;});
-  lastScanSuggestions=scanWordingSuggestions(words,nt,codes);
+  // The keynote file IS the authoritative wording — do not second-guess it with "tighten" suggestions.
+  // (Wording tips belong on the drawing scan, where annotations are loose.)
+  lastScanSuggestions=[];
   var byDiv={};codes.forEach(function(c){var d=secOf(c).div;byDiv[d]=(byDiv[d]||0)+1;});
   var mappedN=archTotal-unmapped.length;
-  var h='<div class="scanstat">';
-  h+='<div class="s glass"><div class="n">'+codes.length+'</div><div class="l">Sections identified</div></div>';
-  h+='<div class="s glass"><div class="n">'+mappedN+'/'+archTotal+'</div><div class="l">Keynotes recognised</div></div>';
-  h+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
-  h+='<div class="s glass"><div class="n">'+unmapped.length+'</div><div class="l">Unrecognised (curate)</div></div></div>';
-  var tot=codes.length||1;h+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){h+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});h+='</div>';
-  lastScan=codes.map(function(c){return {code:c,tier:"required",via:true,terms:sec[c].map(function(k){return k.text;}).slice(0,8),m:sec[c].length,corr:0};});
-  h+='<div class="row" style="margin:14px 0"><button class="btn" id="expSpec">Export spec index (CSV)</button><button class="btn ghost" id="printSpec" style="margin-left:8px">Print</button></div>';
-  h+='<div class="callout" style="margin:14px 0"><b>Keynote run — '+esc(fname)+'.</b> The keynote file is the authoritative wording, so this is the most accurate spec list the tool produces. '+mappedN+' of '+archTotal+' architectural keynotes matched a curated section; the '+unmapped.length+' below are candidates to curate.</div>';
-  h+='<p class="count"><b>Sections your keynotes call for</b> ('+codes.length+')</p><div class="grid">';
-  codes.slice(0,120).forEach(function(c){h+=card(lastScan.filter(function(r){return r.code===c;})[0]);});
-  h+='</div>';
-  if(unmapped.length){h+='<p class="count" style="margin-top:22px"><b>Keynotes the library doesn’t recognise yet</b> ('+unmapped.length+') — curation candidates</p><div class="glass" style="padding:8px 16px">';
-    unmapped.slice(0,60).forEach(function(k){h+='<div style="font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line)"><b style="color:var(--accent);font-family:ui-monospace,Menlo,monospace">'+esc(k.code)+'</b> &nbsp;'+esc(k.text)+'</div>';});h+='</div>';}
-  if(lastScanSuggestions.length)h+='<p class="count" style="margin-top:22px"><b>Keynote wording to tighten</b> ('+lastScanSuggestions.length+') — see the Keynotes tab for the full list</p>';
-  out.innerHTML=h;
-  var ex=document.getElementById("expSpec");if(ex)ex.onclick=exportSpecIndex;
-  var pr=document.getElementById("printSpec");if(pr)pr.onclick=function(){window.print();};
+  var stat='<div class="scanstat">';
+  stat+='<div class="s glass"><div class="n">'+codes.length+'</div><div class="l">Sections identified</div></div>';
+  stat+='<div class="s glass"><div class="n">'+mappedN+'/'+archTotal+'</div><div class="l">Keynotes recognised</div></div>';
+  stat+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
+  stat+='<div class="s glass"><div class="n">'+unmapped.length+'</div><div class="l">Unrecognised (curate)</div></div></div>';
+  var tot=codes.length||1;stat+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){stat+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});stat+='</div>';
+  lastScan=codes.map(function(c){return {code:c,tier:"required",via:true,terms:sec[c].map(function(k){return k.text;}).slice(0,12),src:sec[c].map(function(k){return k.code;}).slice(0,24),srcLabel:"From keynotes",m:sec[c].length,corr:0};});
+  var after='';
+  if(unmapped.length){after+='<p class="count" style="margin-top:22px"><b>Keynotes the library doesn’t recognise yet</b> ('+unmapped.length+') — curation candidates</p><div class="glass" style="padding:8px 16px">';
+    unmapped.slice(0,60).forEach(function(k){after+='<div style="font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line)"><b style="color:var(--accent);font-family:ui-monospace,Menlo,monospace">'+esc(k.code)+'</b> &nbsp;'+esc(k.text)+'</div>';});after+='</div>';}
+  renderScanShell({
+    statHtml:stat,
+    callout:'<b>Keynote run — '+esc(fname)+'.</b> The keynote file is the authoritative wording, so this is the most accurate spec list the tool produces. '+mappedN+' of '+archTotal+' architectural keynotes matched a curated section; the '+unmapped.length+' below are candidates to curate.',
+    reqLabel:"Sections your keynotes call for",
+    after:after
+  });
   fillKeynotes();
 }
 
@@ -606,12 +653,13 @@ function runScan(files){
     out.innerHTML='<div class="empty glass"><b>The PDF reader didn’t load</b>The scan needs the pdf.js library, which this page couldn’t load (usually a network or firewall block on the CDN). The per-term <b>Search</b>, <b>Browse</b>, and <b>Manufacturers</b> tabs work without it. If you’re on the office network, try again off-VPN, or ask me to ship a version with the reader built in.</div>';
     return;
   }
-  var arr=Array.prototype.slice.call(files),alltext="";
+  var arr=Array.prototype.slice.call(files),alltext="",pageTexts=[];
   out.innerHTML='<div class="glass" style="padding:18px 20px"><div class="count" id="scanmsg" style="margin:0 0 10px">Opening '+esc(arr[0]?arr[0].name:"file")+'…</div><div class="scanbar"><i id="scanbari"></i></div><div style="font-size:11.5px;color:var(--muted);margin-top:8px">Reading in your browser — large sets can take a minute or two. Nothing leaves your device.</div></div>';
   var setmsg=function(t,pct){var m=document.getElementById("scanmsg");if(m)m.textContent=t;var bi=document.getElementById("scanbari");if(bi&&pct!=null)bi.style.width=Math.max(2,Math.min(100,pct))+"%";};
   function readFile(idx){
-    if(idx>=arr.length){setmsg("Matching against the curated library…",100);setTimeout(function(){try{scanResult(alltext);}catch(e){out.innerHTML='<div class="empty glass"><b>Scan error</b>'+esc(e.message||"")+'</div>';}},40);return;}
-    var f=arr[idx],fr=new FileReader();
+    if(idx>=arr.length){setmsg("Matching against the curated library…",100);setTimeout(function(){try{scanResult(alltext,pageTexts);}catch(e){out.innerHTML='<div class="empty glass"><b>Scan error</b>'+esc(e.message||"")+'</div>';}},40);return;}
+    var f=arr[idx],fr=new FileReader(),fshort=f.name.replace(/\.[^.]+$/,"");
+    if(fshort.length>44)fshort=fshort.slice(0,44)+"…";
     fr.onerror=function(){setmsg("Couldn’t read "+esc(f.name)+", skipping…");readFile(idx+1);};
     fr.onload=function(){
       var task;
@@ -622,7 +670,7 @@ function runScan(files){
         clearTimeout(fail);var N=pdf.numPages,chain=Promise.resolve();
         var base=arr.length>1?("File "+(idx+1)+" of "+arr.length+" — "):"";
         setmsg(base+esc(f.name)+" — "+N+" pages",3);
-        for(var p=1;p<=N;p++){(function(p){chain=chain.then(function(){return pdf.getPage(p).then(function(pg){return pg.getTextContent();}).then(function(tc){alltext+=" "+tc.items.map(function(it){return it.str;}).join(" ");if(p%2===0||p===N)setmsg(base+"page "+p+" of "+N,Math.round((idx+p/N)/arr.length*100));});});})(p);}
+        for(var p=1;p<=N;p++){(function(p){chain=chain.then(function(){return pdf.getPage(p).then(function(pg){return pg.getTextContent();}).then(function(tc){var pt=tc.items.map(function(it){return it.str;}).join(" ");alltext+=" "+pt;pageTexts.push({label:fshort+" · p."+p,nt:" "+nrm(pt)+" "});if(p%2===0||p===N)setmsg(base+"page "+p+" of "+N,Math.round((idx+p/N)/arr.length*100));});});})(p);}
         return chain;
       }).then(function(){readFile(idx+1);}).catch(function(e){clearTimeout(fail);out.innerHTML='<div class="empty glass"><b>Couldn’t read '+esc(f.name)+'</b>'+esc(e.message||"")+'. If it’s a scanned/image-only PDF there’s no text layer to read.</div>';});
     };
@@ -634,7 +682,7 @@ function runScan(files){
 // on the drawings per section; single words are ignored as noise. Two honest tiers:
 //   required (confident): >=4 distinct multi-word phrases AND >=1 corroborated  (~76% precision)
 //   likely:               >=2 distinct multi-word phrases                        (broader, softer)
-function scanResult(text){
+function scanResult(text,pageTexts){
   var nt=" "+nrm(text)+" ";var words={};nt.split(" ").forEach(function(w){words[w]=1;});
   var sec={};
   for(var term in ALIASES){
@@ -646,7 +694,17 @@ function scanResult(text){
       if((confByEdge[term+"|"+c]||[]).length>0)sec[c].corr++;
       else if(confCount(term,c)>0)sec[c].corr++;}
   }
-  var rows=Object.keys(sec).map(function(c){var v=sec[c];return {code:c,m:v.mw.length,corr:v.corr,terms:v.mw,maxconf:0,via:true};});
+  // attribute each matched phrase to the drawing page(s) it appears on
+  var termSrc={};
+  if(pageTexts&&pageTexts.length){
+    var matched={};Object.keys(sec).forEach(function(c){sec[c].mw.forEach(function(t){matched[t]=1;});});
+    Object.keys(matched).forEach(function(t){var needle=" "+nrm(t)+" ",labels=[];
+      for(var pi=0;pi<pageTexts.length&&labels.length<16;pi++){if(pageTexts[pi].nt.indexOf(needle)>=0)labels.push(pageTexts[pi].label);}
+      termSrc[t]=labels;});
+  }
+  var rows=Object.keys(sec).map(function(c){var v=sec[c];
+    var srcSet={};v.mw.forEach(function(t){(termSrc[t]||[]).forEach(function(l){srcSet[l]=1;});});
+    return {code:c,m:v.mw.length,corr:v.corr,terms:v.mw,src:Object.keys(srcSet),maxconf:0,via:true};});
   var required=rows.filter(function(r){return r.m>=4&&r.corr>=1;}).sort(function(a,b){return b.m-a.m;});
   var likely=rows.filter(function(r){return r.m>=2&&!(r.m>=4&&r.corr>=1);}).sort(function(a,b){return b.m-a.m;});
   required.forEach(function(r){r.tier="required";});likely.forEach(function(r){r.tier="likely";});
@@ -656,32 +714,98 @@ function scanResult(text){
   lastScanSuggestions=scanWordingSuggestions(words,nt,Object.keys(reached));
   var byDiv={};flagged.forEach(function(r){var d=secOf(r.code).div;byDiv[d]=(byDiv[d]||0)+1;});
   var mfrn=required.reduce(function(n,r){return n+((secOf(r.code).mfr||[]).length);},0);
-  var out=document.getElementById("scanout");
-  var h='<div class="scanstat">';
-  h+='<div class="s glass"><div class="n">'+required.length+'</div><div class="l">Required (confident)</div></div>';
-  h+='<div class="s glass"><div class="n">'+likely.length+'</div><div class="l">Likely</div></div>';
-  h+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
-  h+='<div class="s glass"><div class="n">'+mfrn+'</div><div class="l">Manufacturers surfaced</div></div></div>';
-  var tot=flagged.length||1;h+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){h+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});h+='</div>';
-  lastScan=required.concat(likely);
-  h+='<div class="row" style="margin:14px 0"><button class="btn" id="expSpec">Export spec index (CSV)</button><button class="btn ghost" id="printSpec" style="margin-left:8px">Print</button></div>';
-  h+='<div class="callout" style="margin:14px 0">This is a reading aid, not a substitute for the spec list. The <b>confident</b> tier (≥4 corroborated drawing phrases) runs about 76% precise across six buildings; <b>likely</b> is a wider, softer net. Verify anything before you rely on it.</div>';
-  if(required.length){h+='<p class="count"><b style="color:var(--amber-d)">Required — confident</b> ('+required.length+')</p><div class="grid">';required.slice(0,60).forEach(function(r){h+=card(r);});h+='</div>';}
-  if(likely.length){h+='<p class="count" style="margin-top:20px"><b>Likely — softer signal</b> ('+likely.length+')</p><div class="grid">';likely.slice(0,60).forEach(function(r){h+=card(r);});h+='</div>';}
+  var nfiles={};if(pageTexts)pageTexts.forEach(function(pt){nfiles[pt.label.split(" · p.")[0]]=1;});
+  var stat='<div class="scanstat">';
+  stat+='<div class="s glass"><div class="n">'+required.length+'</div><div class="l">Required (confident)</div></div>';
+  stat+='<div class="s glass"><div class="n">'+likely.length+'</div><div class="l">Likely</div></div>';
+  stat+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
+  stat+='<div class="s glass"><div class="n">'+mfrn+'</div><div class="l">Manufacturers surfaced</div></div></div>';
+  var tot=flagged.length||1;stat+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){stat+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});stat+='</div>';
+  var after='';
   if(lastScanSuggestions.length){
-    h+='<p class="count" style="margin-top:22px"><b>Keynote wording to tighten — from your set</b> ('+lastScanSuggestions.length+')</p>';
-    h+='<div class="glass" style="padding:6px 18px 14px">';
+    after+='<p class="count" style="margin-top:22px"><b>Keynote wording to tighten — from your set</b> ('+lastScanSuggestions.length+')</p>';
+    after+='<div class="glass" style="padding:6px 18px 14px">';
     lastScanSuggestions.slice(0,40).forEach(function(x){var col=divCol(secOf(x.code).div);
-      h+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin:9px 0"><div style="font-size:12.5px;font-weight:650">'+esc(x.code)+' · '+esc(x.title)+'</div><div style="font-size:12px;color:var(--muted);margin-top:5px">your set tags this as <span class="pill" style="margin:0">'+esc(x.yours)+'</span> → firm standard <span class="pill term" style="margin:0">'+esc(x.std)+'</span></div></div>';});
-    h+='</div><div style="font-size:11.5px;color:var(--muted);margin:2px 0 0">Also shown on the Keynotes tab. “Standard” = the clearest wording the firm’s other projects used for this section.</div>';
+      after+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin:9px 0"><div style="font-size:12.5px;font-weight:650">'+esc(x.code)+' · '+esc(x.title)+'</div><div style="font-size:12px;color:var(--muted);margin-top:5px">your set tags this as <span class="pill" style="margin:0">'+esc(x.yours)+'</span> → firm standard <span class="pill term" style="margin:0">'+esc(x.std)+'</span></div></div>';});
+    after+='</div><div style="font-size:11.5px;color:var(--muted);margin:2px 0 0">Also on the Keynotes tab. “Standard” = the clearest wording the firm’s other projects used for this section.</div>';
   }
-  if(!flagged.length)h+='<div class="empty glass"><b>No sections cleared the bar</b>The set may be light on text, or use vocabulary not yet curated. Try the per-term Search instead.</div>';
-  out.innerHTML=h;
-  var ex=document.getElementById("expSpec");if(ex)ex.onclick=exportSpecIndex;
-  var pr=document.getElementById("printSpec");if(pr)pr.onclick=function(){window.print();};
+  lastScan=required.concat(likely);
+  renderScanShell({
+    statHtml:stat,
+    callout:'This is a reading aid, not a substitute for the spec list. The <b>confident</b> tier (≥4 corroborated drawing phrases) runs about 76% precise across six buildings; <b>likely</b> is a wider, softer net. Verify anything before you rely on it.'+(Object.keys(nfiles).length?' Phrases are tagged with the drawing (and page) they were seen on.':''),
+    reqLabel:"Required — confident",
+    after:after,
+    empty:flagged.length?'':'<div class="empty glass"><b>No sections cleared the bar</b>The set may be light on text, or use vocabulary not yet curated. Try the per-term Search instead.</div>'
+  });
   fillKeynotes();  // refresh the Keynotes tab to reflect THIS set
 }
 var lastScan=[];
+/* ---------- shared scan render: cards | list, filters, expandable rows ---------- */
+var scanView="cards", scanDivs=null, scanTierF="all", scanMeta=null;
+function renderScanShell(meta){
+  scanMeta=meta; scanDivs=null; scanTierF="all";
+  var out=document.getElementById("scanout");
+  var h=meta.statHtml;
+  h+='<div class="row" style="margin:14px 0"><button class="btn" id="expSpec">Export spec index (CSV)</button><button class="btn ghost" id="printSpec" style="margin-left:8px">Print</button></div>';
+  h+='<div class="callout" style="margin:14px 0">'+meta.callout+'</div>';
+  h+=(meta.empty||'');
+  if(lastScan.length){h+='<div class="filters" id="scanfilters"></div><div id="scanbody"></div>';}
+  h+=(meta.after||'');
+  out.innerHTML=h;
+  var ex=document.getElementById("expSpec");if(ex)ex.onclick=exportSpecIndex;
+  var pr=document.getElementById("printSpec");if(pr)pr.onclick=function(){window.print();};
+  if(lastScan.length){buildScanFilters();renderScanBody();}
+}
+function buildScanFilters(){
+  var host=document.getElementById("scanfilters");if(!host)return;
+  var divs={};lastScan.forEach(function(r){divs[secOf(r.code).div]=1;});
+  var hasLikely=lastScan.some(function(r){return r.tier==="likely";}),hasReq=lastScan.some(function(r){return r.tier==="required";});
+  var h='<span class="lbl">Division</span>';
+  Object.keys(divs).sort().forEach(function(d){h+='<button class="dfilter" data-d="'+d+'"><span class="dot" style="background:'+divCol(d)+'"></span>'+d+'</button>';});
+  if(hasLikely&&hasReq){h+='<span style="width:10px"></span><span class="lbl">Tier</span><span class="cfilter" id="scantier"><button data-t="all" class="on">All</button><button data-t="required">Required</button><button data-t="likely">Likely</button></span>';}
+  h+='<span style="flex:1;min-width:12px"></span><span class="lbl">View</span><span class="cfilter" id="scanviewtog"><button data-v="cards" class="'+(scanView==="cards"?"on":"")+'">Cards</button><button data-v="list" class="'+(scanView==="list"?"on":"")+'">List</button></span>';
+  host.innerHTML=h;
+  host.querySelectorAll(".dfilter").forEach(function(b){b.onclick=function(){if(scanDivs===null)scanDivs={};if(scanDivs[b.dataset.d]){delete scanDivs[b.dataset.d];b.classList.add("off");}else{scanDivs[b.dataset.d]=1;b.classList.remove("off");}if(!Object.keys(scanDivs).length)scanDivs=null;renderScanBody();};});
+  var tier=document.getElementById("scantier");if(tier)tier.querySelectorAll("button").forEach(function(b){b.onclick=function(){scanTierF=b.dataset.t;tier.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b);});renderScanBody();};});
+  var vt=document.getElementById("scanviewtog");vt.querySelectorAll("button").forEach(function(b){b.onclick=function(){scanView=b.dataset.v;vt.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b);});renderScanBody();};});
+}
+function renderScanBody(){
+  var body=document.getElementById("scanbody");if(!body)return;
+  var rows=lastScan.filter(function(r){
+    if(scanDivs&&!scanDivs[secOf(r.code).div])return false;
+    if(scanTierF!=="all"&&r.tier!==scanTierF)return false;
+    return true;});
+  if(!rows.length){body.innerHTML='<div class="empty glass"><b>Nothing matches those filters</b>Clear a division or tier filter.</div>';return;}
+  if(scanView==="cards"){
+    var h='',req=rows.filter(function(r){return r.tier==="required";}),lk=rows.filter(function(r){return r.tier==="likely";});
+    if(req.length){h+='<p class="count"><b style="color:var(--amber-d)">'+(scanMeta.reqLabel||"Required")+'</b> ('+req.length+')</p><div class="grid">'+req.slice(0,150).map(card).join("")+'</div>';}
+    if(lk.length){h+='<p class="count" style="margin-top:20px"><b>Likely — softer signal</b> ('+lk.length+')</p><div class="grid">'+lk.slice(0,150).map(card).join("")+'</div>';}
+    body.innerHTML=h;
+  }else{
+    body.innerHTML='<div class="slist">'+rows.map(scanListRow).join("")+'</div>';
+  }
+}
+function scanListRow(r){
+  var s=secOf(r.code),col=divCol(s.div);
+  var bCls=r.tier==="likely"?"likely":(r.via?"req":"sug"),bTxt=r.tier==="likely"?"likely":"required";
+  var meta=r.tier?(r.m+" phrase"+(r.m!==1?"s":"")+(r.corr?" · "+r.corr+" corrob.":"")):"";
+  var h='<div class="sli"><div class="slrow"><span class="bedge" style="background:'+col+'"></span><span class="chev">▸</span>';
+  h+='<span class="slcode">'+esc(s.code)+'</span><span class="sltitle">'+esc(s.title)+'</span>';
+  h+='<span class="badge '+bCls+'">'+bTxt+'</span><span class="slmeta">'+esc(meta)+'</span></div>';
+  h+='<div class="slbody">'+scanRowDetail(r)+'</div></div>';
+  return h;
+}
+function scanRowDetail(r){
+  var s=secOf(r.code),mfr=s.mfr||[],bod=s.bod||[];
+  var terms=(r.terms||[]).slice().sort(function(a,b){return b.split(" ").length-a.split(" ").length;});
+  var h='<span class="dtag" style="background:'+divCol(s.div)+';margin-top:0">'+s.div+' · '+esc(s.divName||"")+'</span>';
+  if(terms.length){h+='<div class="mrow"><b>'+(r.tier?"Drawing phrases":"Matched terms")+'</b><br>';terms.slice(0,24).forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});h+='</div>';}
+  if(r.src&&r.src.length){h+='<div class="mrow"><b>'+(r.srcLabel||"Seen on")+'</b><br>';r.src.slice(0,20).forEach(function(x){h+='<span class="pill">'+esc(x)+'</span>';});if(r.src.length>20)h+='<span class="pill">+'+(r.src.length-20)+' more</span>';h+='</div>';}
+  if(mfr.length){h+='<div class="mrow"><b>Manufacturers</b><br>';mfr.slice(0,12).forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});if(mfr.length>12)h+='<span class="pill">+'+(mfr.length-12)+'</span>';h+='</div>';}
+  if(bod.length){h+='<div class="mrow"><b>Specified product</b><br>';bod.slice(0,6).forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
+  h+='<div style="margin-top:11px"><button class="btn ghost" onclick="openDetail(\''+esc(s.code)+'\')">Open full detail →</button></div>';
+  return h;
+}
 function exportSpecIndex(){
   if(!lastScan.length)return;
   var rows=[["Division","Section","Title","Confidence","Drawing phrases","Acceptable manufacturers","Specified products"]];
