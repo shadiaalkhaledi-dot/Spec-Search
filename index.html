@@ -1,2394 +1,521 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spec Finder — Keyword to MasterFormat Section</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #ffffff;
-        --panel: #ffffff;
-        --ink: #141414;
-        --muted: #6b7280;
-        --faint: #9ca3af;
-        --line: #eceef0;
-        --line2: #e2e5e8;
-        --chip: #f5f6f7;
-        --accent: #f59e0b;
-        --accent-d: #b45309;
-        --ok: #0f766e;
-        --okbg: #ecfdf5;
-        --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--ink);
-        font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          "Helvetica Neue",
-          Arial,
-          sans-serif;
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.5;
-      }
-      .wrap {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 48px 24px 96px;
-      }
-      header .eyebrow {
-        font-size: 12px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--accent-d);
-        font-weight: 600;
-        margin: 0 0 10px;
-      }
-      header h1 {
-        font-size: 34px;
-        line-height: 1.12;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin: 0 0 10px;
-      }
-      header p.lede {
-        font-size: 16px;
-        color: var(--muted);
-        margin: 0;
-        max-width: 640px;
-      }
-      .tabs {
-        display: flex;
-        gap: 4px;
-        margin: 36px 0 20px;
-        border-bottom: 1px solid var(--line);
-        flex-wrap: wrap;
-      }
-      .tab {
-        appearance: none;
-        border: 0;
-        background: none;
-        padding: 12px 4px;
-        margin-right: 22px;
-        font-size: 14.5px;
-        font-weight: 600;
-        color: var(--faint);
-        cursor: pointer;
-        border-bottom: 2px solid transparent;
-        transition: 0.15s;
-      }
-      .tab:hover {
-        color: var(--ink);
-      }
-      .tab.active {
-        color: var(--ink);
-        border-bottom-color: var(--accent);
-      }
-      .searchrow {
-        position: relative;
-        margin-bottom: 18px;
-      }
-      .searchrow input,
-      textarea {
-        width: 100%;
-        border: 1px solid var(--line2);
-        border-radius: 12px;
-        background: #fff;
-        font: inherit;
-        color: var(--ink);
-        padding: 15px 16px;
-        box-shadow: var(--shadow);
-        transition: 0.15s;
-      }
-      .searchrow input {
-        font-size: 17px;
-      }
-      textarea {
-        font-size: 15px;
-        min-height: 140px;
-        resize: vertical;
-        line-height: 1.6;
-      }
-      .searchrow input:focus,
-      textarea:focus {
-        outline: none;
-        border-color: var(--accent);
-        box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
-      }
-      .hint {
-        font-size: 13px;
-        color: var(--faint);
-        margin: 0 2px 22px;
-      }
-      .btn {
-        appearance: none;
-        border: 0;
-        border-radius: 10px;
-        background: var(--ink);
-        color: #fff;
-        font: inherit;
-        font-weight: 600;
-        font-size: 14.5px;
-        padding: 12px 20px;
-        cursor: pointer;
-        transition: 0.15s;
-      }
-      .btn:hover {
-        background: #000;
-      }
-      .btn.amber {
-        background: var(--accent);
-      }
-      .btn.amber:hover {
-        background: var(--accent-d);
-      }
-      .btn:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-      .row {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .count {
-        font-size: 13px;
-        color: var(--muted);
-        margin: 6px 2px 16px;
-      }
-      .card {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 16px 18px;
-        margin-bottom: 12px;
-        background: #fff;
-        box-shadow: var(--shadow);
-        transition: 0.15s;
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        align-items: flex-start;
-      }
-      .card:hover {
-        border-color: var(--line2);
-        box-shadow: 0 4px 14px rgba(16, 24, 40, 0.07);
-        transform: translateY(-1px);
-      }
-      .card .code {
-        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
-        font-size: 13px;
-        color: var(--accent-d);
-        font-weight: 600;
-        letter-spacing: 0.01em;
-      }
-      .card .title {
-        font-size: 16px;
-        font-weight: 600;
-        margin: 3px 0 6px;
-        letter-spacing: -0.01em;
-      }
-      .card .div {
-        display: inline-block;
-        font-size: 11.5px;
-        color: var(--muted);
-        background: var(--chip);
-        padding: 3px 9px;
-        border-radius: 999px;
-        font-weight: 500;
-      }
-      .req {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11.5px;
-        font-weight: 700;
-        color: var(--ok);
-        background: var(--okbg);
-        border: 1px solid #a7f3d0;
-        padding: 3px 10px;
-        border-radius: 999px;
-        margin-bottom: 8px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-      .open {
-        white-space: nowrap;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--ink);
-        text-decoration: none;
-        border: 1px solid var(--line2);
-        border-radius: 9px;
-        padding: 8px 12px;
-        transition: 0.15s;
-        align-self: center;
-      }
-      .open:hover {
-        border-color: var(--accent);
-        color: var(--accent-d);
-      }
-      .matchwords {
-        font-size: 12px;
-        color: var(--faint);
-        margin-top: 6px;
-      }
-      .reason {
-        font-size: 12.5px;
-        color: var(--ink);
-        margin-top: 8px;
-        line-height: 1.5;
-      }
-      .reason b {
-        color: var(--accent-d);
-      }
-      .gitem {
-        display: flex;
-        gap: 10px;
-        align-items: baseline;
-        padding: 9px 4px;
-        border-bottom: 1px solid var(--line);
-        font-size: 13px;
-      }
-      .gterm {
-        font-weight: 600;
-        color: var(--ink);
-        min-width: 190px;
-        flex-shrink: 0;
-      }
-      .garrow {
-        color: var(--faint);
-      }
-      .gsecs {
-        color: var(--muted);
-        line-height: 1.6;
-      }
-      .gcode {
-        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
-        color: var(--accent-d);
-        font-weight: 600;
-      }
-      .seckw {
-        font-size: 11.5px;
-        color: var(--muted);
-        margin-top: 8px;
-        line-height: 1.9;
-      }
-      .seckw b {
-        color: var(--muted);
-      }
-      .tag {
-        display: inline-block;
-        font-size: 10.5px;
-        font-weight: 700;
-        padding: 2px 9px;
-        border-radius: 999px;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        margin-bottom: 8px;
-      }
-      .tag.likely {
-        color: var(--ok);
-        background: var(--okbg);
-        border: 1px solid #a7f3d0;
-      }
-      .tag.maybe {
-        color: #b45309;
-        background: #fff7ed;
-        border: 1px solid #fed7aa;
-      }
-      .gx {
-        border: 0;
-        background: none;
-        color: var(--faint);
-        cursor: pointer;
-        font-size: 12px;
-        padding: 0 2px;
-        line-height: 1;
-      }
-      .gx:hover {
-        color: #b91c1c;
-      }
-      .ekw {
-        display: inline-flex;
-        align-items: center;
-        gap: 3px;
-      }
-      .addrow {
-        display: flex;
-        gap: 6px;
-        margin-top: 10px;
-        max-width: 520px;
-      }
-      .addrow input {
-        flex: 1;
-        border: 1px solid var(--line2);
-        border-radius: 8px;
-        padding: 7px 10px;
-        font: inherit;
-        font-size: 12.5px;
-      }
-      .addrow .btn {
-        padding: 7px 14px;
-        font-size: 13px;
-      }
-      .chips {
-        display: flex;
-        gap: 7px;
-        flex-wrap: wrap;
-        margin: 2px 0 22px;
-        align-items: center;
-      }
-      .chip {
-        appearance: none;
-        border: 1px solid var(--line2);
-        background: #fff;
-        border-radius: 999px;
-        padding: 6px 13px;
-        font: inherit;
-        font-size: 12.5px;
-        font-weight: 500;
-        color: var(--muted);
-        cursor: pointer;
-        transition: 0.15s;
-      }
-      .chip:hover {
-        border-color: var(--accent);
-        color: var(--accent-d);
-      }
-      .chip.active {
-        background: var(--ink);
-        color: #fff;
-        border-color: var(--ink);
-      }
-      .chiplabel {
-        font-size: 12px;
-        color: var(--faint);
-        margin-right: 2px;
-      }
-      .empty {
-        text-align: center;
-        color: var(--faint);
-        padding: 48px 20px;
-        font-size: 15px;
-      }
-      .empty strong {
-        color: var(--muted);
-        display: block;
-        margin-bottom: 6px;
-        font-size: 16px;
-      }
-      .batch-out .grp {
-        margin-bottom: 26px;
-      }
-      .batch-out .grp h4 {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-        margin: 0 0 10px;
-        font-weight: 600;
-      }
-      .kw {
-        font-family: "SF Mono", ui-monospace, monospace;
-        font-size: 12px;
-        background: var(--chip);
-        padding: 2px 7px;
-        border-radius: 6px;
-        color: var(--ink);
-      }
-      .foot {
-        margin-top: 56px;
-        padding-top: 22px;
-        border-top: 1px solid var(--line);
-        font-size: 12.5px;
-        color: var(--faint);
-        line-height: 1.7;
-      }
-      .foot b {
-        color: var(--muted);
-        font-weight: 600;
-      }
-      mark {
-        background: rgba(245, 158, 11, 0.3);
-        color: var(--ink);
-        border-radius: 3px;
-        padding: 0 2px;
-        font-weight: 600;
-      }
-      .dwgsec h3 {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-        margin: 30px 0 12px;
-        font-weight: 600;
-      }
-      .sheet {
-        display: flex;
-        justify-content: space-between;
-        gap: 14px;
-        align-items: flex-start;
-        border: 1px solid var(--line);
-        border-radius: 11px;
-        padding: 11px 14px;
-        margin-bottom: 8px;
-        background: #fff;
-        box-shadow: var(--shadow);
-        transition: 0.15s;
-      }
-      .sheet:hover {
-        border-color: var(--line2);
-        box-shadow: 0 4px 14px rgba(16, 24, 40, 0.06);
-      }
-      .sheet .sno {
-        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
-        font-size: 13.5px;
-        font-weight: 600;
-        color: var(--ink);
-      }
-      .sheet .sdisc {
-        display: inline-block;
-        font-size: 10px;
-        font-weight: 700;
-        color: var(--accent-d);
-        background: #fff7ed;
-        border: 1px solid #fed7aa;
-        padding: 2px 8px;
-        border-radius: 999px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-left: 8px;
-      }
-      .sheet .ssnip {
-        font-size: 12.5px;
-        color: var(--muted);
-        margin-top: 6px;
-        line-height: 1.55;
-        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
-      }
-      .sheet .shits {
-        font-size: 12px;
-        color: var(--faint);
-        white-space: nowrap;
-        text-align: right;
-      }
-      .sheet .shits .pdflink {
-        color: #0563c1;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      .sheet .shits .pdflink:hover {
-        text-decoration: underline;
-      }
-      .ssnip2 {
-        font-size: 12.5px;
-        color: var(--muted);
-        margin-top: 8px;
-        line-height: 1.55;
-        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
-        padding-left: 10px;
-        border-left: 2px solid var(--line2);
-      }
-      details.more {
-        margin-top: 8px;
-      }
-      details.more > summary {
-        font-size: 12px;
-        color: var(--accent-d);
-        cursor: pointer;
-        font-weight: 600;
-        list-style: revert;
-      }
-      .linkbtn {
-        appearance: none;
-        border: 0;
-        background: none;
-        color: var(--accent-d);
-        font: inherit;
-        font-size: 12.5px;
-        font-weight: 600;
-        cursor: pointer;
-        padding: 10px 2px 0;
-        display: inline-block;
-      }
-      .linkbtn:hover {
-        text-decoration: underline;
-      }
-      .scandiv {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-        margin: 28px 0 12px;
-        font-weight: 600;
-      }
-      .panel {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 22px;
-        background: #fff;
-        box-shadow: var(--shadow);
-        margin-bottom: 16px;
-      }
-      .panel h4 {
-        margin: 0 0 4px;
-        font-size: 15px;
-      }
-      .panel p {
-        margin: 0 0 16px;
-        font-size: 13.5px;
-        color: var(--muted);
-      }
-      .drop {
-        border: 2px dashed var(--line2);
-        border-radius: 12px;
-        padding: 26px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 14px;
-        cursor: pointer;
-        transition: 0.15s;
-        background: #fcfcfd;
-      }
-      .drop:hover,
-      .drop.drag {
-        border-color: var(--accent);
-        background: #fffdf7;
-        color: var(--accent-d);
-      }
-      .drop b {
-        color: var(--ink);
-      }
-      .field {
-        margin: 16px 0;
-      }
-      .field label {
-        display: block;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--muted);
-        margin-bottom: 6px;
-      }
-      .field input {
-        width: 100%;
-        border: 1px solid var(--line2);
-        border-radius: 9px;
-        padding: 10px 12px;
-        font: inherit;
-        font-size: 14px;
-      }
-      .statusline {
-        font-size: 13px;
-        margin: 14px 0;
-        padding: 11px 14px;
-        border-radius: 10px;
-        background: var(--chip);
-        color: var(--muted);
-      }
-      .statusline.ok {
-        background: var(--okbg);
-        color: var(--ok);
-        border: 1px solid #a7f3d0;
-      }
-      .statusline.err {
-        background: #fef2f2;
-        color: #b91c1c;
-        border: 1px solid #fecaca;
-      }
-      .bar {
-        height: 7px;
-        background: var(--line);
-        border-radius: 99px;
-        overflow: hidden;
-        margin-top: 8px;
-      }
-      .bar > span {
-        display: block;
-        height: 100%;
-        background: var(--accent);
-        width: 0;
-        transition: width 0.1s;
-      }
-      .note {
-        font-size: 12.5px;
-        color: var(--accent-d);
-        background: #fff8ec;
-        border: 1px solid #fed7aa;
-        border-radius: 10px;
-        padding: 10px 13px;
-        margin: 0 0 18px;
-      }
-      .mfr {
-        margin: 10px 0 4px;
-        border-top: 1px solid #f0e6d2;
-        padding-top: 8px;
-      }
-      .mfr summary {
-        cursor: pointer;
-        color: #b45309;
-        font-size: 13px;
-        list-style: none;
-        user-select: none;
-      }
-      .mfr summary::-webkit-details-marker {
-        display: none;
-      }
-      .mfr summary:before {
-        content: "▸ ";
-        color: #b45309;
-      }
-      .mfr[open] summary:before {
-        content: "▾ ";
-      }
-      .mcount {
-        background: #fff8ec;
-        border: 1px solid #f2d9a8;
-        border-radius: 10px;
-        padding: 0 6px;
-        font-size: 11px;
-        color: #92600a;
-      }
-      .mprefcount {
-        color: #b45309;
-        font-weight: 600;
-      }
-      .bod {
-        font-size: 12px;
-        color: #6b6257;
-        margin: 6px 0;
-      }
-      .mprefline {
-        font-size: 12px;
-        color: #92600a;
-        background: #fff8ec;
-        border: 1px solid #f2d9a8;
-        border-radius: 6px;
-        padding: 4px 8px;
-        margin: 6px 0;
-      }
-      .mchips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin: 6px 0;
-      }
-      .mchip {
-        display: inline-flex;
-        align-items: center;
-        gap: 3px;
-        font-size: 12px;
-        background: #f7f4ee;
-        border: 1px solid #e6dcc8;
-        border-radius: 12px;
-        padding: 2px 8px 2px 4px;
-        color: #4a453d;
-      }
-      .mchip.on {
-        background: #fff3d6;
-        border-color: #f0b64a;
-        color: #7a4f06;
-        font-weight: 600;
-      }
-      .mstar {
-        border: 0;
-        background: none;
-        cursor: pointer;
-        font-size: 13px;
-        color: #c9a24a;
-        padding: 0 1px;
-        line-height: 1;
-      }
-      .mchip.on .mstar {
-        color: #e8930c;
-      }
-      .mdel {
-        border: 0;
-        background: none;
-        cursor: pointer;
-        color: #b8b0a2;
-        font-size: 11px;
-        padding: 0 0 0 2px;
-      }
-      .maddrow {
-        display: flex;
-        gap: 6px;
-        margin-top: 6px;
-      }
-      .madd {
-        flex: 0 1 220px;
-        font-size: 12px;
-        padding: 3px 8px;
-        border: 1px solid #e0d6c2;
-        border-radius: 6px;
-      }
-      .maddbtn {
-        font-size: 12px;
-      }
-      .tag.demo {
-        display: inline-block;
-        background: #eef0f3;
-        color: #475569;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        padding: 1px 7px;
-        font-size: 11px;
-        font-weight: 600;
-      }
-      .card.demo {
-        border-left: 3px solid #94a3b8;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <header>
-        <p class="eyebrow">DIALOG · Master Specifications</p>
-        <h1>Spec Finder</h1>
-        <p class="lede">
-          Type a term off the drawings. It tells you which MasterFormat specification section is
-          required — no section number needed — and which drawing sheets the term appears on, in
-          context, with a link to the sheet.
-        </p>
-      </header>
-      <nav class="tabs">
-        <button class="tab active" data-tab="lookup">Keyword → required spec</button>
-        <button class="tab" data-tab="batch">Batch check</button>
-        <button class="tab" data-tab="browse">Browse all sections</button>
-        <button class="tab" data-tab="scan">Required specs</button>
-        <button class="tab" data-tab="glossary">Keyword glossary</button>
-        <button class="tab" data-tab="update">Update drawings</button>
-        <button class="tab" data-tab="feedback">Feedback</button>
-      </nav>
-      <section id="tab-lookup">
-        <div class="searchrow">
-          <input
-            id="q"
-            type="text"
-            placeholder="e.g. expansion joint, sliding door, mirror, curtain wall, terrazzo, hm…"
-            autocomplete="off"
-          />
-        </div>
-        <p class="hint">
-          Matches drawing language (including abbreviations like HM, IGU, SCW) against the spec
-          library, and shows the drawing sheets the term appears on. Ambiguous terms like
-          <b>expansion joint</b> return each division's section, best first.
-        </p>
-        <div class="chips" id="dwgDiscChips"></div>
-        <div id="lookupOut"></div>
-        <div id="dwgOut"></div>
-      </section>
-      <section id="tab-batch" style="display: none">
-        <div class="searchrow">
-          <textarea
-            id="batchIn"
-            placeholder="Paste drawing keywords — one per line or comma-separated.&#10;e.g.&#10;expansion joint filler&#10;sliding door&#10;toilet partition&#10;curtain wall"
-          ></textarea>
-        </div>
-        <div class="row" style="margin-bottom: 20px">
-          <button class="btn amber" id="batchRun">Find required specs</button
-          ><span id="batchNote" class="count" style="margin: 0"></span>
-        </div>
-        <div id="batchOut" class="batch-out"></div>
-      </section>
-      <section id="tab-browse" style="display: none">
-        <div class="searchrow">
-          <input
-            id="bq"
-            type="text"
-            placeholder="Filter by section number or title…"
-            autocomplete="off"
-          />
-        </div>
-        <div class="chips" id="divChips"></div>
-        <p class="hint" style="margin: 0 2px 6px">
-          Browse the master and edit each section's keywords — remove any (✕) or type to add your
-          own. Edits save on this device; use Export to send them to be baked in permanently.
-        </p>
-        <div id="editNote"></div>
-        <div class="chips" id="browseSortRow" style="margin: 0 2px 6px">
-          <span class="hint" style="margin: 0 6px 0 0">Order</span
-          ><button class="chip active" data-bs="code">Section number</button
-          ><button class="chip" data-bs="relevance">Best match</button>
-        </div>
-        <p class="count" id="browseCount"></p>
-        <div id="browseOut"></div>
-      </section>
-      <section id="tab-scan" style="display: none">
-        <p class="hint">
-          Reads the whole drawing set and lists every MasterFormat section whose keywords appear on
-          the sheets — your draft project spec list. Discipline follows the chips on the "Keyword →
-          required spec" tab.
-        </p>
-        <div class="row" style="margin-bottom: 10px">
-          <button class="btn amber" id="scanRun">Scan current drawing set</button
-          ><span id="scanNote" class="count" style="margin: 0"></span>
-        </div>
-        <label id="scanFilterWrap" style="display: none; font-size: 13px; color: var(--muted)"
-          ><input type="checkbox" id="scanHideMaybe" /> Hide "maybe" matches (context looks off —
-          needs review)</label
-        >
-        <div id="scanOut"></div>
-      </section>
-      <section id="tab-glossary" style="display: none">
-        <div class="searchrow">
-          <input
-            id="gq"
-            type="text"
-            placeholder="Filter keywords… e.g. joint, insulation, brick, panel"
-            autocomplete="off"
-          />
-        </div>
-        <p class="hint">
-          Every search term in the dictionary and the specification section(s) it points to — the
-          vocabulary behind the tool.
-        </p>
-        <p class="count" id="glossCount"></p>
-        <div id="glossaryOut"></div>
-      </section>
-      <section id="tab-update" style="display: none">
-        <div class="panel">
-          <h4>Load the drawing set</h4>
-          <p>
-            Drop your drawing set PDF (read <b>entirely in your browser</b>) — or a <b>.json</b>/<b
-              >.txt</b
-            >
-            pre-extracted index. The set is remembered on this device until you reset. Nothing is
-            sent anywhere.
-          </p>
-          <div class="drop" id="drop">
-            <b>Choose a file</b> or drop it here<br /><span style="font-size: 12px"
-              >A drawing PDF (read in your browser) — or a <b>.json</b> / <b>.txt</b> index</span
-            >
-          </div>
-          <input
-            id="pdfFile"
-            type="file"
-            accept=".pdf,.json,.txt,application/pdf,application/json,text/plain"
-            style="display: none"
-          />
-          <div class="statusline" id="upStatus">
-            Current set: <b id="setName">none loaded</b> · <span id="setCount">0</span> sheets
-          </div>
-          <div class="bar" id="upBarWrap" style="display: none"><span id="upBar"></span></div>
-          <button class="linkbtn" id="resetBtn" style="display: none">
-            ↺ Reset to built-in set
-          </button>
-        </div>
-        <div class="panel">
-          <h4>Make it permanent</h4>
-          <p>
-            To publish, set the hosted PDF link, then download a fresh
-            <span class="kw">index.html</span> with the drawings baked in and commit it to your
-            repo.
-          </p>
-          <div class="field">
-            <label
-              >PDF link for "PDF p.N" buttons (relative filename hosted next to the site, or a full
-              URL; leave blank for plain page numbers)</label
-            >
-            <input id="pdfUrlField" type="text" placeholder="drawings.pdf" />
-          </div>
-          <button class="btn amber" id="dlBtn" disabled>Download updated index.html</button>
-          <span class="count" id="dlNote" style="margin-left: 10px"></span>
-        </div>
-      </section>
-      <section id="tab-feedback" style="display: none">
-        <p class="hint">
-          Your correction log. Flag wrong matches as you spot them (⚑ on any result), fix keywords
-          in the Browse tab, then Export and send the JSON back so the fixes get baked into the
-          shared library.
-        </p>
-        <div id="fbOut"></div>
-      </section>
-      <div class="foot">
-        <b>How it works.</b> The spec library is baked into this file, so lookup/browse/glossary run
-        offline. The <b>Update drawings</b> tab reads a PDF in your browser (via pdf.js) to index
-        the sheets — load your drawings once and they're remembered on this device.<br />
-        <b>Open in MasterSpecs</b> links search the DIALOG published master library (sign-in
-        required).
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Spec Finder — DIALOG</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+:root{
+  /* restrained: a single muted brass accent, used sparingly */
+  --amber:#9a7838; --amber-d:#6f551f; --amber-soft:#f1efe9;
+  --accent:#3a5169; --accent-soft:#eef2f6;
+  --ink:#20262e; --ink2:#515a66; --muted:#828b98; --line:#eceef1;
+  --bg:#f7f8fa; --panel:rgba(255,255,255,.82); --panel-solid:#ffffff; --brd:rgba(24,32,44,.10);
+  --ok:#3f7d63; --shadow:0 6px 22px rgba(28,40,66,.07);
+  /* desaturated, professional division palette */
+  --d03:#8c8578;--d04:#a5715c;--d05:#5a7791;--d06:#9c8552;--d07:#4f8880;
+  --d08:#5b7ba0;--d09:#78708f;--d10:#a06e86;--d11:#5f8a72;--d12:#997e93;
+  --d13:#6a7196;--d14:#548b98;--dxx:#7c8492;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:var(--ink);
+  background:linear-gradient(180deg,#fafbfc,var(--bg));background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;line-height:1.5}
+.glass{background:var(--panel);border:1px solid var(--brd);border-radius:16px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow)}
+button{font-family:inherit;cursor:pointer}
+input,textarea{font-family:inherit}
+a{color:var(--amber-d)}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(244,246,251,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--brd)}
+.hwrap{max-width:1180px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.01em;font-size:18px}
+.logo .mark{width:30px;height:30px;border-radius:8px;background:var(--ink);display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px}
+.logo small{display:block;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.tab{border:none;background:transparent;color:var(--ink2);padding:9px 14px;border-radius:10px;font-size:13.5px;font-weight:600}
+.tab:hover{background:rgba(20,30,50,.05)}
+.tab.on{background:var(--ink);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 22px 90px}
+.view{display:none}.view.on{display:block}
+/* hero search */
+.hero{padding:32px 28px;margin-bottom:22px;border-radius:18px;background:#fff;border:1px solid var(--brd)}
+.hero h1{margin:0 0 4px;font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.02em}
+.hero p{margin:0 0 18px;color:var(--ink2);max-width:640px;font-size:15px}
+.searchbar{display:flex;gap:10px;flex-wrap:wrap}
+.searchbar input{flex:1;min-width:240px;padding:15px 18px;border-radius:13px;border:1px solid var(--brd);background:#fff;font-size:16px;box-shadow:inset 0 1px 3px rgba(20,30,50,.05)}
+.searchbar input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(58,81,105,.13)}
+.btn{padding:15px 22px;border-radius:12px;border:none;background:var(--ink);color:#fff;font-weight:700;font-size:15px}
+.btn:hover{background:#333c48}
+.btn.ghost{background:#fff;border:1px solid var(--brd);color:var(--ink);box-shadow:none;font-weight:650}
+.btn.ghost:hover{background:#f2f4f8}
+.suggest{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.suggest span{font-size:12px;color:var(--muted)}
+.stag{font-size:12.5px;padding:5px 11px;border-radius:9px;background:#fff;border:1px solid var(--brd);color:var(--ink2);cursor:pointer}
+.stag:hover{border-color:var(--accent);color:var(--accent)}
+/* filter bar */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:2px 0 18px}
+.filters .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:2px}
+.dfilter{font-size:12.5px;padding:6px 11px 6px 9px;border-radius:9px;border:1px solid var(--brd);background:#fff;color:var(--ink2);font-weight:600;display:inline-flex;align-items:center;gap:7px}
+.dfilter .dot{width:9px;height:9px;border-radius:3px}
+.dfilter.off{opacity:.42}
+.tog{font-size:12.5px;padding:6px 12px;border-radius:9px;border:1px solid var(--brd);background:#fff;color:var(--ink2);font-weight:600}
+.tog.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* result cards */
+.count{font-size:13px;color:var(--muted);margin:0 0 14px}
+.summary{padding:15px 17px;margin:0 0 16px;border-radius:14px}
+.summary .srow{margin:4px 0;line-height:2}
+.summary .sk{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:15px}
+.rc{border-radius:15px;overflow:hidden;background:var(--panel-solid);border:1px solid var(--brd);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.rc .edge{height:5px}
+.rc .rb{padding:16px 17px;flex:1;display:flex;flex-direction:column}
+.rc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.rc .code{font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:17px;letter-spacing:-.01em}
+.rc .ttl{font-size:14px;color:var(--ink);margin-top:1px;font-weight:600}
+.badge{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
+.badge.req{background:var(--amber);color:#fff}
+.badge.sug{background:#eef1f6;color:var(--muted);border:1px solid var(--brd)}
+.dtag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;color:#fff;margin-top:10px;width:fit-content}
+.mrow{margin-top:12px;font-size:12px;color:var(--muted)}
+.mrow b{color:var(--ink2);font-weight:650;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.pill{display:inline-block;font-size:11.5px;padding:3px 9px;border-radius:8px;background:#f4f6fb;border:1px solid var(--brd);color:var(--ink2);margin:5px 5px 0 0}
+.pill.term{background:var(--accent-soft);border-color:#d8e0e8;color:var(--accent)}
+.pill.prod{background:#eef4f1;border-color:#d3e3da;color:#3f7d63}
+.conf{margin-top:11px;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#dfe3ea}
+.dots i.f{background:var(--ok)}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:5px}
+/* scan */
+.drop{border:2px dashed #cfd6e2;border-radius:16px;padding:34px;text-align:center;background:rgba(255,255,255,.6);transition:.15s}
+.drop.hot{border-color:var(--amber);background:var(--amber-soft)}
+.drop .ic{font-size:34px}
+.drop p{margin:8px 0 0;color:var(--ink2)}
+.drop small{color:var(--muted)}
+.scanstat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.scanstat .s{padding:15px;border-radius:13px;text-align:center}
+.scanstat .n{font-size:24px;font-weight:800}
+.scanstat .l{font-size:11.5px;color:var(--muted);margin-top:2px}
+.divbar{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:14px 0 6px;border:1px solid var(--brd)}
+.divbar i{height:100%}
+/* browse table-ish */
+.brow{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:12px;background:#fff;border:1px solid var(--brd);margin-bottom:8px}
+.brow .bedge{width:5px;align-self:stretch;border-radius:4px;flex:none}
+.brow .bcode{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:13.5px;min-width:88px}
+.brow .btitle{flex:1;font-size:13.5px}
+.brow .bmeta{font-size:11.5px;color:var(--muted);white-space:nowrap}
+/* guide */
+.guide{max-width:820px}
+.step{display:flex;gap:15px;padding:18px;border-radius:14px;background:#fff;border:1px solid var(--brd);margin-bottom:12px}
+.step .num{width:34px;height:34px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-weight:800;display:grid;place-items:center;flex:none}
+.step h3{margin:0 0 4px;font-size:15.5px}
+.step p{margin:0;color:var(--ink2);font-size:13.5px}
+.callout{padding:16px 18px;border-radius:13px;background:var(--accent-soft);border:1px solid #d8e0e8;color:var(--accent);font-size:13.5px;margin:14px 0}
+.section-h{font-size:20px;font-weight:750;margin:0 0 4px;letter-spacing:-.01em}
+.section-s{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:720px}
+.klayer{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.klayer{grid-template-columns:1fr}.scanstat{grid-template-columns:repeat(2,1fr)}nav{display:none}}
+footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);font-size:12px;text-align:center}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <div class="logo"><span class="mark">S</span><div>Spec Finder<small>Drawing language → required specification · DIALOG</small></div></div>
+    <nav id="nav">
+      <button class="tab on" data-v="search">Search</button>
+      <button class="tab" data-v="scan">Scan drawings</button>
+      <button class="tab" data-v="browse">Browse</button>
+      <button class="tab" data-v="makers">Manufacturers</button>
+      <button class="tab" data-v="keynotes">Keynotes</button>
+      <button class="tab" data-v="guide">How to use</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- SEARCH -->
+  <section class="view on" id="v-search">
+    <div class="hero glass">
+      <h1>What specification does this call for?</h1>
+      <p>Type a term off a drawing — a material, a keynote phrase, an abbreviation — and get the MasterFormat sections it requires, the acceptable manufacturers, and the product that was actually specified.</p>
+      <div class="searchbar">
+        <input id="q" placeholder="curtain wall · HM · steel stud · roller shade · epoxy…" autocomplete="off"/>
+        <button class="btn" id="go">Search</button>
+      </div>
+      <div class="suggest"><span>Try:</span>
+        <button class="stag">curtain wall</button><button class="stag">steel stud</button><button class="stag">roller shade</button><button class="stag">firestopping</button><button class="stag">healthcare casework</button><button class="stag">IGU</button>
       </div>
     </div>
-    <div
-      id="flagModal"
-      style="
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(20, 20, 20, 0.45);
-        z-index: 50;
-        align-items: center;
-        justify-content: center;
-      "
-    >
-      <div
-        style="
-          background: #fff;
-          max-width: 460px;
-          width: 92%;
-          border-radius: 16px;
-          padding: 22px;
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-        "
-      >
-        <div
-          style="
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--accent-d);
-            font-weight: 600;
-          "
-        >
-          Flag as incorrect
-        </div>
-        <div id="flagWhat" style="font-size: 15px; font-weight: 600; margin: 6px 0 14px"></div>
-        <div
-          id="flagReasons"
-          style="display: flex; flex-direction: column; gap: 9px; font-size: 13.5px"
-        ></div>
-        <textarea
-          id="flagNote"
-          placeholder="Add a note (optional) — e.g. should be 07 92 00, or which keyword is wrong"
-          style="
-            margin-top: 12px;
-            min-height: 64px;
-            width: 100%;
-            border: 1px solid var(--line2);
-            border-radius: 8px;
-            padding: 9px 11px;
-            font: inherit;
-            font-size: 13px;
-          "
-        ></textarea>
-        <div class="row" style="justify-content: flex-end; margin-top: 14px">
-          <button class="btn" id="flagCancel">Cancel</button
-          ><button class="btn amber" id="flagSave">Save flag</button>
-        </div>
+    <div class="filters" id="filters"></div>
+    <p class="count" id="scount"></p>
+    <div id="results"></div>
+  </section>
+
+  <!-- SCAN -->
+  <section class="view" id="v-scan">
+    <h2 class="section-h">Scan a drawing set</h2>
+    <p class="section-s">Upload the architectural PDF. Every page's text is read in your browser — nothing is uploaded anywhere — then matched against the curated library to surface the sections the set is likely to require.</p>
+    <div class="drop glass" id="drop">
+      <div class="ic">📐</div>
+      <p><b>Drop a drawing PDF here</b> or click to choose</p>
+      <small>Runs entirely on your device · large sets take a moment</small>
+      <input type="file" id="file" accept="application/pdf" class="hidden" multiple>
+    </div>
+    <div id="scanout"></div>
+  </section>
+
+  <!-- BROWSE -->
+  <section class="view" id="v-browse">
+    <h2 class="section-h">Browse the library</h2>
+    <p class="section-s">Every curated section, coloured by division. Filter by division, by whether a drawing term reaches it, or by manufacturer coverage.</p>
+    <div class="searchbar" style="margin-bottom:14px"><input id="bq" placeholder="filter by code, title, or manufacturer…"></div>
+    <div class="filters" id="bfilters"></div>
+    <p class="count" id="bcount"></p>
+    <div id="browselist"></div>
+  </section>
+
+  <!-- MAKERS -->
+  <section class="view" id="v-makers">
+    <h2 class="section-h">Manufacturers &amp; products</h2>
+    <p class="section-s">Search the other direction. Type a maker or a specified product and see every section it's named in — the reverse of the drawing-term lookup.</p>
+    <div class="searchbar" style="margin-bottom:14px"><input id="mq" placeholder="Kawneer · Hilti · Sika · Soprema · Duranar…"></div>
+    <div class="filters"><button class="tog" id="mmode-mfr" data-m="mfr">Manufacturers</button><button class="tog" id="mmode-prod" data-m="prod">Products</button></div>
+    <p class="count" id="mcount"></p>
+    <div id="makersout"></div>
+  </section>
+
+  <!-- KEYNOTES -->
+  <section class="view" id="v-keynotes">
+    <h2 class="section-h">Keynotes — the second verification layer</h2>
+    <p class="section-s">One word doesn't tell the whole story. The tool reads a drawing in layers: the term you type, the phrases around it, and — the reliable layer here — the keynotes, because keynotes are how elements are actually tagged. It's a second check on the term and phrase mapping, not a replacement for reading the rest of the set.</p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px">
+      <div class="glass" style="flex:1;min-width:200px;padding:16px 18px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700">Layer 1</div><div style="font-weight:700;margin-top:4px">Term &amp; alias</div><div style="font-size:12.5px;color:var(--ink2);margin-top:3px">The curated word or abbreviation → its section.</div></div>
+      <div class="glass" style="flex:1;min-width:200px;padding:16px 18px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700">Layer 2</div><div style="font-weight:700;margin-top:4px">Phrase &amp; structure</div><div style="font-size:12.5px;color:var(--ink2);margin-top:3px">Multi-word callouts, schedules, legends — weighted higher.</div></div>
+      <div class="glass" style="flex:1;min-width:200px;padding:16px 18px;border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700">Layer 3 · verify</div><div style="font-weight:700;margin-top:4px">Keynote agreement</div><div style="font-size:12.5px;color:var(--ink2);margin-top:3px">How the element was actually tagged — the confirmation.</div></div>
+    </div>
+
+    <div class="klayer">
+      <div class="glass" style="padding:20px">
+        <h3 style="margin:0 0 8px;font-size:16px">Built from the projects — no master needed</h3>
+        <p style="color:var(--ink2);font-size:13.5px;margin:0 0 12px">There is no master keynote file. The standard is assembled from the projects themselves: mine each set's keynotes, line up how the same element was tagged across six buildings, and the most consistent, clearest wording becomes the proposed standard.</p>
+        <div id="knsamples"></div>
+      </div>
+      <div class="glass" style="padding:20px">
+        <h3 style="margin:0 0 8px;font-size:16px">"This keynote could be better"</h3>
+        <p style="color:var(--ink2);font-size:13.5px;margin:0 0 12px">Because the tool sees every project, it can flag where a keynote you used is vaguer or less consistent than how another project tagged the same thing — and suggest the stronger wording.</p>
+        <div id="kncompare"></div>
       </div>
     </div>
-    <script src="data.js"></script>
-    <script>
-if (typeof DB === "undefined") {
-  document.addEventListener("DOMContentLoaded", () => {
-    document.body.innerHTML =
-      '<div style="max-width:640px;margin:64px auto;padding:24px;border:2px solid #b45309;border-radius:10px;font:16px/1.6 system-ui,sans-serif;color:#1f2937">' +
-      '<h1 style="margin:0 0 12px;font-size:20px;color:#b45309">Spec library did not load</h1>' +
-      '<p style="margin:0 0 12px"><b>data.js</b> is missing. Spec Finder is two files and they must sit in the same folder:</p>' +
-      '<pre style="background:#f3f4f6;padding:12px;border-radius:6px;margin:0 0 12px">index.html\ndata.js</pre>' +
-      '<p style="margin:0">If you uploaded only <b>index.html</b>, upload <b>data.js</b> alongside it. If you are opening this from your computer, download both into one folder first.</p>' +
-      '</div>';
-  });
-  throw new Error("data.js not loaded — DB is undefined");
+  </section>
+
+  <!-- GUIDE -->
+  <section class="view" id="v-guide">
+    <h2 class="section-h">How to use Spec Finder</h2>
+    <p class="section-s">A curated bridge from what's drawn to what must be specified — built from six real DIALOG projects.</p>
+    <div class="guide">
+      <div class="step"><div class="num">1</div><div><h3>Search a drawing term</h3><p>Type any material, phrase, or abbreviation. Results are MasterFormat sections, ranked, each edged by its division colour.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Read the badge</h3><p><span class="badge req">required</span> means a curated term reaches it — the tool can assert it. <span class="badge sug">suggestion</span> means a title-text match only, shown but never asserted. No match is an honest blank, not a guess.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Use the makers &amp; product</h3><p>Each card carries the acceptable manufacturers and the specified basis-of-design product, pulled from the real issued spec books.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>Scan a whole set</h3><p>On <b>Scan drawings</b>, drop the architectural PDF. It reads every sheet in your browser and summarises the required sections by division.</p></div></div>
+      <div class="step"><div class="num">5</div><div><h3>Filter by division &amp; trust</h3><p>Colour filters narrow to the divisions you care about; the trust dots show how many of the six projects corroborate a mapping.</p></div></div>
+      <div class="callout"><b>The one rule:</b> a section is only ever badged <b>required</b> when the curated library backs it. Reach without proof is just a guess — and this tool won't make one.</div>
+    </div>
+  </section>
+</div>
+<footer id="foot"></footer>
+
+<script src="data.js"></script>
+<script>
+/* ---------- engine (faithful to eval harness) ---------- */
+var SECS=[],ALIASES={},PROV={},PROJ={},byCode={},aliasCount={},confByEdge={};
+var DIVCOLOR={"03":"--d03","04":"--d04","05":"--d05","06":"--d06","07":"--d07","08":"--d08","09":"--d09","10":"--d10","11":"--d11","12":"--d12","13":"--d13","14":"--d14"};
+function cvar(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function divCol(div){return cvar(DIVCOLOR[div]||"--dxx")||"#6b7688";}
+var canon=function(c){return c.trim().replace(/\./g,"-").replace(/-0+$/,"").replace(/-0+(\d)/,"-$1");};
+var nrm=function(s){return (s||"").toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();};
+var sing=function(w){return w.length>3&&w.slice(-1)==="s"?w.slice(0,-1):w;};
+function toks(s){return nrm(s).split(" ").map(sing).filter(Boolean);}
+function tokMatch(w,arr){return arr.some(function(x){return x===w||(w.length>=4&&x.length>=4&&(x.indexOf(w)===0||w.indexOf(x)===0));});}
+function esc(s){return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+
+function initData(){
+  if(typeof DB==="undefined"){document.getElementById("results").innerHTML='<div class="empty glass"><b>data.js not found</b>Place data.js beside index.html — the library lives there.</div>';return false;}
+  SECS=DB.sections;ALIASES=DB.aliases;PROV=DB.provenance||{};PROJ=DB.projects||{};
+  SECS.forEach(function(s){byCode[s.code]=s;byCode[canon(s.code)]=byCode[canon(s.code)]||s;});
+  for(var t in ALIASES)for(var i=0;i<ALIASES[t].length;i++){var c=ALIASES[t][i];aliasCount[c]=(aliasCount[c]||0)+1;}
+  confByEdge=(PROV.confirmations)||{};
+  return true;
 }
-const SP = "https://dialogdesign.sharepoint.com/sites/MasterSpecs/_layouts/15/search.aspx/?q=";
-let PDF_URL = "";
-const SECS = DB.sections,
-  ALIASES = DB.aliases,
-  KWBYCODE = DB.kwByCode || {};
-function loadEdits() {
-  try {
-    const e = JSON.parse(localStorage.getItem("kwedits") || "{}");
-    return { add: e.add || {}, remove: e.remove || [] };
-  } catch (_) {
-    return { add: {}, remove: [] };
-  }
-}
-function saveEdits(e) {
-  localStorage.setItem("kwedits", JSON.stringify(e));
-}
-function applyEdits() {
-  invalidateAliasCache();
-  const e = loadEdits();
-  for (const term in e.add) {
-    const t = nrm(term);
-    e.add[term].forEach((c) => {
-      ALIASES[t] = ALIASES[t] || [];
-      if (!ALIASES[t].includes(c)) ALIASES[t].push(c);
-      KWBYCODE[c] = KWBYCODE[c] || [];
-      if (!KWBYCODE[c].includes(t)) KWBYCODE[c].push(t);
-    });
-  }
-  e.remove.forEach((p) => {
-    const i = p.indexOf("|||");
-    const t = p.slice(0, i),
-      c = p.slice(i + 3);
-    if (ALIASES[t]) {
-      ALIASES[t] = ALIASES[t].filter((x) => x !== c);
-      if (!ALIASES[t].length) delete ALIASES[t];
-    }
-    if (KWBYCODE[c]) KWBYCODE[c] = KWBYCODE[c].filter((x) => x !== t);
-  });
-}
-function addKw(term, code) {
-  invalidateAliasCache();
-  term = nrm(term);
-  const e = loadEdits();
-  e.add[term] = e.add[term] || [];
-  if (!e.add[term].includes(code)) e.add[term].push(code);
-  e.remove = e.remove.filter((p) => p !== term + "|||" + code);
-  saveEdits(e);
-  ALIASES[term] = ALIASES[term] || [];
-  if (!ALIASES[term].includes(code)) ALIASES[term].push(code);
-  KWBYCODE[code] = KWBYCODE[code] || [];
-  if (!KWBYCODE[code].includes(term)) KWBYCODE[code].push(term);
-}
-function removeKw(term, code) {
-  invalidateAliasCache();
-  const e = loadEdits();
-  if (!e.remove.includes(term + "|||" + code)) e.remove.push(term + "|||" + code);
-  if (e.add[term]) {
-    e.add[term] = e.add[term].filter((c) => c !== code);
-    if (!e.add[term].length) delete e.add[term];
-  }
-  saveEdits(e);
-  if (ALIASES[term]) {
-    ALIASES[term] = ALIASES[term].filter((x) => x !== code);
-    if (!ALIASES[term].length) delete ALIASES[term];
-  }
-  if (KWBYCODE[code]) KWBYCODE[code] = KWBYCODE[code].filter((x) => x !== term);
-}
-function rebuildGloss() {
-  GLOSS.length = 0;
-  Object.keys(ALIASES)
-    .sort()
-    .forEach((k) => GLOSS.push(k));
-}
-const DRAWINGS = [];
-const DISC = { A: "Arch", S: "Struct", M: "Mech", E: "Elec", "?": "—" };
-let BAKED_DWG = DRAWINGS.slice(),
-  BAKED_URL = PDF_URL;
-const byCode = {};
-SECS.forEach((s) => (byCode[s.code] = s));
-function resolveCodes(codes) {
-  const out = [];
-  codes.forEach((c) => {
-    if (byCode[c]) {
-      out.push(byCode[c]);
-      return;
-    }
-    const child = SECS.filter((s) => s.code.startsWith(c + "."));
-    if (child.length) {
-      out.push(...child.slice(0, 2));
-      return;
-    }
-    const near = SECS.filter((s) => s.code.startsWith(c.slice(0, 6)));
-    if (near.length) out.push(near[0]);
-  });
-  return out;
-}
-const nrm = (s) =>
-  s
-    .toLowerCase()
-    .replace(/[^a-z0-9 ]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-const norm = nrm;
-const sing = (w) => (w.length > 3 && w.endsWith("s") ? w.slice(0, -1) : w);
-const rxEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-let ALIAS_TOK = null;
-function invalidateAliasCache() {
-  ALIAS_TOK = null;
-}
-function aliasTokens() {
-  if (!ALIAS_TOK) {
-    ALIAS_TOK = [];
-    for (const term in ALIASES) {
-      const tt = norm(term).split(" ").map(sing).filter(Boolean);
-      if (tt.length) ALIAS_TOK.push([term, tt]);
-    }
-  }
-  return ALIAS_TOK;
-}
-function lookup(query) {
-  const q = norm(query);
-  if (!q) return [];
-  const qt = q.split(" ").map(sing).filter(Boolean);
-  const scored = new Map();
-  const add = (sec, sc, why, viaAlias) => {
-    const e = scored.get(sec.code) || { sec, score: 0, why: new Set(), viaAlias: false };
-    e.score += sc;
-    if (viaAlias) e.viaAlias = true;
-    why.forEach((w) => e.why.add(w));
-    scored.set(sec.code, e);
-  };
-  const tokMatch = (w, arr) =>
-    arr.some(
-      (x) => x === w || (w.length >= 4 && x.length >= 4 && (x.startsWith(w) || w.startsWith(x))),
-    );
-  const toks = aliasTokens();
-  let bestAliasLen = 0;
-  for (const [, tt] of toks)
-    if (tt.every((w) => tokMatch(w, qt)) && tt.length > bestAliasLen) bestAliasLen = tt.length;
-  for (const [term, tt] of toks) {
-    if (tt.every((w) => tokMatch(w, qt))) {
-      const base = 900 + tt.length * 300;
-      resolveCodes(ALIASES[term]).forEach((sec, i) => add(sec, base - i * 40, [term], true));
-    }
-  }
-  const suppressTitle = bestAliasLen >= 2;
-  SECS.forEach((sec) => {
-    const tl = norm(sec.title);
-    const tt = tl.split(" ").map(sing);
-    if (tl.includes(q) && q.length > 2) add(sec, 90, [], false);
-    else if (!suppressTitle) {
-      const hits = qt.filter((w) => w.length > 2 && tt.includes(w));
-      if (qt.length > 1 && hits.length >= qt.length) add(sec, 40 * hits.length, [], false);
-      else if (qt.length === 1 && hits.length) add(sec, 40 * hits.length, [], false);
-    }
-    if (
-      /\d/.test(query) &&
-      sec.code.replace(/\s/g, "").includes(query.replace(/[^0-9]/g, "")) &&
-      query.replace(/[^0-9]/g, "").length >= 4
-    )
-      add(sec, 80, [], false);
-  });
-  return [...scored.values()]
-    .sort((a, b) => b.viaAlias - a.viaAlias || b.score - a.score)
-    .slice(0, 12);
-}
-function spLink(sec) {
-  return SP + encodeURIComponent(sec.code + " " + sec.title);
-}
-function esc(s) {
-  return String(s).replace(
-    /[&<>"']/g,
-    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
-  );
-}
-function secKw(sec) {
-  const k = KWBYCODE[sec.code] || [];
-  if (!k.length) return "";
-  return (
-    '<div class="seckw"><b>keywords:</b> ' +
-    k
-      .slice(0, 26)
-      .map((x) => '<span class="kw">' + esc(x) + "</span>")
-      .join(" ") +
-    (k.length > 26 ? " …" : "") +
-    "</div>"
-  );
-}
-function loadMfr() {
-  try {
-    return JSON.parse(localStorage.getItem("sf_mfr") || "{}");
-  } catch (_) {
-    return {};
-  }
-}
-function saveMfr(m) {
-  localStorage.setItem("sf_mfr", JSON.stringify(m));
-}
-function getPref(code) {
-  const m = loadMfr()[code] || {};
-  return { pref: m.pref || [], add: m.add || [] };
-}
-function setPref(code, fn) {
-  const m = loadMfr();
-  const cur = Object.assign({ pref: [], add: [] }, m[code] || {});
-  fn(cur);
-  if (cur.pref.length || cur.add.length) m[code] = { pref: cur.pref, add: cur.add };
-  else delete m[code];
-  saveMfr(m);
-}
-function toggleMfr(code, name) {
-  setPref(code, (c) => {
-    const i = c.pref.indexOf(name);
-    if (i >= 0) c.pref.splice(i, 1);
-    else c.pref.push(name);
-  });
-}
-function addMfr(code, name) {
-  name = (name || "").trim();
-  if (!name) return;
-  setPref(code, (c) => {
-    if (!c.add.includes(name)) c.add.push(name);
-    if (!c.pref.includes(name)) c.pref.push(name);
-  });
-}
-function delMfr(code, name) {
-  setPref(code, (c) => {
-    c.add = c.add.filter((x) => x !== name);
-    c.pref = c.pref.filter((x) => x !== name);
-  });
-}
-function mfrBlock(sec) {
-  const list = sec.mfr || [],
-    bod = sec.bod || [];
-  const p = getPref(sec.code);
-  const all = list.concat(p.add.filter((a) => !list.includes(a)));
-  if (!all.length && !bod.length) return "";
-  const isP = (n) => p.pref.includes(n);
-  const ordered = all
-    .slice()
-    .sort((a, b) => (isP(b) ? 1 : 0) - (isP(a) ? 1 : 0) || all.indexOf(a) - all.indexOf(b));
-  const bodLine = bod.length
-    ? `<div class="bod"><b>Basis of design:</b> ${bod.map(esc).join("; ")}</div>`
-    : "";
-  const prefNames = ordered.filter(isP);
-  const prefLine = prefNames.length
-    ? `<div class="mprefline">★ <b>Your preferred:</b> ${prefNames.map(esc).join(", ")}</div>`
-    : "";
-  const chips = ordered
-    .map(
-      (n) =>
-        `<span class="mchip${isP(n) ? " on" : ""}"><button class="mstar" data-code="${esc(sec.code)}" data-name="${esc(n)}" title="mark as preferred">${isP(n) ? "★" : "☆"}</button>${esc(n)}${p.add.includes(n) ? `<button class="mdel" data-code="${esc(sec.code)}" data-name="${esc(n)}" title="remove your entry">✕</button>` : ""}</span>`,
-    )
-    .join(" ");
-  return `<details class="mfr"${prefNames.length ? " open" : ""}><summary><b>Acceptable manufacturers</b> <span class="mcount">${all.length}</span>${prefNames.length ? ` · <span class="mprefcount">${prefNames.length} preferred</span>` : ""}</summary>${bodLine}${prefLine}<div class="mchips">${chips}</div><div class="maddrow"><input class="madd" data-code="${esc(sec.code)}" placeholder="add your own…" autocomplete="off"><button class="linkbtn maddbtn" data-code="${esc(sec.code)}">+ add</button></div></details>`;
-}
-function wireMfr(box, rerender) {
-  rerender = rerender || runLookup;
-  box.querySelectorAll(".mstar").forEach(
-    (b) =>
-      (b.onclick = () => {
-        toggleMfr(b.dataset.code, b.dataset.name);
-        rerender();
-      }),
-  );
-  box.querySelectorAll(".mdel").forEach(
-    (b) =>
-      (b.onclick = () => {
-        delMfr(b.dataset.code, b.dataset.name);
-        rerender();
-      }),
-  );
-  box.querySelectorAll(".maddbtn").forEach(
-    (b) =>
-      (b.onclick = () => {
-        const inp = b.previousElementSibling;
-        if (inp && inp.value.trim()) {
-          addMfr(b.dataset.code, inp.value);
-          rerender();
-        }
-      }),
-  );
-  box.querySelectorAll(".madd").forEach((inp) =>
-    inp.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        addMfr(inp.dataset.code, inp.value);
-        rerender();
-      }
-    }),
-  );
-}
-function card(sec, req, why, showMfr) {
-  const w =
-    why && why.length
-      ? `<div class="matchwords">matched on: ${why.map((x) => '<span class="kw">' + esc(x) + "</span>").join(" ")}</div>`
-      : "";
-  return `<div class="card"><div>${req ? '<div class="req">✓ Specification required</div><br>' : ""}<span class="code">${esc(sec.code)}</span><div class="title">${esc(sec.title)}</div><span class="div">Div ${sec.div} · ${esc(sec.divName)}</span>${w}${secKw(sec)}${showMfr ? mfrBlock(sec) : ""}<div class="matchwords"><button class="flagbtn linkbtn" data-code="${esc(sec.code)}" data-term="${why && why.length ? esc(why.join(", ")) : ""}" data-src="lookup" style="padding:4px 0 0">⚑ flag as wrong</button></div></div><a class="open" href="${spLink(sec)}" target="_blank" rel="noopener">Open in MasterSpecs ↗</a></div>`;
-}
-let activeDisc = "A",
-  expandSyn = false,
-  lastQ = "",
-  lastSyn = [];
-function phraseRx(phrase) {
-  const parts = phrase.split(" ").filter(Boolean).map(rxEsc);
-  return new RegExp("(?<![A-Za-z0-9])(" + parts.join("[^A-Za-z0-9]+") + ")(?![A-Za-z0-9])", "ig");
-}
-function collectPhrases(query, synonyms) {
-  const base = [norm(query)];
-  if (expandSyn)
-    synonyms.forEach((s) => {
-      const n = norm(s);
-      if (n && !base.includes(n)) base.push(n);
-    });
-  return base.filter((p) => p.length >= 3);
-}
-function drawingHits(query, synonyms) {
-  const phrases = collectPhrases(query, synonyms);
-  const res = [];
-  if (phrases.length) {
-    DRAWINGS.forEach((pg) => {
-      if (activeDisc !== "all" && pg.disc !== activeDisc) return;
-      const ntxt = " " + norm(pg.text) + " ";
-      let hits = 0;
-      const matched = new Set();
-      phrases.forEach((p) => {
-        const re = new RegExp("(?:^|[^a-z0-9])" + rxEsc(p) + "(?:[^a-z0-9]|$)", "g");
-        const m = ntxt.match(re);
-        if (m) {
-          hits += m.length;
-          matched.add(p);
-        }
-      });
-      if (hits) res.push({ pg, hits, matched: [...matched] });
-    });
-    res.sort((a, b) => b.hits - a.hits || (a.pg.sheet || "").localeCompare(b.pg.sheet || ""));
-  }
-  return { res, phrases };
-}
-function allMatchIdx(text, phrases) {
-  const idx = [];
-  phrases.forEach((p) => {
-    const rx = phraseRx(p);
-    let m;
-    while ((m = rx.exec(text))) {
-      idx.push([m.index, m[0].length]);
-      if (rx.lastIndex === m.index) rx.lastIndex++;
-    }
-  });
-  idx.sort((a, b) => a[0] - b[0]);
-  const merged = [];
-  for (const it of idx) {
-    if (merged.length && it[0] - merged[merged.length - 1][0] < 30) continue;
-    merged.push(it);
-  }
-  return merged;
-}
-function snipAt(text, pos, len, phrases) {
-  const s = Math.max(0, pos - 70),
-    e = Math.min(text.length, pos + len + 100);
-  let seg = esc(text.slice(s, e));
-  phrases.forEach((p) => {
-    seg = seg.replace(phraseRx(p), "<mark>$1</mark>");
-  });
-  return (s > 0 ? "… " : "") + seg + (e < text.length ? " …" : "");
-}
-function renderDiscChips() {
-  const w = document.getElementById("dwgDiscChips");
-  const opts = [
-    ["A", "Architectural"],
-    ["all", "All disciplines"],
-    ["S", "Structural"],
-    ["M", "Mechanical"],
-    ["E", "Electrical"],
-  ];
-  w.innerHTML =
-    '<span class="chiplabel">Drawings:</span>' +
-    opts
-      .map(
-        ([d, l]) =>
-          `<button class="chip ${activeDisc === d ? "active" : ""}" data-d="${d}">${l}</button>`,
-      )
-      .join("");
-  w.querySelectorAll(".chip").forEach(
-    (c) =>
-      (c.onclick = () => {
-        activeDisc = c.dataset.d;
-        renderDiscChips();
-        if (lastQ) renderDrawings(lastQ, lastSyn);
-      }),
-  );
-}
-function renderDrawings(query, synonyms) {
-  lastQ = query;
-  lastSyn = synonyms;
-  const box = document.getElementById("dwgOut");
-  const { res } = drawingHits(query, synonyms);
-  const extra = synonyms.map(norm).filter((s) => s && s !== norm(query));
-  let synbar = "";
-  if (extra.length) {
-    synbar = expandSyn
-      ? `<button class="linkbtn" id="synToggle">− literal phrase only</button>`
-      : `<button class="linkbtn" id="synToggle">＋ also search related terms (${extra.slice(0, 4).map(esc).join(", ")}${extra.length > 4 ? "…" : ""})</button>`;
-  }
-  const discName = {
-    A: "architectural",
-    all: "all disciplines",
-    S: "structural",
-    M: "mechanical",
-    E: "electrical",
-  }[activeDisc];
-  if (!DRAWINGS.length) {
-    box.innerHTML = `<div class="dwgsec"><h3>On the drawings</h3><p class="note">No drawing set loaded yet. Open the <b>Update drawings</b> tab and drop your drawings PDF — it indexes in your browser and is remembered on this device.</p></div>`;
-    return;
-  }
-  if (!res.length) {
-    box.innerHTML = `<div class="dwgsec"><h3>On the drawings — 0 sheets · ${discName}</h3><p class="hint">No ${discName === "all disciplines" ? "" : discName + " "}sheet contains "${esc(query)}". Try the discipline chips above${extra.length ? ", or include related terms" : ""}.</p>${synbar}</div>`;
-    wireSyn();
-    return;
-  }
-  const shown = res.slice(0, 40);
-  box.innerHTML =
-    `<div class="dwgsec"><h3>On the drawings — ${res.length} sheet${res.length !== 1 ? "s" : ""} · ${discName}</h3>` +
-    shown
-      .map((r) => {
-        const idx = allMatchIdx(r.pg.text, r.matched);
-        const first = idx.length
-          ? snipAt(r.pg.text, idx[0][0], idx[0][1], r.matched)
-          : esc(r.pg.text.slice(0, 140));
-        const rest = idx
-          .slice(1)
-          .map((it) => `<div class="ssnip2">${snipAt(r.pg.text, it[0], it[1], r.matched)}</div>`)
-          .join("");
-        const more =
-          idx.length > 1
-            ? `<details class="more"><summary>show all ${idx.length} matches on this sheet</summary>${rest}</details>`
-            : "";
-        const pdf = PDF_URL
-          ? `<a class="pdflink" href="${PDF_URL}#page=${r.pg.page}" target="_blank" rel="noopener">PDF p.${r.pg.page} ↗</a>`
-          : `PDF p.${r.pg.page}`;
-        return `<div class="sheet"><div><span class="sno">${esc(r.pg.sheet || "p." + r.pg.page)}</span><span class="sdisc">${DISC[r.pg.disc] || r.pg.disc}</span><div class="ssnip">${first}</div>${more}</div><span class="shits">${r.hits} hit${r.hits !== 1 ? "s" : ""}<br>${pdf}</span></div>`;
-      })
-      .join("") +
-    (res.length > 40
-      ? `<p class="hint" style="margin-top:10px">Showing top 40 of ${res.length} sheets.</p>`
-      : "") +
-    synbar +
-    `</div>`;
-  wireSyn();
-}
-function wireSyn() {
-  const b = document.getElementById("synToggle");
-  if (b)
-    b.onclick = () => {
-      expandSyn = !expandSyn;
-      renderDrawings(lastQ, lastSyn);
-    };
-}
-const q = document.getElementById("q"),
-  lookupOut = document.getElementById("lookupOut");
-let t = null;
-q.addEventListener("input", () => {
-  clearTimeout(t);
-  t = setTimeout(runLookup, 120);
-});
-function runLookup() {
-  const val = q.value.trim();
-  if (!val) {
-    lookupOut.innerHTML = "";
-    document.getElementById("dwgOut").innerHTML = "";
-    return;
-  }
-  const res = lookup(val);
-  const syn = new Set();
-  res.forEach((r) => r.why.forEach((w) => syn.add(w)));
-  const required = res.filter((r) => r.viaAlias);
-  const suggested = res.filter((r) => !r.viaAlias).slice(0, 6);
-  let h = "";
-  if (required.length) {
-    h +=
-      `<p class="count">${required.length} required specification${required.length > 1 ? "s" : ""} — from the keyword library</p>` +
-      required.map((r, i) => card(r.sec, true, [...r.why], true)).join("");
-  } else {
-    h +=
-      `<div class="empty"><strong>No curated match for "${esc(val)}"</strong>` +
-      (suggested.length
-        ? "Nothing in the keyword library maps this term. The sections below only mention it in their titles — check one, then add the keyword so the next person gets a straight answer."
-        : "Nothing in the keyword library maps this term, and no section title mentions it. Try a simpler word, or use Browse.") +
-      "</div>";
-  }
-  if (suggested.length) {
-    h +=
-      `<div class="grp"><h4>${required.length ? "Also mentions this term" : "Possible matches — not confirmed"}</h4>` +
-      '<p class="hint">Matched on section title text only. These are not curated mappings.</p>' +
-      suggested
-        .map(
-          (r) =>
-            card(r.sec, false, [], true) +
-            `<p class="hint"><button class="btn amber lkadd" data-c="${esc(r.sec.code)}" data-t="${esc(norm(val))}">+ Add "${esc(val)}" as a keyword for ${esc(r.sec.code)}</button></p>`,
-        )
-        .join("") +
-      "</div>";
-  }
-  lookupOut.innerHTML = h;
-  lookupOut.querySelectorAll(".lkadd").forEach(
-    (b) =>
-      (b.onclick = () => {
-        addKw(b.dataset.t, b.dataset.c);
-        runLookup();
-        renderEditor();
-      }),
-  );
-  wireMfr(lookupOut);
-  expandSyn = false;
-  renderDrawings(val, [...syn]);
-}
-document.getElementById("batchRun").addEventListener("click", () => {
-  const raw = document.getElementById("batchIn").value;
-  const terms = raw
-    .split(/[\n,;]+/)
-    .map((s) => s.trim())
-    .filter(Boolean);
-  const out = document.getElementById("batchOut"),
-    note = document.getElementById("batchNote");
-  if (!terms.length) {
-    out.innerHTML = "";
-    note.textContent = "";
-    return;
-  }
-  const found = new Map(),
-    missing = [];
-  terms.forEach((term) => {
-    const r = lookup(term);
-    if (r.length && r[0].viaAlias) {
-      const top = r[0];
-      const e = found.get(top.sec.code) || { sec: top.sec, terms: new Set() };
-      e.terms.add(term);
-      found.set(top.sec.code, e);
-    } else missing.push(term);
-  });
-  const req = [...found.values()].sort((a, b) => a.sec.code.localeCompare(b.sec.code));
-  note.textContent =
-    `${terms.length} terms → ${req.length} required sections` +
-    (missing.length ? `, ${missing.length} unmatched` : "");
-  let h = "";
-  if (req.length) {
-    h +=
-      '<div class="grp"><h4>Required specifications</h4>' +
-      req.map((e) => card(e.sec, true, [...e.terms])).join("") +
-      "</div>";
-  }
-  if (missing.length) {
-    h +=
-      '<div class="grp"><h4>Unmatched terms</h4><p class="hint">' +
-      missing.map((m) => '<span class="kw">' + esc(m) + "</span>").join(" ") +
-      "</p></div>";
-  }
-  out.innerHTML = h;
-});
-const SPECIAL =
-  /bridge|airport|hangar|marine|helipad|hospital|correctional|detention|aviation|runway|transit|\brail\b|biocontainment|botanic|shopping centre|greenhouse|natatorium|\bpool\b|residential|patient|nurse|operating room|laboratory|fume hood/i;
-function scanConf(sec, termsArr, sheetCount) {
-  const specialized = SPECIAL.test(sec.title);
-  const phrases = termsArr.filter((x) => x.includes(" ")).length;
-  const broadOnly = termsArr.every((x) => !x.includes(" ") && (ALIASES[x] || []).length > 3);
-  const sheets = sheetCount || 0;
-  // tuned against the YYC Concourse B TP5 package: single generic words carry no evidential
-  // weight at all -- they are what produced the false positives. Only phrases count.
-  let ev = phrases * 3;
-  if (sheets >= 3) ev += 2;
-  else if (sheets <= 1) ev -= 1;
-  if (specialized && !phrases) ev -= 3;
-  if (broadOnly) ev -= 2;
-  return ev >= 7 ? "likely" : "maybe";
-}
-let lastScanRows = null;
-function renderScanRows(data) {
-  const out = document.getElementById("scanOut"),
-    note = document.getElementById("scanNote");
-  const hideMaybe = document.getElementById("scanHideMaybe").checked;
-  const discName = {
-    A: "architectural",
-    all: "all disciplines",
-    S: "structural",
-    M: "mechanical",
-    E: "electrical",
-  }[activeDisc];
-  const rows = (data && data.new) || [];
-  const demoTerms = (data && data.demoTerms) || [],
-    demoSheets = (data && data.demoSheets) || [];
-  let view = rows.map((e) =>
-    Object.assign({}, e, { conf: scanConf(e.sec, [...e.terms], e.sheets ? e.sheets.size : 0) }),
-  );
-  const nmaybe = view.filter((v) => v.conf === "maybe").length;
-  document.getElementById("scanFilterWrap").style.display =
-    rows.length || demoTerms.length ? "inline-flex" : "none";
-  if (hideMaybe) view = view.filter((v) => v.conf === "likely");
-  const ndiv = new Set(view.map((r) => r.sec.div)).size;
-  note.textContent =
-    `${view.length} new-work section${view.length !== 1 ? "s" : ""} · ${ndiv} division${ndiv !== 1 ? "s" : ""}` +
-    (demoTerms.length ? ` · + demolition scope` : "") +
-    ` · ${discName}` +
-    (nmaybe ? ` · ${nmaybe} "maybe"` : "");
-  if (!view.length && !demoTerms.length) {
-    out.innerHTML = `<div class="empty"><strong>Nothing to show</strong>${rows.length ? 'All matches are "maybe" — uncheck the filter to see them.' : "No keywords matched this set (load a drawing set first)."}</div>`;
-    return;
-  }
-  let h = "";
-  if (demoTerms.length) {
-    const dsec = SECS.find((s) => s.code === "02 41 19") || {
-      code: "02 41 19",
-      title: "Selective Demolition",
-      div: "02",
-      divName: "Existing Conditions",
-    };
-    const dt = demoTerms
-      .slice(0, 16)
-      .map((x) => '<span class="kw">' + esc(x) + "</span>")
-      .join(" ");
-    const dsh = demoSheets.slice(0, 12).map(esc).join(", ");
-    const dmore = demoSheets.length > 12 ? ` +${demoSheets.length - 12} more` : "";
-    h += `<h3 class="scandiv">Demolition scope</h3><div class="card demo"><div><div class="tag demo">⌫ Demolition</div><br><span class="code">${esc(dsec.code)}</span><div class="title">${esc(dsec.title)}</div><div class="reason"><b>Why:</b> marked existing-to-be-removed on the drawings: ${dt}</div><div class="matchwords">On ${demoSheets.length} sheet${demoSheets.length !== 1 ? "s" : ""}: ${dsh}${dmore}</div><div class="matchwords">Demolished — points to Selective Demolition, not a new-material section.</div><div class="matchwords"><button class="flagbtn linkbtn" data-code="${esc(dsec.code)}" data-term="${esc(demoTerms.join(", "))}" data-src="scan-demo" style="padding:4px 0 0">⚑ flag as wrong</button></div></div><a class="open" href="${spLink(dsec)}" target="_blank" rel="noopener">Open in MasterSpecs ↗</a></div>`;
-  }
-  if (view.length) {
-    h += `<h3 class="scandiv" style="margin-top:18px">New work</h3>`;
-    let cur = "";
-    view.forEach((e) => {
-      if (e.sec.div !== cur) {
-        cur = e.sec.div;
-        h += `<h4 class="scandiv" style="font-size:13.5px;opacity:.8;margin:10px 0 4px">Division ${cur} · ${esc(e.sec.divName)}</h4>`;
-      }
-      const terms = [...e.terms]
-        .slice(0, 8)
-        .map((x) => '<span class="kw">' + esc(x) + "</span>")
-        .join(" ");
-      const shts = [...e.sheets].slice(0, 12).map(esc).join(", ");
-      const smore = e.sheets.size > 12 ? ` +${e.sheets.size - 12} more` : "";
-      const tag =
-        e.conf === "maybe"
-          ? '<div class="tag maybe">~ Maybe · review</div><br>'
-          : '<div class="tag likely">✓ Likely</div><br>';
-      h += `<div class="card"><div>${tag}<span class="code">${esc(e.sec.code)}</span><div class="title">${esc(e.sec.title)}</div><div class="reason"><b>Why:</b> the drawings mention ${terms}</div><div class="matchwords">Found on ${e.sheets.size} sheet${e.sheets.size !== 1 ? "s" : ""}: ${shts}${smore}</div><div class="matchwords"><button class="flagbtn linkbtn" data-code="${esc(e.sec.code)}" data-term="${esc([...e.terms].join(", "))}" data-src="scan" style="padding:4px 0 0">⚑ flag as wrong</button></div></div><a class="open" href="${spLink(e.sec)}" target="_blank" rel="noopener">Open in MasterSpecs ↗</a></div>`;
-    });
-  }
-  out.innerHTML = h;
-}
-document.getElementById("scanRun").addEventListener("click", () => {
-  const disc = activeDisc;
-  const DEMO_SHEET = /demolition|\bdemo\b|\bremovals?\b/i;
-  const DEMO_TXT =
-    /to be (?:removed|demolished|relocated|salvaged)|remove existing|existing[a-z0-9 ]{0,18}to be (?:removed|demolished)|\bdemolish/;
-  const REMAIN = /to remain|to be retained/;
-  const pages = DRAWINGS.filter((pg) => disc === "all" || pg.disc === disc).map((pg) => {
-    const n = " " + norm(pg.text) + " ";
-    return {
-      sheet: pg.sheet || "p." + pg.page,
-      n,
-      demo: DEMO_SHEET.test((pg.title || "") + " " + (pg.sheet || "")),
-      hasD: DEMO_TXT.test(n),
-      hasR: REMAIN.test(n),
-      segs: (" " + (pg.text || "") + " ")
-        .split(/[.\n;•]+/)
-        .map((s) => " " + norm(s) + " ")
-        .filter((s) => s.length > 3),
-    };
-  });
-  const newBySec = new Map(),
-    demoTerms = new Set(),
-    demoSheets = new Set();
-  const isSpecific = (term, sec) => {
-    const w = term.split(" ");
-    if (w.length >= 2) return true;
-    const t = w[0];
-    if (t.length <= 4) return true;
-    const tw = norm(sec.title).split(" ");
-    return tw.some((x) => x === t || x.startsWith(t) || t.startsWith(x));
-  };
-  for (const term in ALIASES) {
-    const p = norm(term);
-    if (p.length < 3) continue;
-    const re = new RegExp("(?:^|[^a-z0-9])" + rxEsc(p) + "(?:[^a-z0-9]|$)");
-    for (const pg of pages) {
-      if (!re.test(pg.n)) continue;
-      let nw = false,
-        dm = false;
-      if (pg.demo) {
-        dm = true;
-      } else if (!pg.hasD && !pg.hasR) {
-        nw = true;
-      } else {
-        let seen = false;
-        for (const seg of pg.segs) {
-          if (!re.test(seg)) continue;
-          seen = true;
-          if (REMAIN.test(seg)) continue;
-          if (DEMO_TXT.test(seg)) dm = true;
-          else nw = true;
-        }
-        if (!seen) nw = true;
-      }
-      if (dm) {
-        demoTerms.add(term);
-        demoSheets.add(pg.sheet);
-      }
-      if (nw) {
-        resolveCodes(ALIASES[term]).forEach((sec) => {
-          if (!isSpecific(term, sec)) return;
-          const e = newBySec.get(sec.code) || { sec, terms: new Set(), sheets: new Set() };
-          e.terms.add(term);
-          e.sheets.add(pg.sheet);
-          newBySec.set(sec.code, e);
-        });
+function secOf(code){return byCode[code]||byCode[canon(code)]||{code:code,title:"",div:code.slice(0,2),divName:"",mfr:[],bod:[]};}
+function confCount(term,code){var v=confByEdge[term+"|"+code];return v?v.length:0;}
+
+function lookup(q){
+  var qt=toks(q),scores={};
+  for(var term in ALIASES){
+    var tt=toks(term);
+    if(tt.length && tt.every(function(w){return tokMatch(w,qt);})){
+      for(var i=0;i<ALIASES[term].length;i++){
+        var c=ALIASES[term][i];
+        scores[c]=scores[c]||{score:0,terms:[],via:true,maxconf:0};
+        scores[c].score+=tt.length; scores[c].terms.push(term);
+        scores[c].maxconf=Math.max(scores[c].maxconf,confCount(term,c));
       }
     }
   }
-  lastScanRows = {
-    new: [...newBySec.values()].sort((a, b) => a.sec.code.localeCompare(b.sec.code)),
-    demoTerms: [...demoTerms],
-    demoSheets: [...demoSheets],
-  };
-  renderScanRows(lastScanRows);
-});
-document.getElementById("scanHideMaybe").addEventListener("change", () => {
-  if (lastScanRows) renderScanRows(lastScanRows);
-});
-const divs = [...new Set(SECS.map((s) => s.div))].sort();
-const chipWrap = document.getElementById("divChips");
-let activeDiv = "all";
-function byDivName(d) {
-  const s = SECS.find((x) => x.div === d);
-  return s ? s.divName : d;
-}
-function renderChips() {
-  chipWrap.innerHTML =
-    `<button class="chip ${activeDiv === "all" ? "active" : ""}" data-d="all">All</button>` +
-    divs
-      .map(
-        (d) =>
-          `<button class="chip ${activeDiv === d ? "active" : ""}" data-d="${d}">${d} · ${esc(byDivName(d))}</button>`,
-      )
-      .join("");
-  chipWrap.querySelectorAll(".chip").forEach(
-    (c) =>
-      (c.onclick = () => {
-        activeDiv = c.dataset.d;
-        renderChips();
-        renderBrowse();
-      }),
-  );
-}
-const bq = document.getElementById("bq");
-bq.addEventListener("input", renderBrowse);
-let browseSort = "code";
-document.querySelectorAll("#browseSortRow [data-bs]").forEach(
-  (b) =>
-    (b.onclick = () => {
-      browseSort = b.dataset.bs;
-      renderBrowse();
-    }),
-);
-function browseCard(sec) {
-  const kws = KWBYCODE[sec.code] || [];
-  const chips = kws
-    .map(
-      (k) =>
-        '<span class="kw ekw">' +
-        esc(k) +
-        '<button class="gx" data-t="' +
-        esc(k) +
-        '" data-c="' +
-        esc(sec.code) +
-        '" title="remove keyword">✕</button><button class="flagbtn" data-code="' +
-        esc(sec.code) +
-        '" data-term="' +
-        esc(k) +
-        '" data-src="keyword" title="flag this keyword as wrong" style="border:0;background:none;color:var(--faint);cursor:pointer;font-size:11px;padding:0 1px">⚑</button></span>',
-    )
-    .join(" ");
-  return (
-    '<div class="card"><div style="flex:1;min-width:0"><span class="code">' +
-    esc(sec.code) +
-    '</span><div class="title">' +
-    esc(sec.title) +
-    '</div><span class="div">Div ' +
-    sec.div +
-    " · " +
-    esc(sec.divName) +
-    '</span><div class="seckw"><b>keywords:</b> ' +
-    (chips || '<span style="color:var(--faint)">none yet</span>') +
-    "</div>" +
-    mfrBlock(sec) +
-    '<div class="addrow"><input type="text" placeholder="add a keyword to this section…"><button class="btn amber addk" data-c="' +
-    esc(sec.code) +
-    '">Add</button></div></div><a class="open" href="' +
-    spLink(sec) +
-    '" target="_blank" rel="noopener">Open ↗</a></div>'
-  );
-}
-function renderBrowse() {
-  const f = norm(bq.value);
-  const fc = f.replace(/\s/g, "");
-  let list = SECS.filter((s) => activeDiv === "all" || s.div === activeDiv);
-  if (f)
-    list = list.filter(
-      (s) =>
-        norm(s.title).includes(f) ||
-        s.code.replace(/\s/g, "").includes(fc) ||
-        (KWBYCODE[s.code] || []).some((k) => k.includes(f)),
-    );
-  if (browseSort === "relevance" && f) {
-    const score = (s) => {
-      let v = 0;
-      const t = norm(s.title);
-      if (t === f) v += 1000;
-      else if (t.includes(f)) v += 500;
-      (KWBYCODE[s.code] || []).forEach((k) => {
-        if (k === f) v += 300;
-        else if (k.startsWith(f) || k.includes(f)) v += 120;
-      });
-      return v;
-    };
-    list = list.slice().sort((x, y) => score(y) - score(x) || x.code.localeCompare(y.code));
-  } else {
-    list = list.slice().sort((x, y) => x.code.localeCompare(y.code));
+  // title-text fallback — unbadged
+  for(var j=0;j<SECS.length;j++){
+    var s=SECS[j]; if(scores[s.code])continue;
+    var stt=toks(s.title);
+    if(qt.length && stt.length && qt.every(function(w){return tokMatch(w,stt);})){
+      scores[s.code]={score:0.05,terms:[],via:false,maxconf:0};
+    }
   }
-  document
-    .querySelectorAll("#browseSortRow [data-bs]")
-    .forEach((b) => b.classList.toggle("active", b.dataset.bs === browseSort));
-  document.getElementById("browseCount").textContent =
-    list.length + " section" + (list.length !== 1 ? "s" : "");
-  const out = document.getElementById("browseOut");
-  out.innerHTML = list.length
-    ? list.map(browseCard).join("")
-    : '<div class="empty"><strong>Nothing matches</strong>Adjust the filter.</div>';
-  out.querySelectorAll(".ekw .gx").forEach(
-    (b) =>
-      (b.onclick = () => {
-        removeKw(b.dataset.t, b.dataset.c);
-        renderBrowse();
-        renderEditor();
-      }),
-  );
-  out.querySelectorAll(".addk").forEach(
-    (b) =>
-      (b.onclick = () => {
-        const inp = b.previousElementSibling;
-        const v = (inp.value || "").trim();
-        if (!v) return;
-        addKw(v, b.dataset.c);
-        renderBrowse();
-        renderEditor();
-      }),
-  );
-  wireMfr(out, renderBrowse);
-}
-const SHEET_RX = /[A-Z]{1,3}\d{1,2}\.\d{1,2}\.\d{2,3}/g;
-const upStatus = document.getElementById("upStatus"),
-  setName = document.getElementById("setName"),
-  setCount = document.getElementById("setCount"),
-  pdfUrlField = document.getElementById("pdfUrlField"),
-  dlBtn = document.getElementById("dlBtn"),
-  dlNote = document.getElementById("dlNote"),
-  barWrap = document.getElementById("upBarWrap"),
-  bar = document.getElementById("upBar"),
-  drop = document.getElementById("drop"),
-  pdfFile = document.getElementById("pdfFile"),
-  resetBtn = document.getElementById("resetBtn");
-setCount.textContent = DRAWINGS.length;
-setName.textContent = DRAWINGS.length ? "built-in set" : "none loaded";
-pdfUrlField.value = PDF_URL && !PDF_URL.startsWith("blob:") ? PDF_URL : "";
-let sessionBlobUrl = null;
-function status(msg, cls) {
-  upStatus.className = "statusline" + (cls ? " " + cls : "");
-  upStatus.innerHTML = msg;
-}
-function recFromFlat(flat, i) {
-  flat = String(flat).replace(/\s+/g, " ").trim();
-  if (!flat) return null;
-  const ms = flat.match(SHEET_RX) || [];
-  const sheet = ms.length ? ms[ms.length - 1] : "";
-  const mt = flat.match(/SHEET TITLE(.*?)LOCATION PROJECT/);
-  const title = mt ? mt[1].replace(/\s+/g, " ").trim() : "";
-  return { page: i, sheet, disc: sheet ? sheet[0] : "?", title, text: flat };
-}
-async function indexPdf(file) {
-  if (typeof pdfjsLib === "undefined")
-    throw new Error(
-      "PDF engine not loaded — check your internet connection (pdf.js loads from a CDN). Or upload a .json/.txt.",
-    );
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  const data = new Uint8Array(await file.arrayBuffer());
-  const pdf = await pdfjsLib.getDocument({ data }).promise;
-  const N = pdf.numPages,
-    recs = [];
-  barWrap.style.display = "block";
-  for (let i = 1; i <= N; i++) {
-    const page = await pdf.getPage(i);
-    const tc = await page.getTextContent();
-    const r = recFromFlat(tc.items.map((it) => it.str).join(" "), i);
-    if (r) recs.push(r);
-    bar.style.width = Math.round((i / N) * 100) + "%";
-    status(`Indexing… ${i} / ${N} sheets`);
-    if (i % 4 === 0) await new Promise((r) => setTimeout(r));
+  // manufacturer / product name match — so typing a maker or product also finds sections
+  var qn=nrm(q);
+  if(qn.length>=3)for(var k=0;k<SECS.length;k++){
+    var sc=SECS[k]; if(scores[sc.code])continue;
+    var hay=nrm((sc.mfr||[]).join(" · ")+" · "+(sc.bod||[]).join(" · "));
+    if(hay.indexOf(qn)>=0){scores[sc.code]={score:0.04,terms:[],via:false,maxconf:0,viaMaker:true};}
   }
-  return recs;
+  return Object.keys(scores).map(function(code){var v=scores[code];return {code:code,score:v.score,terms:v.terms,via:v.via,maxconf:v.maxconf};})
+    .sort(function(a,b){return b.score-a.score;}).slice(0,16);
 }
-const IDB_NAME = "specfinder",
-  IDB_STORE = "kv";
-function idbOpen() {
-  return new Promise((res, rej) => {
-    const r = indexedDB.open(IDB_NAME, 1);
-    r.onupgradeneeded = () => {
-      const db = r.result;
-      if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
-    };
-    r.onsuccess = () => res(r.result);
-    r.onerror = () => rej(r.error);
+
+/* ---------- filters state ---------- */
+var activeDivs=null, reqOnly=false, mfrOnly=false, lastResults=[];
+function allDivs(){var d={};SECS.forEach(function(s){if(DIVCOLOR[s.div])d[s.div]=s.divName;});return d;}
+
+function buildFilters(){
+  var dv=allDivs(),host=document.getElementById("filters");
+  var h='<span class="lbl">Division</span>';
+  Object.keys(dv).sort().forEach(function(d){
+    h+='<button class="dfilter" data-d="'+d+'"><span class="dot" style="background:'+divCol(d)+'"></span>'+d+'</button>';
   });
-}
-async function idbSet(k, v) {
-  const db = await idbOpen();
-  return new Promise((res, rej) => {
-    const tx = db.transaction(IDB_STORE, "readwrite");
-    tx.objectStore(IDB_STORE).put(v, k);
-    tx.oncomplete = () => res(true);
-    tx.onerror = () => rej(tx.error);
-    tx.onabort = () => rej(tx.error || new Error("aborted"));
+  h+='<span style="width:12px"></span><button class="tog" id="reqTog">Required only</button><button class="tog" id="mfrTog">Has manufacturers</button>';
+  host.innerHTML=h;
+  host.querySelectorAll(".dfilter").forEach(function(b){
+    b.onclick=function(){ if(activeDivs===null)activeDivs={}; if(activeDivs[b.dataset.d]){delete activeDivs[b.dataset.d];b.classList.add("off");}else{activeDivs[b.dataset.d]=1;b.classList.remove("off");}
+      if(Object.keys(activeDivs).length===0)activeDivs=null; renderResults();};
   });
+  document.getElementById("reqTog").onclick=function(){reqOnly=!reqOnly;this.classList.toggle("on",reqOnly);renderResults();};
+  document.getElementById("mfrTog").onclick=function(){mfrOnly=!mfrOnly;this.classList.toggle("on",mfrOnly);renderResults();};
 }
-async function idbGet(k) {
-  const db = await idbOpen();
-  return new Promise((res, rej) => {
-    const tx = db.transaction(IDB_STORE, "readonly");
-    const rq = tx.objectStore(IDB_STORE).get(k);
-    rq.onsuccess = () => res(rq.result);
-    rq.onerror = () => rej(rq.error);
-  });
+
+function card(r){
+  var s=secOf(r.code),div=s.div,col=divCol(div);
+  var mfr=(s.mfr||[]),bod=(s.bod||[]);
+  var terms=r.terms.slice().sort(function(a,b){return b.split(" ").length-a.split(" ").length;}).slice(0,6);
+  var h='<div class="rc"><div class="edge" style="background:'+col+'"></div><div class="rb">';
+  h+='<div class="top"><div><div class="code">'+esc(s.code)+'</div><div class="ttl">'+esc(s.title)+'</div></div>';
+  h+='<span class="badge '+(r.via?"req":"sug")+'">'+(r.via?"required":"suggestion")+'</span></div>';
+  h+='<span class="dtag" style="background:'+col+'">'+div+' · '+esc(s.divName||"")+'</span>';
+  if(terms.length){h+='<div class="mrow"><b>Matched terms</b><br>';terms.forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});h+='</div>';}
+  if(mfr.length){h+='<div class="mrow"><b>Manufacturers</b><br>';mfr.slice(0,5).forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});if(mfr.length>5)h+='<span class="pill">+'+(mfr.length-5)+'</span>';h+='</div>';}
+  if(bod.length){h+='<div class="mrow"><b>Specified product</b><br>';bod.slice(0,2).forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
+  if(r.via){var c=r.maxconf;h+='<div class="conf"><span class="dots">';for(var i=0;i<6;i++)h+='<i class="'+(i<c?"f":"")+'"></i>';h+='</span> corroborated by '+c+' of 6 projects</div>';}
+  h+='</div></div>';
+  return h;
 }
-async function idbDel(k) {
-  try {
-    const db = await idbOpen();
-    return new Promise((res) => {
-      const tx = db.transaction(IDB_STORE, "readwrite");
-      tx.objectStore(IDB_STORE).delete(k);
-      tx.oncomplete = () => res(true);
-      tx.onerror = () => res(false);
-    });
-  } catch (e) {
-    return false;
-  }
-}
-async function saveLocal(name) {
-  try {
-    await idbSet("sf_dwg", DRAWINGS);
-    localStorage.setItem("sf_name", name);
-    localStorage.setItem(
-      "sf_url",
-      PDF_URL && !PDF_URL.startsWith("blob:") ? PDF_URL : pdfUrlField.value.trim() || "",
-    );
-    try {
-      localStorage.removeItem("sf_dwg");
-    } catch (_) {}
+function renderResults(){
+  var out=document.getElementById("results"),cnt=document.getElementById("scount");
+  var rs=lastResults.filter(function(r){
+    var s=secOf(r.code);
+    if(activeDivs&&!activeDivs[s.div])return false;
+    if(reqOnly&&!r.via)return false;
+    if(mfrOnly&&!((s.mfr||[]).length))return false;
     return true;
-  } catch (e) {
-    console.warn("Could not save drawing set:", e);
-    return false;
-  }
-}
-async function finishLoad(recs, name, pdfFileObj) {
-  DRAWINGS.splice(0, DRAWINGS.length, ...recs);
-  if (sessionBlobUrl) {
-    URL.revokeObjectURL(sessionBlobUrl);
-    sessionBlobUrl = null;
-  }
-  if (pdfFileObj) {
-    sessionBlobUrl = URL.createObjectURL(pdfFileObj);
-    PDF_URL = sessionBlobUrl;
-  }
-  const disc = {};
-  recs.forEach((r) => (disc[r.disc] = (disc[r.disc] || 0) + 1));
-  const dl = Object.entries(disc)
-    .map(([d, n]) => `${DISC[d] || d} ${n}`)
-    .join(" · ");
-  setName.textContent = name;
-  setCount.textContent = recs.length;
-  const saved = await saveLocal(name);
-  const persistNote = saved
-    ? " Saved on this device — it stays after refresh until you reset."
-    : ' (Too large to remember here; use "Download updated index.html" to keep it.)';
-  status(
-    `Loaded <b>${esc(name)}</b> — ${recs.length} sheets (${dl}). Search now uses this set${pdfFileObj ? '; "PDF p.N" opens this file this session' : ""}.` +
-      persistNote,
-    "ok",
-  );
-  barWrap.style.display = "none";
-  resetBtn.style.display = "inline-block";
-  if (!pdfUrlField.value && pdfFileObj) pdfUrlField.value = name;
-  dlBtn.disabled = false;
-  if (lastQ) renderDrawings(lastQ, lastSyn);
-}
-async function applySaved() {
-  try {
-    let arr = await idbGet("sf_dwg");
-    if (!Array.isArray(arr) || !arr.length) {
-      const raw = localStorage.getItem("sf_dwg");
-      if (raw) {
-        try {
-          const legacy = JSON.parse(raw);
-          if (Array.isArray(legacy) && legacy.length) {
-            arr = legacy;
-            await idbSet("sf_dwg", legacy);
-            localStorage.removeItem("sf_dwg");
-          }
-        } catch (_) {}
-      }
-    }
-    if (!Array.isArray(arr) || !arr.length) return false;
-    DRAWINGS.splice(0, DRAWINGS.length, ...arr);
-    const nm = localStorage.getItem("sf_name") || "saved set";
-    const url = localStorage.getItem("sf_url") || "";
-    if (url) {
-      PDF_URL = url;
-      pdfUrlField.value = url;
-    }
-    setName.textContent = nm + " · saved on this device";
-    setCount.textContent = arr.length;
-    resetBtn.style.display = "inline-block";
-    status(
-      `Using your saved set <b>${esc(nm)}</b> — ${arr.length} sheets. Stays until you reset.`,
-      "ok",
-    );
-    dlBtn.disabled = false;
-    if (lastQ) renderDrawings(lastQ, lastSyn);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-function resetToBuilt() {
-  try {
-    ["sf_dwg", "sf_name", "sf_url"].forEach((k) => localStorage.removeItem(k));
-    idbDel("sf_dwg");
-  } catch (e) {}
-  DRAWINGS.splice(0, DRAWINGS.length, ...BAKED_DWG);
-  PDF_URL = BAKED_URL;
-  pdfUrlField.value = BAKED_URL && !BAKED_URL.startsWith("blob:") ? BAKED_URL : "";
-  setName.textContent = DRAWINGS.length ? "built-in set" : "none loaded";
-  setCount.textContent = DRAWINGS.length;
-  resetBtn.style.display = "none";
-  status("Reset to the built-in set.", "");
-  if (lastQ) renderDrawings(lastQ, lastSyn);
-}
-async function handleFile(file) {
-  if (!file) return;
-  dlBtn.disabled = true;
-  dlNote.textContent = "";
-  const nm = file.name.toLowerCase();
-  try {
-    if (nm.endsWith(".json")) {
-      status('Reading "' + esc(file.name) + '" …');
-      const arr = JSON.parse(await file.text());
-      if (!Array.isArray(arr) || !arr.length)
-        throw new Error("That JSON is not a drawing-index array.");
-      const recs = arr
-        .map((r, i) => ({
-          page: r.page || i + 1,
-          sheet: r.sheet || "",
-          disc: r.disc || (r.sheet ? String(r.sheet)[0] : "?"),
-          title: r.title || "",
-          text: String(r.text || ""),
-        }))
-        .filter((r) => r.text);
-      if (!recs.length) throw new Error("No pages with text in that JSON.");
-      await finishLoad(recs, file.name, null);
-    } else if (nm.endsWith(".txt")) {
-      status('Reading "' + esc(file.name) + '" …');
-      const pages = (await file.text()).split(/\f/);
-      const recs = [];
-      pages.forEach((p, i) => {
-        const r = recFromFlat(p, i + 1);
-        if (r) recs.push(r);
-      });
-      if (!recs.length) throw new Error("No page breaks found — export with pdftotext -layout.");
-      await finishLoad(recs, file.name, null);
-    } else {
-      status('Reading "' + esc(file.name) + '" …');
-      const recs = await indexPdf(file);
-      if (!recs.length) {
-        status(
-          "No text found — this PDF has no text layer (looks scanned). Use OCR, or upload a .json/.txt.",
-          "err",
-        );
-        barWrap.style.display = "none";
-        return;
-      }
-      await finishLoad(recs, file.name, file);
-    }
-  } catch (e) {
-    status("Could not load: " + esc(e.message), "err");
-    barWrap.style.display = "none";
-  }
-}
-resetBtn.onclick = resetToBuilt;
-drop.onclick = () => pdfFile.click();
-pdfFile.onchange = () => handleFile(pdfFile.files[0]);
-drop.addEventListener("dragover", (e) => {
-  e.preventDefault();
-  drop.classList.add("drag");
-});
-drop.addEventListener("dragleave", () => drop.classList.remove("drag"));
-drop.addEventListener("drop", (e) => {
-  e.preventDefault();
-  drop.classList.remove("drag");
-  handleFile(e.dataTransfer.files[0]);
-});
-dlBtn.onclick = () => {
-  ["lookupOut", "dwgOut", "browseOut", "batchOut"].forEach((id) => {
-    const e = document.getElementById(id);
-    if (e) e.innerHTML = "";
   });
-  document.getElementById("q").value = "";
-  document.getElementById("bq").value = "";
-  const wantUrl = pdfUrlField.value.trim();
-  let html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-  const beforeBake = html;
-  html = html.replace(
-    /const DRAWINGS = [\s\S]*?;(\s*)const DISC/,
-    (m, gap) => "const DRAWINGS = " + JSON.stringify(DRAWINGS) + ";" + gap + "const DISC",
-  );
-  if (html === beforeBake) {
-    dlNote.textContent =
-      "Nothing downloaded — could not find the DRAWINGS declaration to write into. Report this rather than shipping the file.";
-    return;
+  if(!lastResults.length){out.innerHTML='';cnt.textContent='';return;}
+  if(!rs.length){out.innerHTML='<div class="empty glass"><b>No sections match those filters</b>Loosen the division or badge filters.</div>';cnt.textContent='';return;}
+  var req=rs.filter(function(r){return r.via;}).length;
+  cnt.innerHTML=rs.length+' section'+(rs.length!==1?'s':'')+' · <b style="color:var(--amber-d)">'+req+' required</b> · '+(rs.length-req)+' suggestion'+((rs.length-req)!==1?'s':'');
+  // aggregate manufacturers + products across the result sections
+  var mset={},pset={};
+  rs.forEach(function(r){var s=secOf(r.code);(s.mfr||[]).forEach(function(m){mset[m]=1;});(s.bod||[]).forEach(function(p){pset[p]=1;});});
+  var mfrs=Object.keys(mset),prods=Object.keys(pset);
+  var sum='';
+  if(mfrs.length||prods.length){
+    sum='<div class="summary glass">';
+    if(mfrs.length){sum+='<div class="srow"><span class="sk">Manufacturers ('+mfrs.length+')</span> ';sum+=mfrs.slice(0,14).map(function(m){return '<span class="pill">'+esc(m)+'</span>';}).join("");if(mfrs.length>14)sum+='<span class="pill">+'+(mfrs.length-14)+'</span>';sum+='</div>';}
+    if(prods.length){sum+='<div class="srow"><span class="sk">Specified products ('+prods.length+')</span> ';sum+=prods.slice(0,10).map(function(p){return '<span class="pill prod">'+esc(p)+'</span>';}).join("");if(prods.length>10)sum+='<span class="pill">+'+(prods.length-10)+'</span>';sum+='</div>';}
+    sum+='</div>';
   }
-  html = html.replace(/let PDF_URL = "[^"]*"/, () => "let PDF_URL = " + JSON.stringify(wantUrl));
-  const blob = new Blob([html], { type: "text/html" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "index.html";
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-  dlNote.textContent =
-    "Downloaded index.html — commit it to your repo" +
-    (wantUrl ? ` (host "${wantUrl}" alongside it).` : " .");
-};
-const GLOSS = Object.keys(ALIASES).sort();
-const gq = document.getElementById("gq");
-function renderGlossary() {
-  const f = norm(gq.value);
-  const list = f ? GLOSS.filter((t) => t.includes(f)) : GLOSS;
-  document.getElementById("glossCount").textContent =
-    list.length + " term" + (list.length !== 1 ? "s" : "");
-  const out = document.getElementById("glossaryOut");
-  out.innerHTML =
-    list
-      .slice(0, 500)
-      .map((t) => {
-        const secs =
-          resolveCodes(ALIASES[t] || [])
-            .map((s) => '<span class="gcode">' + esc(s.code) + "</span> " + esc(s.title))
-            .join("  ·  ") || esc((ALIASES[t] || []).join(", "));
-        return (
-          '<div class="gitem"><span class="gterm">' +
-          esc(t) +
-          '</span><span class="garrow">→</span><span class="gsecs">' +
-          secs +
-          "</span></div>"
-        );
-      })
-      .join("") +
-    (list.length > 500
-      ? '<p class="hint" style="margin-top:10px">Showing first 500 — type to filter.</p>'
-      : "");
+  out.innerHTML=sum+'<div class="grid">'+rs.map(card).join("")+'</div>';
 }
-function renderEditor() {
-  if (document.getElementById("fbOut")) setTimeout(renderFeedback, 0);
-  const e = loadEdits();
-  const n = Object.values(e.add).reduce((a, b) => a + b.length, 0) + e.remove.length;
-  const box = document.getElementById("editNote");
-  box.innerHTML = n
-    ? `<p class="count" style="margin:0 0 12px">${n} personal edit${n !== 1 ? "s" : ""} saved on this device · <button class="linkbtn" id="expEdits" style="padding:0">Export</button> · <button class="linkbtn" id="resetEdits" style="padding:0">Reset all</button></p>`
-    : "";
-  const ex = document.getElementById("expEdits");
-  if (ex)
-    ex.onclick = () => {
-      const blob = new Blob([JSON.stringify(loadEdits(), null, 1)], {
-        type: "application/json",
-      });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "my_keyword_edits.json";
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-    };
-  const rs = document.getElementById("resetEdits");
-  if (rs)
-    rs.onclick = () => {
-      localStorage.removeItem("kwedits");
-      location.reload();
-    };
+function doSearch(q){
+  q=(q||document.getElementById("q").value).trim();
+  if(!q){lastResults=[];renderResults();return;}
+  lastResults=lookup(q); renderResults();
+  document.getElementById("scount").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
-gq.addEventListener("input", renderGlossary);
-function loadFlags() {
-  try {
-    return JSON.parse(localStorage.getItem("sf_flags") || "[]");
-  } catch (_) {
-    return [];
-  }
+
+/* ---------- browse ---------- */
+var bDivs=null;
+function buildBrowse(){
+  var dv=allDivs(),host=document.getElementById("bfilters");
+  var h='<span class="lbl">Division</span>';
+  Object.keys(dv).sort().forEach(function(d){h+='<button class="dfilter" data-d="'+d+'"><span class="dot" style="background:'+divCol(d)+'"></span>'+d+' · '+esc(dv[d])+'</button>';});
+  host.innerHTML=h;
+  host.querySelectorAll(".dfilter").forEach(function(b){b.onclick=function(){if(bDivs===null)bDivs={};if(bDivs[b.dataset.d]){delete bDivs[b.dataset.d];b.classList.add("off");}else{bDivs[b.dataset.d]=1;b.classList.remove("off");}if(!Object.keys(bDivs).length)bDivs=null;renderBrowse();};});
 }
-function saveFlags(f) {
-  localStorage.setItem("sf_flags", JSON.stringify(f));
+function renderBrowse(){
+  var q=nrm(document.getElementById("bq").value),list=document.getElementById("browselist"),cnt=document.getElementById("bcount");
+  var rows=SECS.filter(function(s){
+    if(bDivs&&!bDivs[s.div])return false;
+    if(q){var hay=nrm(s.code+" "+s.title+" "+(s.mfr||[]).join(" "));if(hay.indexOf(q)<0)return false;}
+    return DIVCOLOR[s.div];
+  }).sort(function(a,b){return canon(a.code)<canon(b.code)?-1:1;});
+  cnt.textContent=rows.length+" sections";
+  list.innerHTML=rows.slice(0,400).map(function(s){
+    var col=divCol(s.div),na=aliasCount[s.code]||0,nm=(s.mfr||[]).length;
+    return '<div class="brow"><div class="bedge" style="background:'+col+'"></div><div class="bcode">'+esc(s.code)+'</div><div class="btitle">'+esc(s.title)+'</div><div class="bmeta">'+(na?na+' terms':'<span style="color:#c0392b">no term</span>')+' · '+nm+' mfr</div></div>';
+  }).join("")+(rows.length>400?'<p class="count">showing first 400 of '+rows.length+'</p>':'');
 }
-// Set this to a collector URL (an Apps Script web app, a webhook, anything that accepts POST)
-// and flags will reach you instead of dying in the user's browser. Left empty the app behaves
-// exactly as before: flags are stored locally and only leave via manual export.
-const FLAG_ENDPOINT = "";
-function addFlag(o) {
-  var f = loadFlags();
-  f.push(o);
-  saveFlags(f);
-  renderFeedback();
-  if (FLAG_ENDPOINT) {
-    // no-cors + text/plain avoids a preflight, which Apps Script endpoints will not answer.
-    // Fire and forget: localStorage remains the source of truth, so a failed send loses nothing.
-    try {
-      fetch(FLAG_ENDPOINT, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ ...o, set: localStorage.getItem("sf_name") || "", ua: navigator.userAgent }),
-      }).catch(() => {});
-    } catch (_) {}
-  }
+
+/* ---------- manufacturers & products ---------- */
+var mfrIndex={},prodIndex={},makerMode="mfr";
+function buildMakerIndex(){
+  SECS.forEach(function(s){
+    (s.mfr||[]).forEach(function(m){var k=m.toLowerCase();(mfrIndex[k]=mfrIndex[k]||{name:m,secs:[]}).secs.push(s.code);});
+    (s.bod||[]).forEach(function(p){var k=p.toLowerCase();(prodIndex[k]=prodIndex[k]||{name:p,secs:[]}).secs.push(s.code);});
+  });
 }
-var FLAG_REASONS = [
-  "This keyword does not belong to this section",
-  "Wrong section for this term — should be a different one",
-  "This section is not used on our projects",
-  "Duplicate or near-duplicate of another section",
-  "Section title or number looks wrong",
-  "Missing — a needed keyword/section is absent",
-  "Other (see note)",
-];
-var _flagCtx = null;
-function openFlag(code, term, src) {
-  _flagCtx = { code: code, term: term, src: src };
-  document.getElementById("flagWhat").innerHTML =
-    esc(code) +
-    (term ? ' · <span style="font-weight:400">matched on “' + esc(term) + "”</span>" : "");
-  document.getElementById("flagReasons").innerHTML = FLAG_REASONS.map(function (r, i) {
-    return (
-      '<label style="display:flex;gap:8px;align-items:flex-start;cursor:pointer"><input type="radio" name="flagr" value="' +
-      esc(r) +
-      '"' +
-      (i === 0 ? " checked" : "") +
-      ' style="margin-top:3px"><span>' +
-      esc(r) +
-      "</span></label>"
-    );
+function renderMakers(){
+  var q=nrm(document.getElementById("mq").value);
+  var idx=makerMode==="mfr"?mfrIndex:prodIndex;
+  var rows=Object.keys(idx).map(function(k){return idx[k];});
+  if(q)rows=rows.filter(function(r){return nrm(r.name).indexOf(q)>=0;});
+  rows.sort(function(a,b){return b.secs.length-a.secs.length||a.name.localeCompare(b.name);});
+  var cnt=document.getElementById("mcount"),out=document.getElementById("makersout");
+  var total=Object.keys(idx).length;
+  cnt.innerHTML=q?(rows.length+' '+(makerMode==="mfr"?'manufacturers':'products')+' match "'+esc(q)+'"'):('Showing the most-referenced of '+total+' '+(makerMode==="mfr"?'manufacturers':'products')+' — type to search');
+  if(!rows.length){out.innerHTML='<div class="empty glass"><b>No match</b>Try a different spelling or switch between Manufacturers and Products.</div>';return;}
+  out.innerHTML=rows.slice(0,60).map(function(r){
+    var chips=r.secs.slice(0,20).map(function(c){var s=secOf(c),col=divCol(s.div);
+      return '<span class="pill" style="border-left:3px solid '+col+';padding-left:8px">'+esc(s.code)+' · '+esc(s.title)+'</span>';}).join("");
+    if(r.secs.length>20)chips+='<span class="pill">+'+(r.secs.length-20)+' more</span>';
+    return '<div class="glass" style="padding:15px 17px;margin-bottom:11px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><div style="font-weight:700;font-size:15px">'+esc(r.name)+'</div><div class="bmeta">'+r.secs.length+' section'+(r.secs.length!==1?'s':'')+'</div></div><div style="margin-top:9px">'+chips+'</div></div>';
   }).join("");
-  document.getElementById("flagNote").value = "";
-  document.getElementById("flagModal").style.display = "flex";
 }
-function closeFlag() {
-  document.getElementById("flagModal").style.display = "none";
-  _flagCtx = null;
-}
-document.addEventListener("click", function (e) {
-  var b = e.target.closest ? e.target.closest(".flagbtn") : null;
-  if (b) {
-    e.preventDefault();
-    openFlag(b.dataset.code, b.dataset.term, b.dataset.src);
-  }
-});
-document.getElementById("flagCancel").onclick = closeFlag;
-document.getElementById("flagModal").onclick = function (e) {
-  if (e.target === this) closeFlag();
-};
-document.getElementById("flagSave").onclick = function () {
-  if (!_flagCtx) return;
-  var r = document.querySelector("input[name=flagr]:checked");
-  addFlag({
-    code: _flagCtx.code,
-    term: _flagCtx.term,
-    src: _flagCtx.src,
-    reason: r ? r.value : "",
-    note: document.getElementById("flagNote").value.trim(),
-    t: new Date().toISOString().slice(0, 16).replace("T", " "),
+function setMakerMode(m){makerMode=m;document.getElementById("mmode-mfr").classList.toggle("on",m==="mfr");document.getElementById("mmode-prod").classList.toggle("on",m==="prod");renderMakers();}
+
+/* ---------- scan ---------- */
+function runScan(files){
+  var out=document.getElementById("scanout");
+  out.innerHTML='<p class="count">Reading '+files.length+' file'+(files.length!==1?'s':'')+'…</p>';
+  var alltext="";var done=0;
+  Array.prototype.forEach.call(files,function(f){
+    var fr=new FileReader();
+    fr.onload=function(){
+      pdfjsLib.getDocument({data:new Uint8Array(fr.result)}).promise.then(function(pdf){
+        var pages=[];for(var p=1;p<=pdf.numPages;p++)pages.push(p);
+        return pages.reduce(function(chain,p){return chain.then(function(){return pdf.getPage(p).then(function(pg){return pg.getTextContent();}).then(function(tc){alltext+=" "+tc.items.map(function(it){return it.str;}).join(" ");});});},Promise.resolve());
+      }).then(function(){done++;out.querySelector(".count").textContent="Read "+done+" of "+files.length+"…";if(done===files.length)scanResult(alltext);}).catch(function(e){out.innerHTML='<div class="empty glass"><b>Could not read that PDF</b>'+esc(e.message||"")+'</div>';});
+    };
+    fr.readAsArrayBuffer(f);
   });
-  closeFlag();
-};
-function renderFeedback() {
-  var flags = loadFlags();
-  var e = loadEdits();
-  var nedit =
-    Object.values(e.add).reduce(function (a, b) {
-      return a + b.length;
-    }, 0) + e.remove.length;
-  var mp = loadMfr();
-  var nmfr = Object.keys(mp).length;
-  var box = document.getElementById("fbOut");
-  if (!box) return;
-  var h =
-    '<p class="count">' +
-    flags.length +
-    " flag" +
-    (flags.length !== 1 ? "s" : "") +
-    " · " +
-    nedit +
-    " keyword edit" +
-    (nedit !== 1 ? "s" : "") +
-    " · " +
-    nmfr +
-    " section" +
-    (nmfr !== 1 ? "s" : "") +
-    " with preferred manufacturers, saved on this device</p>";
-  h +=
-    '<div class="row" style="margin-bottom:18px"><button class="btn amber" id="fbExport">Export feedback (JSON)</button><button class="btn" id="fbClear">Clear flags</button></div>';
-  if (flags.length) {
-    for (var i = 0; i < flags.length; i++) {
-      var f = flags[i];
-      h +=
-        '<div class="card"><div style="flex:1;min-width:0"><span class="code">' +
-        esc(f.code) +
-        '</span> <span class="div">' +
-        esc(f.src || "") +
-        "</span>" +
-        (f.term ? '<div class="matchwords">matched on: ' + esc(f.term) + "</div>" : "") +
-        (f.reason ? '<div class="reason"><b>' + esc(f.reason) + "</b></div>" : "") +
-        (f.note ? '<div class="matchwords">' + esc(f.note) + "</div>" : "") +
-        '<div class="matchwords">' +
-        esc(f.t || "") +
-        '</div></div><button class="linkbtn fbdel" data-i="' +
-        i +
-        '">remove</button></div>';
-    }
-  } else {
-    h +=
-      '<div class="empty"><strong>No flags yet</strong>On any result, click “⚑ flag as wrong” to log what looks off. Fix keywords directly in Browse (✕ to remove, or type to add). Then Export and send the file back to bake corrections in.</div>';
-  }
-  box.innerHTML = h;
-  var ex = document.getElementById("fbExport");
-  if (ex)
-    ex.onclick = function () {
-      var data = {
-        flags: loadFlags(),
-        edits: loadEdits(),
-        mfrPrefs: loadMfr(),
-        generated: new Date().toISOString(),
-      };
-      var blob = new Blob([JSON.stringify(data, null, 1)], { type: "application/json" });
-      var a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "spec_finder_feedback.json";
-      a.click();
-      setTimeout(function () {
-        URL.revokeObjectURL(a.href);
-      }, 4000);
-    };
-  var cl = document.getElementById("fbClear");
-  if (cl)
-    cl.onclick = function () {
-      if (confirm("Clear all flags on this device?")) {
-        saveFlags([]);
-        renderFeedback();
-      }
-    };
-  var dels = box.querySelectorAll(".fbdel");
-  for (var j = 0; j < dels.length; j++) {
-    dels[j].onclick = function () {
-      var ff = loadFlags();
-      ff.splice(+this.dataset.i, 1);
-      saveFlags(ff);
-      renderFeedback();
-    };
-  }
 }
-document.querySelectorAll(".tab").forEach(
-  (tb) =>
-    (tb.onclick = () => {
-      document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
-      tb.classList.add("active");
-      ["lookup", "batch", "browse", "scan", "glossary", "update", "feedback"].forEach(
-        (id) => (document.getElementById("tab-" + id).style.display = "none"),
-      );
-      document.getElementById("tab-" + tb.dataset.tab).style.display = "";
-    }),
-);
-applySaved();
-applyEdits();
-rebuildGloss();
-renderDiscChips();
-renderChips();
-renderBrowse();
-renderGlossary();
-renderEditor();
-renderFeedback();
-    </script>
-  </body>
+function scanResult(text){
+  var nt=" "+nrm(text)+" ";var words={};nt.split(" ").forEach(function(w){words[w]=1;});
+  var sec={};
+  for(var term in ALIASES){
+    var tt=toks(term);if(!tt.length)continue;
+    if(!tt.every(function(w){return words[w];}))continue;
+    if(nt.indexOf(" "+nrm(term)+" ")<0)continue;
+    var wt=tt.length>=2?tt.length:0.4;
+    for(var i=0;i<ALIASES[term].length;i++){var c=ALIASES[term][i];sec[c]=sec[c]||{w:0,terms:[]};sec[c].w+=wt;sec[c].terms.push(term);}
+  }
+  var rows=Object.keys(sec).map(function(c){return {code:c,w:sec[c].w,terms:sec[c].terms};}).sort(function(a,b){return b.w-a.w;});
+  var likely=rows.filter(function(r){return r.w>=2;});
+  var byDiv={};likely.forEach(function(r){var d=secOf(r.code).div;byDiv[d]=(byDiv[d]||0)+1;});
+  var out=document.getElementById("scanout");
+  var h='<div class="scanstat">';
+  h+='<div class="s glass"><div class="n">'+likely.length+'</div><div class="l">Likely required</div></div>';
+  h+='<div class="s glass"><div class="n">'+rows.length+'</div><div class="l">Sections touched</div></div>';
+  h+='<div class="s glass"><div class="n">'+Object.keys(byDiv).length+'</div><div class="l">Divisions</div></div>';
+  var mfrn=likely.reduce(function(n,r){return n+((secOf(r.code).mfr||[]).length);},0);
+  h+='<div class="s glass"><div class="n">'+mfrn+'</div><div class="l">Manufacturers surfaced</div></div></div>';
+  // division bar
+  var tot=likely.length||1;h+='<div class="divbar">';Object.keys(byDiv).sort().forEach(function(d){h+='<i style="background:'+divCol(d)+';width:'+(byDiv[d]/tot*100)+'%" title="Div '+d+': '+byDiv[d]+'"></i>';});h+='</div>';
+  h+='<p class="count" style="margin-top:8px">Sections the set is likely to require, most-evidenced first:</p>';
+  h+='<div class="grid">';
+  likely.slice(0,60).forEach(function(r){h+=card({code:r.code,score:r.w,terms:r.terms,via:true,maxconf:0});});
+  h+='</div>';
+  out.innerHTML=h;
+}
+
+/* ---------- keynotes ---------- */
+function fillKeynotes(){
+  // proof sample: mined from OCME's modern 5-digit keynote format
+  var s=[["02019","EXISTING CONCRETE BASE AND LIGHT"],["03011","CONCRETE CURB — REFER TO TYPICAL BARRIER"],["31011","CANOPY ABOVE"],["31006","PAINTED BARRIER-FREE PARKING SYMBOL"]];
+  var h='<div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px">';
+  s.forEach(function(r){h+='<div style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)"><b style="color:var(--accent);min-width:52px">'+r[0]+'</b><span style="flex:1">'+esc(r[1])+'</span></div>';});
+  h+='</div><p style="font-size:12px;color:var(--muted);margin-top:10px">Proof sample — mined from OCME\'s machine-readable keynote format. Extraction extends to each set as its keynotes are folded in.</p>';
+  document.getElementById("knsamples").innerHTML=h;
+
+  // "this keynote could be better" — same section, several wordings; standard = wording closest to the section title
+  var picks=[];
+  ["07 92 00","09 22 16","08 44 13","07 84 00"].forEach(function(code){
+    var sec=secOf(code); var titleToks=toks(sec.title);
+    var terms=[];for(var t in ALIASES)if(ALIASES[t].indexOf(code)>=0)terms.push(t);
+    if(terms.length<2)return;
+    // score each term: overlap with title tokens, prefer 2-3 words, penalise digits/very long
+    function score(t){var tt=toks(t);var ov=tt.filter(function(w){return titleToks.indexOf(w)>=0;}).length;
+      var lenpen=Math.abs(tt.length-2)*0.4; var digit=/\d/.test(t)?2:0;
+      return ov*2 - lenpen - digit;}
+    terms.sort(function(a,b){return score(b)-score(a);});
+    var best=terms[0];
+    var weak=terms.slice().sort(function(a,b){return toks(a).length-toks(b).length;})[0];
+    if(best!==weak)picks.push({code:code,title:sec.title,best:best,weak:weak,n:terms.length});
+  });
+  var c='';
+  picks.forEach(function(p){
+    var col=divCol(secOf(p.code).div);
+    c+='<div style="border-left:3px solid '+col+';padding:9px 0 9px 12px;margin-bottom:11px">';
+    c+='<div style="font-size:12.5px;font-weight:650">'+esc(p.code)+' · '+esc(p.title)+'</div>';
+    c+='<div style="font-size:12px;color:var(--muted);margin-top:5px">tagged as <span class="pill" style="margin:0">'+esc(p.weak)+'</span> and '+(p.n-1)+' other'+(p.n>2?'s':'')+'</div>';
+    c+='<div style="font-size:12px;color:var(--ink2);margin-top:6px">suggested standard → <span class="pill term" style="margin:0">'+esc(p.best)+'</span></div></div>';
+  });
+  document.getElementById("kncompare").innerHTML=c||'<p style="font-size:12.5px;color:var(--muted)">Fold in more keynotes to surface wording drift.</p>';
+}
+
+/* ---------- nav ---------- */
+document.getElementById("nav").addEventListener("click",function(e){
+  var b=e.target.closest(".tab");if(!b)return;
+  document.querySelectorAll(".tab").forEach(function(t){t.classList.toggle("on",t===b);});
+  document.querySelectorAll(".view").forEach(function(v){v.classList.remove("on");});
+  document.getElementById("v-"+b.dataset.v).classList.add("on");
+  if(b.dataset.v==="browse")renderBrowse();
+  if(b.dataset.v==="makers")renderMakers();
+});
+document.getElementById("go").onclick=function(){doSearch();};
+document.getElementById("q").addEventListener("keydown",function(e){if(e.key==="Enter")doSearch();});
+document.querySelectorAll(".stag").forEach(function(b){b.onclick=function(){document.getElementById("q").value=b.textContent;doSearch();};});
+document.getElementById("bq").addEventListener("input",renderBrowse);
+document.getElementById("mq").addEventListener("input",renderMakers);
+document.getElementById("mmode-mfr").onclick=function(){setMakerMode("mfr");};
+document.getElementById("mmode-prod").onclick=function(){setMakerMode("prod");};
+var drop=document.getElementById("drop"),file=document.getElementById("file");
+drop.onclick=function(){file.click();};
+file.onchange=function(){if(file.files.length)runScan(file.files);};
+["dragover","dragenter"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add("hot");});});
+["dragleave","drop"].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove("hot");});});
+drop.addEventListener("drop",function(e){if(e.dataTransfer.files.length)runScan(e.dataTransfer.files);});
+
+/* ---------- boot ---------- */
+if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+if(initData()){
+  buildFilters();buildBrowse();buildMakerIndex();setMakerMode("mfr");fillKeynotes();
+  var np=Object.keys(PROJ).length;
+  document.getElementById("foot").innerHTML=SECS.length+" sections · "+Object.keys(ALIASES).length+" curated terms · "+np+" projects taught in · a section is asserted only when the curated library can back it.";
+  doSearch("curtain wall");
+}
+</script>
+</body>
 </html>
