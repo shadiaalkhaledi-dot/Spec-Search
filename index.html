@@ -520,6 +520,7 @@ function flPill(code,kind,item,cls,labelHtml){
 /* ---------- section detail ---------- */
 var DETAIL_FROM_SCAN=false;
 function openDetail(code){
+  vDetailCode=code;
   var s=secOf(code),col=divCol(s.div);
   var terms=(DB.kwByCode&&DB.kwByCode[s.code])||[];
   var mfr=s.mfr||[],bod=s.bod||[];
@@ -1027,6 +1028,7 @@ var VSEED=window.VERIFY_SEED||{}, VMETA=window.VERIFY_SEED_META||{};
 var VTIERS=[{k:'signature',l:'Signature',c:'--amber'},{k:'high',l:'High',c:'--accent'},{k:'medium',l:'Medium',c:'--d13'},{k:'low',l:'Low',c:'--muted'}];
 var VTLABEL={signature:'Signature',high:'High',medium:'Medium',low:'Low'};
 var __V=null, vSel=null, vQ="", vTierF="all", vUnv=false;
+var vDetailEdit=false, vDetailCode=null;
 function vClone(o){return JSON.parse(JSON.stringify(o));}
 function vData(){ if(__V)return __V; var s=null; try{s=JSON.parse(localStorage.getItem("sf_verify_v1")||"null");}catch(e){} if(!s||typeof s!=="object")s={}; Object.keys(VSEED).forEach(function(c){ if(!s[c]) s[c]=vClone(VSEED[c]); }); __V=s; return s; }
 function vSave(){ try{localStorage.setItem("sf_verify_v1",JSON.stringify(__V));}catch(e){} }
@@ -1126,15 +1128,65 @@ function vRow(p){
       '<button class="vdel" data-act="del" data-id="'+esc(p.id)+'" title="remove this phrase">✕</button>'+
     '</div></div>';
 }
+var VTLABELS={signature:'Signature',high:'High',medium:'Medium',low:'Low'};
+var VTCOLS={signature:'--amber',high:'--accent',medium:'--d13',low:'--muted'};
+function vFindP(sec,id){for(var i=0;i<sec.phrases.length;i++)if(sec.phrases[i].id===id&&!sec.phrases[i].deleted)return sec.phrases[i];return null;}
+function vReDetail(){var mb=document.getElementById("modalbg");var sc=mb?mb.scrollTop:0;openDetail(vDetailCode);if(mb)mb.scrollTop=sc;}
 function vGoldBlock(code){
   var sec=vFind(code);if(!sec)return "";
-  var sigs=vLive(sec).filter(function(p){return vEff(p)==="signature";});
-  if(!sigs.length)return "";
-  var h='<div class="msec"><div class="h" style="color:var(--amber-d)">★ Signature phrases — see one on a drawing and it\'s this section</div>';
-  sigs.forEach(function(p){h+='<span class="goldpill'+(p.verified?" v":"")+'" title="'+(p.verified?"verified by you":"AI draft — not yet verified")+'">'+esc(p.name)+(p.verified?' ✓':'')+'</span>';});
+  var live=vLive(sec);
+  var editing=vDetailEdit&&(vDetailCode===code);
+  if(!live.length&&!editing)return "";
+  var groups={signature:[],high:[],medium:[],low:[]};
+  live.forEach(function(p){(groups[vEff(p)]||groups.low).push(p);});
+  var btn=editing?'<button class="btn" data-vact="edit" style="padding:6px 12px;font-size:12px">✓ Done</button>'
+                 :'<button class="btn ghost" data-vact="edit" style="padding:6px 12px;font-size:12px">✎ Edit &amp; verify</button>';
+  var h='<div class="msec"><div class="h" style="color:var(--amber-d);display:flex;justify-content:space-between;align-items:center;gap:10px"><span>Signature &amp; confidence phrases — your Verify layer <span style="font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0">· gold = signature, green = verified</span></span>'+btn+'</div>';
+  ['signature','high','medium','low'].forEach(function(t){
+    if(!groups[t].length)return;
+    var col=vGold(VTCOLS[t]);
+    h+='<div style="margin:8px 0 4px;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:'+col+'">'+VTLABELS[t]+' <span style="color:var(--muted);font-weight:600">'+groups[t].length+'</span></div>';
+    if(editing){ groups[t].forEach(function(p){h+=vRowModal(p);}); return; }
+    groups[t].forEach(function(p){
+      if(t==="signature"){
+        h+='<span class="goldpill'+(p.verified?" v":"")+'" title="'+(p.verified?"verified by you":"AI draft — not yet verified")+'">'+esc(p.name)+(p.verified?' ✓':'')+'</span>';
+      }else{
+        var vc=p.verified?vGold('--ok'):col;
+        h+='<span style="display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;margin:0 6px 6px 0;border:1px solid '+vc+';color:'+vc+';background:#fff'+(p.verified?';font-weight:650':'')+'" title="'+VTLABELS[t]+(p.verified?' · verified by you':' · AI draft')+'">'+esc(p.name)+(p.verified?' ✓':'')+'</span>';
+      }
+    });
+  });
+  if(editing){
+    h+='<div class="vadd" style="margin-top:14px"><input id="vd_add" placeholder="add a phrase you know belongs here…" autocomplete="off"><select id="vd_tier">'+
+       VTIERS.map(function(x){return '<option value="'+x.k+'"'+(x.k==="signature"?" selected":"")+'>'+x.l+'</option>';}).join("")+
+       '</select><button class="btn" data-vact="add">Add</button></div>';
+  }
   h+='</div>';
   return h;
 }
+function vRowModal(p){
+  var sig=vEff(p)==="signature";
+  var seg=VTIERS.map(function(x){var on=vEff(p)===x.k;return '<button class="'+(on?"on":"")+'" data-vact="tier" data-id="'+esc(p.id)+'" data-tier="'+x.k+'" title="'+x.l+'"'+(on?' style="background:'+vGold(x.c)+';border-color:'+vGold(x.c)+';color:#fff"':'')+'>'+x.l.charAt(0)+'</button>';}).join("");
+  return '<div class="vph'+(sig?' sig':'')+'">'+
+    '<div style="flex:1;min-width:0"><input class="vname" data-vact="name" data-id="'+esc(p.id)+'" value="'+esc(p.name)+'">'+
+    (p.brands?'<span class="vbrand">★ specified</span>':'')+(p.evidence?'<div class="vev">'+esc(p.evidence)+'</div>':'')+'</div>'+
+    '<div class="vctrl"><span class="vseg">'+seg+'</span>'+
+    '<button class="vverify'+(p.verified?" on":"")+'" data-vact="verify" data-id="'+esc(p.id)+'">'+(p.verified?"✓ Verified":"Verify")+'</button>'+
+    '<button class="vdel" data-vact="del" data-id="'+esc(p.id)+'" title="remove">✕</button></div></div>';
+}
+document.getElementById("modal").addEventListener("click",function(e){
+  var el=e.target.closest("[data-vact]");if(!el)return;var act=el.getAttribute("data-vact");
+  if(act==="name")return;
+  if(act==="edit"){vDetailEdit=!vDetailEdit;vReDetail();return;}
+  var sec=vFind(vDetailCode);if(!sec)return;var id=el.getAttribute("data-id"),p;
+  if(act==="tier"){p=vFindP(sec,id);if(p){p.userTier=el.getAttribute("data-tier");vSave();vReDetail();}return;}
+  if(act==="verify"){p=vFindP(sec,id);if(p){p.verified=!p.verified;vSave();vReDetail();}return;}
+  if(act==="del"){p=vFindP(sec,id);if(p){p.deleted=true;vSave();vReDetail();}return;}
+  if(act==="add"){var ni=document.getElementById("vd_add"),nm=ni?ni.value.trim():"";if(!nm)return;var tr=document.getElementById("vd_tier").value;var nid=vNewId(sec,nm);sec.phrases.push({id:nid,name:nm,article:"added by you",evidence:"",brands:false,aiTier:tr,aiSource:"you",userTier:tr,verified:false});vSave();vReDetail();return;}
+});
+document.getElementById("modal").addEventListener("change",function(e){
+  var el=e.target.closest('[data-vact="name"]');if(!el)return;var sec=vFind(vDetailCode);if(!sec)return;var p=vFindP(sec,el.getAttribute("data-id"));if(p){p.name=el.value.trim()||p.name;vSave();}
+});
 document.getElementById("veditor").addEventListener("click",function(e){
   var el=e.target.closest("[data-act]");if(!el)return;var act=el.getAttribute("data-act");var sec=vData()[vSel];if(!sec)return;var p;
   if(act==="tier"){p=vSecP(el.getAttribute("data-id"));if(p){p.userTier=el.getAttribute("data-tier");vSave();renderVerify();}e.preventDefault();return;}
