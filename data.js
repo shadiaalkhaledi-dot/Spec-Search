@@ -28847,22 +28847,17 @@ const DB = {
    }
   },
   "masterMerge": {
-   "addedManufacturers": 42,
-   "addedProducts": 99,
-   "cleanedJunkMfr": [
-    "Custom",
-    "Description",
-    "Engineered Assemblies",
-    "Finish",
-    "Galvanizing Designation",
-    "Surface Texture",
-    "Thickness",
-    "Type",
-    "Water"
+   "addedManufacturers": 107,
+   "addedProducts": 109,
+   "cleanedJunkMfr": [],
+   "divisions": [
+    "07",
+    "05",
+    "09",
+    "08"
    ],
-   "division": "07",
    "note": "Acceptable manufacturers + basis-of-design merged from DIALOG Division 07 master specs; junk mfr labels removed. mfr/bod only; aliases/kwByCode untouched.",
-   "sectionsTouched": 29
+   "sectionsTouched": 36
   },
   "note": "Records where an alias edge came from. An edge is 'term|code'. Edges NOT listed here predate provenance tracking — many were derived from earlier projects and specifications, the source simply was not captured at the time. Treat them as unrecorded, not unverified. 'confirmations' accumulates projects that independently corroborate an edge — that is the trust signal, and it is more useful than origin. 'review' flags edges a project contradicted with a sibling section, which is a candidate for correction, not proof of error.",
   "removedSections": {
@@ -32999,7 +32994,8 @@ const DB = {
     "Tigerlac Super Durable Series 58",
     "IFS Coatings, Architectural Series",
     "IFS Coatings, Architectural Series , IFS",
-    "IFS Coatings, Architectural Series , IFS 400"
+    "IFS Coatings, Architectural Series , IFS 400",
+    "PPG, Industries"
    ],
    "code": "05 05 13",
    "div": "05",
@@ -33009,7 +33005,8 @@ const DB = {
     "DuPont Alesta AR Series",
     "Polychem",
     "PPG Industries",
-    "Tiger Drylac"
+    "Tiger Drylac",
+    "PPG"
    ],
    "title": "Shop Applied Coatings for Metals"
   },
@@ -33032,7 +33029,8 @@ const DB = {
     "Hilti HVA-Rebar System",
     "Hilti HIT HY200 System",
     "Hilti HIT HY200-HIS System",
-    "Hilti HIT HY200-Rebar System"
+    "Hilti HIT HY200-Rebar System",
+    "Hilti, HY200 adhesive"
    ],
    "code": "05 05 23",
    "div": "05",
@@ -33126,7 +33124,16 @@ const DB = {
   },
   {
    "bod": [
-    "Hilti SMD 1224 x 1 5/8 M HWH 5 Racing Tip Screw"
+    "Hilti SMD 1224 x 1 5/8 M HWH 5 Racing Tip Screw",
+    "Hilti, S-MD 12-24 x 1 5/8",
+    "Hilti, SLC 01",
+    "Hilti, SLC 02",
+    "Hilti, X-ENP Series",
+    "Hilti, X-ENP-21 HVB Powder Actuated Fastener",
+    "Hilti, X-HSN Series",
+    "Hilti, X-HVB Shear Connectors",
+    "Rockwool, Protec Deck Flute Filler",
+    "Canam, Composite Floor Deck Profiles"
    ],
    "code": "05 31 00",
    "div": "05",
@@ -33159,7 +33166,10 @@ const DB = {
   {
    "bod": [
     "Hilti Kwik Con",
-    "Dow Ethafoam 222"
+    "Dow Ethafoam 222",
+    "Hilti, DX Fastening",
+    "Owens Corning, Thermafiber RainBarrier 45",
+    "Thermafiber, RainBarrier 45"
    ],
    "code": "05 41 13",
    "div": "05",
@@ -33172,13 +33182,20 @@ const DB = {
     "Steelform NLB Products",
     "Trebor Building Products Ltd",
     "ROCKWOOL",
-    "Owens Corning"
+    "Owens Corning",
+    "Hilti",
+    "Thermafiber",
+    "Bailey Metal"
    ],
    "title": "Lightweight Steel Framing"
   },
   {
    "bod": [
-    "Hilti Kwik Con"
+    "Hilti Kwik Con",
+    "Hilti, DX Fastening",
+    "Owens Corning, Thermafiber RainBarrier 45",
+    "Thermafiber, RainBarrier 45",
+    "Steeler, Construction Supply"
    ],
    "code": "05 41 16",
    "div": "05",
@@ -33192,17 +33209,25 @@ const DB = {
     "Steeler Construction Supply",
     "Trebor Building Products Ltd",
     "ROCKWOOL",
-    "Owens Corning"
+    "Owens Corning",
+    "Hilti",
+    "Thermafiber",
+    "Bailey Metal",
+    "Steeler"
    ],
    "title": "Lateral Loadbearing] [Wind Loadbearing] [Demising Partition] Steel Stud Framing"
   },
   {
    "bod": [
-    "Hilti drilled insert"
+    "Hilti drilled insert",
+    "Hilti, DX fastening"
    ],
    "code": "05 44 00",
    "div": "05",
    "divName": "Metals",
+   "mfr": [
+    "Hilti"
+   ],
    "title": "Cold Formed Steel [Floor] [Roof] Trusses"
   },
   {
@@ -33217,7 +33242,10 @@ const DB = {
   },
   {
    "bod": [
-    "Southco"
+    "Southco",
+    "Carboline, Company",
+    "PPG, Industries",
+    "Tnemec, Company"
    ],
    "code": "05 50 00",
    "div": "05",
@@ -33229,7 +33257,10 @@ const DB = {
     "nVent ERICO",
     "Carboline Company",
     "PPG Industries",
-    "Tnemec Company"
+    "Tnemec Company",
+    "Carboline",
+    "PPG",
+    "Tnemec"
    ],
    "title": "Metal Fabrications"
   },
@@ -33266,7 +33297,10 @@ const DB = {
     "McNichols Co",
     "IKG Industries (Harsco Canada)",
     "Fisher and Ludlow (Harris Steel Ltd.)",
-    "Nelson Stud Welding"
+    "Nelson Stud Welding",
+    "3M",
+    "Fisher & Ludlow",
+    "McNichols"
    ],
    "title": "Metal Stairs [and Ladders"
   },
@@ -33286,7 +33320,8 @@ const DB = {
    "bod": [
     "Hendrick Screen Company",
     "Hendricks Screen Company, B9",
-    "Hendrick Screen Company, B9 Profile"
+    "Hendrick Screen Company, B9 Profile",
+    "Ohio Gratings, Inc"
    ],
    "code": "05 53 00",
    "div": "05",
@@ -33300,7 +33335,9 @@ const DB = {
     "IKG Industries; a Harsco Company",
     "MLP Specialty Metals",
     "Ohio Gratings, Inc",
-    "Tru-Weld"
+    "Tru-Weld",
+    "Borden Metal",
+    "Ohio Gratings"
    ],
    "title": "Metal Gratings"
   },
@@ -33318,7 +33355,8 @@ const DB = {
     "diamondLife, Base Molding MX",
     "Gordon Inc, eConnect Metal Column Covers",
     "C.R. Laurence, ACRS Component Railing",
-    "C.R. Laurence, Malibu Series Glass"
+    "C.R. Laurence, Malibu Series Glass",
+    "Julius Blum, JB Glass Railing"
    ],
    "code": "05 70 00",
    "div": "05",
@@ -33328,7 +33366,9 @@ const DB = {
     "Julius Blum & Co., Inc",
     "Ronstan Tensile Architecture",
     "Lexco Cable",
-    "Julius Blum"
+    "Julius Blum",
+    "3M",
+    "C.R. Laurence"
    ],
    "title": "Ornamental Metal Fabrications"
   },
@@ -33337,7 +33377,8 @@ const DB = {
     "Sika Canada, SikaGlaze GG735",
     "Sika Canada, SikaGlaze",
     "Sika Canada, SikaGlaze GG-735",
-    "C. R. Laurence Co. Inc"
+    "C. R. Laurence Co. Inc",
+    "Sika, Canada"
    ],
    "code": "05 73 13",
    "div": "05",
@@ -35642,6 +35683,9 @@ const DB = {
    "title": "Commissioning of Openings"
   },
   {
+   "bod": [
+    "Saint-Gobain, Glass Solutions"
+   ],
    "code": "08 11 13",
    "div": "08",
    "divName": "Openings",
@@ -35649,7 +35693,8 @@ const DB = {
     "Herman Forster AG",
     "Saint-Gobain Glass Solutions",
     "SAFTI Fire and Safety Rated Glass",
-    "InterEdge Technologies"
+    "InterEdge Technologies",
+    "Saint-Gobain"
    ],
    "title": "Steel Doors and Frames"
   },
@@ -35695,6 +35740,9 @@ const DB = {
    "title": "Concealed Frames"
   },
   {
+   "bod": [
+    "VT Industries, Inc"
+   ],
    "code": "08 14 00",
    "div": "08",
    "divName": "Openings",
@@ -35719,7 +35767,8 @@ const DB = {
     "Lampton Doors",
     "Edmonton",
     "Calgary",
-    "Nickâs Woodcraft Industries Ltd"
+    "Nickâs Woodcraft Industries Ltd",
+    "VT Industries"
    ],
    "title": "Wood Veneer] [and] [Plastic Laminate] Faced] [Flush] Wood Doors"
   },
@@ -35750,13 +35799,17 @@ const DB = {
    "title": "Stile and Rail Wood Doors"
   },
   {
+   "bod": [
+    "Mohawk, Flush Doors"
+   ],
    "code": "08 14 73",
    "div": "08",
    "divName": "Openings",
    "mfr": [
     "Cherry Tree Design",
     "Shoji Designs Inc",
-    "Shoji Living LLC"
+    "Shoji Living LLC",
+    "Mohawk"
    ],
    "title": "Interior Sliding Wood Doors - Residential"
   },
@@ -35771,14 +35824,24 @@ const DB = {
   },
   {
    "bod": [
-    "Dorma HSW ISO System"
+    "Dorma HSW ISO System",
+    "Dorma, HSW ISO",
+    "Dorma, Modernfold",
+    "PPG, Duracron",
+    "PPG, Duranar",
+    "Tremco, TremGlaz LEF"
    ],
    "code": "08 18 16",
    "div": "08",
    "divName": "Openings",
    "mfr": [
     "Dorma Modernfold",
-    "C. R. Laurence of Canada"
+    "C. R. Laurence of Canada",
+    "C.R. Laurence",
+    "Dorma",
+    "Kawneer",
+    "PPG",
+    "Tremco"
    ],
    "title": "Sliding Aluminum Framed Glass Doors"
   },
@@ -35809,7 +35872,9 @@ const DB = {
    "bod": [
     "NABCO, Gyro Tech Manual Sliding Door System",
     "Horton Automatics 310 Manual Sliding Door",
-    "Stanley Access Technologies, DuraGlide 7000 Series ICU Door"
+    "Stanley Access Technologies, DuraGlide 7000 Series ICU Door",
+    "Horton, Automatics",
+    "Stanley Access, Technologies"
    ],
    "code": "08 32 13-16",
    "div": "08",
@@ -35817,7 +35882,9 @@ const DB = {
    "mfr": [
     "NABCO",
     "Horton Automatics",
-    "Stanley Access Technologies"
+    "Stanley Access Technologies",
+    "Horton",
+    "Stanley Access"
    ],
    "title": "Manual Sliding Aluminum [Trackless] ICU-CCU Doors"
   },
@@ -35825,7 +35892,9 @@ const DB = {
    "bod": [
     "McKeon Door Company Auto-Set Operator",
     "Overhead Door Corporation",
-    "Cookson, Roll Up Fire Doors"
+    "Cookson, Roll Up Fire Doors",
+    "Cookson, Company",
+    "Cornell, Ironworks"
    ],
    "code": "08 33 23",
    "div": "08",
@@ -35838,7 +35907,10 @@ const DB = {
     "WayneDalton Corporation",
     "McKeon Door Company",
     "Overhead Door Corporation",
-    "Kinnear/Wayne-Dalton Corporation"
+    "Kinnear/Wayne-Dalton Corporation",
+    "Cookson",
+    "Cornell",
+    "Overhead Door"
    ],
    "title": "Overhead Coiling Doors"
   },
@@ -35860,6 +35932,11 @@ const DB = {
    "title": "Overhead Rapid Coiling Doors"
   },
   {
+   "bod": [
+    "Cookson, Company",
+    "Cornell, Ironworks",
+    "Overhead Door, Corporation"
+   ],
    "code": "08 33 26",
    "div": "08",
    "divName": "Openings",
@@ -35869,7 +35946,10 @@ const DB = {
     "Dynamic Closures Corporation",
     "Dynaflair Corp. Canada Inc",
     "WayneDalton Corporation",
-    "Overhead Door Corporation"
+    "Overhead Door Corporation",
+    "Cookson",
+    "Cornell",
+    "Overhead Door"
    ],
    "title": "Overhead Coiling Grilles"
   },
@@ -35927,7 +36007,12 @@ const DB = {
   },
   {
    "bod": [
-    "Dynamic Closures Corporation, Slim line SL Prestige, 90 degree turn"
+    "Dynamic Closures Corporation, Slim line SL Prestige, 90 degree turn",
+    "Cookson, Company",
+    "Cornell, Ironworks",
+    "Overhead Door, Corporation",
+    "PPG, Duracron",
+    "PPG, Duranar"
    ],
    "code": "08 35 16",
    "div": "08",
@@ -35938,13 +36023,19 @@ const DB = {
     "Dynamic Closures Corporation",
     "WayneDalton Corporation",
     "MobilFlex Inc",
-    "Overhead Door Corporation"
+    "Overhead Door Corporation",
+    "Cookson",
+    "Cornell",
+    "Kawneer",
+    "Overhead Door",
+    "PPG"
    ],
    "title": "Side Folding Grilles"
   },
   {
    "bod": [
-    "Enershield Air Barriers, Durashield"
+    "Enershield Air Barriers, Durashield",
+    "Overhead Door, Company"
    ],
    "code": "08 36 13-13",
    "div": "08",
@@ -35961,7 +36052,8 @@ const DB = {
     "Manaras Commercial Operators",
     "Lynx Industries Inc",
     "Chamberlain Group - LiftMaster",
-    "Doorlec Corporation"
+    "Doorlec Corporation",
+    "Overhead Door"
    ],
    "title": "Sectional Steel Doors"
   },
@@ -35976,11 +36068,17 @@ const DB = {
    "div": "08",
    "divName": "Openings",
    "mfr": [
-    "Wilson Doors Inc"
+    "Wilson Doors Inc",
+    "Kawneer",
+    "PPG"
    ],
    "title": "Multi Leaf Vertical Lift Doors"
   },
   {
+   "bod": [
+    "Overhead Door, Bracket",
+    "Overhead Door, Company"
+   ],
    "code": "08 38 13",
    "div": "08",
    "divName": "Openings",
@@ -35988,7 +36086,8 @@ const DB = {
     "Accurate Overhead Door Company",
     "Chase Doors",
     "Chalfant Sewing Fabricators Inc",
-    "Kingman Industries"
+    "Kingman Industries",
+    "Overhead Door"
    ],
    "title": "Flexible Strip Doors"
   },
@@ -36040,7 +36139,10 @@ const DB = {
     "PPG Duranar XL",
     "PPG Duracron",
     "Kawneer 360 Insulclad Thermal Entrances Series",
-    "Kawneer Trifab VersaGlaze 451 Series"
+    "Kawneer Trifab VersaGlaze 451 Series",
+    "Alumicor, Limited",
+    "Kawneer, Series",
+    "Tremco, TremGlaz LEF"
    ],
    "code": "08 41 13",
    "div": "08",
@@ -36053,7 +36155,10 @@ const DB = {
     "Kawneer",
     "United States Aluminum",
     "Tremco",
-    "Dupont"
+    "Dupont",
+    "Adams Rite",
+    "Alumicor",
+    "PPG"
    ],
    "title": "Aluminum Framed Entrances and Storefronts"
   },
@@ -36075,7 +36180,12 @@ const DB = {
     "PPG Duranar",
     "PPG Duranar XL",
     "PPG Duracron",
-    "DORMA, Pure"
+    "DORMA, Pure",
+    "BASF, Omniseal",
+    "Dorma, Door Controls Inc",
+    "Oldcastle BuildingEnvelope, Glass",
+    "Tremco, Spectrum",
+    "Vistawall, Entrance"
    ],
    "code": "08 42 26",
    "div": "08",
@@ -36092,7 +36202,14 @@ const DB = {
     "Pecora",
     "SikaSil",
     "Tremco",
-    "Prelco Inc."
+    "Prelco Inc.",
+    "C.R. Laurence",
+    "Dorma",
+    "Kawneer",
+    "Oldcastle BuildingEnvelope",
+    "PPG",
+    "Viracon",
+    "Vistawall"
    ],
    "title": "All Glass Entrances [and Storefronts"
   },
@@ -36100,7 +36217,10 @@ const DB = {
    "bod": [
     "PPG Duranar",
     "PPG Duranar XL",
-    "PPG Duracron"
+    "PPG Duracron",
+    "Horton, Automatics",
+    "Nabco, Entrances Inc",
+    "Stanley Access, Technologies"
    ],
    "code": "08 42 29-23",
    "div": "08",
@@ -36111,7 +36231,12 @@ const DB = {
     "Horton Automatics",
     "Stanley Access Technologies",
     "ASSA ABLOY Entrance Systems",
-    "Record"
+    "Record",
+    "Horton",
+    "Kawneer",
+    "Nabco",
+    "PPG",
+    "Stanley Access"
    ],
    "title": "Sliding Automatic Entrances"
   },
@@ -36121,7 +36246,10 @@ const DB = {
     "GE Silicones UltraSpan",
     "Tremco Proglaze ETA",
     "PPG Acrynar",
-    "Dorma/Dormakaba, Stainless welded floor"
+    "Dorma/Dormakaba, Stainless welded floor",
+    "Dorma, Group North America",
+    "Tremco, Proglaze ETA Engineered Transition Assembly",
+    "Tremco, TremGlaz LEF"
    ],
    "code": "08 42 33",
    "div": "08",
@@ -36136,7 +36264,11 @@ const DB = {
     "BLASI",
     "Tremco",
     "Dupont",
-    "DormaKabba"
+    "DormaKabba",
+    "Dorma",
+    "Dow",
+    "Dow Corning",
+    "Horton"
    ],
    "title": "Revolving Entrances"
   },
@@ -36146,7 +36278,8 @@ const DB = {
     "Adams Rite Manufacturing",
     "PPG Duranar",
     "PPG Duranar XL",
-    "PPG Duracron"
+    "PPG Duracron",
+    "Alumicor, Limited"
    ],
    "code": "08 43 13-13",
    "div": "08",
@@ -36159,7 +36292,10 @@ const DB = {
     "United States Aluminum",
     "Momentive",
     "Dowsil",
-    "Tremco"
+    "Tremco",
+    "Adams Rite",
+    "Alumicor",
+    "PPG"
    ],
    "title": "Aluminum Framed Storefronts - Interior"
   },
@@ -36170,7 +36306,9 @@ const DB = {
     "Kawneer 1070 Series",
     "PPG Duranar",
     "PPG Duranar XL",
-    "PPG Duracron"
+    "PPG Duracron",
+    "Alumicor, Limited",
+    "Tremco, TremGlaz LEF"
    ],
    "code": "08 43 29",
    "div": "08",
@@ -36181,7 +36319,9 @@ const DB = {
     "Kawneer",
     "United States Aluminum of Canada Limited",
     "Tremco",
-    "Dupont"
+    "Dupont",
+    "Alumicor",
+    "PPG"
    ],
    "title": "Sliding Storefronts"
   },
@@ -36213,7 +36353,12 @@ const DB = {
     "PPG Acrynar",
     "Ferguson Corporation",
     "SOTAWALL",
-    "SOTAWALL Hybrid-Wall"
+    "SOTAWALL Hybrid-Wall",
+    "Alumicor, Limited",
+    "Dow Corning, Dowsil Transition Membrane",
+    "Dow, Corning",
+    "Sika, Boom AS-PRO",
+    "Tremco, TremGlaz LEF"
    ],
    "code": "08 44 13",
    "div": "08",
@@ -36228,7 +36373,11 @@ const DB = {
     "Tremco",
     "Dupont",
     "Ferguson",
-    "Stick Built Curtain wall System"
+    "Stick Built Curtain wall System",
+    "Alumicor",
+    "Dow",
+    "Dow Corning",
+    "PPG"
    ],
    "title": "Glazed Aluminum Curtain Walls"
   },
@@ -36241,7 +36390,10 @@ const DB = {
     "DuPont SentryGlas Plus Laminating Film",
     "kuraray Trosifol, SentryGlas",
     "SEFAR, Architecture VISION fabric with kuraray Trosifol, SentryGlas",
-    "Stella Glass Hardware Inc."
+    "Stella Glass Hardware Inc.",
+    "Oldcastle BuildingEnvelope, Building Envelope",
+    "Pilkington, Planar",
+    "Pilkington, Planar Triple Glazed Engineered Curtain"
    ],
    "code": "08 44 26-19",
    "div": "08",
@@ -36253,7 +36405,10 @@ const DB = {
     "Novum Structures",
     "Paragon Architectural Products, LLC",
     "Seele Inc",
-    "Pilkington Planar"
+    "Pilkington Planar",
+    "C.R. Laurence",
+    "Oldcastle BuildingEnvelope",
+    "Pilkington"
    ],
    "title": "Point] [Edge] Supported Structural Glass Curtain Wall Assemblies"
   },
@@ -36311,7 +36466,13 @@ const DB = {
     "PPG Duranar",
     "PPG Duranar XL",
     "Dow Corning, HPI-1000 Building",
-    "PPG Acrynar"
+    "PPG Acrynar",
+    "Cardinal, LoE 270",
+    "Dow Corning, Dowsil Silicone Transition",
+    "Dow, Corning",
+    "Guardian Glass, SunGuard SuperNeutral 68",
+    "PPG, SolarBan 60",
+    "Rockwool, CavityRock"
    ],
    "code": "08 44 39",
    "div": "08",
@@ -36322,19 +36483,30 @@ const DB = {
     "Sky Window Technologies",
     "Starline Windows",
     "State Window Corporation",
-    "Toro Aluminum"
+    "Toro Aluminum",
+    "Cardinal",
+    "Dow",
+    "Dow Corning",
+    "Guardian Glass",
+    "PPG",
+    "Rockwool",
+    "Tremco",
+    "Viracon"
    ],
    "title": "Window Wall Assemblies"
   },
   {
    "bod": [
-    "Kalwall Corporation"
+    "Kalwall Corporation",
+    "CPI Daylighting, Inc"
    ],
    "code": "08 45 23",
    "div": "08",
    "divName": "Openings",
    "mfr": [
-    "CPI Daylighting, Inc"
+    "CPI Daylighting, Inc",
+    "CPI Daylighting",
+    "Kalwall"
    ],
    "title": "Fibreglass-Sandwich-Panel Assemblies"
   },
@@ -36345,11 +36517,19 @@ const DB = {
     "GE, UST2200 Ultraspan",
     "Tremco Proglaze ETA Engineered Transition Assembly",
     "Roto Frank of America",
-    "EuroBuilt Windows, Tilt-Turn"
+    "EuroBuilt Windows, Tilt-Turn",
+    "Dow Corning, Dowsil Silicone Transition",
+    "Dow, Corning"
    ],
    "code": "08 46 13",
    "div": "08",
    "divName": "Openings",
+   "mfr": [
+    "Cascadia",
+    "Dow",
+    "Dow Corning",
+    "Tremco"
+   ],
    "title": "Fibreglass Window Wall Assemblies"
   },
   {
@@ -36364,7 +36544,24 @@ const DB = {
     "Truth Hardware 24 Series, Multi-Point Window Lock",
     "Truth 50 Series Maxim Awning Operator",
     "Truth 50 Series Maxim Dual Arm Operator",
-    "EuroBuilt Windows, Tilt-Turn"
+    "EuroBuilt Windows, Tilt-Turn",
+    "Alumicor, 2200 Series",
+    "Alumicor, 2300 Series",
+    "Alumicor, 800 Series",
+    "Alumicor, Limited",
+    "Dow Corning, Dowsil Transition Membrane",
+    "Dow, Corning",
+    "Kawneer, 1600 Curtain Wall framing",
+    "Kawneer, 1600 SG Series",
+    "Kawneer, 1602 Series",
+    "Kawneer, 5500 Isoweb Vent Insert fits",
+    "Kawneer, 7500 Curtain Wall framing",
+    "Kawneer, Isoweb",
+    "Kawneer, Series",
+    "Kawneer, Tri-Fab II 450 Series",
+    "PPG, Duranar",
+    "Tremco, Information Bulletins",
+    "Tremco, Ltd"
    ],
    "code": "08 51 13",
    "div": "08",
@@ -36378,7 +36575,11 @@ const DB = {
     "United States Aluminum of Canada Limited",
     "Tremco",
     "Dupont",
-    "Sentry II WLS Power System, as manufactured by Truth Hardware"
+    "Sentry II WLS Power System, as manufactured by Truth Hardware",
+    "Alumicor",
+    "Dow",
+    "Dow Corning",
+    "PPG"
    ],
    "title": "Aluminum Windows"
   },
@@ -36412,11 +36613,15 @@ const DB = {
     "Truth Hardware 24 Series, Multi-Point Window Lock",
     "Truth 50 Series Maxim Awning Operator",
     "Truth 50 Series Maxim Dual Arm Operator",
-    "EuroBuilt Windows, Tilt-Turn"
+    "EuroBuilt Windows, Tilt-Turn",
+    "Cascadia, Windows"
    ],
    "code": "08 54 00",
    "div": "08",
    "divName": "Openings",
+   "mfr": [
+    "Cascadia"
+   ],
    "title": "Fibreglass Windows"
   },
   {
@@ -36449,11 +36654,16 @@ const DB = {
     "Velux Round Diffuser Model TOC",
     "Velux Square Diffuser Model TTC",
     "Velux Round Diffuser Model THC",
-    "Velux Daylight Controller Model ZTP"
+    "Velux Daylight Controller Model ZTP",
+    "Velux, America Inc",
+    "Velux, Model ZTR Rigid Tunnel Extensions"
    ],
    "code": "08 62 23",
    "div": "08",
    "divName": "Openings",
+   "mfr": [
+    "Velux"
+   ],
    "title": "Tubular Skylights"
   },
   {
@@ -36462,7 +36672,9 @@ const DB = {
     "Kawneer Company Inc., 2000 Skylight",
     "Ferguson Glass Western Ltd.(Engineered",
     "Engineered Aluminum Products Inc. (EAP)",
-    "PPG Duranar"
+    "PPG Duranar",
+    "Alumicor, Limited",
+    "Kawneer, Company Inc"
    ],
    "code": "08 63 00",
    "div": "08",
@@ -36475,7 +36687,10 @@ const DB = {
     "Kawneer",
     "Super Sky Products, Inc",
     "Wasco Products, Inc",
-    "Ferguson Corporation"
+    "Ferguson Corporation",
+    "Alumicor",
+    "Super Sky",
+    "Wasco"
    ],
    "title": "Metal-Framed Skylights"
   },
@@ -36504,7 +36719,19 @@ const DB = {
   {
    "bod": [
     "Pedestal PRO, LLC",
-    "Pro-Finish Hardware Associates Ltd"
+    "Pro-Finish Hardware Associates Ltd",
+    "ASSA ABLOY, Inc",
+    "Adams Rite, Manufacturing Co",
+    "Corbin Russwin, Architectural Hardware",
+    "Corbin Russwin, Medeco",
+    "Hager, Companies",
+    "Pemko, Manufacturing Co",
+    "Sargent, Manufacturing Company",
+    "Schlage, Lock Company",
+    "Securitron, Magnalock Corp",
+    "Von Duprin, Inc",
+    "Yale, Security Inc",
+    "Yale, Security all"
    ],
    "code": "08 71 00",
    "div": "08",
@@ -36538,7 +36765,19 @@ const DB = {
     "Lawrence (LH)",
     "Dorma Canada/PBB",
     "McKinney Products Company (MCK",
-    "Continuous Geared Hinges"
+    "Continuous Geared Hinges",
+    "ASSA ABLOY",
+    "Adams Rite",
+    "Corbin Russwin",
+    "Hager",
+    "McKinney",
+    "Pemko",
+    "Rixson",
+    "Sargent",
+    "Schlage",
+    "Securitron",
+    "Von Duprin",
+    "Yale"
    ],
    "title": "Door Hardware"
   },
@@ -36592,7 +36831,20 @@ const DB = {
     "Guardian Glass, SN68 on",
     "Vitro Architectural Class (formerly PPG",
     "Edgetech-Quanex Super Spacer TriSeal",
-    "Vitro, Starphire Solarban 60"
+    "Vitro, Starphire Solarban 60",
+    "Cardinal, Glass Industries",
+    "Cardinal, Industries",
+    "Dow, Dowsil",
+    "Guardian Glass, Bird1st",
+    "Pilkington, North America",
+    "Saint-Gobain, Glass",
+    "Saint-Gobain, Spandrel Glass",
+    "Tremco, Spectrem",
+    "Viracon, Ceramic Frit Bird Friendly Glass",
+    "Viracon, Viraspan",
+    "Vitro, Architectural Glass",
+    "Vitro, Glass recommends",
+    "Vitro, Spandrel Glass"
    ],
    "code": "08 81 00",
    "div": "08",
@@ -36614,7 +36866,11 @@ const DB = {
     "Dow",
     "Tremco",
     "Glass Materials",
-    "Guardian Glass (Europe)"
+    "Guardian Glass (Europe)",
+    "Cardinal",
+    "Pilkington",
+    "Saint-Gobain",
+    "Vitro"
    ],
    "title": "Glass Glazing"
   },
@@ -36627,7 +36883,8 @@ const DB = {
     "ZC & R Coatings for Optics, Abrisa",
     "Engineered Aluminum Products Inc. (EAP)",
     "PPG Duranar",
-    "C.R. Laurence, Geneva GENS6BN"
+    "C.R. Laurence, Geneva GENS6BN",
+    "PPG, Canada Inc"
    ],
    "code": "08 81 13",
    "div": "08",
@@ -36639,7 +36896,8 @@ const DB = {
     "Blenheim Specialty Glass",
     "Durapaints Inc",
     "Goldray Corporation",
-    "Garibaldi Glass Industries Inc"
+    "Garibaldi Glass Industries Inc",
+    "PPG"
    ],
    "title": "Decorative Glass and Glazing"
   },
@@ -36675,7 +36933,8 @@ const DB = {
     "Avery Dennison Graphics",
     "Apex Window Films",
     "Llumar Window Film",
-    "Oracal"
+    "Oracal",
+    "3M"
    ],
    "title": "Glazing Surface Films"
   },
@@ -36694,7 +36953,8 @@ const DB = {
     "SAFTIFIRST, GPX Architectural Series (for STC rated assemblies",
     "TGP, Fireframes Aluminum Series, Non- load bearing",
     "TGP, Fireframes Heat Barrier Series",
-    "TGP, Fireframes SG Curtainwall Series"
+    "TGP, Fireframes SG Curtainwall Series",
+    "Pilkington, Pyrostop"
    ],
    "code": "08 88 13",
    "div": "08",
@@ -36712,7 +36972,9 @@ const DB = {
     "VetroTech ContraFlam",
     "Technical Glass Products",
     "Nippon Electric Glass Products",
-    "Pilkington Glass"
+    "Pilkington Glass",
+    "Pilkington",
+    "Saint-Gobain"
    ],
    "title": "Fire Resistant Glazing"
   },
@@ -36758,7 +37020,8 @@ const DB = {
     "Tremco Spectrem 2",
     "Momentive Silpruf LM SCS2700",
     "Dowsil 791 Silicone Weatherproofing Sealant",
-    "Tremco Spectrem 1 Ultralow Modulus Silicone Sealant"
+    "Tremco Spectrem 1 Ultralow Modulus Silicone Sealant",
+    "Tremco, Spectrem"
    ],
    "code": "08 88 36-13",
    "div": "08",
@@ -36766,7 +37029,9 @@ const DB = {
    "mfr": [
     "Sage Electrochromic, Inc",
     "Smartglass International Limited",
-    "VIEW Electronically variable tinted glass, Inc"
+    "VIEW Electronically variable tinted glass, Inc",
+    "Dow",
+    "Tremco"
    ],
    "title": "Electronically Variable Tinted Glass"
   },
@@ -36793,13 +37058,17 @@ const DB = {
     "Construction Specialties Company",
     "Haakon Industries",
     "Nystrom Airline Products Co",
-    "Western Ventilation Products Ltd"
+    "Western Ventilation Products Ltd",
+    "Airolite",
+    "Kawneer",
+    "PPG"
    ],
    "title": "Louvres [and Vents"
   },
   {
    "bod": [
-    "Wayne Building Products"
+    "Wayne Building Products",
+    "Vicwest, Building"
    ],
    "code": "08 95 13",
    "div": "08",
@@ -36807,19 +37076,22 @@ const DB = {
    "mfr": [
     "Gentek Building Products",
     "Kaycan Ltd",
-    "Vicwest Building Products"
+    "Vicwest Building Products",
+    "Vicwest"
    ],
    "title": "Manufactured Soffit Panels"
   },
   {
    "bod": [
-    "Explovent pressure relief panel systems model ERPTIC"
+    "Explovent pressure relief panel systems model ERPTIC",
+    "Construction Specialties, Company"
    ],
    "code": "08 95 19",
    "div": "08",
    "divName": "Openings",
    "mfr": [
-    "C/S Construction Specialties Company"
+    "C/S Construction Specialties Company",
+    "Construction Specialties"
    ],
    "title": "Explosion Vents"
   },
@@ -36836,15 +37108,26 @@ const DB = {
    "code": "08 95 33",
    "div": "08",
    "divName": "Openings",
+   "mfr": [
+    "Construction Specialties"
+   ],
    "title": "Explosion Vents"
   },
   {
    "bod": [
-    "CGC Interiors, A USG Company CGC Diamond Brand Interior Finish Plaster"
+    "CGC Interiors, A USG Company CGC Diamond Brand Interior Finish Plaster",
+    "USG, Company",
+    "USG, Diamond Brand Interior Finish Plaster",
+    "USG, Inc",
+    "USG, Interiors",
+    "USG, Plaster Bonder"
    ],
    "code": "09 01 20-91",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "USG"
+   ],
    "title": "Plaster Restoration"
   },
   {
@@ -36899,7 +37182,8 @@ const DB = {
     "DONN DX-24 main T-Bar or M-6",
     "Minimalist Door Frame, Fry Reglet",
     "Fry Reglet, DMGT",
-    "Hilti CFS-TTS"
+    "Hilti CFS-TTS",
+    "ClarkDietrich, C-T Stud Framing"
    ],
    "code": "09 21 16-23",
    "div": "09",
@@ -36916,7 +37200,9 @@ const DB = {
     "CertainTeed",
     "CGC Interiors",
     "Georgia-Pacific Canada",
-    "CGC Inc"
+    "CGC Inc",
+    "Bailey Metal",
+    "USG"
    ],
    "title": "Gypsum Board Shaft Wall Assemblies"
   },
@@ -36943,7 +37229,9 @@ const DB = {
     "Hilti CP777 Speed Plugs with Hilti CFS-SP WB Firestop Joint Spray",
     "Hilti CFS-TTS Firestop Track Seal",
     "Pre-engineered seismic bracing and movement",
-    "Hilti CP777 Speed Plugs with Hilti CFS-SP"
+    "Hilti CP777 Speed Plugs with Hilti CFS-SP",
+    "Hilti, CFS-SP WB Firestop Joint Spray",
+    "Hilti, CP777 Speed Plugs"
    ],
    "code": "09 22 16",
    "div": "09",
@@ -36957,7 +37245,9 @@ const DB = {
     "Brady Construction Innovations",
     "Steel Form",
     "BRACELOK by Plenum Inc",
-    "Non-Structural Steel Stud Framing Properties"
+    "Non-Structural Steel Stud Framing Properties",
+    "Bailey Metal",
+    "Hilti"
    ],
    "title": "Non-Structural Metal Stud Framing"
   },
@@ -36965,7 +37255,9 @@ const DB = {
    "bod": [
     "BRACELOK by Plenum Inc. (for seismic bracing)",
     "Hilti CP777 Speed Plugs",
-    "Hilti CFS-TTS Firestop Track Seal"
+    "Hilti CFS-TTS Firestop Track Seal",
+    "ClarkDietrich, Building",
+    "Hilti, CFS-SP WB Firestop Joint Spray"
    ],
    "code": "09 22 19",
    "div": "09",
@@ -36979,7 +37271,9 @@ const DB = {
     "Alabama Metal Industries Corporation (AMBICO)",
     "Expanded Metal Corporation",
     "Brady Construction Innovations",
-    "Steel Form"
+    "Steel Form",
+    "Bailey Metal",
+    "Hilti"
    ],
    "title": "Metal Framing for Security Assemblies"
   },
@@ -36992,7 +37286,14 @@ const DB = {
     "Hilti CP777 Speed Plugs",
     "Hilti CFS-TTS Firestop Track Seal",
     "GRIDLOK GRD-10 Series",
-    "Pre-engineered seismic bracing and movement"
+    "Pre-engineered seismic bracing and movement",
+    "Armstrong, Axiom",
+    "Armstrong, Drywall Grid Solutions",
+    "CertainTeed, Drywall Grid",
+    "Chicago Metallic, Infinity Perimeter Trim",
+    "Rockfon, Drywall Grid",
+    "USG, Comp",
+    "USG, Drywall Suspension"
    ],
    "code": "09 22 26-13",
    "div": "09",
@@ -37006,7 +37307,11 @@ const DB = {
     "CGC Compasso",
     "Chicago Metallic",
     "GRIDLOK by Plenum Inc",
-    "Chicago Metallic Drywall Grid"
+    "Chicago Metallic Drywall Grid",
+    "Armstrong",
+    "CertainTeed",
+    "Rockfon",
+    "USG"
    ],
    "title": "Gypsum Board Ceiling Suspension Systems"
   },
@@ -37049,6 +37354,9 @@ const DB = {
    "code": "09 23 82",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "USG"
+   ],
    "title": "Fireproof Gypsum Plastering"
   },
   {
@@ -37070,7 +37378,8 @@ const DB = {
     "Dryvit Systems Canada",
     "Durabond Products Ltd",
     "DuRock Alfacing International Ltd",
-    "Sto Corporation"
+    "Sto Corporation",
+    "Dryvit"
    ],
    "title": "Acrylic Plaster Finish"
   },
@@ -37087,13 +37396,17 @@ const DB = {
    "title": "Venetian Plastering"
   },
   {
+   "bod": [
+    "Armstrong, PlasterForm"
+   ],
    "code": "09 27 13",
    "div": "09",
    "divName": "Finishes",
    "mfr": [
     "Armstrong PlasterForm",
     "DecoForm Inc",
-    "Plastrglas Architectural Fabrications"
+    "Plastrglas Architectural Fabrications",
+    "Armstrong"
    ],
    "title": "Glass Fibre Reinforced Plaster Fabrications"
   },
@@ -37108,7 +37421,8 @@ const DB = {
     "Georgia-Pacific LLC",
     "CertainTeed Gypsum of Canada",
     "CGC Interiors",
-    "Georgia-Pacific Canada"
+    "Georgia-Pacific Canada",
+    "CertainTeed"
    ],
    "title": "Backing Boards"
   },
@@ -37122,7 +37436,11 @@ const DB = {
     "Hilti, CP 506 Smoke and Acoustic Sealant",
     "Pecora Corp., AC-20 FTR Acoustic and Insulation Sealant",
     "Fry Reglet, DRME 3     Execution",
-    "Pecora Corp., AC-20 FTR Acoustic and"
+    "Pecora Corp., AC-20 FTR Acoustic and",
+    "CertainTeed, No-Coat",
+    "Hilti, CP 506 Smoke",
+    "Pecora, Corp",
+    "Tremco, Acoustical Sealant"
    ],
    "code": "09 29 13",
    "div": "09",
@@ -37140,7 +37458,11 @@ const DB = {
     "Pittcon Industries",
     "CertainTeed Gypsum of Canada",
     "CGC Inc",
-    "Georgia-Pacific Canada"
+    "Georgia-Pacific Canada",
+    "CertainTeed",
+    "Hilti",
+    "Owens Corning",
+    "Pecora"
    ],
    "title": "Gypsum Boards"
   },
@@ -37163,7 +37485,11 @@ const DB = {
     "Custom Building Products, MegaLite RS",
     "Custom Building Products, Complete",
     "Custom Building Products CEG-Lite Epoxy",
-    "Custom Building Products Prism Grout"
+    "Custom Building Products Prism Grout",
+    "Laticrete, Spectralock 1 Pre-Mixed Grout",
+    "Mapei, Flexcolor CQ",
+    "Merkrete, 705",
+    "Schluter, KERDI DS waterproofing membrane"
    ],
    "code": "09 30 00",
    "div": "09",
@@ -37175,7 +37501,13 @@ const DB = {
     "Kiesel Bauchemie GmbH",
     "Laticrete International Inc",
     "MAPEI Inc",
-    "Parex USA Inc"
+    "Parex USA Inc",
+    "Custom Building Products",
+    "Flextile",
+    "Laticrete",
+    "Mapei",
+    "Merkrete",
+    "Schluter"
    ],
    "title": "Tiling"
   },
@@ -37186,7 +37518,32 @@ const DB = {
     "Custom Building Products",
     "Custom Building Products, Contact Fortified",
     "Custom Building Products, Prism Ultimate",
-    "Custom Building Products, RedGard"
+    "Custom Building Products, RedGard",
+    "Custom Building Products, LevelQuik Waterproof",
+    "Custom Building Products, Ltd",
+    "Custom Building Products, RedGard Waterproofing",
+    "Flextile, 53 Floor Mix Mortar",
+    "Flextile, 56SR Sag-Resistant Mortar",
+    "Flextile, 5900 Flex-Flo Plus Self-Levelling Underlayment",
+    "Flextile, FlexMat 3000",
+    "Flextile, Ltd",
+    "Flextile, PM Unsanded Grout",
+    "Flextile, Ultra Performance Caulk",
+    "Laticrete, International",
+    "Laticrete, International Inc",
+    "Merkrete, 720 Marble Pro Medium Bed",
+    "Merkrete, Colored Caulking",
+    "Merkrete, Non-Sanded Color Grout",
+    "Merkrete, Parex USA Inc",
+    "Merkrete, Underlay M",
+    "Merkrete, Underlay SLU",
+    "Parex, USA Inc",
+    "Schluter, Dilex",
+    "Schluter, Dilex EZ6",
+    "Schluter, Ditra",
+    "Schluter, Kerdi",
+    "Schluter, Schiene",
+    "Schluter, Trep"
    ],
    "code": "09 30 33",
    "div": "09",
@@ -37196,7 +37553,13 @@ const DB = {
     "Flextile Ltd",
     "Laticrete International",
     "MAPEI Inc",
-    "Merkrete, Parex USA Inc"
+    "Merkrete, Parex USA Inc",
+    "Custom Building Products",
+    "Flextile",
+    "Laticrete",
+    "Merkrete",
+    "Parex",
+    "Schluter"
    ],
    "title": "Stone Tiling"
   },
@@ -37213,7 +37576,26 @@ const DB = {
   {
    "bod": [
     "Solus Decor",
-    "Schluter"
+    "Schluter",
+    "Custom Building Products, Ltd",
+    "Custom Building Products, Polyblend Sanded Grout",
+    "Custom Building Products, Polyblend Unsanded Grout",
+    "Flextile, 56SR Medium Bed Mortar",
+    "Flextile, Flex Flo Self Level",
+    "Flextile, Ltd",
+    "Flextile, Mortar Bed",
+    "Laticrete, International Inc",
+    "Merkrete, 720 Marble Pro Medium Bed",
+    "Merkrete, Underlay M",
+    "Merkrete, Underlay SLU",
+    "Parex, USA Inc",
+    "Schluter, Dilex",
+    "Schluter, Dilex EZ6",
+    "Schluter, Ditra",
+    "Schluter, Schiene",
+    "Schluter, Trep",
+    "USG, Company",
+    "USG, Interiors"
    ],
    "code": "09 31 36",
    "div": "09",
@@ -37222,7 +37604,14 @@ const DB = {
     "Custom Building Products Ltd",
     "Flextile Ltd",
     "MAPEI Inc",
-    "Parex USA Inc"
+    "Parex USA Inc",
+    "Custom Building Products",
+    "Flextile",
+    "Laticrete",
+    "Merkrete",
+    "Parex",
+    "Schluter",
+    "USG"
    ],
    "title": "Concrete Tiling"
   },
@@ -37230,7 +37619,13 @@ const DB = {
    "bod": [
     "GRK Fasteners, RSS Rugged Structural Screw",
     "Hilti Kwik Bolt 3 Series",
-    "Tapcon 410 Stainless"
+    "Tapcon 410 Stainless",
+    "Custom Building Products, Ltd",
+    "Flextile, 5400 Maxiflex Polymer Modified Mortar",
+    "Flextile, Ltd",
+    "Laticrete, International",
+    "Laticrete, MVIS Hi-Bond Veneer Mortar",
+    "Mapei, Keraflex Super"
    ],
    "code": "09 31 39",
    "div": "09",
@@ -37245,7 +37640,12 @@ const DB = {
     "Flextile Ltd",
     "Laticrete International, Inc",
     "MAPEI Inc",
-    "Spec Mix, LLC"
+    "Spec Mix, LLC",
+    "Custom Building Products",
+    "Flextile",
+    "Hilti",
+    "Laticrete",
+    "Mapei"
    ],
    "title": "Thin-Set Brick Veneer Tiling"
   },
@@ -37255,7 +37655,20 @@ const DB = {
     "Para-Lite by Liteline Corporation",
     "Atoglas PlexiGlas",
     "Armstrong World Industries Canada Ltd",
-    "Armstrong Shadow Molding"
+    "Armstrong Shadow Molding",
+    "Armstrong, Axiom",
+    "Armstrong, Ceiling",
+    "CertainTeed, Ecophon Sombra",
+    "Chicago Metallic, Infinity",
+    "Chicago Metallic, Infinity Trim",
+    "Hunter Douglas, EdgeLine Perimeter Trim",
+    "Hunter Douglas, Techstyle Classic Series",
+    "Johns Manville, Sound Shield Glass Fibre Batts",
+    "Rockfon, North America",
+    "USG, Comp",
+    "USG, Company",
+    "USG, Interiors",
+    "USG, Softcore Theatre Black"
    ],
    "code": "09 51 00",
    "div": "09",
@@ -37274,7 +37687,11 @@ const DB = {
     "CGC Interiors",
     "Rockfon",
     "Lindner Group",
-    "Armstrong World Industries Canada Ltd"
+    "Armstrong World Industries Canada Ltd",
+    "Armstrong",
+    "CertainTeed",
+    "Hunter Douglas",
+    "USG"
    ],
    "title": "Acoustical Panel Ceilings"
   },
@@ -37296,11 +37713,15 @@ const DB = {
   },
   {
    "bod": [
-    "CURVATURA 3Dimensional Curved Ceiling System as supplied by CGC Inc."
+    "CURVATURA 3Dimensional Curved Ceiling System as supplied by CGC Inc.",
+    "USG, Inc"
    ],
    "code": "09 53 13",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "USG"
+   ],
    "title": "Curved Profile Ceiling Suspension Assemblies"
   },
   {
@@ -37345,6 +37766,14 @@ const DB = {
    "title": "Luminous Ceilings"
   },
   {
+   "bod": [
+    "Armstrong, Ceiling",
+    "CertainTeed, Inc",
+    "Hunter Douglas, Ceilings",
+    "Rockfon, Planar",
+    "USG, Corp",
+    "USG, Paraline Linear Metal"
+   ],
    "code": "09 54 23",
    "div": "09",
    "divName": "Finishes",
@@ -37353,7 +37782,12 @@ const DB = {
     "Luxalon as manufactured by Hunter Douglas Ceilings & Walls",
     "Rockfon Planar",
     "PlanarPlus",
-    "USG Paraline Linear Metal Systems"
+    "USG Paraline Linear Metal Systems",
+    "Armstrong",
+    "CertainTeed",
+    "Hunter Douglas",
+    "Rockfon",
+    "USG"
    ],
    "title": "Linear Metal Ceilings"
   },
@@ -37386,7 +37820,10 @@ const DB = {
     "Balco Abrasive Bars",
     "3M SafetyWalk 500 Series",
     "Balco Abrasive Bars, R-315LP",
-    "Access Tile, Surface Applied Fire Retardant 3     Execution"
+    "Access Tile, Surface Applied Fire Retardant 3     Execution",
+    "BASF, MasterTop",
+    "Sherwin-Williams, Protective",
+    "Sika, Canada"
    ],
    "code": "09 61 13-13",
    "div": "09",
@@ -37401,7 +37838,12 @@ const DB = {
     "Abrasive Coatings",
     "Tactile Studs",
     "Kinesik",
-    "Stoncor"
+    "Stoncor",
+    "3M",
+    "BASF",
+    "Sherwin-Williams",
+    "Sika",
+    "Stonhard"
    ],
    "title": "Slip-Resistant Stair and Landing Treatments"
   },
@@ -37426,13 +37868,15 @@ const DB = {
    "bod": [
     "Armstrong Commercial Hardwood Floors, Premier Performance",
     "Balco AS-2",
-    "Hoover, Pyro-Guard"
+    "Hoover, Pyro-Guard",
+    "Armstrong, Commercial Hardwood Floors"
    ],
    "code": "09 64 29",
    "div": "09",
    "divName": "Finishes",
    "mfr": [
-    "Alternate 1 â Nydree Red Oak Natural"
+    "Alternate 1 â Nydree Red Oak Natural",
+    "Armstrong"
    ],
    "title": "Wood Strip and Plank Flooring"
   },
@@ -37474,11 +37918,29 @@ const DB = {
   },
   {
    "bod": [
-    "Altro Classic 25"
+    "Altro Classic 25",
+    "Altro, Safety Floor",
+    "Forbo, Cove Strip ACC06",
+    "Forbo, NA may be",
+    "Johnsonite, LS-40 Leveller",
+    "Johnsonite, Traditional",
+    "Mannington, Commercial",
+    "Mannington, Edge TV",
+    "Roppe, 700 Series",
+    "Schluter, EKSB",
+    "Schluter, Schl"
    ],
    "code": "09 65 00",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "Altro",
+    "Forbo",
+    "Johnsonite",
+    "Mannington",
+    "Roppe",
+    "Schluter"
+   ],
    "title": "Resilient Flooring and Accessories"
   },
   {
@@ -37486,7 +37948,14 @@ const DB = {
     "FlashCove Prefabricated Bases Inc.",
     "Schluter",
     "Johnsonite",
-    "Kinesik Engineered Products"
+    "Kinesik Engineered Products",
+    "Johnsonite, LS-40 Leveller",
+    "Johnsonite, Traditional",
+    "Mannington, Commercial",
+    "Mannington, Edge TV",
+    "Roppe, 700 Series",
+    "Schluter, EKSB",
+    "Schluter, Schl"
    ],
    "code": "09 65 13",
    "div": "09",
@@ -37495,7 +37964,9 @@ const DB = {
     "Mannington Commercial",
     "Roppe",
     "Johnsonite Tarkett",
-    "Mannington"
+    "Mannington",
+    "Johnsonite",
+    "Schluter"
    ],
    "title": "Resilient Base and Accessories"
   },
@@ -37519,11 +37990,15 @@ const DB = {
   },
   {
    "bod": [
-    "nora systems, Inc."
+    "nora systems, Inc.",
+    "nora, Inc"
    ],
    "code": "09 65 16-19",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "nora"
+   ],
    "title": "Nora Systems Sheet Rubber Flooring (non-DLG)"
   },
   {
@@ -37550,7 +38025,12 @@ const DB = {
    "bod": [
     "Tarkett iQ Toro (SC) Vinyl Sheet",
     "Johnsonite, # CFS-00",
-    "Johnsonite, # CFS-00-S1"
+    "Johnsonite, # CFS-00-S1",
+    "Armstrong, Excelon SDT",
+    "Armstrong, Flooring",
+    "Roppe, Corporation",
+    "Roppe, ESD Vinyl Tile Flooring",
+    "Tarkett, Canada"
    ],
    "code": "09 65 36",
    "div": "09",
@@ -37561,7 +38041,10 @@ const DB = {
     "Tarkett Canada",
     "Gerflor",
     "Johnsonite Tarkett",
-    "Forbo"
+    "Forbo",
+    "Armstrong",
+    "Roppe",
+    "Tarkett"
    ],
    "title": "Static-Control Resilient Flooring"
   },
@@ -37579,7 +38062,8 @@ const DB = {
     "Connor Sports Flooring Corporation",
     "Mondo America Inc",
     "Robbins Sports Surfaces",
-    "Gerflor - the flooring group"
+    "Gerflor - the flooring group",
+    "Gerflor"
    ],
    "title": "Resilient Athletic Flooring"
   },
@@ -37600,7 +38084,8 @@ const DB = {
   },
   {
    "bod": [
-    "Sikafloor Purcem"
+    "Sikafloor Purcem",
+    "Sika, Resoclad MRW"
    ],
    "code": "09 67 23",
    "div": "09",
@@ -37639,7 +38124,8 @@ const DB = {
   },
   {
    "bod": [
-    "Kinesik Engineered Products, Ecoglo Series Carpet Stair Nosings"
+    "Kinesik Engineered Products, Ecoglo Series Carpet Stair Nosings",
+    "BASF, Zeftron"
    ],
    "code": "09 68 16",
    "div": "09",
@@ -37647,7 +38133,8 @@ const DB = {
    "mfr": [
     "Ardex",
     "Laticrete",
-    "MAPEI"
+    "MAPEI",
+    "BASF"
    ],
    "title": "Sheet Carpeting"
   },
@@ -37656,7 +38143,8 @@ const DB = {
     "Tate Concore Panels",
     "Tate All Steel Panels",
     "Tate Aluminum System",
-    "Haworth Inc., TecCrete 1250; and TecCrete"
+    "Haworth Inc., TecCrete 1250; and TecCrete",
+    "Tate, Floors"
    ],
    "code": "09 69 00",
    "div": "09",
@@ -37664,7 +38152,9 @@ const DB = {
    "mfr": [
     "ASM Modular Systems Inc",
     "Camino Modular Systems Inc",
-    "Tate Access Floors"
+    "Tate Access Floors",
+    "Kingspan",
+    "Tate"
    ],
    "title": "Access Flooring"
   },
@@ -37695,19 +38185,23 @@ const DB = {
    "div": "09",
    "divName": "Finishes",
    "mfr": [
-    "Custom graphic wallpaper (WLP-1)"
+    "Custom graphic wallpaper (WLP-1)",
+    "Koroseal"
    ],
    "title": "Dry Erasable] [Visual Display] Vinyl Wall Coverings"
   },
   {
    "bod": [
-    "Altro, Whiterock"
+    "Altro, Whiterock",
+    "Altro, A900",
+    "Altro, Sanitary Sealant"
    ],
    "code": "09 72 16-16",
    "div": "09",
    "divName": "Finishes",
    "mfr": [
-    "BioClad Antimicrobial Hygienic Wall Cladding Canada"
+    "BioClad Antimicrobial Hygienic Wall Cladding Canada",
+    "Altro"
    ],
    "title": "Rigid-Sheet Vinyl Wall Coverings"
   },
@@ -37731,7 +38225,8 @@ const DB = {
   },
   {
    "bod": [
-    "CGC Micore"
+    "CGC Micore",
+    "USG, Micore"
    ],
    "code": "09 77 13",
    "div": "09",
@@ -37741,7 +38236,8 @@ const DB = {
     "Fabri-Lok Wall System",
     "Fabri-Trak Systems Inc",
     "Fabra-Wall Acoustic Systems",
-    "Novawall Systems Inc"
+    "Novawall Systems Inc",
+    "USG"
    ],
    "title": "Stretched Fabric Wall Systems"
   },
@@ -37766,20 +38262,27 @@ const DB = {
    "code": "09 80 00-13",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "Rockwool"
+   ],
    "title": "Plenum Noise Barrier"
   },
   {
    "bod": [
     "Certainteed, ToughGard R",
     "Johns Manville, Linacoustic RC",
-    "CertainTeed CertaPro Board CB 600"
+    "CertainTeed CertaPro Board CB 600",
+    "CertainTeed, Canada Inc",
+    "CertainTeed, CertaPro",
+    "Johns Manville, InsulSheild I/S"
    ],
    "code": "09 81 16",
    "div": "09",
    "divName": "Finishes",
    "mfr": [
     "CertainTeed Canada Inc",
-    "Johns Manville"
+    "Johns Manville",
+    "CertainTeed"
    ],
    "title": "Acoustic Blanket Insulation"
   },
@@ -37821,7 +38324,8 @@ const DB = {
     "PPG, DEFT , and Dulux Interior",
     "PPG, Dulux Interior Polyurethane",
     "Sansin, Sansin Classic",
-    "Rosco Canada, Supersaturated Rosco paint"
+    "Rosco Canada, Supersaturated Rosco paint",
+    "Dulux, Paints"
    ],
    "code": "09 91 00",
    "div": "09",
@@ -37834,14 +38338,16 @@ const DB = {
     "AkzoNobel",
     "Cloverdale Paints",
     "BASF",
-    "Sherwin Williams"
+    "Sherwin Williams",
+    "Dulux"
    ],
    "title": "Painting"
   },
   {
    "bod": [
     "Benjamin Moore Corotech Acrylic Aliphatic Polyurethane V500",
-    "PPG Architectural Olympic Premium Interior Oil Based Wood Stain 44500"
+    "PPG Architectural Olympic Premium Interior Oil Based Wood Stain 44500",
+    "Dulux, Paints"
    ],
    "code": "09 91 23",
    "div": "09",
@@ -37854,17 +38360,24 @@ const DB = {
     "AkzoNobel",
     "Cloverdale Paints",
     "C2 LoVo Interior",
-    "Mythic Classic"
+    "Mythic Classic",
+    "Dulux"
    ],
    "title": "Interior Painting"
   },
   {
+   "bod": [
+    "CertainTeed, Wall",
+    "USG, Interiors"
+   ],
    "code": "09 94 13",
    "div": "09",
    "divName": "Finishes",
    "mfr": [
     "CertainTeed Wall and Ceiling Spray Textures",
-    "CGC Interiors, Synko Brand Textures"
+    "CGC Interiors, Synko Brand Textures",
+    "CertainTeed",
+    "USG"
    ],
    "title": "Textured Finishing"
   },
@@ -37873,7 +38386,19 @@ const DB = {
     "Sikafloor Purcem",
     "Sika Canada Inc, Sikafloor Resoclad MRW",
     "Sika Canada/Duochem Inc, Sikafloor",
-    "Sika Canada/Duochem Inc., Sikafloor"
+    "Sika Canada/Duochem Inc., Sikafloor",
+    "Carboline, Company",
+    "Dex-O-Tex, Decor-Flor Broadcast Epoxy Floor",
+    "Dex-O-Tex, M-E Floor",
+    "Dex-O-Tex, Wall-Glas",
+    "Master Builders Solutions, Canada Inc",
+    "Sika, Canada",
+    "Sika, Canada/Duochem Inc",
+    "Sika, Descoglas",
+    "Sika, Sternflex 1",
+    "Stonhard, Limited Stonkote GS4",
+    "Stonhard, Stonclad GS",
+    "Stonhard, Stongard MR"
    ],
    "code": "09 96 00",
    "div": "09",
@@ -37894,7 +38419,11 @@ const DB = {
     "AkzoNobel",
     "Valspar Corporation",
     "Advanced Polymer Technology",
-    "Sika Canada/Duochem Inc"
+    "Sika Canada/Duochem Inc",
+    "BASF",
+    "Carboline",
+    "Master Builders Solutions",
+    "Sherwin-Williams"
    ],
    "title": "High Performance Coatings"
   },
@@ -37914,9 +38443,15 @@ const DB = {
    "code": "09 96 16",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "IdeaPaint"
+   ],
    "title": "Markerboard Coatings"
   },
   {
+   "bod": [
+    "GAF, Graffiti Shield"
+   ],
    "code": "09 96 19",
    "div": "09",
    "divName": "Finishes",
@@ -37927,13 +38462,15 @@ const DB = {
     "ProSoCo, Inc",
     "GAF, Graffiti Shield",
     "Evonik Industries",
-    "CSL Silicones, Inc"
+    "CSL Silicones, Inc",
+    "GAF"
    ],
    "title": "Stain Resistant] [Protective Surface] Treatment Coatings"
   },
   {
    "bod": [
-    "Faceal Oleo HD, distributed by Eco-Graffiti"
+    "Faceal Oleo HD, distributed by Eco-Graffiti",
+    "GAF, Graffiti Shield"
    ],
    "code": "09 96 23",
    "div": "09",
@@ -37944,17 +38481,22 @@ const DB = {
     "Graffiti Master",
     "ProSoCo, Inc",
     "GAF, Graffiti Shield",
-    "Faceal Oleo HD"
+    "Faceal Oleo HD",
+    "GAF"
    ],
    "title": "Graffiti Resistant Coatings"
   },
   {
    "bod": [
-    "Carboline Company, A/D Fire Protection Systems Inc., A/D FIREFILM III"
+    "Carboline Company, A/D Fire Protection Systems Inc., A/D FIREFILM III",
+    "Carboline, Company"
    ],
    "code": "09 96 46",
    "div": "09",
    "divName": "Finishes",
+   "mfr": [
+    "Carboline"
+   ],
    "title": "Intumescent Painting"
   },
   {
@@ -37968,6 +38510,9 @@ const DB = {
    "title": "Epoxy Coatings"
   },
   {
+   "bod": [
+    "PPG, Architectural"
+   ],
    "code": "09 97 13",
    "div": "09",
    "divName": "Finishes",
@@ -37975,7 +38520,9 @@ const DB = {
     "ICI Devoe",
     "PPG Architectural",
     "Sherwin Williams",
-    "AkzoNobel/International"
+    "AkzoNobel/International",
+    "PPG",
+    "Sherwin-Williams"
    ],
    "title": "Steel Coatings"
   },
