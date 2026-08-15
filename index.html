@@ -79,6 +79,8 @@ nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
 .badge.req{background:var(--amber);color:#fff}
 .badge.likely{background:var(--accent-soft);color:var(--accent);border:1px solid #cdd8e2}
 .badge.sug{background:#eef1f6;color:var(--muted);border:1px solid var(--brd)}
+.badge.sigai{background:var(--amber);color:#fff}
+.badge.sigok{background:var(--ok);color:#fff}
 .dtag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;color:#fff;margin-top:10px;width:fit-content}
 .mrow{margin-top:12px;font-size:12px;color:var(--muted)}
 .mrow b{color:var(--ink2);font-weight:650;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
@@ -165,6 +167,55 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
 .cfilter button{border:none;background:#fff;color:var(--ink2);font-size:12px;padding:6px 11px;font-weight:600;border-right:1px solid var(--brd)}
 .cfilter button:last-child{border-right:none}
 .cfilter button.on{background:var(--accent);color:#fff}
+/* verify tab */
+.vbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.vbar input#vq{flex:0 1 300px;padding:10px 13px;border-radius:11px;border:1px solid var(--brd);background:#fff;font-size:14px}
+.vprog{font-size:12.5px;color:var(--ink2)}
+.vfilters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.vlayout{display:grid;grid-template-columns:330px 1fr;gap:16px;align-items:start}
+.vlist{max-height:74vh;overflow:auto;display:flex;flex-direction:column;gap:6px;padding-right:4px}
+.vsec{display:flex;gap:10px;align-items:center;padding:9px 11px;border:1px solid var(--brd);border-radius:11px;background:#fff;cursor:pointer}
+.vsec:hover{border-color:var(--accent)}
+.vsec.on{border-color:var(--accent);box-shadow:0 0 0 2px rgba(58,81,105,.14)}
+.vsec .vedge{width:5px;align-self:stretch;border-radius:4px;flex:none}
+.vsec .vcode{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:12.5px}
+.vsec .vtitle{font-size:12px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vsec .vcount{font-size:11px;color:var(--muted)}
+.vsec .vsig{font-size:11px;color:var(--amber-d);font-weight:700}
+.vflag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#c0392b;background:#fdecea;border:1px solid #e6a9a1;border-radius:6px;padding:1px 5px;margin-top:2px}
+.veditor{padding:16px 18px;min-height:240px}
+.vhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:6px}
+.vhcode{font-family:ui-monospace,Menlo,monospace;font-weight:800;font-size:19px}
+.vhtitle{font-size:14px;color:var(--ink2);margin-top:1px}
+.vbanner{background:var(--amber-soft);border:1px solid #e5dcc4;color:var(--amber-d);font-size:12.5px;padding:10px 12px;border-radius:10px;margin:12px 0}
+.vgrp{display:flex;align-items:center;gap:8px;margin:16px 0 8px}
+.vgrp-l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+.vgrp-n{font-size:11px;color:var(--muted)}
+.vph{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--brd);border-radius:11px;margin-bottom:8px;background:#fff}
+.vph.sig{border-left:4px solid var(--amber);background:var(--amber-soft)}
+.vname{font-weight:650;font-size:14px;border:1px solid transparent;background:transparent;width:100%;padding:2px 5px;border-radius:6px;color:var(--ink)}
+.vname:hover{border-color:var(--brd)}
+.vname:focus{outline:none;border-color:var(--accent);background:#fff}
+.vbrand{font-size:10.5px;font-weight:700;color:var(--ok);margin-left:6px;white-space:nowrap}
+.vev{font-size:11.5px;color:var(--muted);margin:4px 0 0;line-height:1.45}
+.vmeta{margin-top:5px}
+.vai{font-size:10.5px;color:var(--muted);background:#f4f6fb;border:1px solid var(--brd);border-radius:6px;padding:1px 7px}
+.vctrl{display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex:none}
+.vseg{display:inline-flex;border:1px solid var(--brd);border-radius:8px;overflow:hidden}
+.vseg button{border:none;border-right:1px solid var(--brd);background:#fff;color:var(--ink2);font-size:12px;font-weight:700;width:26px;height:26px;cursor:pointer}
+.vseg button:last-child{border-right:none}
+.vverify{border:1px solid var(--brd);background:#fff;color:var(--ink2);font-size:12px;font-weight:650;padding:5px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.vverify.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.vdel{border:1px solid var(--brd);background:#fff;color:var(--muted);width:26px;height:26px;border-radius:8px;cursor:pointer;font-size:12px}
+.vdel:hover{border-color:#c0392b;color:#c0392b}
+.vadd{display:flex;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.vadd input{flex:1;padding:9px 12px;border-radius:9px;border:1px solid var(--brd)}
+.vadd select{padding:9px;border-radius:9px;border:1px solid var(--brd)}
+.vmakers{margin-top:16px;padding:12px 14px;border:1px solid var(--brd);border-radius:11px;background:#fafbfc}
+.vmakers-h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+.goldpill{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;background:#fff;border:1px dashed var(--amber);color:var(--amber-d);margin:0 6px 6px 0}
+.goldpill.v{background:var(--ok);border-color:var(--ok);border-style:solid;color:#fff;font-weight:650}
+@media(max-width:820px){.vlayout{grid-template-columns:1fr}.vlist{max-height:42vh}}
 </style>
 </head>
 <body>
@@ -177,6 +228,7 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
       <button class="tab" data-v="browse">Browse</button>
       <button class="tab" data-v="makers">Manufacturers</button>
       <button class="tab" data-v="keynotes">Keynotes</button>
+      <button class="tab" data-v="verify">Verify</button>
       <button class="tab" data-v="guide">How to use</button>
     </nav>
   </div>
@@ -266,6 +318,26 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
     </div>
   </section>
 
+  <!-- VERIFY -->
+  <section class="view" id="v-verify">
+    <h2 class="section-h">Verify — signature phrases</h2>
+    <p class="section-s">Each section's product and material names, pulled straight from the master spec. <b style="color:var(--amber-d)">Gold = a signature phrase</b>: see it on a drawing and it's this section, for sure. Set each one's confidence, mark what you've checked, add anything missing, delete anything wrong. Your work saves in this browser — <b>Export</b> it to keep it safe or hand it off.</p>
+    <div class="vbar">
+      <input id="vq" placeholder="filter sections or phrases…" autocomplete="off">
+      <span class="vprog" id="vprog"></span>
+      <span style="flex:1;min-width:8px"></span>
+      <button class="btn ghost" id="vexport">Export</button>
+      <button class="btn ghost" id="vimportbtn">Import</button>
+      <input type="file" id="vimport" accept="application/json" class="hidden">
+      <button class="btn ghost" id="vreset">Reset to source</button>
+    </div>
+    <div class="vfilters" id="vfilters"></div>
+    <div class="vlayout">
+      <div class="vlist" id="vlist"></div>
+      <div class="veditor glass" id="veditor"></div>
+    </div>
+  </section>
+
   <!-- GUIDE -->
   <section class="view" id="v-guide">
     <h2 class="section-h">How to use Spec Finder</h2>
@@ -287,6 +359,7 @@ footer{max-width:1180px;margin:0 auto;padding:20px 22px 40px;color:var(--muted);
 <div class="modalbg" id="modalbg"><div class="modal" id="modal"></div></div>
 
 <script src="data.js"></script>
+<script src="verify-data.js"></script>
 <script>
 /* ---------- engine (faithful to eval harness) ---------- */
 var SECS=[],ALIASES={},PROV={},PROJ={},byCode={},aliasCount={},confByEdge={};
@@ -339,7 +412,12 @@ function lookup(q){
     var hay=nrm((sc.mfr||[]).join(" · ")+" · "+(sc.bod||[]).join(" · "));
     if(hay.indexOf(qn)>=0){scores[sc.code]={score:0.04,terms:[],via:false,maxconf:0,viaMaker:true};}
   }
-  return Object.keys(scores).map(function(code){var v=scores[code];return {code:code,score:v.score,terms:v.terms,via:v.via,maxconf:v.maxconf};})
+  // verified/AI signature phrases from the Verify layer — hyphen/plural-proof, badged gold(AI)/green(verified)
+  vSignatures().forEach(function(sg){var tt=toks(sg.name);if(!tt.length)return;
+    if(tt.every(function(w){return tokMatch(w,qt);})){var c=sg.code;scores[c]=scores[c]||{score:0,terms:[],via:true,maxconf:0};
+      scores[c].score+=tt.length+6;if(scores[c].terms.indexOf(sg.name)<0)scores[c].terms.push(sg.name);
+      scores[c].via=true;scores[c].sig=true;scores[c].sigVerified=scores[c].sigVerified||sg.verified;}});
+  return Object.keys(scores).map(function(code){var v=scores[code];return {code:code,score:v.score,terms:v.terms,via:v.via,maxconf:v.maxconf,sig:v.sig,sigVerified:v.sigVerified};})
     .sort(function(a,b){return b.score-a.score;}).slice(0,16);
 }
 
@@ -372,6 +450,7 @@ function card(r){
   var h='<div class="rc" onclick="openDetail(\''+s.code+'\')"><div class="edge" style="background:'+col+'"></div><div class="rb">';
   h+='<div class="top"><div><div class="code">'+esc(s.code)+'</div><div class="ttl">'+esc(s.title)+'</div></div>';
   var bCls=r.tier==="likely"?"likely":(r.via?"req":"sug"),bTxt=r.tier==="likely"?"likely":(r.via?"required":"suggestion");
+  if(r.sig){bCls=r.sigVerified?"sigok":"sigai";bTxt=r.sigVerified?"signature ✓":"signature";}
   h+='<span class="badge '+bCls+'">'+bTxt+'</span></div>';
   h+='<span class="dtag" style="background:'+col+'">'+div+' · '+esc(s.divName||"")+'</span>';
   if(terms.length){h+='<div class="mrow"><b>'+(r.tier?"Drawing phrases":"Matched terms")+'</b><br>';terms.forEach(function(t){h+='<span class="pill term">'+esc(t)+'</span>';});h+='</div>';}
@@ -451,6 +530,8 @@ function openDetail(code){
   h+='<button class="mclose" onclick="closeDetail()">×</button>';
   h+='<div class="mcode">'+esc(s.code)+'</div><h3>'+esc(s.title)+'</h3>';
   h+='<span class="dtag" style="background:'+col+';margin-top:8px">'+s.div+' · '+esc(s.divName||"")+'</span>';
+  h+=vGoldBlock(s.code);
+  h+=vMakerBlock(s.code);
   if(by.length){
     var typs={};by.forEach(function(p){var ty=((DB.projects||{})[p]||{}).typology;if(ty)typs[ty]=1;});
     var ntyp=Object.keys(typs).length;
@@ -694,6 +775,13 @@ function scanResult(text,pageTexts){
       if((confByEdge[term+"|"+c]||[]).length>0)sec[c].corr++;
       else if(confCount(term,c)>0)sec[c].corr++;}
   }
+  // verified/AI signature phrases go live in the scan too — a signature hit alone makes the section required
+  vSignatures().forEach(function(sg){var tt=toks(sg.name);if(tt.length<2)return;
+    if(!tt.every(function(w){return words[w];}))return;
+    if(nt.indexOf(" "+nrm(sg.name)+" ")<0)return;
+    var c=sg.code;sec[c]=sec[c]||{mw:[],corr:0};
+    if(sec[c].mw.indexOf(sg.name)<0)sec[c].mw.push(sg.name);
+    sec[c].sig=true;sec[c].sigVerified=sec[c].sigVerified||sg.verified;});
   // attribute each matched phrase to the drawing page(s) it appears on
   var termSrc={};
   if(pageTexts&&pageTexts.length){
@@ -704,9 +792,9 @@ function scanResult(text,pageTexts){
   }
   var rows=Object.keys(sec).map(function(c){var v=sec[c];
     var srcSet={};v.mw.forEach(function(t){(termSrc[t]||[]).forEach(function(l){srcSet[l]=1;});});
-    return {code:c,m:v.mw.length,corr:v.corr,terms:v.mw,src:Object.keys(srcSet),maxconf:0,via:true};});
-  var required=rows.filter(function(r){return r.m>=4&&r.corr>=1;}).sort(function(a,b){return b.m-a.m;});
-  var likely=rows.filter(function(r){return r.m>=2&&!(r.m>=4&&r.corr>=1);}).sort(function(a,b){return b.m-a.m;});
+    return {code:c,m:v.mw.length,corr:v.corr,terms:v.mw,src:Object.keys(srcSet),maxconf:0,via:true,sig:v.sig,sigVerified:v.sigVerified};});
+  var required=rows.filter(function(r){return r.sig||(r.m>=4&&r.corr>=1);}).sort(function(a,b){return (b.sig?1:0)-(a.sig?1:0)||b.m-a.m;});
+  var likely=rows.filter(function(r){return !r.sig&&r.m>=2&&!(r.m>=4&&r.corr>=1);}).sort(function(a,b){return b.m-a.m;});
   required.forEach(function(r){r.tier="required";});likely.forEach(function(r){r.tier="likely";});
   var flagged=required.concat(likely);
   // sections the set reaches by ANY term (incl. single words) — basis for wording suggestions
@@ -788,6 +876,7 @@ function renderScanBody(){
 function scanListRow(r){
   var s=secOf(r.code),col=divCol(s.div);
   var bCls=r.tier==="likely"?"likely":(r.via?"req":"sug"),bTxt=r.tier==="likely"?"likely":"required";
+  if(r.sig){bCls=r.sigVerified?"sigok":"sigai";bTxt=r.sigVerified?"signature ✓":"signature";}
   var meta=r.tier?(r.m+" phrase"+(r.m!==1?"s":"")+(r.corr?" · "+r.corr+" corrob.":"")):"";
   var h='<div class="sli"><div class="slrow"><span class="bedge" style="background:'+col+'"></span><span class="chev">▸</span>';
   h+='<span class="slcode">'+esc(s.code)+'</span><span class="sltitle">'+esc(s.title)+'</span>';
@@ -872,6 +961,7 @@ document.getElementById("nav").addEventListener("click",function(e){
   document.getElementById("v-"+b.dataset.v).classList.add("on");
   if(b.dataset.v==="browse")renderBrowse();
   if(b.dataset.v==="makers")renderMakers();
+  if(b.dataset.v==="verify")renderVerify();
 });
 document.getElementById("go").onclick=function(){doSearch();};
 document.getElementById("q").addEventListener("keydown",function(e){if(e.key==="Enter")doSearch();});
@@ -932,10 +1022,148 @@ if(kdrop&&kfile){
   kdrop.addEventListener("drop",function(e){if(e.dataTransfer.files.length)readKeynote(e.dataTransfer.files[0]);});
 }
 
+/* ================= VERIFY — signature-phrase confidence layer ================= */
+var VSEED=window.VERIFY_SEED||{}, VMETA=window.VERIFY_SEED_META||{};
+var VTIERS=[{k:'signature',l:'Signature',c:'--amber'},{k:'high',l:'High',c:'--accent'},{k:'medium',l:'Medium',c:'--d13'},{k:'low',l:'Low',c:'--muted'}];
+var VTLABEL={signature:'Signature',high:'High',medium:'Medium',low:'Low'};
+var __V=null, vSel=null, vQ="", vTierF="all", vUnv=false;
+function vClone(o){return JSON.parse(JSON.stringify(o));}
+function vData(){ if(__V)return __V; var s=null; try{s=JSON.parse(localStorage.getItem("sf_verify_v1")||"null");}catch(e){} if(!s||typeof s!=="object")s={}; Object.keys(VSEED).forEach(function(c){ if(!s[c]) s[c]=vClone(VSEED[c]); }); __V=s; return s; }
+function vSave(){ try{localStorage.setItem("sf_verify_v1",JSON.stringify(__V));}catch(e){} }
+function vEff(p){return p.userTier||p.aiTier;}
+function vLive(sec){return sec.phrases.filter(function(p){return !p.deleted;});}
+function vFind(code){var d=vData(); if(d[code])return d[code]; var cc=canon(code); for(var k in d){if(d[k].canon===cc||canon(k)===cc)return d[k];} return null;}
+function vGold(col){return cvar(col)||"#9a7838";}
+// effective-signature phrases across the overlay — these go LIVE in Search & Scan (gold=AI, green=verified)
+function vSignatures(){var d=vData(),out=[];Object.keys(d).forEach(function(code){d[code].phrases.forEach(function(p){if(!p.deleted&&(p.userTier||p.aiTier)==="signature")out.push({name:p.name,code:code,verified:!!p.verified});});});return out;}
+// acceptable manufacturers + basis-of-design products pulled from the master spec (reference)
+function vMakerBlock(code){
+  var sec=vFind(code);if(!sec)return "";
+  var mfr=sec.mfr||[],bod=sec.bod||[];
+  if(!mfr.length&&!bod.length)return "";
+  var h='<div class="msec"><div class="h">Acceptable products — from the master spec</div>';
+  if(mfr.length){h+='<div style="margin:0 0 6px">';mfr.forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});h+='</div>';}
+  if(bod.length){bod.forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});}
+  h+='</div>';return h;
+}
+function vSecP(id){var sec=vData()[vSel];if(!sec)return null;for(var i=0;i<sec.phrases.length;i++)if(sec.phrases[i].id===id&&!sec.phrases[i].deleted)return sec.phrases[i];return null;}
+function vNewId(sec,base){var b=(base||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40)||"item";var ex={};sec.phrases.forEach(function(p){ex[p.id]=1;});var id=b,i=2;while(ex[id]){id=b+"-"+i;i++;}return id;}
+function vProgress(){var d=vData(),tp=0,vp=0,sd=0;Object.keys(d).forEach(function(c){var live=vLive(d[c]);if(!live.length)return;var vv=live.filter(function(p){return p.verified;}).length;tp+=live.length;vp+=vv;if(vv===live.length)sd++;});return {tp:tp,vp:vp,sd:sd,ns:Object.keys(d).length};}
+
+function renderVerify(){
+  vData();
+  if(!vSel||!__V[vSel]){var codes=Object.keys(__V).sort();vSel=codes[0]||null;}
+  var pr=vProgress();
+  var pe=document.getElementById("vprog");
+  if(pe)pe.innerHTML='<b style="color:var(--amber-d)">'+pr.vp+'</b> / '+pr.tp+' phrases verified · '+pr.sd+' sections complete · '+pr.ns+' sections';
+  renderVFilters();renderVList();renderVEditor();
+}
+function renderVFilters(){
+  var host=document.getElementById("vfilters");if(!host)return;
+  var h='<span class="lbl">Tier</span><span class="cfilter" id="vtierf"><button data-t="all" class="'+(vTierF==="all"?"on":"")+'">All</button>';
+  VTIERS.forEach(function(t){h+='<button data-t="'+t.k+'" class="'+(vTierF===t.k?"on":"")+'">'+t.l+'</button>';});
+  h+='</span><span style="width:10px"></span><button class="tog'+(vUnv?" on":"")+'" id="vunv">Unverified only</button>';
+  host.innerHTML=h;
+  host.querySelectorAll("#vtierf button").forEach(function(b){b.onclick=function(){vTierF=b.dataset.t;renderVerify();};});
+  document.getElementById("vunv").onclick=function(){vUnv=!vUnv;renderVerify();};
+}
+function vSecMatch(sec){ if(!vQ)return true; if((sec.code+" "+sec.title).toLowerCase().indexOf(vQ)>=0)return true; return vLive(sec).some(function(p){return p.name.toLowerCase().indexOf(vQ)>=0;}); }
+function renderVList(){
+  var d=vData(),host=document.getElementById("vlist");if(!host)return;
+  var codes=Object.keys(d).sort().filter(function(c){return vSecMatch(d[c]);});
+  host.innerHTML=codes.map(function(c){
+    var sec=d[c],live=vLive(sec),vv=live.filter(function(p){return p.verified;}).length;
+    var sig=live.filter(function(p){return vEff(p)==="signature";}).length;
+    var col=divCol(sec.division||c.slice(0,2)),done=live.length&&vv===live.length;
+    var flag=sec.zeroProducts?'<div class="vflag" title="No products auto-found — add them or skip">check</div>':'';
+    return '<div class="vsec'+(c===vSel?" on":"")+'" data-code="'+esc(c)+'"><span class="vedge" style="background:'+col+'"></span>'+
+      '<div style="flex:1;min-width:0"><div class="vcode">'+esc(sec.code)+(done?' <b style="color:var(--ok)">✓</b>':'')+'</div><div class="vtitle">'+esc(sec.title)+'</div></div>'+
+      '<div style="text-align:right;flex:none"><div class="vcount">'+vv+'/'+live.length+'</div>'+(sig?'<div class="vsig">★'+sig+'</div>':'')+flag+'</div></div>';
+  }).join("")||'<div class="empty" style="padding:20px">No sections match.</div>';
+}
+function renderVEditor(){
+  var host=document.getElementById("veditor");if(!host)return;
+  var sec=vSel?vData()[vSel]:null;
+  if(!sec){host.innerHTML='<div class="empty" style="padding:30px">Pick a section on the left to start.</div>';return;}
+  var live=vLive(sec),vv=live.filter(function(p){return p.verified;}).length,secDone=live.length&&vv===live.length;
+  var h='<div class="vhead"><div><div class="vhcode">'+esc(sec.code)+'</div><div class="vhtitle">'+esc(sec.title)+'</div></div>'+
+    '<div style="text-align:right;flex:none"><button class="btn'+(secDone?'':' ghost')+'" data-act="secver">'+(secDone?'✓ All verified':'Mark all verified')+'</button>'+
+    '<div style="margin-top:6px"><a href="#" data-act="reload" style="font-size:11.5px">reload from source</a></div></div></div>';
+  if(sec.zeroProducts)h+='<div class="vbanner">No products were auto-found here — this may be a testing/QA section, a non-standard (non-DLG) template, or the products sit under an unusual article in the spec. Add them below, or leave it.</div>';
+  var shown=0;
+  VTIERS.forEach(function(t){
+    var rows=live.filter(function(p){return vEff(p)===t.k && (vTierF==="all"||vTierF===t.k) && (!vUnv||!p.verified);});
+    if(!rows.length)return; shown+=rows.length;
+    h+='<div class="vgrp"><span class="vgrp-l" style="color:'+vGold(t.c)+'">'+t.l+'</span><span class="vgrp-n">'+rows.length+'</span></div>';
+    rows.forEach(function(p){h+=vRow(p);});
+  });
+  if(!shown&&live.length)h+='<div class="empty" style="padding:20px">Nothing in this filter. Loosen the tier or the "unverified only" toggle.</div>';
+  if((sec.mfr&&sec.mfr.length)||(sec.bod&&sec.bod.length)){
+    h+='<div class="vmakers"><div class="vmakers-h">Acceptable products — from the master spec</div>';
+    if(sec.mfr&&sec.mfr.length){h+='<div>';sec.mfr.forEach(function(m){h+='<span class="pill">'+esc(m)+'</span>';});h+='</div>';}
+    if(sec.bod&&sec.bod.length){h+='<div style="margin-top:6px">';sec.bod.forEach(function(p){h+='<span class="pill prod">'+esc(p)+'</span>';});h+='</div>';}
+    h+='</div>';
+  }
+  h+='<div class="vadd"><input id="vaddname" placeholder="add a phrase you know belongs here…" autocomplete="off"><select id="vaddtier">'+
+     VTIERS.map(function(t){return '<option value="'+t.k+'"'+(t.k==="signature"?" selected":"")+'>'+t.l+'</option>';}).join("")+
+     '</select><button class="btn" data-act="add">Add</button></div>';
+  host.innerHTML=h;
+}
+function vRow(p){
+  var sig=vEff(p)==="signature";
+  var seg=VTIERS.map(function(x){var on=vEff(p)===x.k;return '<button class="'+(on?"on":"")+'" data-act="tier" data-id="'+esc(p.id)+'" data-tier="'+x.k+'" title="'+x.l+'"'+(on?' style="background:'+vGold(x.c)+';border-color:'+vGold(x.c)+';color:#fff"':'')+'>'+x.l.charAt(0)+'</button>';}).join("");
+  var aiNote=p.aiSource==="you"?'<span class="vai">added by you</span>':(p.aiSource==="title"?'<span class="vai">section name</span>':'<span class="vai">AI draft: '+VTLABEL[p.aiTier]+'</span>');
+  return '<div class="vph'+(sig?' sig':'')+'">'+
+    '<div style="flex:1;min-width:0">'+
+      '<input class="vname" data-act="name" data-id="'+esc(p.id)+'" value="'+esc(p.name)+'">'+
+      (p.brands?'<span class="vbrand" title="Carries an Acceptable Products list — a genuinely specified product">★ specified</span>':'')+
+      (p.evidence?'<div class="vev">'+esc(p.evidence)+'</div>':'')+
+      '<div class="vmeta">'+aiNote+'</div>'+
+    '</div>'+
+    '<div class="vctrl">'+
+      '<span class="vseg">'+seg+'</span>'+
+      '<button class="vverify'+(p.verified?" on":"")+'" data-act="verify" data-id="'+esc(p.id)+'">'+(p.verified?"✓ Verified":"Verify")+'</button>'+
+      '<button class="vdel" data-act="del" data-id="'+esc(p.id)+'" title="remove this phrase">✕</button>'+
+    '</div></div>';
+}
+function vGoldBlock(code){
+  var sec=vFind(code);if(!sec)return "";
+  var sigs=vLive(sec).filter(function(p){return vEff(p)==="signature";});
+  if(!sigs.length)return "";
+  var h='<div class="msec"><div class="h" style="color:var(--amber-d)">★ Signature phrases — see one on a drawing and it\'s this section</div>';
+  sigs.forEach(function(p){h+='<span class="goldpill'+(p.verified?" v":"")+'" title="'+(p.verified?"verified by you":"AI draft — not yet verified")+'">'+esc(p.name)+(p.verified?' ✓':'')+'</span>';});
+  h+='</div>';
+  return h;
+}
+document.getElementById("veditor").addEventListener("click",function(e){
+  var el=e.target.closest("[data-act]");if(!el)return;var act=el.getAttribute("data-act");var sec=vData()[vSel];if(!sec)return;var p;
+  if(act==="tier"){p=vSecP(el.getAttribute("data-id"));if(p){p.userTier=el.getAttribute("data-tier");vSave();renderVerify();}e.preventDefault();return;}
+  if(act==="verify"){p=vSecP(el.getAttribute("data-id"));if(p){p.verified=!p.verified;vSave();renderVerify();}return;}
+  if(act==="del"){p=vSecP(el.getAttribute("data-id"));if(p){p.deleted=true;vSave();renderVerify();}return;}
+  if(act==="secver"){var live=vLive(sec);var allv=live.length&&live.every(function(x){return x.verified;});live.forEach(function(x){x.verified=!allv;});vSave();renderVerify();return;}
+  if(act==="reload"){e.preventDefault();if(VSEED[vSel]&&confirm("Reload "+vSel+" from the source spec? Your edits and verifications for THIS section will be replaced.")){__V[vSel]=vClone(VSEED[vSel]);vSave();renderVerify();}return;}
+  if(act==="add"){var ni=document.getElementById("vaddname"),nm=ni.value.trim();if(!nm)return;var tr=document.getElementById("vaddtier").value;var id=vNewId(sec,nm);sec.phrases.push({id:id,name:nm,article:"added by you",evidence:"",brands:false,aiTier:tr,aiSource:"you",userTier:tr,verified:false});vSave();renderVerify();return;}
+});
+document.getElementById("veditor").addEventListener("change",function(e){
+  var el=e.target.closest('[data-act="name"]');if(!el)return;var p=vSecP(el.getAttribute("data-id"));if(p){p.name=el.value.trim()||p.name;vSave();renderVList();}
+});
+document.getElementById("vlist").addEventListener("click",function(e){
+  var el=e.target.closest(".vsec");if(!el)return;vSel=el.getAttribute("data-code");renderVerify();
+});
+function initVerify(){
+  var vqEl=document.getElementById("vq");if(!vqEl)return;
+  vData();
+  vqEl.addEventListener("input",function(){vQ=this.value.toLowerCase().trim();renderVList();});
+  document.getElementById("vexport").onclick=function(){var blob=new Blob([JSON.stringify({meta:VMETA,saved:new Date().toISOString(),state:vData()},null,1)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="specfinder-verify-"+(VMETA.division||"data")+".json";a.click();};
+  document.getElementById("vimportbtn").onclick=function(){document.getElementById("vimport").click();};
+  document.getElementById("vimport").onchange=function(){var f=this.files[0];if(!f)return;var fr=new FileReader();fr.onload=function(){try{var o=JSON.parse(fr.result);var st=o.state||o;if(st&&typeof st==="object"){__V=st;vSave();vSel=null;renderVerify();}else alert("That file didn't contain verification data.");}catch(err){alert("Couldn't read that file: "+(err.message||err));}};fr.readAsText(f);this.value="";};
+  document.getElementById("vreset").onclick=function(){if(confirm("Reset ALL verification work back to the source spec? This clears your edits and verifications for every section.")){try{localStorage.removeItem("sf_verify_v1");}catch(e){}__V=null;vData();vSel=null;renderVerify();}};
+}
+
 /* ---------- boot ---------- */
 if(window.pdfjsLib){var _wsrc="pdf.worker.min.js";var _we=document.getElementById("__pdfworker");if(_we){try{_wsrc=URL.createObjectURL(new Blob([_we.textContent],{type:"application/javascript"}));}catch(e){}}pdfjsLib.GlobalWorkerOptions.workerSrc=_wsrc;}
 if(initData()){
-  buildFilters();buildBrowse();buildMakerIndex();setMakerMode("mfr");fillKeynotes();
+  buildFilters();buildBrowse();buildMakerIndex();setMakerMode("mfr");fillKeynotes();initVerify();
   var np=Object.keys(PROJ).length;
   document.getElementById("foot").innerHTML=SECS.length+" sections · "+Object.keys(ALIASES).length+" curated terms · "+np+" projects taught in · a section is asserted only when the curated library can back it.";
   doSearch("curtain wall");
